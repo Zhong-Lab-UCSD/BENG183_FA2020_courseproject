@@ -23,10 +23,23 @@ In order to perform hypothesis testing, **there are 5 steps that MUST be complet
 ---
 ## Form Hypotheses 
 
-In order to prove a hypothesis, it’s a requirement to have **two opposing hypotheses** that are disjoint events.  
+In order to prove a hypothesis, it’s a requirement to have **two opposing hypotheses** that are disjoint events. This means that if one is true, it is impossible for the other to be true as well. 
+
 These hypotheses need to have these two features:
 * Have reproducible results
 * Have the possibility to be proven either false or true
+
+These hypotheses have names and they are the **null hypothesis (H0)** and the **alternative hypothesis (H1)**
+
+#### Null Hypothesis (H0)
+* always predicts that there is no relationship between variables or no difference between variables 
+* is assumed true until rejected by *not rejecting the alternative hypothesis*
+
+#### Alternative hypothesis (H1)
+* needs to proven true 
+* this hypothesis is the one that assumes there’s a relationship between variables
+
+So now that there are two testable hypotheses, data is needed! 
 
 ---
 ## Data and Test Design
