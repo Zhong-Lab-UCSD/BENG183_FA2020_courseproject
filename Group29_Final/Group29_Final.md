@@ -79,6 +79,7 @@ The smaller the p-value → the greater the belief we have against the H0
 
 The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reject the null hypothesis*
 
+
 #### *What if the decision we made is wrong?*
 There are two types of errors that we can make and they are: 
 * **Type I Error (False Positive)** = reject a true null hypothesis and is a considerably worse error
