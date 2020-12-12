@@ -3,7 +3,7 @@
 ### By: John Gervasoni and Jacob Olivares (Group 29)
 
 ---
-## Table of Contents
+## Table of Contents 
 * [Why do Hypothesis Testing?](#why-do-hypothesis-testing)
 * [Form Hypotheses](#form-hypotheses)
 * [Data and Test Design](#data-and-test-design)
@@ -23,6 +23,10 @@ In order to perform hypothesis testing, **there are 5 steps that MUST be complet
 ---
 ## Form Hypotheses 
 
+In order to prove a hypothesis, it’s a requirement to have **two opposing hypotheses** that are disjoint events.  
+These hypotheses need to have these two features:
+* Have reproducible results
+* Have the possibility to be proven either false or true
 
 ---
 ## Data and Test Design
@@ -38,7 +42,6 @@ In order to perform hypothesis testing, **there are 5 steps that MUST be complet
 ---
 
 ## Sources
-
 
 
 
