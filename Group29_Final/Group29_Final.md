@@ -80,13 +80,18 @@ The smaller the p-value → the greater the belief we have against the H0
 The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reject the null hypothesis*
 
 #### *What if the decision we made is wrong?*
+There are two types of errors that we can make and they are: 
+* **Type I Error (False Positive)** = reject a true null hypothesis and is a considerably worse error
+* **Type II Error (False Negative)** = When you accept a false null hypothesis
 
+Here is an illustration of the type of decisions that can be made
 
-
+![Errors](https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/type-1-2-errors.png)
 
 ---
 
 ## Sources
+* AB Tasty. “What Are Type 1 and Type 2 Errors?” AB Tasty, 2 July 2020, www.abtasty.com/blog/type-1-and-type-2-errors/. 
 * Editor, Minitab Blog. “Understanding Hypothesis Tests: Significance Levels (Alpha) and P Values in Statistics.” Minitab Blog, 2015, blog.minitab.com/blog/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics.
 * Foster et al. “7.5: Critical Values, p-Values, and Significance Level.” Statistics LibreTexts, Libretexts, 11 Aug. 2020, stats.libretexts.org/Bookshelves/Applied_Statistics/Book:_An_Introduction_to_Psychological_Statistics_(Foster_et_al.)/07:__Introduction_to_Hypothesis_Testing/7.05:_Critical_values,_p-values,_and_significance_level.
 * Roger B. Davis and ScD Kenneth J. MukamalMD, et al. “Hypothesis Testing.” Circulation, 5 Sept. 2006, www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.105.586461.
