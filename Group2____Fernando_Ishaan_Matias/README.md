@@ -75,7 +75,11 @@ If we want to use high dimensional data, such as images (with each pixel corresp
 So for large data, we use Convolutional Neural Network Architecture (CNNs) that have layers themselves comprising of Convolutional filters and pooling layers, that act like feature reduction, reducing the number of parameters needed. Thus CNNs are often used for DL with images.
 
 ![Convolution filter example](https://cdn.analyticsvidhya.com/wp-content/uploads/2018/12/Screenshot-from-2018-12-07-15-21-02.png)
-###### Fig 1: Example of feature extraction with the help of Convolutional filters
+###### Fig 1: Example of feature extraction with the help of Convolutional filter layer
+![Pooling layer example](https://miro.medium.com/max/1400/1*-3-9b0tAakAsdozzhNlEww.png)
+###### Fig 2: Example of feature extraction with the help of Pooling layer
+
+<!--CNN for medical images here-->
 
 So an easy guess for an application might be using Medical images. For example, 
 
@@ -89,8 +93,8 @@ Detect SNPs/indels and other variants
 ### DeepVariant
 
 #### Variant Calling
-
-##### Pilups
+Variants are regions of the genome where the sequence differes from the reference genome. 
+#### Pileups
 
 #### Structure of DeepVariant Model
 
