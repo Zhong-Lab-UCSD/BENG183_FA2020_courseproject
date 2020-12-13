@@ -60,8 +60,10 @@ language processing, speech recognition, and image recognition
 - Inputs are training data ($x$ for each training  example), first layer outputs just that
 - In the forward-propagation step, the outputs of activation function of neurons in one layer are successively applied weights and other parameters ($w,b$)   on and fed to next layer in forward fashion. Output of final is the expected output ( $\hat{y}$ for each training example)
 - Loss function ( $L(\hat{y},y)$ ) compares expected output with real output of training data ($y$ for each training example)
-- Cost function is the average of $L$ across all training examples.
-- In back-propagation step, for each parameter $w$, $ \frac{\partial J}{\partial w} $ is computed by chain rule.
+- Cost function $ J $ is the average of $L$ across all training examples.
+- In back-propagation step, We use Gradient Descent to optimize Cost Function, i.e, find the parameters that minimize the Cost Function.
+- In Gradient Descent, we change the parameters by a step proportional to the slope of Cost function for those parameters.
+- So for each parameter $w$, $ \frac{\partial J}{\partial w} $ is computed by chain rule.
 - Iteratively, we minimize $ J $ by iteratively in each forward propagation step (except initial) tuning the parameter $w$ in the direction $ -\frac{\partial J}{\partial w} $ This algorithm called gradient descent helps **learn** the parameters.
 
 This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
@@ -70,11 +72,13 @@ Furthermore, the example we saw is a Deep Feed-Forward NN (DFF), but there are d
 ### CNNs
 If we want to use high dimensional data, such as images (with each pixel corresponding to a neuron in the input layer), as input for a neural network, we have a large number of neurons in the input layer and large number of neurons in the next layer. By the fully connected architecture we saw above, how many parameters would we need? Just the number of simple weights would the product of those two large numbers of neurons.
 
-So for large data, we use Convolutional Neural Network Arcgitecture (CNNs) that have layers themselves comprising of Convolutional filters and pooling layers, that act like feature reduction, reducing the number of parameters needed. Thus CNNs are often used for DL with images.
+So for large data, we use Convolutional Neural Network Architecture (CNNs) that have layers themselves comprising of Convolutional filters and pooling layers, that act like feature reduction, reducing the number of parameters needed. Thus CNNs are often used for DL with images.
 
 ![Convolution filter example](https://cdn.analyticsvidhya.com/wp-content/uploads/2018/12/Screenshot-from-2018-12-07-15-21-02.png)
 ###### Fig 1: Example of feature extraction with the help of Convolutional filters
-Medical images application
+
+So an easy guess for an application might be using Medical images. For example, 
+
 OMICS application:
 Detect SNPs/indels and other variants
 
