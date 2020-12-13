@@ -1,6 +1,8 @@
 # Deep Learning in OMICS - Group 2
 #### Fernando Bracamonte, Ishaan Gupta, Matias Lin
 
+<!--lets update Contents after we're done finalizing the rest-->
+
 ## Contents
 - [Introduction](#Introduction)
 - [OMICS](#OMICS)
@@ -16,9 +18,16 @@
 
 ## Introduction
 
-With the invention of new OMIC technologies, as well as with the advancement in technology withing new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models and from these large biological datasets (1). 
+With the invention of new OMIC technologies, as well as with the advancement in technology withing new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models and from these large biological datasets (5). 
 
-This paper will explain the background of OMICS and Deep Learning and Artificial Neural Networks (ANNs), with a focus on Convolutional Neural Networks (CNNs). Moreover, applications of CNNs in OMICS data analysis will be explored in more detail. 
+### Aim of this lesson:
+- To show how AI is revolutionizing Precision Medicine and OMICS data analysis
+- To explain the background of Deep Learning and Artificial Neural Networks (ANNs), with a focus on Convolutional Neural Networks (CNNs)
+- To introduce different kinds of architectures and appropriate uses
+- To show what kinds of data can be used input and output for DL in OMICS data through examples
+- Particularly focus on Variant Calling as an example application
+
+---
 
 ---
 
@@ -29,17 +38,77 @@ OMICS...
 
 ---
 
-## Deep Learning
-
-Deep Learning...
+## Deep Learning Background
+- Why DL is important
+- AI, DL, ML, NN - Buzzword, for great reason, but meaning?
+- AI: Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University, “Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence.” (1)
+- ML: ML is a branch of AI. “Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience.” -  Tom M. Mitchell, Carnegie Mellon University, Machine Learning Department (1)
+- DL networks are a class of ML algorithms uses ANNs
+- ANNs are inspired by biological neural networks in a sense that they are formed by interconnected artificial neurons, which receive an input, apply a transformation to the data, and return an output
+- DL can encode and learn from heterogeneous and complex data, in both supervised and unsupervised settings
+language processing, speech recognition, and image recognition
+- In Omics data analysis: over-performed previous methods in terms of sensitivity, specificity and efficiency (2)
 
 ### ANNs
 
-### Deep Learning Methods
+#### Basic design: 
 
-### Applications
+- Image of a simple neural network
+- Inputs are training data ($x$ for each training  example), first layer outputs just that
+- In the forward-propagation step, the outputs of activation function of neurons in one layer are successively applied weights and other parameters ($w,b$)   on and fed to next layer in forward fashion. Output of final is the expected output ( $\hat{y}$ for each training example)
+- Loss function ( $L(\hat{y},y)$ ) compares expected output with real output of training data ($y$ for each training example)
+- Cost function $ J $ is the average of $L$ across all training examples.
+- In back-propagation step, We use Gradient Descent to optimize Cost Function, i.e, find the parameters that minimize the Cost Function.
+- In Gradient Descent, we change the parameters by a step proportional to the slope of Cost function for those parameters.
+- So for each parameter $w$, $ \frac{\partial J}{\partial w} $ is computed by chain rule.
+- Iteratively, we minimize $ J $ by iteratively in each forward propagation step (except initial) tuning the parameter $w$ in the direction $ -\frac{\partial J}{\partial w} $ This algorithm called gradient descent helps **learn** the parameters.
+
+This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
+Furthermore, the example we saw is a Deep Feed-Forward NN (DFF), but there are different NN architectures specific to different uses. 
+
+### CNNs
+If we want to use high dimensional data, such as images (with each pixel corresponding to a neuron in the input layer), as input for a neural network, we have a large number of neurons in the input layer and large number of neurons in the next layer. By the fully connected architecture we saw above, how many parameters would we need? Just the number of simple weights would the product of those two large numbers of neurons.
+
+So for large data, we use Convolutional Neural Network Architecture (CNNs) that have layers themselves comprising of Convolutional filters and pooling layers, that act like feature reduction, reducing the number of parameters needed. Thus CNNs are often used for DL with images.
+
+![Convolution filter example](https://cdn.analyticsvidhya.com/wp-content/uploads/2018/12/Screenshot-from-2018-12-07-15-21-02.png)
+###### Fig 1: Example of feature extraction with the help of Convolutional filter layer
+![Pooling layer example](https://miro.medium.com/max/1400/1*-3-9b0tAakAsdozzhNlEww.png)
+###### Fig 2: Example of feature extraction with the help of Pooling layer
+
+<!--CNN for medical images here-->
+
+So an easy guess for an application might be using Medical images. For example, 
+
+OMICS application:
+Detect SNPs/indels and other variants
+
+
+## Applications
 
 ---
+### DeepVariant
+
+#### Variant Calling
+Variants are regions of the genome where the sequence differes from the reference genome. They could be in the form of:
+- Single NUcleotide Variants (SNVs)
+- Indels
+- Structural Variants (SVs)
+ - Copy number Variants (CNVs)
+ - Translocation
+ - Duplication
+ - Inversion
+
+![Variants types](Images/TypesOfVariants.png)
+###### Fig 3: Types of Variants (6)
+
+#### Pileups
+
+#### Structure of DeepVariant Model
+
+#### Comparison with other Variant Calling methods
+
+### Other applications
 
 ## Conclusion
 
@@ -49,7 +118,12 @@ Conclusion...
 
 ### References 
 
-1. Martorell-Marugán J, Tabik S, Benhammou Y, et al. Deep Learning in Omics Data Analysis and Precision Medicine. In: Husi H, editor. Computational Biology \[Internet\]. Brisbane (AU): Codon Publications; 2019 Nov 21. Chapter 3. Available from: https://www.ncbi.nlm.nih.gov/books/NBK550335/ doi: 10.15586/computationalbiology.2019.ch3
-2. Source two
-3. Source three
+1. Machine Learning (ML) vs. Artificial Intelligence (AI) — Crucial Differences ( https://medium.com/towards-artificial-intelligence/differences-between-ai-and-machine-learning-and-why-it-matters-1255b182fc6 )
+2. Deep learning in bioinformatics ( https://pubmed.ncbi.nlm.nih.gov/27473064/ ) 
+3. A universal SNP and small-indel variant caller using deep neural networks ( https://pubmed.ncbi.nlm.nih.gov/30247488/ ) 
+full PDF: https://www.plantdna.cn/docs/july-1st/post1/poplin2018.pdf
+4. Zhou J, Troyanskaya OG. Predicting effects of noncoding variants with deep learning-based sequence model. Nat Methods. 2015 Oct;12(10):931–4. [PMC free article] [PubMed]
+5. Martorell-Marugán J, Tabik S, Benhammou Y, et al. Deep Learning in Omics Data Analysis and Precision Medicine. In: Husi H, editor. Computational Biology \[Internet\]. Brisbane (AU): Codon Publications; 2019 Nov 21. Chapter 3. Available from: https://www.ncbi.nlm.nih.gov/books/NBK550335/ doi: 10.15586/computationalbiology.2019.ch3
+6. https://www.ebi.ac.uk/training-beta/online/courses/human-genetic-variation-introduction/what-is-genetic-variation/types-of-genetic-variation/
+
 
