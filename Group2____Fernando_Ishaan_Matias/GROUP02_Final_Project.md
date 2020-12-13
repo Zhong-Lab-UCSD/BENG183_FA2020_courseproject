@@ -76,15 +76,18 @@ So for large data, we use Convolutional Neural Network Architecture (CNNs) that 
 ![Pooling layer example](https://miro.medium.com/max/1400/1*-3-9b0tAakAsdozzhNlEww.png)
 ###### Fig 2: Example of feature extraction with the help of Pooling layer
 
+
+### RNNs and LSTMs
+### Autoencoders
+## Applications in OMICS and Precision Medicine
+### Applications of CNNs
+
 <!--CNN for medical images here-->
 
-So an easy guess for an application might be using Medical images. For example, 
+An easy guess for an application might be using Medical images. For example, 
 
 OMICS application:
 Detect SNPs/indels and other variants
-
-
-## Applications
 
 ---
 ### DeepVariant
