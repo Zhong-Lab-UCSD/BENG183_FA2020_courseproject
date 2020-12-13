@@ -94,10 +94,10 @@ Variants are regions of the genome where the sequence differes from the referenc
 - Single NUcleotide Variants (SNVs)
 - Indels
 - Structural Variants (SVs)
- - Copy number Variants (CNVs)
- - Translocation
- - Duplication
- - Inversion
+  * Copy number Variants (CNVs)
+  * Translocation
+  * Duplication
+  * Inversion
 
 ![Variants types](Images/TypesOfVariants.png)
 ###### Fig 3: Types of Variants (6)
