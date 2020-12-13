@@ -8,6 +8,7 @@
 * Ishaan Gupta
 * Matias Lin
 
+<!--lets update Contents after we're done finalizing the rest-->
 
 ## Contents
 - [Introduction](#Introduction)
