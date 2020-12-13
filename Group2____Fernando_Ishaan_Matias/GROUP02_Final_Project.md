@@ -6,7 +6,7 @@
 - [OMICS](#OMICS)
 - [Deep Learning](#Deep-Learning)
   * [ANNs](#ANNs)
-  * [Deep Learning Methods](#DL-Mehods)
+  * [Deep Learning Methods](#Deep-Learning-Methods)
   * [Applications](#Applications)
 - [Conclusion](#Conclusion)
 - [References](#References)
