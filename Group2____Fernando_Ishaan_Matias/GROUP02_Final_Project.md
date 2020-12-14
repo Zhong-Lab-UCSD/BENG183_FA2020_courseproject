@@ -128,5 +128,6 @@ full PDF: https://www.plantdna.cn/docs/july-1st/post1/poplin2018.pdf
 4. Zhou J, Troyanskaya OG. Predicting effects of noncoding variants with deep learning-based sequence model. Nat Methods. 2015 Oct;12(10):931–4. [PMC free article] \[PubMed\]
 5. Martorell-Marugán J, Tabik S, Benhammou Y, et al. Deep Learning in Omics Data Analysis and Precision Medicine. In: Husi H, editor. Computational Biology \[Internet\]. Brisbane (AU): Codon Publications; 2019 Nov 21. Chapter 3. Available from: https://www.ncbi.nlm.nih.gov/books/NBK550335/ doi: 10.15586/computationalbiology.2019.ch3
 6. https://www.ebi.ac.uk/training-beta/online/courses/human-genetic-variation-introduction/what-is-genetic-variation/types-of-genetic-variation/
+7. Ward, Sherry L. “Omics, Bioinformatics, Computational Biology.” AltTox.org, 14 July 2014, alttox.org/mapp/emerging-technologies/omics-bioinformatics-computational-biology/. Accessed 13 Dec. 2020.
 
 
