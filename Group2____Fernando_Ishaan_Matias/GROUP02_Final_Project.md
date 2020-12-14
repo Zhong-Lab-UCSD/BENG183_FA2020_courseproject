@@ -35,7 +35,7 @@ With the invention of new OMIC technologies, as well as with the advancement in 
 
 ## OMICS
 
-Omics are the different science branches of Biology, which have the suffix of *-omics*, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents al the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References).  These Omic technologies are shown below with explanations as to what they study:
+Omics are the different science branches of Biology, which have the suffix of *-omics*, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents al the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References).  A few Omic technologies are shown below with explanations as to what they study:
 
 - Genomics: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
 - Transcriptomics: studies the transcriptome, which is the collection of all mRNA
@@ -111,11 +111,29 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ### Autoencoders
 
+---
+
 ## Applications in OMICS and Precision Medicine
+
+As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications algo improve and give rise to precision medicine from analysing medical imagine to get a specific diagnosis for a person [(5)](#References). 
+
+Some other examples of what deep learning applications can be used for are explained below:
+
+### Genomics and Sequence analysis
+
+There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References). 
+
+### Transcriptomics
+
+### Epigenomics 
+
+### Medical Imaging
+
+
 
 ![DL Applications in Omics](./Images/DLApplicationsOmics.jpg)
 
-###### Fig X: Workflow of Deep Learning Applications in Omics Data Analysis
+###### Fig 5: Workflow of Deep Learning Applications in Omics Data Analysis
 
 
 
