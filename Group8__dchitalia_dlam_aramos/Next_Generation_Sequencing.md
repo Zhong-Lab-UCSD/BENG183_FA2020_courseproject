@@ -74,6 +74,8 @@ Dilution is the next step in the library preparation workflow. This step is esse
 The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be over crowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
   
 ## Sequencing Run
+Step 1 
+
 
 ## Analysis
 
