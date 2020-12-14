@@ -161,14 +161,14 @@ After calculating the p-value for the applicable tests, the value can be used to
 
 
 ## **References** 
-[1]: https://www.khanacademy.org/science/high-school-biology/hs-biology-foundations/hs-biology-and-the-scientific-method/a/the-science-of-biology\
-[2]: https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/2569/2017/10/23192123/1000000000000342000002C90F1084BF.png\
-[3]: Taylor, Courtney. "Null Hypothesis and Alternative Hypothesis." ThoughtCo, Aug. 27, 2020, thoughtco.com/null-hypothesis-vs-alternative-hypothesis-3126413\
-[4]: https://blog.minitab.com/blog/understanding-statistics/understanding-qualitative-quantitative-attribute-discrete-and-continuous-data-types\
-[5]: http://osp.mans.edu.eg/tmahdy/papers_of_month/0706_statistical.pdf\
-[6]: https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/\
-[7]: http://abacus.bates.edu/~ganderso/biology/resources/statistics.html\
-[8]: https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/hypothesis-testing/p-value-approach\
-[9]: Lecture and Example Class Handout - https://github.com/Irenexzwen/Applied-Genomic-Technologies/blob/master/statistics_cheatsheet.pdf\
-[10]: https://www.statisticshowto.com/probability-and-statistics/t-test/#PairedTTest\
+[1]: https://www.khanacademy.org/science/high-school-biology/hs-biology-foundations/hs-biology-and-the-scientific-method/a/the-science-of-biology \
+[2]: https://s3-us-west-2.amazonaws.com/courses-images/wp-content/uploads/sites/2569/2017/10/23192123/1000000000000342000002C90F1084BF.png \
+[3]: Taylor, Courtney. "Null Hypothesis and Alternative Hypothesis." ThoughtCo, Aug. 27, 2020, thoughtco.com/null-hypothesis-vs-alternative-hypothesis-3126413 \
+[4]: https://blog.minitab.com/blog/understanding-statistics/understanding-qualitative-quantitative-attribute-discrete-and-continuous-data-types \
+[5]: http://osp.mans.edu.eg/tmahdy/papers_of_month/0706_statistical.pdf \
+[6]: https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/ \
+[7]: http://abacus.bates.edu/~ganderso/biology/resources/statistics.html \
+[8]: https://online.stat.psu.edu/statprogram/reviews/statistical-concepts/hypothesis-testing/p-value-approach \
+[9]: Lecture and Example Class Handout - https://github.com/Irenexzwen/Applied-Genomic-Technologies/blob/master/statistics_cheatsheet.pdf \
+[10]: https://www.statisticshowto.com/probability-and-statistics/t-test/#PairedTTest \
 [11]: https://www.cyclismo.org/tutorial/R/pValues.html#calculating-a-single-p-value-from-a-normal-distribution
