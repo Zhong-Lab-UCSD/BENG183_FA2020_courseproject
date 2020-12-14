@@ -58,7 +58,7 @@ Once we have competing hypotheses, we need to categorize experimental results in
 The type or format of data and the size of our dataset from our experiment is critical to choosing a test. The below list/flowchart represents the different types of data.<sup>[[4]](https://blog.minitab.com/blog/understanding-statistics/understanding-qualitative-quantitative-attribute-discrete-and-continuous-data-types)</sup>
 
 ### <div align="center">**Figure 1.2 Different Data Types**</div>
-<div align="center"><img src="Figure 1.2.JPG" width="500" /></div>
+<div align="center"><img src="Figure 1.2.JPG" width="550" /></div>
 
 **Quantitative data:** Data that is in the form of numerical values and can be measured objectively. Examples: Height, Weight
 * Discrete data: Data is stratified or in the form of categories
@@ -86,7 +86,7 @@ Here are some of the basic, common layers to a statistical test. These layers ar
 It is important to note that some tests do not include the following layers or may be referred to with different terms. A one-size fits all rule does not apply.
 
 ### <div align="center">**Figure 1.3 Common Layers of Statistical Testing**</div>
-<div align="center"><img src="Figure 1.3.JPG" width="450" /></div>
+<div align="center"><img src="Figure 1.3.JPG" width="500" /></div>
 
 *The statistical test that makes use of all 3 common layers and prevalent in this chapter, is the Student’s T-test.*
 
@@ -94,7 +94,7 @@ It is important to note that some tests do not include the following layers or m
 Parametric testing is dependent on the existence of parameters. There are three main differences between parametric and non-parametric tests<sup>[[5]](http://osp.mans.edu.eg/tmahdy/papers_of_month/0706_statistical.pdf)</sup>:
 
 ### <div align="center">**Figure 1.4 Parametric vs. Non-Parametric**</div>
-<div align="center"><img src="Figure 1.4.JPG" width="500" /></div>
+<div align="center"><img src="Figure 1.4.JPG" width="550" /></div>
 Due to these requirements, we often use non-parametric tests in conjunction with parametric tests within the same experiment. This allows us to cover different aspects of the same experiment or different types of data. 
 
 ### **Middle layer: Paired or Unpaired Testing**
