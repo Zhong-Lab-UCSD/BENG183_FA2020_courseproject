@@ -125,7 +125,11 @@ There are many examples where deep learning methods have been applied to genomic
 
 ### Transcriptomics
 
+In transcriptomics, which is the omics technology that quantifies RNA expression levels, deep learning algorithms use generally expression matrices of different gene expression levels as their input. Therefore, with the output of these deep learning methods, many applications can be conducted. For example, CNNs are used to identify actual splice junctions from false positives generated from RNA-seq reads alignment. Also, using a DNN with a Bayesian statistical model to analyze differential splicing between different samples using RNA-seq data. One final example is the use of an RNN to differentiate between coding and non-coding RNAs [(5)](#References).
+
 ### Epigenomics 
+
+Epigenomics studies the DNA structure modifications that has the potential of modifying gene expression. These changes, which were learned at the beginning  of BENG 183, are for example DNA methylation and histone modifications. Therefore, just like the previous methods discussed, deep learning methods can be used on methylation matrices, ChIP- and CLIP-seq data, DNase I sequencing data in order to predict and use it in many applications. Some examples are: CNNs have been used to predict sequences recognizes by DNA- and RNA-binding proteins; CNNs also have predicted the 3D chromatin state in a cell; and a final example is that a CNN was used to predict gene expression from histone modification data [(5)](#References).
 
 ### Medical Imaging
 
