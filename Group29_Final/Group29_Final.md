@@ -179,7 +179,7 @@ There are two types of errors that we can make and they are:
 
 Here is an illustration of the type of decisions that can be made
 
-![Errors](https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/type-1-2-errors.png)
+![Errors](/Group29_Final/type-1-2-errors.png)
 
 ---
 
