@@ -115,7 +115,7 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ## Applications in OMICS and Precision Medicine
 
-As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications also improve and give rise to precision medicine from analysing medical imagine to get a specific diagnosis for a person [(5)](#References). 
+As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications also improve and give rise to precision medicine from analyzing medical imaging to get a specific diagnosis for a person [(5)](#References). 
 
 Some other examples of what deep learning applications can be used for are explained below:
 
