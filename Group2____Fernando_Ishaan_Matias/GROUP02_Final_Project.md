@@ -133,7 +133,7 @@ Epigenomics studies the DNA structure modifications that has the potential of mo
 
 ### Medical Imaging
 
-
+Medical imaging is a crucial component in the healthcare industry to treat patients. With the introduction of deep learning methods in this field, it has helped push transition medicine to transition into precision medicine.  Omics data analysis has also helped precision medicine from the study of diseases at different molecular levels, such as DNA sequences and RNA expression, to determine if any have been altered.  To understand the importance of using medical imaging in deep learning methods, we will explore various applications and uses there have been. Deep Leaning Methods are used in identifying skin cancer; for example, CNNs have been used to predict whether a certain skin lesion is cancer or not with the input of clinical images. Moreover, it has applications in identifying brain tumors, where CNNs and SAEs are applied on MRI images to predict and identify characteristics of tumors. One final example is in the diagnosis of medical conditions with X-ray images. One such example is a CNN trained to detect vessel regions for the diagnosis of coronary artery disease [(5)](#References).
 
 ![DL Applications in Omics](./Images/DLApplicationsOmics.jpg)
 
