@@ -79,6 +79,32 @@ The standard Illumina PhiX control that is used today is the PhiX Control v3 Lib
 
 ## Applications
 
+## Citations
+
+[An Introduction to Next-Generation Sequencing Technology](https://www.illumina.com/content/dam/illumina-marketing/documents/products/illumina_sequencing_introduction.pdf)
+
+[Illumina Adaptor Sequences](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-14.pdf)
+
+[Illumina Sequencing Technology](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+[Magnetic Beads Kits for DNA Extraction](https://mvspacific.com/REAGENTS/DNA%20Isolation%20Kits.htm)
+
+[Nextera DNA Library Prep Reference Guide](https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/samplepreps_nextera/nexteradna/nextera-dna-library-prep-reference-guide-15027987-01.pdf)
+
+[Using a PhiX Control for HiSeq Sequencing Runs](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/hiseq-phix-control-v3-technical-note.pdf)
+
+[What is the PhiX Control v3 Library and what is its function in Illumina Next Generation Sequencing?](https://support.illumina.com/bulletins/2017/02/what-is-the-phix-control-v3-library-and-what-is-its-function-in-.html)
+
+Cortes, Kamila Caraballo, et al. “Next-Generation Sequencing of 5′ Untranslated Region of
+  Hepatitis C Virus in Search of Minor Viral Variant in a Patient Who Revealed New Genotype While on Antiviral Treatment.” Respirology Advances in Experimental Medicine and Biology, 2015, pp. 11–23., doi:10.1007/5584_2015_186.
+  
+Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next Generation
+  Sequencing.” Scientific Reports, vol. 6, no. 1, 2016, doi:10.1038/srep24067.
+
+
+
+
+
 
 
 
