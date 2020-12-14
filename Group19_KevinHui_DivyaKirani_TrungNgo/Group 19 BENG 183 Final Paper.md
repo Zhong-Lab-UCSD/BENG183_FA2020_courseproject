@@ -103,10 +103,10 @@ Paired or unpaired testing is used based on the samples in our experiment. If we
 ### **Bottom layer: One-tailed or Two-tailed Testing**
 One and two-tailed testing is specific to t-tests. In one-tailed testing, our t-distribution has only one rejection region. In the case of two-tailed testing, the rejection region is halved into two regions.<sup>[[6]](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/)</sup> Let us take the above example on anti-blue ray glasses to show this. 
 
-*Case 1: One-tailed test*
+*Case 1: One-tailed test* \
 Our first sample or sample A is the population without the anti-blue ray glasses. Our second sample **consists of the same people** from sample A with the anti-blue ray glasses. If we want to examine whether the eye fatigue levels after looking at a screen **increases**, we need to use a **paired, one-tailed test**. This is because we are seeing how wearing anti-blue ray glasses **increases** the eye fatigue levels of the same set population over time.
 
-*Case 2: Two-tailed test*
+*Case 2: Two-tailed test* \
 Our first sample or sample A is the population without the anti-blue ray glasses. Our second sample **consists of the same people** from sample A who are now wearing the anti-blue ray glasses. If we want to examine whether the eye fatigue levels after looking at a screen **changes**, we need to use a **paired, two-tailed test**. This is because we are seeing how wearing anti-blue ray glasses only **affects** the eye fatigue levels of the same set population over time. 
 
 **Hypotheses for Tailed Testing**
@@ -115,15 +115,15 @@ Our first sample or sample A is the population without the anti-blue ray glasses
 
 The following set of formulations involving the mean/median of the samples may help when you are drafting your null and alternative hypotheses.
 
-**One-tailed:**\
-Null hypothesis: “A is equal to B.” Alternative hypothesis “A is less than B.”
+**One-tailed:** \
+Null hypothesis: “A is equal to B.” Alternative hypothesis “A is less than B.”\
 Null hypothesis: “A is equal to B.” Alternative hypothesis “A is greater than B.”
 
 ### <div align="center">**Figure 1.5 One-tailed Testing Distribution**<sup>[[6]](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/)</sup></div>
 <div align="center"><img src="Figure 1.5.JPG" width="450" /></div>
 
-**Two-tailed:**\
-Null hypothesis: “A is equal to B.” 
+**Two-tailed:** \
+Null hypothesis: “A is equal to B.”\
 Alternative hypothesis: “A is not equal to B.”
 
 ### <div align="center">**Figure 1.6 Two-tailed Testing Distribution**<sup>[[6]](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/)</sup></div>
