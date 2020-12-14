@@ -113,6 +113,12 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ## Applications in OMICS and Precision Medicine
 
+![DL Applications in Omics](./Images/DLMethodsOmics.jpg)
+
+###### Fig X: Workflow of Deep Learning Applications in Omics Data Analysis
+
+
+
 ### Applications of CNNs
 
 <!--CNN for medical images here-->
