@@ -33,7 +33,7 @@ With the invention of new OMIC technologies, as well as with the advancement in 
 
 ## OMICS
 
-OMICS...
+OMICS are the different branches of biological sciences, which have the suffix of *-omics*, such as genomics (which is the focus of BENG 183), transcriptomics
 
 
 ---
