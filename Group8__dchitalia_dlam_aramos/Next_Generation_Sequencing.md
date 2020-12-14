@@ -1,4 +1,5 @@
 # In Depth Look at Next Generation Sequencing
+BENG 183 Final | Dheerav Chitalia | Dylan Lam | Alejandro Ramos
 
 ## Library Preparation
 
@@ -20,11 +21,13 @@ We will now take a closer look at each one of these steps
 ### PCR 1: Addition of SBS Adaptors and Purification 1
 #### Sequencing by Synthesis Adaptors
 ![](./img/SBS_Sequences.png)
+
 [Illumina SBS Adaptors](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 The Illumina sequencing by synthesis adaptors are the first set of sequences to be added to the sample DNA. These adaptors are important because they allow the DNA samples to bind on to the flow cell surface and eventually are used to conduct bridge amplification in the sequencing workflow. These adaptors are added by polymerase chain reaction and then the samples are purified.
 #### Magnetic Bead Purification 1
 ![](./img/Bead_Purification.png)
+
 [Bead Purification](https://mvspacific.com/REAGENTS/DNA%20Isolation%20Kits.htm)
 
 After the first PCR, the DNA samples will be contaminated with a variety of PCR residues and DNA dimers that can potentially affect the sequencing run. In order to purify these samples, a magnetic bead purification is done. This process involves:
@@ -36,12 +39,45 @@ After the first PCR, the DNA samples will be contaminated with a variety of PCR 
 ### PCR 2: Addition of Index Sequences and Purification 2
 #### Index Sequences
 ![](./img/Index_Sequences.png)
+
 [Illumina Index Sequences](https://www.researchgate.net/figure/Dual-index-PCR-primers-designed-for-paired-end-Illumina-sequencing-of-5-UTR-region-The_fig5_289734765)
 
 The addition of Illumina's unique dual (UD) index adaptors allows each sample of DNA to be identified after the sequencing run. These adaptors usually come in pairs (i5 and i7) and are 10 bases long. The addition of these adaptors makes it possible for scientists to conduct massively parallel sequencing runs with many different samples placed into a single pool. This technology saves time and the cost of having to conduct each of these sample sequencing runs in separate pools. Further downstream, the Illumina analysis algorithms are able to separate the sequences of the different samples in the pool by identifying the unique indexes. The addition of these indexes are done by a second PCR which, again, requires a purification.
 
 #### Magnetic Bead Purification 2
-After the second PCR, the DNA samples must be purified again in the exact same way they were purified after the first PCR. This ensures that the quality of the DNA samples is preserved for the sequencing run
+After the second PCR, the DNA samples must be purified again in the same way they were purified after the first PCR except now these index samples can be pooled into one sample. This ensures that the quality of the DNA samples is preserved for the sequencing run
+
+### Quantification, Dilution, and Addition of PhiX Control
+#### Quantification
+![](./img/Quantification.png)
+
+[Comparison of DNA Quantification Methods for Next Generation Sequencing](https://www.nature.com/articles/srep24067)
+
+The quantification step of the library preparation workflow is required to create an accurate dilution of the DNA samples. There are many ways to quantify the DNA content of the sample pool and some examples are:
+- qPCR
+- Qubit
+- ddPCR
+- ddPCR-Tail
+The image above is from an article where these four methods for quantification were done and the affects of the quantification methods on the final NGS run quality were analyzed.
+
+In addition to these methods of quantification, it is standard to use tools such as Bioanalyzer (top right corner of the image above) to find the average base pair length of the sample pool. With these two quantification methods, the molarity of the sample can be calculated and be used for dilution.
+
+#### Dilution
+![](./img/Dilution.png)
+
+[Dilution](https://upcvmda-pl480.weebly.com/educational-articles/dna-sequencing-illumina-workflow-part-1-dna-isolation-quality-control-and-dilution)
+
+Dilution is the next step in the library preparation workflow. This step is essential for the success of the resulting sequencing quality. When the sequencing undergoes bridge amplification, the sample DNA will be multiplied many times to form thousands of clusters across the sequencing flow cell. If the starting sample is not diluted enough, the clusters will over crowd the flow cell and the clusters will not be distinguishable when the sequencing images are taken. The standard dilution of DNA samples is down to a 4nM library.
+
+#### PhiX Control
+
+The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be over crowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
+  
+## Sequencing Run
+
+## Analysis
+
+## Applications
 
 
 
