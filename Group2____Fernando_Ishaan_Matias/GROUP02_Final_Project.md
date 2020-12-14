@@ -19,7 +19,7 @@
 
 ## Introduction
 
-With the invention of new OMIC technologies, as well as with the advancement in technology withing new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models and from these large biological datasets (5).
+With the invention of new OMIC technologies, as well as with the advancement in technology withing new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models and from these large biological datasets [(5)](#References).
 
 ### Aim of this lesson:
 
@@ -50,13 +50,13 @@ With the summary of what some of these Omics technologies do, the overall object
 
 - Why DL is important
 - AI, DL, ML, NN - Buzzword, for great reason, but meaning?
-- AI: Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University, “Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence.” (1)
-- ML: ML is a branch of AI. “Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience.” - Tom M. Mitchell, Carnegie Mellon University, Machine Learning Department (1)
+- AI: Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University, “Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence.” [(1)](#References)
+- ML: ML is a branch of AI. “Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience.” - Tom M. Mitchell, Carnegie Mellon University, Machine Learning Department [(1)](#References)
 - DL networks are a class of ML algorithms uses ANNs
 - ANNs are inspired by biological neural networks in a sense that they are formed by interconnected artificial neurons, which receive an input, apply a transformation to the data, and return an output
 - DL can encode and learn from heterogeneous and complex data, in both supervised and unsupervised settings
   language processing, speech recognition, and image recognition
-- In Omics data analysis: over-performed previous methods in terms of sensitivity, specificity and efficiency (2)
+- In Omics data analysis: over-performed previous methods in terms of sensitivity, specificity and efficiency [(2)](#References)
 
 ### ANNs
 
@@ -89,7 +89,7 @@ So for large data, we use Convolutional Neural Network Architecture (CNNs) that 
 
 ###### Fig 2: Example of feature extraction with the help of Pooling layer
 
-Oncology is one of the areas in the medical field where CNNs are gaining prevalence. To better improve the accuracy when diagnosing Lung Adenocarcinomas (LAC), researchers utilize DL to evaluate distinct histological tumor growth patterns (9). There are five main growth patterns of interest when it comes to assaying LAC: Acinar (AC), Microcapillary (MP), Solid (SO), Cribriform (CR) and Non-Tumor (NT). In an effort to automate the task of quantifying these growth patterns, the scientists developed a pipeline that involves a CNN model.
+Oncology is one of the areas in the medical field where CNNs are gaining prevalence. One of the papers that explored this possibility is "Convolutional neural networks can accurately distinguish four histologic growth patterns of lung adenocarcinoma in digital slides". To better improve the accuracy when diagnosing Lung Adenocarcinomas (LAC), researchers utilize DL to evaluate distinct histological tumor growth patterns [(9)](#References). There are five main growth patterns of interest when it comes to assaying LAC: Acinar (AC), Microcapillary (MP), Solid (SO), Cribriform (CR) and Non-Tumor (NT). In an effort to automate the task of quantifying these growth patterns, the scientists developed a pipeline that involves a CNN model.
 
 ![CNN Pipeline](./Images/cnn_hist_1.png)
 
@@ -97,7 +97,15 @@ Oncology is one of the areas in the medical field where CNNs are gaining prevale
 
 From Figure 3.A, we can observe that the researchers employ a convolutional neural network to predict all five growth patterns (AC, SO, MP, CR and NT) given an image (note that this paper refers to the input images as tiles). In this example, a single histopathology slide yielded 19,942 tiles corresponding to 5 classes and after data augmentation, 797,680 images were used to train the model. Once the CNN model was trained, it was incorporated into the overall pipeline as seen in Figure 3.B. The model is used to be able to classify the tiles to be able to quantify the different growth patterns and later construct the tumor growth pattern map.
 
-This paper not only demonstrates the potential of CNN in a clinical setting but also the wide range of applications in which this machine learning technique can be used in.
+Another interesting example involves the studying and diagnosis of breast cancer as described in the following paper: "Cancer diagnosis in histopathological image: CNN based approach". The process of diagnosing breast cancer is through the careful analysis of breast tissue cells. This is a task that can be wearisome and even error-prone if performed by an individual. Therefore, this paper proposes a machine learning approach where they use CNN models to predict whether a histopathology slide of breast tissue cells is malignant or benign [(10)](#References).
+
+![BRCA Example](./Images/brca_pipeline.jpg)
+
+###### Fig 4: Pipeline showing the use of CNN to predict whether a breast tissue cell is malignant or benign.
+
+From Figure 4 we can that the CNN model will be able to take a histopathology slide of a breast tissue cell and classify it to be either malignant (label 0) or benign (label 1). The utilized a total of 7,909 biopsy images that were partitioned for training and testing, 6,327 and 1,582 respectively. After this model has been trained and tested, it reported the following performance: precision of 0.93, recall of 0.93, F1-Score of 0.93 and an accuracy of 0.98 [(10)](#References). These results suggest that the use of deep learning (CNN) not only resolves the laborious task of an classifying cells, but does so with impressive accuracy.
+
+These papers not only demonstrate the potential of CNN in a clinical setting but also the wide range of applications in which this machine learning technique can be used in. We've seen in the first example how CNN could be used to classify different growth patterns in lung adenocarcinoma, and on the second example we've seen how a similar model could be used to predict whether a histopathology panel of breast tissue is malignant or not.
 
 ### RNNs and LSTMs
 
@@ -160,3 +168,4 @@ Conclusion...
 7. Ward, Sherry L. “Omics, Bioinformatics, Computational Biology.” AltTox.org, 14 July 2014, alttox.org/mapp/emerging-technologies/omics-bioinformatics-computational-biology/. Accessed 13 Dec. 2020.
 8. Vailati-Riboni M., Palombo V., Loor J.J. (2017) What Are Omics Sciences?. In: Ametaj B. (eds) Periparturient Diseases of Dairy Cows. Springer, Cham. https://doi.org/10.1007/978-3-319-43033-1_1
 9. Gertych, A., Swiderska-Chadaj, Z., Ma, Z., Ing, N., Markiewicz, T., Cierniak, S., Salemi, H., Guzman, S., Walts, A. E., & Knudsen, B. S. (2019, February 6). Convolutional neural networks can accurately distinguish four histologic growth patterns of lung adenocarcinoma in digital slides. Scientific Reports. https://www.nature.com/articles/s41598-018-37638-9?error=cookies_not_supported&code=1e50ee0c-b6fa-430e-bfd6-129301dc481c
+10. Cancer diagnosis in histopathological image: CNN based approach. (2019, January 1). ScienceDirect. https://www.sciencedirect.com/science/article/pii/S2352914819301133 (#10)
