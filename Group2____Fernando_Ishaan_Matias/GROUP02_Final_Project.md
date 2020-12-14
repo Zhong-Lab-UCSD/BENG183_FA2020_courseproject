@@ -139,16 +139,13 @@ Medical imaging is a crucial component in the healthcare industry to treat patie
 
 ###### Fig 5: Workflow of Deep Learning Applications in Omics Data Analysis
 
-
+---
 
 ### Applications of CNNs
 
 <!--CNN for medical images here-->
 
-An easy guess for an application might be using Medical images. For example,
-
-OMICS application:
-Detect SNPs/indels and other variants
+As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs can be used in genomics and sequence analysis, transcriptomics, epigenomics, medical imaging, and many other areas. The next section of the paper will focus on a specific example of CNN applications in Omics data analysis, and that is in the detection of SNPs/indels and other variants. 
 
 ---
 
