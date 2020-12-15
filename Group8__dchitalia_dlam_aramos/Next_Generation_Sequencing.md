@@ -163,5 +163,6 @@ Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next 
 
 [SSPACE - Bioinformatics](https://bioinformaticshome.com/tools/wga/descriptions/SSPACE.html#:~:text=SSPACE%20is%20a%20tool%20for,in%20the%20contig%20assembly%20step.)
 
+[NGS Applications - AllSeq](https://allseq.com/kb-category/applications/)
 
 
