@@ -160,20 +160,22 @@ As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs
 ### DeepVariant
 
 #### Variant Calling
-
 Variants are regions of the genome where the sequence differes from the reference genome. They could be in the form of:
-
-- Single NUcleotide Variants (SNVs)
+- Single NUcleotide Variants (SNVs) (which are SNPs if 1% or more frequent in population)
 - Indels
 - Structural Variants (SVs)
-  - Copy number Variants (CNVs)
-  - Translocation
-  - Duplication
-  - Inversion
+  * Copy number Variants (CNVs)
+  * Translocation
+  * Duplication
+  * Inversion
 
-![Variants types](Images/TypesOfVariants.png)
-
+![SVs types](Images/TypesOfVariants.png)
 ###### Fig 3: Types of Variants (6)
+
+
+
+#### Sequencing error vs Variants
+Accurate identification of Variants involves differentiating between the two causes of differences between reference genome and sequenced reads - Sequencing error and Variants. This is essentially what the Variant callers involve. Traditionally, Variant callers are statistical methods that check frequency of a variant at the same position from all the reads. Example - GATK, FreeBayes, SAMtools etc.
 
 #### Pileups
 
