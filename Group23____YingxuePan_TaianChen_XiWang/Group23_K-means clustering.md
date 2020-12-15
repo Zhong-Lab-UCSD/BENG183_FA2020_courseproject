@@ -3,14 +3,14 @@
 
 K-Means Clustering: 
 1. [Introduction](#1)
-2. [Algorithms](#2)
+2. [Algorithm](#2)
 3. [Implementations](#3)
-    3.1. Normalizing the raw data
+    3.1. Normalizing the raw data\\
     3.2. Choosing a statistically reasonable k: Elbow Method
     3.3. Initializing Centroids
     3.4. Code Implementation
     3.5. Visualization (Plotting) of the Clustering Results
-4. Limitations and Advantages
+4. [Limitations and Advantages](#4)
     4.1. Limitations of K-means Clustering
     4.2. Advantages of K-means Clustering
 
@@ -31,7 +31,7 @@ kmeans(X: {x_1,x_2,...,x_n}, k)
 			y_i = closest_centroid(centroids,x_i)       \\find the closest centroid for each data point
 		for c_i in centroids:
 			c_i = update_centroid(Y)                    \\update each centroid based on current assginment
-return Y
+    return Y
 ```
 
 ## 3. Implementation<a name="3"></a>
@@ -39,3 +39,6 @@ With a given dataset, we could perform K-Means clustering easily through the ste
 
 ### 3.1. Normalizing the raw data
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
+## 4. Limitations and Advantages<a name="4"></a>
+
+### 4.1 Limitations of K-means Clustering
