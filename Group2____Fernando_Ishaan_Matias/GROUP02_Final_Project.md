@@ -47,27 +47,19 @@ With the summary of what some of these Omics technologies do, the overall object
 
 ## Deep Learning Background
 
-Deep Learning is a subset of machine learning that were modeled to represent the biological neural network of our brain. This model is called artificial neural networks (ANNs). To better undestand what Artificial intelligence and deep learning are, it would be benefitial to see what experts in the field have to say. Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University said:
+Deep Learning is a subset of machine learning that were modeled to represent the biological neural network of our brain. This model is called artificial neural networks (ANNs) (See Figure [(0)](#ANNs vs BioNN). To better undestand what Artificial intelligence and deep learning are and their importance, it would be benefitial to see what experts in the field have to say. Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University said:
 > Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence [(1)](#References).
 
 And Tom M. Mitchell from the Machine Learning Department in Carnegie Mellon University, said: 
-> Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence [(1)](#References).
+> Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience [(1)](#References).
 
-(to be continued...)
+In general terms, deep learning is an algorithm that performs tasks through experience or "learning" as implied by its name.  There are different types of learning that deep learning can do. Learning can be supervised, unsupervised and semi_supervised.  In supervised learning, deep learning takes in labeled training data as input. In unsupervised learning, does not use labeled training data. And semi_supervised learning is the combination of both, it trains on a small labeled data combined with big unlabeled data [(20)](#References).
+
+As mentioned above, ANNs were biological neural networks because they are made by interconnected artificial neurons. Each artificial neuron receives an input, applies a certain transformation on that input and "fires" an output. With this model, deep learning has many applications. They can encode and learn from heterogeneous and complex data. This can be useful in image recognition, voice and speech recognition and language processing. Image recognition is useful in the field of biology because deep learning can take as input medical images and output a diagnosis for medical conditions such as cancer or other diseases [(5, 20)](#References). Deep Learning has become a crucial part in Omics Data Analysis since it has outperformed other techniques and methods as it is more specific, sensative and efficient [(5)](#References).
 
 ![ANNs vs BioNN](./Images/ANN_vs_NN.png)
 
 ###### Fig 0: Depiction of a biological neuron compared to an artificial neuron [(19)](#References). 
-
-- Why DL is important
-- AI, DL, ML, NN - Buzzword, for great reason, but meaning?
-- AI: Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University, “Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence.” [(1)](#References)
-- ML: ML is a branch of AI. “Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience.” - Tom M. Mitchell, Carnegie Mellon University, Machine Learning Department [(1)](#References)
-- DL networks are a class of ML algorithms uses ANNs
-- ANNs are inspired by biological neural networks in a sense that they are formed by interconnected artificial neurons, which receive an input, apply a transformation to the data, and return an output
-- DL can encode and learn from heterogeneous and complex data, in both supervised and unsupervised settings
-  language processing, speech recognition, and image recognition
-- In Omics data analysis: over-performed previous methods in terms of sensitivity, specificity and efficiency [(2)](#References)
 
 ### ANNs
 
@@ -280,3 +272,6 @@ Conclusion...
 17. Mahendran Venkatachalam. “Recurrent Neural Networks.” Medium, Towards Data Science, 24 Feb. 2019, towardsdatascience.com/recurrent-neural-networks-d4642c9bc7ce. Accessed 14 Dec. 2020.
 18. SAMtools Pileup Format http://samtools.sourceforge.net/pileup.shtml
 19. Nagyfi Richárd. “The Differences between Artificial and Biological Neural Networks.” Medium, Towards Data Science, 4 Sept. 2018, towardsdatascience.com/the-differences-between-artificial-and-biological-neural-networks-a8b46db828b7. Accessed 15 Dec. 2020.
+20. Dickson, Ben. “What Is Deep Learning?” PCMAG, 8 Aug. 2019, www.pcmag.com/news/what-is-deep-learning. Accessed 15 Dec. 2020.
+
+‌
