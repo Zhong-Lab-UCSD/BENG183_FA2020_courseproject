@@ -226,7 +226,7 @@ We can check to see if STAR has successfully installed (and learn about using ST
 STAR -h
 ```
 
-STAR is also included within many popular bioinformatics python packages such as bioconda and may already be installed as a part of one of these packages.
+STAR is also included within many popular bioinformatics packages for Python such as bioconda and may already be installed as a part of one of these packages.
 
 **Generate Suffix Array from Reference Genome**
 
