@@ -39,14 +39,19 @@ With a given dataset, we could perform K-Means clustering easily through the ste
 ### 3.1. Normalizing the raw data<a name="3.1"></a>
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
 ![Normalization Is Important](3.1_normalizationIsImportant.png)
+
 An Example of Why Normalization Is Important.
 Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
 
 Taking the question from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression level will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
 The function used to calculate the euclidean distance between patient P_i=(p1_i, p2_i, p3_i, p4_i) and centroid C_j=(c1_j, c2_j, c3_j, c4_j) is 
->Distance(P_i, C_j)= [ (p1_i-c1_i)^2 + (p2_i-c2_i)^2 + (p3_i-c3_i)^2 + (p4_i-c4_i)^2 ]^(1/2)
+```
+Distance(P_i, C_j)= [ (p1_i-c1_i)^2 + (p2_i-c2_i)^2 + (p3_i-c3_i)^2 + (p4_i-c4_i)^2 ]^(1/2)
+```
 The function used to find the average of cluster C_j containing patients P_i,...,P_k is 
->update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k),)
+```
+update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k),)
+```
 
 As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to normalize the raw data to bring all the variables to the same range so that all genes have the same importance (Lakshmanan 2019).
 
