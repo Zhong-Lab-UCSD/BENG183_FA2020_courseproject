@@ -19,6 +19,7 @@ This image shows a general view of the NGS library preparation workflow. It incl
 We will now take a closer look at each one of these steps
 
 ### PCR 1: Addition of SBS Adaptors and Purification 1
+
 #### Sequencing by Synthesis Adaptors
 ![](./img/SBS_Sequences.png)
 
@@ -37,6 +38,7 @@ After the first PCR, the DNA samples will be contaminated with a variety of PCR 
 - Eluting the DNA from the beads
 
 ### PCR 2: Addition of Index Sequences and Purification 2
+
 #### Index Sequences
 ![](./img/Index_Sequences.png)
 
@@ -48,6 +50,7 @@ The addition of Illumina's unique dual (UD) index adaptors allows each sample of
 After the second PCR, the DNA samples must be purified again in the same way they were purified after the first PCR except now these index samples can be pooled into one sample. This ensures that the quality of the DNA samples is preserved for the sequencing run
 
 ### Quantification, Dilution, and Addition of PhiX Control
+
 #### Quantification
 ![](./img/Quantification.png)
 
@@ -63,6 +66,7 @@ The image above is from an article where these four methods for quantification w
 In addition to these methods of quantification, it is standard to use tools such as Bioanalyzer (top right corner of the image above) to find the average base pair length of the sample pool. With these two quantification methods, the molarity of the sample can be calculated and be used for dilution.
 
 #### Dilution
+
 ![](./img/Dilution.png)
 
 [Dilution](https://upcvmda-pl480.weebly.com/educational-articles/dna-sequencing-illumina-workflow-part-1-dna-isolation-quality-control-and-dilution)
@@ -74,17 +78,27 @@ Dilution is the next step in the library preparation workflow. This step is esse
 The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be over crowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
   
 ## Sequencing Run
+
 Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by shear mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
 
 ![](./img/Bridging.PNG)
+
+[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
 After bridging, the fragments return to having a double stranded structure through enzymatic activity which incorporates added nucleotides to form double-stranded bridges on the solid-phase substrate. Upon completion of bridge formation, denaturation occurs, resulting in single stranded templates to be isolated and bound to the substrate.
 
 What we are left with at this stage are the several million dense clusters of double-stranded DNA within the channels of the flow cell, completing amplification. 
+
 ![](./img/Clusters.PNG)
+
+[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
 
 ![](./img/FirstBase.PNG)
+
+[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
 The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
 
 This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
@@ -92,14 +106,24 @@ This series of cycles is then repeated over thousands of cycles, resulting in an
 ## Analysis
 ![](..\..\.pastes\2020-12-14-12-04-09.png)
 **_Alignment_**
-Alignment is also known as mapping, allows us to see the genetic differences between our reads and the reference genome and helps us to detect variation in samples. NGS produces short read pairs or short reads which are sequences of < 200 bases. To compare the sequenced sample to the reference first we must find the corresponding part of that sequence for each read in our data, which is the actual alignment or mapping of reads.
+Alignment is also known as mapping, allows us to see the genetic differences between our reads and the reference genome and helps us to detect variation in samples. NGS produces short read pairs or short reads which are sequences of < 200 bases. To compare the sequenced sample to the reference first we must find the corresponding part of that sequence for each read in our data, which is the actual alignment or mapping of reads. Below are some important tools that can be used for alignment of data.
+
+![tools.JPG](img%5Ctools.JPG)
+- fastqc is a very simple tool used to do quality control checks on data coming from sequencing pipelines.
+- Burrows-Wheeler Alignment (bwa) is a software specifically designed for mapping low-divergent sequences against large reference genomes.
+- Samtools is a software that helps manipulate aligned data in the BAM format.
 
 ![Assembly.PNG](img%5CAssembly.PNG)
 **_Assembly_**
+Genome Assembly usually involves taking in a number of sequenced reads which are much shorter than the actual genome and re-creating the genome sequence. (If possible) Pair ended sequences are mapped out onto the genome with a given specific orientation and a given distance from each other. Below are some important tools used for genome assembly.
 
+![tools2.JPG](img%5Ctools2.JPG)
+- Minia is a short-read assembler that is capable of assembling the human genome on a desktop computer in a day. Minia is based on a de Bruin graph. Assembly is performed using graph simplifications that are inspired by the SPAdes assembler.
+- Sickle is a trimming tool for fastq files. It uses sliding windows and quality and length thresholds to determine and trim low quality bases.
+- SSPACE is a used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
 
 ## Applications
-
+1. 
 ## Citations
 
 [An Introduction to Next-Generation Sequencing Technology](https://www.illumina.com/content/dam/illumina-marketing/documents/products/illumina_sequencing_introduction.pdf)
@@ -124,18 +148,15 @@ Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next 
   
 [Next Generation Sequencing Alignment](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)/Alignment)
 
-[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+[FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+[Manual Reference Pages - BWA(1)](http://bio-bwa.sourceforge.net/bwa.shtml)
 
-[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+[Minia](https://github.com/GATB/minia)
 
+[Sickle - HCC-DOCS](https://hcc.unl.edu/docs/applications/app_specific/bioinformatics_tools/pre_processing_tools/sickle/)
 
-
-
-
-
-
+[SSPACE - Bioinformatics](https://bioinformaticshome.com/tools/wga/descriptions/SSPACE.html#:~:text=SSPACE%20is%20a%20tool%20for,in%20the%20contig%20assembly%20step.)
 
 
 
