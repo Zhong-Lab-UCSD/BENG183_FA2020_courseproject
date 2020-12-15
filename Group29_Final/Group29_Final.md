@@ -215,9 +215,13 @@ After a limited amount of tests, the hypothesis test makes an inference which is
 The **p-value** calculates the probability that we would get the same test statistic or “worse” value, if we repeat the experiment multiple times.
 
 How to calculate the P-value:
-	P-value = 1 - FT|H0(t)
- FT|H0(t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H0
+
+P-value = 1 - FT|H0(t)
+
+>  FT|H0(t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H0
+
 How to find the CDF under the H0:
+
 Computer simulation: simulate random outcomes by using the numbers from the test statistic and keep swapping them for many simulations (approximation of null distribution)
 
 ### Example
