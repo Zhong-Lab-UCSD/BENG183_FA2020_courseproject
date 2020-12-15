@@ -205,3 +205,6 @@ Conclusion...
 11. Wikipedia contributors. (2020, December 2). Autoencoder. Wikipedia. https://en.wikipedia.org/wiki/Autoencoder#:%7E:text=An%20autoencoder%20is%20a%20type,to%20ignore%20signal%20%E2%80%9Cnoise%E2%80%9D.
 12. Mantri, N. (2019, July 20). Applications of Autoencoders. OpenGenus IQ: Learn Computer Science. https://iq.opengenus.org/applications-of-autoencoders/
 13. Simidjievski, N. (2019). Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice. Frontiers. https://www.frontiersin.org/articles/10.3389/fgene.2019.01205/full
+14. Gnanamoorthy, Branav Kumar. “RNNs to Write like Shakespeare.” Medium, 28 Feb. 2019, medium.com/@gnabr/rnns-to-write-like-shakespeare-226609863cd1. Accessed 15 Dec. 2020.
+
+‌
