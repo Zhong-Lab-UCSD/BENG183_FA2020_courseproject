@@ -11,7 +11,7 @@
 - [Deep Learning](#Deep-Learning-Background)
   - [ANNs](#ANNs)
   - [Deep Learning Methods](#CNNs)
-  - [Applications](#Applications-in-OMICS-and-recision-Medicine)
+  - [Applications](#Applications-in-OMICS-and-Precision-Medicine)
 - [Conclusion](#Conclusion)
 - [References](#References)
 
