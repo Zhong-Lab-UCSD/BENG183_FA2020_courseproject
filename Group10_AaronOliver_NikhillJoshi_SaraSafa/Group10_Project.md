@@ -99,12 +99,12 @@ Although this chapter focused on the molecular test, all three of the testing st
     
 10.  Image from: Nasa Sinnott-Armstrong, Daniel L. Klein, Brendan Hickey. Evaluation of Group Testing for SARS-CoV-2 RNA, medRxiv, March 2020. [https://doi.org/10.1101/2020.03.27.20043968](https://doi.org/10.1101/2020.03.27.20043968). <a name="c10"></a>
     
-11.  Baha Abdalhamid, Christopher R Bilder, Emily L McCutchen, Steven H Hinrichs, Scott A Koepsell, Peter C Iwen, Assessment of Specimen Pooling to Conserve SARS CoV-2 Testing Resources, American Journal of Clinical Pathology, Volume 153, Issue 6, June 2020, Pages 715–718, [https://doi.org/10.1093/ajcp/aqaa064](https://doi.org/10.1093/ajcp/aqaa064) <a name="c11"></a>
+11.  Baha Abdalhamid, Christopher R Bilder, Emily L McCutchen, Steven H Hinrichs, Scott A Koepsell, Peter C Iwen, Assessment of Specimen Pooling to Conserve SARS CoV-2 Testing Resources, American Journal of Clinical Pathology, Volume 153, Issue 6, June 2020, Pages 715–718, [https://doi.org/10.1093/ajcp/aqaa064](https://doi.org/10.1093/ajcp/aqaa064). <a name="c11"></a>
     
 12.  Data aggregation by Covid Act Now,  [https://covidactnow.org/](https://covidactnow.org/). <a name="c12"></a>
 
-13. UC San Diego Return to Learn dashboard, [https://returntolearn.ucsd.edu/dashboard/index.html](https://returntolearn.ucsd.edu/dashboard/index.html) <a name="c13"></a>
+13. UC San Diego Return to Learn dashboard, [https://returntolearn.ucsd.edu/dashboard/index.html](https://returntolearn.ucsd.edu/dashboard/index.html). <a name="c13"></a>
 
-14. Genbank, Wuhan seafood market pneumonia virus isolate Wuhan-Hu-1, complete genome. [https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1)  <a name="c14"></a>
+14. Genbank, Wuhan seafood market pneumonia virus isolate Wuhan-Hu-1, complete genome. [https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1).  <a name="c14"></a>
 
-15. Federal Drug Administration, [https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19](https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19)  <a name="c15"></a>
+15. Federal Drug Administration, [https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19](https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19).  <a name="c15"></a>
