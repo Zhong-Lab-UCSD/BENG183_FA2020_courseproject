@@ -91,6 +91,7 @@ What we are left with at this stage are the several million dense clusters of do
 We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
 
 ![](./img/FirstBase.PNG)
+
 [First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
