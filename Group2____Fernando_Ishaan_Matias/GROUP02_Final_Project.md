@@ -238,6 +238,13 @@ As you can see in table 1, pileup file gives information position-wise (column 2
 
 #### Structure of DeepVariant Model
 
+<div align="center">
+    <figure class="image"><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.4235/MediaObjects/41587_2018_Article_BFnbt4235_Fig1_HTML.jpg?as=webp" alt="DeepVariant Workflow" width="600">
+        <figcaption>(DeepVariant Model Workflow)
+        </figcaption>
+    </figure>
+</div>
+
 #### Comparison with other Variant Calling methods
 
 As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
