@@ -17,7 +17,7 @@ University of California, San Diego
 3. [Beginning of First Generation DNA Sequencing](#beg)
 4. [Molecular Biology](#bio)
 5. [Preparing for Sanger Sequencing](#prep)
-6. [Overview of Sanger Sequencing](#overview)
+6. [Overview of Sanger Sequencing](#sanger)
 7. [Practice Problem](#practice)
 8. [Relevance of Sanger Sequencing](#relevance)
 9. [Citations](#citation)
@@ -143,7 +143,7 @@ during PCR
    5. ddNTP to terminate elongation: Nucleotides used during PCR (lacks a 3’-OH
 group). This acts as a key factor that terminates DNA strand elongation
 
-## VI. Overview of Sanger Sequencing <a name="overview"></a>
+## VI. Overview of Sanger Sequencing <a name="sanger"></a>
 ### 3 Steps:
    1. **PCR:** In vitro DNA replication using ddNTPs with fluorescents →
 produces short DNA fragments
