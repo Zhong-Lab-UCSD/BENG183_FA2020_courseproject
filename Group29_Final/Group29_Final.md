@@ -255,6 +255,7 @@ The smaller the p-value → the greater the belief we have against the H0
 The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reject the null hypothesis*
 
 > From our previous example, we saw that our p-value was **0.125** which is higher than our level of significance. 
+
 > 0.125 > 0.05 
 > So we can say that **we accept the H0** and that there is no statistical significance 
 
