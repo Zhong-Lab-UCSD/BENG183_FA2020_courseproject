@@ -108,7 +108,7 @@ will end. This will fragment the DNA into various lengths. For example, if the
 template DNA had a length of 100 base pairs, the fragment length will be varying
 from 1, 2, 3,…, 100.
 
-  ![dNTP and ddNTP](/img/dNTP_ddNTP.jpg)
+  ![dNTP and ddNTP](img/dNTP_ddNTP.jpg)
 
 #### - Phosphate Backbone
   - Once a nucleotide has been incorporated into DNA strand, nucleotides lose
@@ -176,7 +176,7 @@ is correct since the shortest DNA fragment is ***5'-C-3'*** generated from
 ddCTP. The sequence read from the gel is ***3'-TGCAATC-5'***, which is the
 complementary strand of the template strand from the beginning.
 
-![sanger process](img/beng183 - Page 1.png)
+  ![Sanger Process](img/beng183.png)
 ## VII. Practice Problem
 **Question 1:** What are the products of replicating the template strand
 3’-AATGCAGTA-5’ with ddATP?
