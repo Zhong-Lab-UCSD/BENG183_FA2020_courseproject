@@ -227,4 +227,5 @@ Conclusion...
 14. Gnanamoorthy, Branav Kumar. “RNNs to Write like Shakespeare.” Medium, 28 Feb. 2019, medium.com/@gnabr/rnns-to-write-like-shakespeare-226609863cd1. Accessed 15 Dec. 2020.
 15. Zou, J., Huss, M., Abid, A., Mohammadi, P., Torkamani, A., & Telenti, A. (2019). A primer on deep learning in genomics. Nature genetics, 51(1), 12-18.
 16. Raphael, B.J., Dobson, J.R., Oesper, L. et al. Identifying driver mutations in sequenced cancer genomes: computational approaches to enable precision medicine. Genome Med 6, 5 (2014). https://doi.org/10.1186/gm524
+17. Khuong, Ben. “The Basics of Recurrent Neural Networks (RNNs).” Medium, Towards AI, 23 June 2019, medium.com/towards-artificial-intelligence/whirlwind-tour-of-rnns-a11effb7808f. Accessed 14 Dec. 2020.
 ‌
