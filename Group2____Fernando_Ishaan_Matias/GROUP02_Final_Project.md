@@ -8,10 +8,10 @@
 
 - [Introduction](#Introduction)
 - [OMICS](#OMICS)
-- [Deep Learning](#Deep-Learning)
+- [Deep Learning](#Deep-Learning-Background)
   - [ANNs](#ANNs)
-  - [Deep Learning Methods](#Deep-Learning-Methods)
-  - [Applications](#Applications)
+  - [Deep Learning Methods](#CNNs)
+  - [Applications](#Applications-in-OMICS-and-Precision-Medicine)
 - [Conclusion](#Conclusion)
 - [References](#References)
 
@@ -135,7 +135,7 @@ Some other examples of what deep learning applications can be used for are expla
 
 There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References).
 
-An example of the workflow of deep learning methods in genomics is shown below. 
+An example of the workflow of deep learning methods in genomics is shown below.
 
 ![Workflow in Genomics](./Images/Workflow_DL_in_Genomics.png)
 
@@ -170,62 +170,62 @@ As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs
 ### Deep Learning for Variant Calling
 
 #### What is Variant Calling
+
 Variants are regions of the genome where the sequence differes from the reference genome. They could be in the form of:
+
 - Single NUcleotide Variants (SNVs) (which are SNPs if 1% or more frequent in population)
 - Indels
 - Structural Variants (SVs)
-  * Copy number Variants (CNVs)
-  * Translocation
-  * Duplication
-  * Inversion
+  - Copy number Variants (CNVs)
+  - Translocation
+  - Duplication
+  - Inversion
 
 ![SVs types](Images/TypesOfVariants.png)
+
 ###### Fig 9: Types of Variants [(6)](#References).
 
-
 #### Sequencing error vs Variants
+
 Accurate identification of Variants involves differentiating between the two causes of differences between reference genome and sequenced reads - Sequencing/Alignment error and Genomic Variants. This is essentially what the Variant callers involve. Traditionally, Variant callers are statistical methods designed by humans that analyze frequency of a variant at the same position from all the reads, along with the quality of those read bases, and neighboring bases on same read. Example - GATK, FreeBayes, SAMtools etc.
 
 #### Challenges in Variant Calling
 
-As discussed above, variants are traditionally identified by statistical methods that find features by already set certain filters that consider particular parameters. This type of manual selection of features can create bias in terms of what parameters are considered. For 
+As discussed above, variants are traditionally identified by statistical methods that find features by already set certain filters that consider particular parameters. This type of manual selection of features can create bias in terms of what parameters are considered. For
 
-Furthermore, with the evolution of different sequencing technologies (Illumina sequencing, long read sequencing etc.), we need to set different filters manually for the human-designed statistical methods for optimal Variant Calling in different data types. 
+Furthermore, with the evolution of different sequencing technologies (Illumina sequencing, long read sequencing etc.), we need to set different filters manually for the human-designed statistical methods for optimal Variant Calling in different data types.
 
 Not only this, we also need different methods to identify different types of variant. Method to identify an single-nucleotide variant must be very different from a copy number variant.
 
 Even with all these taken care of, somatic variants are not always easy to detect, though, especially in applications like Cancer Biomarker detection, as shown in Fig 10. Usually approximately half of the reads should show an SNV/indel that is present on chromosome, so they should generally be detectable. However, even with 40% samples being normal cells in a tumor samples, we can have a false negative for the SNV (Fig 10(b)).
 
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fgm524/MediaObjects/13073_2014_Article_507_Fig1_HTML.jpg?as=webp)
+
 ###### Fig 10: Somatic mutation detection in tumor samples [(16)](#References). Calling variants being used as Cancer biomarkers. Major task in Variant calling (a) In a pure tumor sample, approximately half of the reads contain the SNV, but in (b) 60% purity sample, it becomes difficult to distinguish the heterozygous somatic SNV in the center from a sequencing error.
 
 #### DeepVariant
 
 Use of neural networks can address these challeneges since they automate the feature extraction process without introduing any human bias, or becoming specialized for types of data or types of variants. Instead of making new filters, we just need to retrain the model on new data.
 
-#### Background check - Pileups 
+#### Background check - Pileups
 
 Since in Variant calling we want to analyze different reads at each position, wouldn't it be easier to kind of take the transpose of a BAM file which gives aligned reads info read-wise across positions, and have the information instead position-wise across the reads? A Pileup file does exactly that. While it can be easily generated using SAMtools, GATK etc, most Variant callers take BAM file as input and perform the conversion to Pileup for you by default. Fig 11 shows an example of a section of a Pileup file.
 | Sequence | Pos | Reference Base | # of Reads | Read Results | Base Quality |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | seq1 | 272 | T | 24 | ,.$.....,,.,.,...,,,.,..^+. | <<<+;<<<<<<<<<<<=<;<;7<& |
 | seq1 | 273 | T | 23 | ,.....,,.,.,...,,,.,..A | <<<;<<<<<<<<<3<=<<<;<<+ |
-| seq1 | 274 | T | 23 | ,.$....,,.,.,...,,,.,... |    7<7;<;<<<<<<<<<=<;<;<<6 |
-| seq1 | 275 | A | 23 | ,$....,,.,.,...,,,.,...^l. |  <+;9*<<<<<<<<<=<<:;<<<< |
-| seq1 | 276 | G | 22 | ...T,,.,.,...,,,.,.... |  33;+<<7=7<<7<&<<1;<<6< |
-| seq1 | 277 | T | 22 | ....,,.,.,.C.,,,.,..G. |  +7<;<<<<<<<&<=<<:;<<&< |
-| seq1 | 278 | G | 23 | ....,,.,.,...,,,.,....^k. |   %38*<<;<7<<7<=<<<;<<<<< |
+| seq1 | 274 | T | 23 | ,.$....,,.,.,...,,,.,... | 7<7;<;<<<<<<<<<=<;<;<<6 |
+| seq1 | 275 | A | 23 | ,$....,,.,.,...,,,.,...^l. | <+;9*<<<<<<<<<=<<:;<<<< |
+| seq1 | 276 | G | 22 | ...T,,.,.,...,,,.,.... | 33;+<<7=7<<7<&<<1;<<6< |
+| seq1 | 277 | T | 22 | ....,,.,.,.C.,,,.,..G. | +7<;<<<<<<<&<=<<:;<<&< |
+| seq1 | 278 | G | 23 | ....,,.,.,...,,,.,....^k. | %38*<<;<7<<7<=<<<;<<<<< |
 | seq1 | 279 | C | 23 | A..T,,.,.,...,,,.,..... | ;75&<<<<<<<<<=<<<9<<:<< |
-
 
 #### Structure of DeepVariant Model
 
 #### Comparison with other Variant Calling methods
 
- 
-
 As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
-
 
 ### Other applications
 
