@@ -104,21 +104,25 @@ The second cycle then proceeds similar to the first with the addition of more te
 This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
 
 ## Analysis
-![](..\..\.pastes\2020-12-14-12-04-09.png)
+![](./img/Alignment.PNG)
+
 **_Alignment_**
 Alignment is also known as mapping, allows us to see the genetic differences between our reads and the reference genome and helps us to detect variation in samples. NGS produces short read pairs or short reads which are sequences of < 200 bases. To compare the sequenced sample to the reference first we must find the corresponding part of that sequence for each read in our data, which is the actual alignment or mapping of reads. Below are some important tools that can be used for alignment of data.
 
-![tools.JPG](img%5Ctools.JPG)
+![](./img/tools.JPG)
+
 - fastqc is a very simple tool used to do quality control checks on data coming from sequencing pipelines.
 - Burrows-Wheeler Alignment (bwa) is a software specifically designed for mapping low-divergent sequences against large reference genomes.
 - Samtools is a software that helps manipulate aligned data in the BAM format.
 
-![Assembly.PNG](img%5CAssembly.PNG)
+![](./img/Assembly.PNG)
+
 **_Assembly_**
 Genome Assembly usually involves taking in a number of sequenced reads which are much shorter than the actual genome and re-creating the genome sequence. (If possible) Pair ended sequences are mapped out onto the genome with a given specific orientation and a given distance from each other. Below are some important tools used for genome assembly.
 
-![tools2.JPG](img%5Ctools2.JPG)
-- Minia is a short-read assembler that is capable of assembling the human genome on a desktop computer in a day. Minia is based on a de Bruin graph. Assembly is performed using graph simplifications that are inspired by the SPAdes assembler.
+![](./img/tools2.JPG)
+
+- Minia is a short-read assembler that is capable of assembling the human genome on a desktop computer in a day. Minia is based on a de Bruin graph. Assembly is performed using graph simplifications that are inspired by the SPADES assembler.
 - Sickle is a trimming tool for fastq files. It uses sliding windows and quality and length thresholds to determine and trim low quality bases.
 - SSPACE is a used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
 
@@ -145,12 +149,6 @@ Genome Assembly usually involves taking in a number of sequenced reads which are
 
 [What is the PhiX Control v3 Library and what is its function in Illumina Next Generation Sequencing?](https://support.illumina.com/bulletins/2017/02/what-is-the-phix-control-v3-library-and-what-is-its-function-in-.html)
 
-Cortes, Kamila Caraballo, et al. “Next-Generation Sequencing of 5′ Untranslated Region of
-  Hepatitis C Virus in Search of Minor Viral Variant in a Patient Who Revealed New Genotype While on Antiviral Treatment.” Respirology Advances in Experimental Medicine and Biology, 2015, pp. 11–23., doi:10.1007/5584_2015_186.
-  
-Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next Generation
-  Sequencing.” Scientific Reports, vol. 6, no. 1, 2016, doi:10.1038/srep24067.
-  
 [Next Generation Sequencing Alignment](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)/Alignment)
 
 [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
@@ -164,5 +162,11 @@ Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next 
 [SSPACE - Bioinformatics](https://bioinformaticshome.com/tools/wga/descriptions/SSPACE.html#:~:text=SSPACE%20is%20a%20tool%20for,in%20the%20contig%20assembly%20step.)
 
 [NGS Applications - AllSeq](https://allseq.com/kb-category/applications/)
+
+Cortes, Kamila Caraballo, et al. “Next-Generation Sequencing of 5′ Untranslated Region of
+  Hepatitis C Virus in Search of Minor Viral Variant in a Patient Who Revealed New Genotype While on Antiviral Treatment.” Respirology Advances in Experimental Medicine and Biology, 2015, pp. 11–23., doi:10.1007/5584_2015_186.
+  
+Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next Generation
+  Sequencing.” Scientific Reports, vol. 6, no. 1, 2016, doi:10.1038/srep24067.
 
 
