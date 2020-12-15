@@ -1,4 +1,4 @@
-# K-Means-Intros, Algorithms, and Limitations
+# K-Means Clustering
 
 
 K-Means Clustering: 
@@ -50,7 +50,7 @@ Distance(P_i, C_j)= [ (p1_i-c1_i)^2 + (p2_i-c2_i)^2 + (p3_i-c3_i)^2 + (p4_i-c4_i
 ```
 The function used to find the average of cluster C_j containing patients P_i,...,P_k is 
 ```
-update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k),)
+update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k))
 ```
 
 As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to normalize the raw data to bring all the variables to the same range so that all genes have the same importance (Lakshmanan 2019).
@@ -95,7 +95,7 @@ The method aims to push the centroids such that they can be as far from one anot
 ### 3.4. Code Implementation<a name="3.4"></a>
 As a comparably matured clustering method, there are a number of ways to implement the K-Means algorithm in codes, such as using python, R, or Matlab. Here, a python implementation is shown:
 
-```
+```python
 import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
@@ -115,7 +115,7 @@ c. Fit the data into the kmeans.
 ### 3.5. Visualization (Plotting) of the Clustering Results<a name="3.5"></a>
 For plotting, each data points’ cluster labels will be stored in kmeans.labels_ (with a small underline at the end). You can use tools such as matplotlib for scatter plot, as shown in the example below:
 
-```
+```python
 import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
