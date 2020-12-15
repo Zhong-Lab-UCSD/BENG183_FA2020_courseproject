@@ -108,14 +108,14 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ### RNNs and LSTMs
 
-Recurrent Neural Networks, or RNNs, are another example of artificial neural networks. RNNs differ to other Neural Networks in that they can take any sized vector as an input, where NNs can only take a fixed size vector. The training process of RNNs is unique. They are able to take input vectors and produce output vectors that are influenced by various things, like weights from inputs, and a hidden state that stores the context from inputs and previous outputs. Thus, it won't guarantee the same output from the same input, since it also takes into consideration the context of previous inputs and outputs. Therefore, since they are good at processing sequential inputs, RNNs are often used in speech and handwriting recognition  [(17)](#References). An example of an RNN model is shown in Figure 5, as the input layers also get the context of previous inputs before generating a final output. 
+Recurrent Neural Networks, or RNNs, are another example of artificial neural networks. RNNs differ to other Neural Networks in that they can take any sized vector as an input, where NNs can only take a fixed size vector. The training process of RNNs is unique. They are able to take input vectors and produce output vectors that are influenced by various things, like weights from inputs, and a hidden state that stores the context from inputs and previous outputs. Thus, it won't guarantee the same output from the same input, since it also takes into consideration the context of previous inputs and outputs. An example of an RNN model is shown in Figure 5, as the input layers also get the context of previous inputs before generating a final output. Therefore, since they are good at processing sequential inputs, RNNs are often used in speech and handwriting recognition [(17)](#References). But, normal RNNs have a short-term memory, which means that they don't retain the context of previous inputs/outputs for long. A model is able to retain this information are called LSTM, which are explained below.
 
-One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell state which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. Therefore, due to its model characteristics, LSTM are used for example in Natural Language processing tasks [(17)](#References).
+One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell states which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. LSTMs extend the memory of RNNs by the implementation of 4 gates: the learn gate, the forget gate, the remember gate, and the use gate. Therefore, due to its model characteristics, LSTM are used for example in Natural Language processing tasks [(14, 17)](#References).
 
 
 ![RNN model](./Images/RNN_model.png)
 
-###### Fig 5. Basic model architecture of an RNN
+###### Fig 5. Basic model architecture of an RNN. This basically shows how a RNN allows for data to be fed back into the network (creating a loop) [(5)](#References).
 
 ### Autoencoders
 
