@@ -12,18 +12,17 @@ University of California, San Diego
 
 ## Overview
 
-1. [Background](#i.-background)
-2. [History](#ii.-history)
-3. [Beginning of First Generation DNA Sequencing](#iii.-beginning-of-first-
-generation-dna-sequencing)
-4. [Molecular Biology](#iv.-molecular-biology)
-5. [Preparing for Sanger Sequencing](#v.-preparing-for-sanger-sequencing)
-6. [Process of Sanger Sequencing](#vi.-process-of-sanger-sequencing)
-7. [Practice Problem](#vii.-practice-problem)
-8. [Relevance of Sanger Sequencing](#viii.-relevance-of-sanger-sequencing)
-9. [Citations](#ix.-citations)
+1. [Background](#background)
+2. [History](#history)
+3. [Beginning of First Generation DNA Sequencing](#beg)
+4. [Molecular Biology](#bio)
+5. [Preparing for Sanger Sequencing](#prep)
+6. [Overview of Sanger Sequencing](#overview)
+7. [Practice Problem](#practice)
+8. [Relevance of Sanger Sequencing](#relevance)
+9. [Citations](#citation)
 
-## I. Background
+## I. Background <a name="background"></a>
 Sanger Sequencing uses principles of DNA replication and deoxynucleoside
 triphosphates (dNTP) in order to make use of dideoxynucleoside triphosphates
 (ddNTP). dNTP includes dATP, dTTP, dCTP and dGTP. To give a brief overview, DNA
@@ -34,7 +33,7 @@ polymerase to attach, add dNTPs to the two strands, and ultimately replicate
 DNA. DNA replication is terminated once a ddNTP is added since it lacks a
 hydroxyl group.
 
-## II. History
+## II. History <a name="history"></a>
 Frederick Sanger was born in England on August 13, 1918 and enrolled in
 Cambridge University where he majored in chemistry and physics. After
 graduating, Sanger worked on research in lysine and sequencing insulin, where he
@@ -49,7 +48,7 @@ Genome Project.
 ![sanger1](img/sangerpic1.jpeg)
 
 ![sanger2](img/sangerpic2.jpeg)
-## III. Beginning of First Generation DNA Sequencing
+## III. Beginning of First Generation DNA Sequencing <a name="beg"></a>
 Sanger and other researchers were aware of the fact that DNA sequences store
 unique biological information and biochemical properties of life [2], it
 remained a challenge to invent a method to order the nucleotides given a sample
@@ -81,7 +80,7 @@ nor nucleic acid attached to the deoxyribose are charged, the negative charge of
 the phosphate group dominates the overall charge of DNA. In simpler terms, DNA
 has a negatively charged backbone.[5]
 
-## IV. Molecular Biology
+## IV. Molecular Biology <a name="bio"></a>
 #### - Structure of ddNTP and dNTP
   - In natural DNA replication, DNA polymerase adds dNTP. dNTP, or
 deoxynucleoside triphosphate, is consistent with three phosphate groups,
@@ -131,7 +130,7 @@ the gel electrophoresis compared to fragment A.
 
   ![dsDNA](img/dnachain2.gif)
 
-## V. Preparing for Sanger Sequencing
+## V. Preparing for Sanger Sequencing <a name="prep"></a>
 ### Ingredients:
    1. Single stranded DNA Template: A Single Stranded DNA template holds the DNA
 information  in which we want to sequence
@@ -144,7 +143,7 @@ during PCR
    5. ddNTP to terminate elongation: Nucleotides used during PCR (lacks a 3’-OH
 group). This acts as a key factor that terminates DNA strand elongation
 
-## VI. Overview of Sanger Sequencing
+## VI. Overview of Sanger Sequencing <a name="overview"></a>
 ### 3 Steps:
    1. **PCR:** In vitro DNA replication using ddNTPs with fluorescents →
 produces short DNA fragments
@@ -177,7 +176,7 @@ ddCTP. The sequence read from the gel is ***3'-TGCAATC-5'***, which is the
 complementary strand of the template strand from the beginning.
 
   ![Sanger Process](img/beng183.png)
-## VII. Practice Problem
+## VII. Practice Problem <a name="practice"></a>
 **Question 1:** What are the products of replicating the template strand
 3’-AATGCAGTA-5’ with ddATP?
 
@@ -215,10 +214,10 @@ positive side (aka bottom end) and the 3' end is on the negative side. When
 reading results from the bottom to the top, you are reading from the 5' to the
 3' direction.
 
-## VIII. Relevance of Sanger Sequencing
+## VIII. Relevance of Sanger Sequencing <a name="relevance"></a>
 
 Sanger sequencing is still used today as it has many advantages compared to other newer methods. Sanger sequencing has a high sequencing quality rate and longer read lengths compared to NGS. However, Sanger sequencing does have slower sequencing speed compared to newer methods and the quality degrades after 700-900 base pairs [3]. Thus, this method is mainly used for validation of NGS results as well as forensic analysis.
-## IX. Citations
+## IX. Citations <a name="citation"></a>
 [1] https://www.nature.com/scitable/topicpage/frederick-sanger-method-man-
 problem-
 solver-6537485/#:~:text=Insulin.,Sanger%20earned%20his%20Ph.&text=Using%20chemistry%20and%20chromatography%2C%20and,Nobel%20Prize%2C%20take%20one.
