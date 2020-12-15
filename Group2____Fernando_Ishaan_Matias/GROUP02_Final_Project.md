@@ -248,20 +248,42 @@ Tabe 2 shows different Variants, each with what chromosome they lie on, their ex
     </figure>
 </div>
 
-###### Fig 11: DeepVariant Model Workflow 
+###### Fig 11: DeepVariant Model Workflow [(3)](#References)
 
-#### Comparison with other Variant Calling methods
-
-As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
 
 As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predicts Genotype Likelihoods for Homozygous Reference (Same as reference), Heterezygous, or Homozygous Alteranate (Non-reference). Based on that, it emits a variant call if highest likelihood is for  Heterezygous or Homozygous Alteranate. uses CNN. 
 
 The CNN can be trained by feeding the CNN with aligned reads encoded into pileup images, something like Figure 12, and making the model target corresponding genotype likelihoods. Thus, we leverage the convolutional filter and pooling layers of CNN that make it able to take high dimensional data - read bases, quality of of bases and neighboring bases - just all the BAM file features. Essentially, the CNN is now just performing Image Classification.
 
 ![](https://github.com/google/deepvariant/raw/r1.1/docs/images/inference_flow_diagram.svg)
-###### Figure 12 The workflow explained by DeepVariant open0source github Readme. 
+###### Figure 12 The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
 
-The deployment of the model can be done easily by running DeepVariant Docker container. Let's explore what kind of inputs go into the command 
+The deployment of the model can be done easily by following the pipeline shown above. Input: BAM file, output: VCF.
+Google Brain Team reccomends running DeepVariant Docker container. Let's explore what kind of inputs go into the command to run DeepVariant:
+```sudo docker run \
+  -v "${INPUT_DIR}":"/input" \
+  -v "${OUTPUT_DIR}:/output" \
+  google/deepvariant:"${BIN_VERSION}" \
+  /opt/deepvariant/bin/run_deepvariant \
+  --model_type=WGS \ **Replace this string with exactly one of the following [WGS,WES,PACBIO]**
+  --ref=/input/ucsc.hg19.chr20.unittest.fasta \
+  --reads=/input/NA12878_S1.chr20.10_10p1mb.bam \
+  --regions "chr20:10,000,000-10,010,000" \
+  --output_vcf=/output/output.vcf.gz \
+  --output_gvcf=/output/output.g.vcf.gz \
+  --num_shards=1 \ **How many cores the `make_examples` step uses. Change it to the number of CPU cores you have.**
+```
+(Given by a DeepVariant pipeline tutorial [(23)](#References)
+
+So really all it takes as input is the familiar BAM file, reference genome. Optionally you can set flags like  model type and regions which we will explain importance of in the next section.
+
+#### Comparison with other Variant Calling methods
+
+DeepVariant was developed by the Google Brain Team in response to the PrecisionFDA Truth Challenge, and was declared as the most accurate Variant caller at the time. In fact, this was even confirmed by studies systemetically comparing different Variant Callers [(24)](#References)
+
+
+As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
+
 
 ### Other applications
 
@@ -269,8 +291,7 @@ The deployment of the model can be done easily by running DeepVariant Docker con
 
 1. Machine Learning (ML) vs. Artificial Intelligence (AI) — Crucial Differences ( https://medium.com/towards-artificial-intelligence/differences-between-ai-and-machine-learning-and-why-it-matters-1255b182fc6 )
 2. Deep learning in bioinformatics ( https://pubmed.ncbi.nlm.nih.gov/27473064/ )
-3. A universal SNP and small-indel variant caller using deep neural networks ( https://pubmed.ncbi.nlm.nih.gov/30247488/ )
-   full PDF: https://www.plantdna.cn/docs/july-1st/post1/poplin2018.pdf
+3. Poplin, R., Chang, PC., Alexander, D. et al. A universal SNP and small-indel variant caller using deep neural networks. Nat Biotechnol 36, 983–987 (2018). https://doi.org/10.1038/nbt.4235
 4. Zhou J, Troyanskaya OG. Predicting effects of noncoding variants with deep learning-based sequence model. Nat Methods. 2015 Oct;12(10):931–4. [PMC free article] \[PubMed\]
 5. Martorell-Marugán J, Tabik S, Benhammou Y, et al. Deep Learning in Omics Data Analysis and Precision Medicine. In: Husi H, editor. Computational Biology \[Internet\]. Brisbane (AU): Codon Publications; 2019 Nov 21. Chapter 3. Available from: https://www.ncbi.nlm.nih.gov/books/NBK550335/ doi: 10.15586/computationalbiology.2019.ch3
 6. https://www.ebi.ac.uk/training-beta/online/courses/human-genetic-variation-introduction/what-is-genetic-variation/types-of-genetic-variation/
@@ -289,6 +310,7 @@ The deployment of the model can be done easily by running DeepVariant Docker con
 19. Nagyfi Richárd. “The Differences between Artificial and Biological Neural Networks.” Medium, Towards Data Science, 4 Sept. 2018, towardsdatascience.com/the-differences-between-artificial-and-biological-neural-networks-a8b46db828b7. Accessed 15 Dec. 2020.
 20. Dickson, Ben. “What Is Deep Learning?” PCMAG, 8 Aug. 2019, www.pcmag.com/news/what-is-deep-learning. Accessed 15 Dec. 2020.
 21. https://samtools.github.io/hts-specs/VCFv4.1.pdf
-22.
-23.
+22. https://github.com/google/deepvariant
+23. https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
+24. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
 ‌
