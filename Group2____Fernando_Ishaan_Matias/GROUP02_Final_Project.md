@@ -183,9 +183,16 @@ Variants are regions of the genome where the sequence differes from the referenc
 ###### Fig 9: Types of Variants [(6)](#References).
 
 
-
 #### Sequencing error vs Variants
-Accurate identification of Variants involves differentiating between the two causes of differences between reference genome and sequenced reads - Sequencing error and Variants. This is essentially what the Variant callers involve. Traditionally, Variant callers are statistical methods that check frequency of a variant at the same position from all the reads. Example - GATK, FreeBayes, SAMtools etc.
+Accurate identification of Variants involves differentiating between the two causes of differences between reference genome and sequenced reads - Sequencing error and Variants. This is essentially what the Variant callers involve. Traditionally, Variant callers are statistical methods designed by humans that analyze frequency of a variant at the same position from all the reads, along with the quality of those read bases, and neighboring bases on same read. Example - GATK, FreeBayes, SAMtools etc.
+
+This is not always easy to detect, though, especially in applications like Cancer Biomarker detection, as shown in Fig 10. Usually approximately half of the reads should show an SNV/indel that is present on chromosome, so they should generally be detectable. However, even with 40% samples being normal cells in a tumor samples, we can have a false negative for the SNV.
+
+
+
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fgm524/MediaObjects/13073_2014_Article_507_Fig1_HTML.jpg?as=webp)
+###### Fig 10: Somatic mutation detection in tumor samples [(16)](#References).
+
 
 #### Pileups
 
@@ -219,5 +226,5 @@ Conclusion...
 13. Simidjievski, N. (2019). Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice. Frontiers. https://www.frontiersin.org/articles/10.3389/fgene.2019.01205/full
 14. Gnanamoorthy, Branav Kumar. “RNNs to Write like Shakespeare.” Medium, 28 Feb. 2019, medium.com/@gnabr/rnns-to-write-like-shakespeare-226609863cd1. Accessed 15 Dec. 2020.
 15. Zou, J., Huss, M., Abid, A., Mohammadi, P., Torkamani, A., & Telenti, A. (2019). A primer on deep learning in genomics. Nature genetics, 51(1), 12-18.
-
+16. Raphael, B.J., Dobson, J.R., Oesper, L. et al. Identifying driver mutations in sequenced cancer genomes: computational approaches to enable precision medicine. Genome Med 6, 5 (2014). https://doi.org/10.1186/gm524
 ‌
