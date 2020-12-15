@@ -47,14 +47,14 @@ Once primers of acceptable quality are finalized, the next step is the process s
 The fluorescence mechanism is shown in the image below [[8]](#c8). First, a specialized TaqMan probe anneals to a region of a SARS-CoV-2 gene that is amplified during a PCR round. As the polymerization step approaches the probe, Taq polymerase degrades the probe and causes fluorescence as the prove cleaves. After the probe degrades and emits fluorescence, it also breaks bonds with the template DNA so that polymerization can complete. At the end of one round RT-qPCR, the probe is destroyed and the standard PCR products are formed.
 
 
-<img src="images/Taqman.png" width="700">
+<img src="images/Taqman.png" width="400">
 
 RT-qPCR is used for molecular COVID-19 testing rather than the more popular RNA-seq technology for a few reasons. While RNA-seq can identify novel sequences and alternate viral variants, the lower sensitivity and larger data output make it difficult to quickly detect viral sequence. Meanwhile, RT-qPCR amplifies genetic sequence so that it has a higher sensitivity for detecting weakly expressed genes [[7]](#c7). Although RT-qPCR can only identify known sequences through targeted fluoresence, this is not a major issue because the molecular test only needs to target specific COVID-19 genes.
  
 ### 3.3 Sample Pooling: More Results with Less Tests <a name="33"></a>
 To ramp up testing scalability, individual testing transforms into a pooling strategy that processes more tests in less time. The image below [[10]](#c10) shows a hypothetical COVID-19 testing protocol that is more efficient than a naive approach of one test for each sample. In the United States, RT-qPCR pooling for COVID-19 was not approved by the Federal Drug Administration until July 2020 [[5]](#c5), months after widespread testing initiatives for SARS-CoV-2.
 
-<img src="images/pooling_method.jpg" width="700">
+<img src="images/pooling_method.jpg" width="400">
 
 First, the samples (96 in this example) are placed into an 8 × 12 matrix. Then, a subsample from each of the samples in a row are combined into a mixture sample representative for that row. This mixture sample then undergoes the RT-qPCR test to detect COVID-19. Repeat this process for all 8 of the rows, as well as for all 12 of the columns. It is possible to perform multiple RT-qPCR tests using RNA from a sample multiple times because the PCR replication is sensitive enough to generate detectable fluoresense from a very small amount of input nucleic acid.
 
