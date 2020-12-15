@@ -13,7 +13,8 @@ K-Means Clustering:
 ## 2. Algorithm<a name="2"></a>
 In a nutshell, K-means clustering begins with randomly selected centroids (graph b), assigns objects to the closest cluster (graph c), updates the centroids based on the current assignment of objects (graph d), and repeats the previous two steps (graph e and f) until it reaches convergence.
 ![Visualization of k-means algorithm](2._kmeansalgo.png)
-An Illustration of Kmeans Algorithm.
+
+Figure 1: An Illustration of Kmeans Algorithm. **Figure by Sheng Zhong, “Beng183 FA20 Lecture 15 Machine Learning, part 2”, (2020)**.
 
 The pseudocode of K-means clustering is as follows:
 ```
@@ -64,12 +65,11 @@ See an example of Elbow Plot below:
 
 ![Elbow Plot](3.2_TwoGraphs.png)
 
-Example of Using Elbow Method to Decide K. 
-
-Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering”, 2017, https://bl.ocks.org/rpgove/0060ff3b656618e9136b
+Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering” (2017)**.
 
 The two graphs are the line graphs of the sum of squared errors with respect to their k numbers for two randomly generated datasets. The elbow point is the point where the sum of errors begins decreasing slowly. 
 As we can see, a number of 3 would be a good K selection. 
+
 ### 3.3. Initializing centroids<a name="3.3"></a>
 The performance of k-means clustering relies on good initial centroids. Bad initialization may end up getting undesirable clusters. We will briefly talk about how to select good initial centroids.
 #### 3.3.1. Bad initial centroids
@@ -77,9 +77,7 @@ In the example of the graph below, if at least two of the initial centroids chos
 There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance.(Satyam Kumar, 2020)
 
 ![Bad Initialization](3.3.1_Initialization.png)
-Clusters Beginning with a Bad Initialization.
-
-Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, 2017, Research Gate, https://www.researchgate.net/figure/Example-of-clusters-begins-with-a-bad-initialization_fig1_319271749
+Figure 3: Clusters Beginning with a Bad Initialization. **Figure by Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, Research Gate (2017)**.
 
 #### 3.3.2. K-Means++ methods for selecting good initialization points
 Spreading out the initial centroids is a worthy objective for selecting good initialization, given that initial centroids close to each other often give bad results.
@@ -163,9 +161,15 @@ Generalization of Kmeans
 Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages 
 
 ## 5. References<a name="5"></a>
+Sheng Zhong, “Beng183 FA20 Lecture 15 Machine Learning, part 2”, (2020)
+
 Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
 
 Swetha Lakshmanan, “How, When, and Why Should You Normalize / Standardize / Rescale Your Data?”, Towards AI, 2019, https://towardsai.net/p/data-science/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff
+
+Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering”, 2017, https://bl.ocks.org/rpgove/0060ff3b656618e9136b
+
+Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, 2017, Research Gate, https://www.researchgate.net/figure/Example-of-clusters-begins-with-a-bad-initialization_fig1_319271749
 
 Imad Dabbura, “K-means Clustering: Algorithm, Applications, Evaluation Methods, and Drawbacks”, towards data science, 2018, https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a
 
