@@ -65,19 +65,20 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ## 4. Disadvatages<a name="4"></a>
 - **Costly**
 
-ChIP-chip costs $400–$800 per array (1–6 million probes) but multiple arrays may be needed for large genomes, however ChIP-Seq cost around $1000–$2000 per Illumina lane (6–15 million readsprior to alignment)
+    ChIP-chip costs $400–$800 per array (1–6 million probes) but multiple arrays may be needed for large genomes, however ChIP-Seq cost around $1000–$2000 per Illumina lane       (6–15 million readsprior to alignment)
 
 - **High quality of antibodies required**
 
-ChIP-seq makes use of antibodies in immunoprecipitation, hence the quality of the data relies on the high quality of the antibody. However, antibodies vary widely in quality between suppliers and batches.
+    ChIP-seq makes use of antibodies in immunoprecipitation, hence the quality of the data relies on the high quality of the antibody. However, antibodies vary widely in           quality between suppliers and batches.
 
 - **Required large amounts of tissue**
 
-It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles needed to be compared to the same loci of the control sample to make the result more accurate.
+    It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles needed to be compared to the same loci of the control sample to make        the result more accurate.
 
 - **Prior knowledge of DNA-binding protein required**
 
-Prior knowledge of specific binding sites are needed for the antibodies to see where they exactly bind to the protein that we are interested in. 
+    Prior knowledge of specific binding sites are needed for the antibodies to see where they exactly bind to the protein that we are interested in. 
+    
 **Bias in high GC-rich content in fragment selection**
 
 
