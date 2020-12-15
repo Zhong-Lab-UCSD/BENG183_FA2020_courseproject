@@ -74,8 +74,46 @@ Dilution is the next step in the library preparation workflow. This step is esse
 The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be over crowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
   
 ## Sequencing Run
+## Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by shear mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
+![](./img/Bridging.PNG)
+[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+After bridging, the fragments return to having a double stranded structure through enzymatic activity which incorporates added nucleotides to form double-stranded bridges on the solid-phase substrate. Upon completion of bridge formation, denaturation occurs, resulting in single stranded templates to be isolated and bound to the substrate.
+
+What we are left with at this stage are the several million dense clusters of double-stranded DNA within the channels of the flow cell, completing amplification. 
+![](./img/Clusters.PNG)
+[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
+
+![](./img/FirstBase.PNG)
+[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
+
+This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
+
+
 ## Analysis
-![](..\..\.pastes\2020-12-14-12-04-09.png)
+Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by shear mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
+![](./img/Bridging.PNG)
+[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+After bridging, the fragments return to having a double stranded structure through enzymatic activity which incorporates added nucleotides to form double-stranded bridges on the solid-phase substrate. Upon completion of bridge formation, denaturation occurs, resulting in single stranded templates to be isolated and bound to the substrate.
+
+What we are left with at this stage are the several million dense clusters of double-stranded DNA within the channels of the flow cell, completing amplification. 
+![](./img/Clusters.PNG)
+[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
+
+![](./img/FirstBase.PNG)
+[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
+
+This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
+
 
 
 ## Applications
