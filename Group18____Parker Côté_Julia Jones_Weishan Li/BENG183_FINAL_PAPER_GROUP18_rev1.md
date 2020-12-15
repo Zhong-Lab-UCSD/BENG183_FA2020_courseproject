@@ -212,26 +212,74 @@ In each string comparison we do at most as many single character comparisons as 
 
 ### Running STAR 
 
-**Generate genome indices**
+**Installing STAR**
 
-As you learned in the Suffix Array section, to do any alignment with Suffix Array we must first generate the index array. The below command in STAR does so:
+With anaconda, installing STAR is as simple as running the command below.
 
 ```
-STAR           
+conda install star
 ```
 
-`--runThreadN`: number of threads 
+We can check to see if STAR has successfully installed (and learn about using STAR) with the following command:
 
-`--runMode`: genomeGenerate mode 
+```
+STAR -h
+```
 
-`--genomeDir` : /path/to/store/genome_indices
+STAR is also included within many popular bioinformatics python packages such as bioconda and may already be installed as a part of one of these packages.
 
-`--genomeFastaFiles` : /path/to/FASTA_file
+**Generate Suffix Array from Reference Genome**
 
-`--sjdbGTFfile` : /path/to/GTF_file
+Before we can begin aligning our reads, we must first use STAR to generate a suffix array from our reference genome. The command below can be used to achieve just that.
 
-`--sjdbOverhang` : typically read length minus 1 
+```
+STAR --runThreadN 10 --runMode genomeGenerate
+--genomeDir /path/to/output
+--genomeFastaFiles /path/to/input/FASTA_file
+--sjdbGTFfile /path/to/input/GTF_file --sjdbOverhang 100     
+```
 
+`--runThreadN`: Number of threads to use  
+
+`--runMode`: STAR run mode to use, for this application we use genomeGenerate 
+
+`--genomeDir` : The path for STAR to output to
+
+`--genomeFastaFiles` : The path to reference genome FASTA file
+
+`--sjdbGTFfile` : The path to reference genome GTF file
+
+`--sjdbOverhang` : Typically we use read length - 1
+
+This step will usually take a couple of minutes to complete, so be patient.
+
+**Align Reads to Reference Genome**
+
+Once the Suffix Array has been generated from our reference genome, the command below will map our reads to the reference.
+
+```
+STAR --runThreadN 10
+--genomeDir /path/to/output
+--readFilesIn /path/to/input/FASTQ_file
+--outSAMtype BAM SortedByCoordinate
+--outFileNamePrefix prefix_for_output_files
+```
+
+`--runThreadN`: Number of threads to use
+
+`--genomeDir`: The path for STAR to output to
+
+`--readFilesIn`: The path to FASTQ file containing our reads
+
+`--outSAMtype`: For our purposes (RNA-Seq), we typically use BAM SortedByCoordinate
+
+`--outFileNamePrefix`: The prefix for our output file names
+
+This step requires a significant amount of computer resources in order to complete and may be unable to complete on poorly equipped computers.
+
+**Our Results**
+
+In our output directory we will have several new files, with the most important files being the final log file and the sorted BAM file. The final log file (with the suffix Log.final.out) will contain important information regarding the quality of our alignment including the total mapping ratio, unique mapping ratio, etc. The sorted BAM file (with the suffix Aligned.sortedByCoord.out.bam) will be used along with featureCounts in following step of the RNA-Seq bioinformatics pipeline, expression quantification. 
 
 ---
 ### Sources
