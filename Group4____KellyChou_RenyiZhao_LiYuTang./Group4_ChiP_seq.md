@@ -21,7 +21,7 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 <!---
 add pic of ChIP
 -->
-
+![chip_seq pipeline](./images/intro.png)
 ChIP-Sequencing stands for chromatin-immunoprecipitation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
 
 The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, histone modifications, nucleosome positioning, and other protein-DNA interactions.
