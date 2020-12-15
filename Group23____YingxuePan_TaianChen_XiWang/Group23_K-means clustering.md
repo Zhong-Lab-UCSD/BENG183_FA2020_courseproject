@@ -13,6 +13,7 @@ K-Means Clustering:
 ## 2. Algorithm<a name="2"></a>
 In a nutshell, K-means clustering begins with randomly selected centroids (graph b), assigns objects to the closest cluster (graph c), updates the centroids based on the current assignment of objects (graph d), and repeats the previous two steps (graph e and f) until it reaches convergence.
 ![Visualization of k-means algorithm](2._kmeansalgo.png)
+An Illustration of Kmeans Algorithm.
 
 The pseudocode of K-means clustering is as follows:
 ```
@@ -38,9 +39,7 @@ With a given dataset, we could perform K-Means clustering easily through the ste
 ### 3.1. Normalizing the raw data<a name="3.1"></a>
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
 ![Normalization Is Important](3.1_normalizationIsImportant.png)
-
 An Example of Why Normalization Is Important.
-
 Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
 
 Taking the question from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression level will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
