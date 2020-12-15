@@ -18,7 +18,7 @@ The pseudocode of K-means clustering is as follows:
 ```
 kmeans(X: {x_1,x_2,...,x_n}, k)
     centroids: {c_1,c_2,...,c_k} = random_points(k)     \\randomly initialize k centroids
-	Y: {y_1,y_2,...,y_n} = new list(n)                  \\initialize the output list
+	Y: {y_1,y_2,...,y_n} = new list(n)                  \\initialize the output, y_1 will be x_1's cluster
 	while the clustering changes: 
 		for x_i in X:
 			y_i = closest_centroid(centroids,x_i)       \\find the closest centroid for each data point
@@ -30,16 +30,29 @@ kmeans(X: {x_1,x_2,...,x_n}, k)
 ## 3. Implementation<a name="3"></a>
 With a given dataset, we could perform K-Means clustering easily through the steps below:
 1. [Normalizing the raw data](#3.1)
-2. Choosing a statistically reasonable k: Elbow Method
+2. [Choosing a statistically reasonable k: Elbow Method](#3.2)
 3. Initializing Centroids
-4. Code Implementation
-5. Visualization (Plotting) of the Clustering Results
+4. [Code Implementation](#3.4)
+5. [Visualization (Plotting) of the Clustering Results](#3.5)
 
 ### 3.1. Normalizing the raw data<a name="3.1"></a>
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
-![An example of Why Normalization Is Important](3.1_normalizationIsImportant.png)
+![Normalization Is Important](3.1_normalizationIsImportant.png)
 
-### 3.2. Choosing a statistically reasonable K (the number of clusters): Elbow Method
+An Example of Why Normalization Is Important.
+
+Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
+
+Taking the question from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression level will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
+The function used to calculate the euclidean distance between patient P_i=(p1_i, p2_i, p3_i, p4_i) and centroid C_j=(c1_j, c2_j, c3_j, c4_j) is 
+>Distance(P_i, C_j)= [ (p1_i-c1_i)^2 + (p2_i-c2_i)^2 + (p3_i-c3_i)^2 + (p4_i-c4_i)^2 ]^(1/2)
+The function used to find the average of cluster C_j containing patients P_i,...,P_k is 
+>update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k),)
+
+As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to normalize the raw data to bring all the variables to the same range so that all genes have the same importance (Lakshmanan 2019).
+
+
+### 3.2. Choosing a statistically reasonable K: Elbow Method<a name="3.2"></a>
 There are a number of ways to do this, but a more common method is the elbow method. 
 What elbow method does is essentially running k-means with a range of values of k, for example, from 1 to 10, and then we calculate and plot the sum of squared errors with each respecting k number in a line chart. Lastly, the elbow point yields some of the best selections. We can do this whole process with pre-installed packages such as the KelbowVisulizer in python and wssplot in R. 
 
@@ -74,7 +87,7 @@ Here are general steps:
 
 The method aims to push the centroids such that they can be as far from one another as possible, overlaying as much of the occupied data space. (David Arthur and Sergei Vassilvitskii, 2006)
 
-### 3.4. Code Implementation
+### 3.4. Code Implementation<a name="3.4"></a>
 As a comparably matured clustering method, there are a number of ways to implement the K-Means algorithm in codes, such as using python, R, or Matlab. Here, a python implementation is shown:
 
 ```
@@ -94,7 +107,7 @@ a. Start with a data array (np).
 b. Initialize the kmeans with the number of clusters of choice.
 c. Fit the data into the kmeans. 
 
-### 3.5. Visualization (Plotting) of the Clustering Results
+### 3.5. Visualization (Plotting) of the Clustering Results<a name="3.5"></a>
 For plotting, each data points’ cluster labels will be stored in kmeans.labels_ (with a small underline at the end). You can use tools such as matplotlib for scatter plot, as shown in the example below:
 
 ```
@@ -146,6 +159,8 @@ Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machin
 
 ## 5. References<a name="5"></a>
 Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
+
+Swetha Lakshmanan, “How, When, and Why Should You Normalize / Standardize / Rescale Your Data?”, Towards AI, 2019, https://towardsai.net/p/data-science/how-when-and-why-should-you-normalize-standardize-rescale-your-data-3f083def38ff
 
 Imad Dabbura, “K-means Clustering: Algorithm, Applications, Evaluation Methods, and Drawbacks”, towards data science, 2018, https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a
 
