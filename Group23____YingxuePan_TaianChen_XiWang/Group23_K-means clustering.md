@@ -12,7 +12,7 @@ K-Means Clustering:
 
 ## 2. Algorithm<a name="2"></a>
 In a nutshell, K-means clustering begins with randomly selected centroids (graph b), assigns objects to the closest cluster (graph c), updates the centroids based on the current assignment of objects (graph d), and repeats the previous two steps (graph e and f) until it reaches convergence.
-![Visualization of k-means algorithm](https://github.com/YingxuePan/Applied-Genomic-Technologies/blob/master/Group23Pics/kmeansalgo.png)
+![Visualization of k-means algorithm](kmeansalgo.png)
 
 The pseudocode of K-means clustering is as follows:
 ```
@@ -44,7 +44,9 @@ There are a number of ways to do this, but a more common method is the elbow met
 What elbow method does is essentially running k-means with a range of values of k, for example, from 1 to 10, and then we calculate and plot the sum of squared errors with each respecting k number in a line chart. Lastly, the elbow point yields some of the best selections. We can do this whole process with pre-installed packages such as the KelbowVisulizer in python and wssplot in R. 
 
 See an example of Elbow Plot below:
+
 ![Elbow Plot](3.2_TwoGraphs.png)
+
 Example of Using Elbow Method to Decide K. 
 
 Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering”, 2017, https://bl.ocks.org/rpgove/0060ff3b656618e9136b
@@ -75,6 +77,15 @@ The method aims to push the centroids such that they can be as far from one anot
 ### 3.4. Code Implementation
 As a comparably matured clustering method, there are a number of ways to implement the K-Means algorithm in codes, such as using python, R, or Matlab. Here, a python implementation is shown:
 
+```
+import numpy as np
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+data = np.array() #data initialization, needs to be an array
+kmeans = KMeans(n_clusters=2) #initialize number of clusters, K
+kmeans.fit_predict(data) #fit data points with kmeans
+```
 
 Requirement: Python 3.8 (as Python 3.9 would not currently work). sklearn package.  
 
@@ -86,6 +97,25 @@ c. Fit the data into the kmeans.
 ### 3.5. Visualization (Plotting) of the Clustering Results
 For plotting, each data points’ cluster labels will be stored in kmeans.labels_ (with a small underline at the end). You can use tools such as matplotlib for scatter plot, as shown in the example below:
 
+```
+import numpy as np
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+data = np.array() #data initialization, needs to be an array
+kmeans = KMeans(n_clusters=2) #initialize number of clusters, K
+kmeans.fit_predict(data) #fit data points with kmeans
+
+
+plt.scatter(data[:,0], data[:,1], s = 10, c = kmeans.labels_, cmap='rainbow')
+#2D arrays of data coordinates[[x, y]]
+
+plt.title('Clusters of Coordinates (Dataset1, KMean)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+
+```
 
 ## 4. Limitations and Advantages<a name="4"></a>
 1. Limitations of K-means Clustering
