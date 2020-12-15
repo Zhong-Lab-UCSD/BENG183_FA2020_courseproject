@@ -40,6 +40,9 @@ These hypotheses have names and they are the **null hypothesis (H0)** and the **
 * needs to proven true 
 * this hypothesis is the one that assumes there’s a relationship between variables
 
+H0: μ = 0			 	H0: μ ≥ 0 					H0: μ ≤ 0
+H1: μ ≠ 0				H1: μ < 0					H1: μ > 0
+
 #### Testing your knowledge. Create the following hypotheses labeling your null and alternative hypothesis.
 The equality of male and female birth rates.
 
@@ -73,26 +76,6 @@ That the presence of a gene increases the chances of developing cancer.
 	Answer:
 >! Null hypothesis: The presence of a gene does not change the probability of developing cancer.
 >! Alternative hypothesis: The presence of a gene does change the probability of developing cancer.
-
-TODO: Decide which way is better to give the answers… below the questions or in a separate section..
-
-
-## Answers:
-
-1.
-
-
-2.
-
- 
-3.
->! Null hypothesis: The defendant is innocent.
->! Alternative hypothesis: The defendant is guilty.
-
-4.
-
-5.
-
 
 Now that we have our hypotheses, we need to create a test design to gather data. 
 
@@ -129,10 +112,10 @@ That a person is clairvoyant when blindly calling suites.
 
 >! Conduct multiple experiments making sure that there is no variation in tone of voice or movement in the presenter.
 
-That the presence of a gene increases the chances of developing cancer.
+That the presence of a mutated gene increases the chances of developing cancer.
 
-> ! Select a random assortment of the population that both contain and do not contain the gene. Then, over a long period of time, check evolving cancer rates for both groups.
-> ! Or compare a control group of mice to genetically engineered mouse models for cancer research as seen [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533445/). 
+>! Select a random assortment of the population that both contain and do not contain the gene. Then, over a long period of time, check evolving cancer rates for both groups.
+>! Or compare a control group of mice to genetically engineered mouse models for cancer research as seen [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533445/). 
 
 TODO: Add an example requiring the use of those bioinformatic databases.
 
@@ -148,15 +131,111 @@ Now that the hypothesis-related data is obtained, some data transformations are 
 
 ## Form Test Statistic
 
-TODO: I got this section. I will try to use the examples above to showcase some of the different test types.
+All test statistic equations take the general form:
 
-There are four different suites each with thirteen cards giving a  ¼ probability that a guess would be correct. 
+![teststatistic2](/Group29_Final/teststatistic2.png)
+
+Data will need to be summarized into a *single number* called a **statistic**.
+If the magnitude of the statistic supports *either hypothesis*, then it’s called a **test statistic**.
+
+### List of Different Test Statistics
+Z-Statistic (Z-Test)
+Determines if two means are different assuming normal distribution using a known standard deviation as the average variation.
+T-Statistic (T-Test)
+Used instead of a Z Test replacing average variation with the sample’s standard deviation.
+Chi-Square Statistic (Chi-Square Test)
+Determines if at least one of these expected percentages are incorrect given our sampling data. Used for tests of homogeneity and tests of independence. Used to test if our sample distribution fits our null distribution for factors which, when added, equal the whole subset. Average variation is replaced with the expected percentages of each given factor.
+Logistic Regression
+ Determines if the probability of an obtained event can be shown as a linear function of a combination of predictor variables. Models of the data are in binary values and must not be correlated with each other.
+Linear Regression
+Determines if the data’s relationship can be modeled using a straight line. The relationship between independent and dependent variables is required and correlation could exist.
+Multiple Regression
+Determines if a dependent variable can be determined using multiple independent variables to either create a linear regression or a non-linear regression. It is rare that a dependent variable is explained by only one other variable. It is assumed that there is no major correlation between the independent variables.
+F-Statistic (ANOVA)
+ANOVA stands for analysis of variance. Generally used as the first statistical test as it can compare multiple groups to determine if, given a single variable, somewhere between the groups there is a significant difference. Afterwards, there would still need to occur (N choose 2) T-Tests to find which specific group interactions are statistically significant.
+Multivariate F-Statistic (MANOVA)
+Similar to ANOVA, but compares multiple variables between groups.
+
+**How to Choose Which Statistical Test**
+
+![flowchart](/Group29_Final/flowchart-for-choosing-a-statistical-test.png)
+
+### Testing your knowledge
+
+You suspect that an ancestral mutation to a specific gene is the cause for a higher likelihood of developing breast cancer in women. In the U.S., about 1 in 400 people have the mutation. You take a sample of 100 women aged 70 without the mutation and find that 7 have breast cancer. You take a sample of 100 women aged 70 with the mutation and find that 40 have breast cancer. Test if this gene can be said to increase the development of breast cancer with a 95% confidence interval.
+
+Null hypothesis: The mutated gene does not increase the chance of cancer. 
+
+>! H0: μmutation - μnormal <= 0
+>! The percentage of women with cancer given the presence of the mutation is less than or equal to the percentage of women with cancer given no mutation.
+
+Alternative hypothesis: Presence of the mutated gene increases the chance of cancer.
+
+>! H1: μmutation - μnormal > 0
+>! The percentage of women with cancer given the presence of the mutation is greater than the percentage of women with cancer given no mutation.
+
+Mutation Mean and Average Variation:
+
+>! μ1 = PM = .07
+>! σ2 = PM(1-PM)/N = ~.0007
+
+Normal Mean and Average Variation:
+
+>! μ2 = PN = .40
+>! σ2 =  PN(1-PN)/N = ~.0024
+
+Sample Distribution and Standard deviation:
+
+>! μPm - μPn = |.07 - .47| = .33
+>! σPm - Pn = (.0007 + .0024)1/2 = ~.0557
+
+95% chance that it is within the distance of the mean, searching the t table gives the value of 1.984. Find the confidence interval:
+
+!> 1.984(.0557) = .1105
+
+Therefore, we are 95% confident that:
+
+!> It falls between the interval .33+-.1105
+
+Assuming the null hypothesis is correct, calculate the t statistic using the general formula for test statistics as a guide:
+
+ !> Assuming PM = PN = P
+!> σPm-Pn = [2P(1-P)/100]½ = ~0.0424
+!> Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
+
+What is the conclusion?
+
+!>Given a significance level of 5%, since our critical t value is less than the t value above, we can be 95% confident that the presence of the mutation contributes to the beast cancer and reject the null hypothesis. These statistics in this example reflect the percentages caused by the BRCA1 mutation.
 
 ---
 ## Calculate the P-value
 
+After a limited amount of tests, the hypothesis test makes an inference which is extrapolated for all cases with a given amount of uncertainty.
 
+The **p-value** calculates the probability that we would get the same test statistic or “worse” value, if we repeat the experiment multiple times.
 
+How to calculate the P-value:
+	P-value = 1 - FT|H0(t)
+ FT|H0(t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H0
+How to find the CDF under the H0:
+Computer simulation: simulate random outcomes by using the numbers from the test statistic and keep swapping them for many simulations (approximation of null distribution)
+
+### Example
+You read an article that said 6% of NCAA students go to the professional level. You think it’s higher at your college. You take a random sample of 50 NCAA students and see that 11% of them are going pro. 
+You are puzzled and do 40 random simulations of n = 50 NCAA students for a large population where 2% of them go pro. You noted the percentage you got every simulation. Here’s a graph of them: 
+![plot](/Group29_Final/plot.PNG)
+> We have our statistic p = 0.06 (NOT P-value)
+
+> Our null hypothesis is that the 0.06 applies to your school: H0 : p = 0.06
+
+> So our alt hypothesis is that it’s higher at your school: H1: p > 0.06
+
+> NOTE: These are disjoint sets and the H0 and H1 can’t happen at the same time 
+
+> So now we can start approximating our p-value 
+> p-val = P(Pschool >= 11% | H0) = 5/40 = 0.125
+> We got this by counting the number of simulations where the p >= 0.11 and dividing it by the total number of simulations 
+From this example we got our **p-val to be equal to 0.125**. What do we do now? 
 ---
 ## Make a Decision
 
@@ -177,9 +256,14 @@ There are two types of errors that we can make and they are:
 * **Type I Error (False Positive)** = reject a true null hypothesis and is a considerably worse error
 * **Type II Error (False Negative)** = When you accept a false null hypothesis
 
-Here is an illustration of the type of decisions that can be made
+Here is an illustration of the type of decisions that can be made:
 
 ![Errors](/Group29_Final/type-1-2-errors.png)
+
+Is it possible to remove all errors?
+	It isn’t because there is a tradeoff between the types of error; if we decrease the probability of one then the probability of the other increases and vise versa. This is seen by the following graph.
+
+![tradeoffs](/Group29_Final/tradeoffbetweenerrors.png)
 
 ---
 
@@ -187,10 +271,13 @@ Here is an illustration of the type of decisions that can be made
 * AB Tasty. “What Are Type 1 and Type 2 Errors?” AB Tasty, 2 July 2020, www.abtasty.com/blog/type-1-and-type-2-errors/. 
 * Editor, Minitab Blog. “Understanding Hypothesis Tests: Significance Levels (Alpha) and P Values in Statistics.” Minitab Blog, 2015, blog.minitab.com/blog/adventures-in-statistics-2/understanding-hypothesis-tests-significance-levels-alpha-and-p-values-in-statistics.
 * Foster et al. “7.5: Critical Values, p-Values, and Significance Level.” Statistics LibreTexts, Libretexts, 11 Aug. 2020, stats.libretexts.org/Bookshelves/Applied_Statistics/Book:_An_Introduction_to_Psychological_Statistics_(Foster_et_al.)/07:__Introduction_to_Hypothesis_Testing/7.05:_Critical_values,_p-values,_and_significance_level.
+* “Estimating a P-Value from a Simulation.” KhanAcademy, khanacademy.org. 
 * Roger B. Davis and ScD Kenneth J. MukamalMD, et al. “Hypothesis Testing.” Circulation, 5 Sept. 2006, www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.105.586461.
 * “S.3.2 Hypothesis Testing (P-Value Approach): STAT ONLINE.” PennState: Statistics Online Courses, 2020,   online.stat.psu.edu/statprogram/reviews/statistical-concepts/hypothesis-testing/p-value-approach.
 * Sacha, Varin, and Demosthenes B Panagiotakos. “Insights in Hypothesis Testing and Making Decisions in Biomedical Research.” The Open Cardiovascular Medicine Journal, Bentham Open, 30 Sept. 2016, www.ncbi.nlm.nih.gov/pmc/articles/PMC5054503/.
 * Sheng Zhong’s (Ph.D), lecture 12: Hypothesis Testing
+* Bevans, R. (2020, October 26). Choosing the Right Statistical Test: Types and Examples. Retrieved December 15, 2020, from https://www.scribbr.com/statistics/statistical-tests/
+
 
 
 
