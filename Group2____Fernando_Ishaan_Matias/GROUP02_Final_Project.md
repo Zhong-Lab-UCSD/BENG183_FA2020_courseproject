@@ -110,7 +110,7 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 Recurrent Neural Networks, or RNNs, are another example of artificial neural networks. RNNs differ to other Neural Networks in that they can take any sized vector as an input, where NNs can only take a fixed size vector. The training process of RNNs is unique. They are able to take input vectors and produce output vectors that are influenced by various things, like weights from inputs, and a hidden state that stores the context from inputs and previous outputs. Thus, it won't guarantee the same output from the same input, since it also takes into consideration the context of previous inputs and outputs. Therefore, since they are good at processing sequential inputs, RNNs are often used in speech and handwriting recognition  [(17)](#References). An example of an RNN model is shown in Figure 5, as the input layers also get the context of previous inputs before generating a final output. 
 
-One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell state which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. Therefore, due to its model characteristics, LSTM are used for example in Natural Language processing tasks.
+One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell state which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. Therefore, due to its model characteristics, LSTM are used for example in Natural Language processing tasks [(17)](#References).
 
 
 ![RNN model](./Images/RNN_model.png)
@@ -264,5 +264,5 @@ Conclusion...
 14. Gnanamoorthy, Branav Kumar. “RNNs to Write like Shakespeare.” Medium, 28 Feb. 2019, medium.com/@gnabr/rnns-to-write-like-shakespeare-226609863cd1. Accessed 15 Dec. 2020.
 15. Zou, J., Huss, M., Abid, A., Mohammadi, P., Torkamani, A., & Telenti, A. (2019). A primer on deep learning in genomics. Nature genetics, 51(1), 12-18.
 16. Raphael, B.J., Dobson, J.R., Oesper, L. et al. Identifying driver mutations in sequenced cancer genomes: computational approaches to enable precision medicine. Genome Med 6, 5 (2014). https://doi.org/10.1186/gm524
-17. Khuong, Ben. “The Basics of Recurrent Neural Networks (RNNs).” Medium, Towards AI, 23 June 2019, medium.com/towards-artificial-intelligence/whirlwind-tour-of-rnns-a11effb7808f. Accessed 14 Dec. 2020.
+17. Mahendran Venkatachalam. “Recurrent Neural Networks.” Medium, Towards Data Science, 24 Feb. 2019, towardsdatascience.com/recurrent-neural-networks-d4642c9bc7ce. Accessed 14 Dec. 2020.
 18. SAMtools Pileup Format http://samtools.sourceforge.net/pileup.shtml
