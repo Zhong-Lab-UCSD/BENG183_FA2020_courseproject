@@ -74,7 +74,7 @@ As we can see, a number of 3 would be a good K selection.
 The performance of k-means clustering relies on good initial centroids. Bad initialization may end up getting undesirable clusters. We will briefly talk about how to select good initial centroids.
 #### 3.3.1. Bad initial centroids
 In the example of the graph below, if at least two of the initial centroids chosen happened to be in the bottom cluster then the resulting solution will be very far from the true solution! (Both green and red clusters are actual one cluster).
-There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance.(Satyam Kumar, 2020)
+There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance (Satyam Kumar, 2020).
 
 ![Bad Initialization](3.3.1_Initialization.png)
 Figure 3: Clusters Beginning with a Bad Initialization. **Figure by Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, Research Gate (2017)**.
@@ -86,9 +86,9 @@ Here are general steps:
 1. choose the first centroid randomly
 2. Calculate distance of all points x_i from all of the previously selected centroids c_j. d_i should be the minimum value of distances between x_i and c_j, where j =  h, 1 ≤ h ≤ m. m is the number of total previously selected centroids.
 3. Select the data points from the data set as a new centroid. The probability of any data point in the data setx_i is chosen is proportional to d_i, which is the minimum value in step2.  
-4. repeat step2 and step3 until k centroids are selected. (Charles Zaiontz, 2016)
+4. repeat step2 and step3 until k centroids are selected (Charles Zaiontz, 2016). 
 
-The method aims to push the centroids such that they can be as far from one another as possible, overlaying as much of the occupied data space. (David Arthur and Sergei Vassilvitskii, 2006)
+The method aims to push the centroids such that they can be as far from one another as possible, overlaying as much of the occupied data space (David Arthur and Sergei Vassilvitskii, 2006). 
 
 ### 3.4. Code Implementation<a name="3.4"></a>
 As a comparably matured clustering method, there are a number of ways to implement the K-Means algorithm in codes, such as using python, R, or Matlab. Here, a python implementation is shown:
@@ -139,26 +139,22 @@ plt.show()
 ### 4.1. Limitations of K-means Clustering<a name="4.1"></a>
 1. One of the limitations is that the k value is chosen manually
 2. When updating the centroids, the new mean vector can be deeply influenced by the outliers. Therefore, consider removing or clipping outliers before clustering.
-3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases. (unknown author, unknown date)
+3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases (unknown author, unknown date). 
 
 ![10Dimensions](4.1.1_10Dimensions.png)
 
 ![1000Dimensions](4.1.1_1000Dimensions.png)
 
-Curse of Dimensionality
-
-Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages 
+Figure 4: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ### 4.2. Advantages of K-means Clustering<a name="4.2"></a>
 1. K-Means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge.  Compared to other clustering methods. Agglomerative hierarchical clustering is in O(n^3). If speed is your priority work, K-Means can work well with the large dataset. 
 
-2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result. (unknown author, unknown date)
+2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (unknown author, unknown date). 
 
 ![WidthsAdvantage](4.2_DifferentKMeans.png)
 
-Generalization of Kmeans
-
-Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages 
+Figure 5: Generalization of Kmeans. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ## 5. References<a name="5"></a>
 Sheng Zhong, “Beng183 FA20 Lecture 15 Machine Learning, part 2”, (2020)
