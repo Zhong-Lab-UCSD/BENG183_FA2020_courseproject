@@ -108,6 +108,10 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ### RNNs and LSTMs
 
+![RNN model](./Images/RNN_model.png)
+
+###### Fig 5. Basic model architecture of an RNN
+
 ### Autoencoders
 
 Another type of artificial neural networks are the autoencoders which employ efficient data encoding to learn a given dataset in an unsupervised manner [(11)](#References). We can think of autoencoders as two funnels where in the first pass we go from a high dimension input to a lower dimensionality. Then we use the output of the first funnel to pass it through a reverse funnel, where we go from a data with low dimensions to a higher dimensionality.
@@ -131,6 +135,12 @@ Some other examples of what deep learning applications can be used for are expla
 
 There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References).
 
+An example of the workflow of deep learning methods in genomics is shown below. 
+
+![Workflow in Genomics](./Images/Workflow_DL_in_Genomics.png)
+
+###### Fig 7. An example of a deep learning method workflow in genomics. The workflow starts with a dataset that is randomly split up into a training, a validation and a test datasets. Then a deep learning method, such as a CNN or RNN is trained on the training dataset. Finally, the results are evaluated and we can make predictions based on the outputs of the models [(15)](#References).
+
 ### Transcriptomics
 
 In transcriptomics, which is the omics technology that quantifies RNA expression levels, deep learning algorithms use generally expression matrices of different gene expression levels as their input. Therefore, with the output of these deep learning methods, many applications can be conducted. For example, CNNs are used to identify actual splice junctions from false positives generated from RNA-seq reads alignment. Also, using a DNN with a Bayesian statistical model to analyze differential splicing between different samples using RNA-seq data. One final example is the use of an RNN to differentiate between coding and non-coding RNAs [(5)](#References).
@@ -145,7 +155,7 @@ Medical imaging is a crucial component in the healthcare industry to treat patie
 
 ![DL Applications in Omics](./Images/DLApplicationsOmics.jpg)
 
-###### Fig 5: Workflow of Deep Learning Applications in Omics Data Analysis
+###### Fig 8: Workflow of Deep Learning Applications in Omics Data Analysis
 
 ---
 
@@ -173,7 +183,7 @@ Variants are regions of the genome where the sequence differes from the referenc
 
 ![Variants types](Images/TypesOfVariants.png)
 
-###### Fig 3: Types of Variants (6)
+###### Fig 9: Types of Variants (6)
 
 #### Pileups
 
@@ -206,5 +216,6 @@ Conclusion...
 12. Mantri, N. (2019, July 20). Applications of Autoencoders. OpenGenus IQ: Learn Computer Science. https://iq.opengenus.org/applications-of-autoencoders/
 13. Simidjievski, N. (2019). Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice. Frontiers. https://www.frontiersin.org/articles/10.3389/fgene.2019.01205/full
 14. Gnanamoorthy, Branav Kumar. “RNNs to Write like Shakespeare.” Medium, 28 Feb. 2019, medium.com/@gnabr/rnns-to-write-like-shakespeare-226609863cd1. Accessed 15 Dec. 2020.
+15. Zou, J., Huss, M., Abid, A., Mohammadi, P., Torkamani, A., & Telenti, A. (2019). A primer on deep learning in genomics. Nature genetics, 51(1), 12-18.
 
 ‌
