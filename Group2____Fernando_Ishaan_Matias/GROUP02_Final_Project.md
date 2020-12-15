@@ -112,7 +112,7 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 Another type of artificial neural networks are the autoencoders which employ efficient data encoding to learn a given dataset in an unsupervised manner [(11)](#References). We can think of autoencoders as two funnels where in the first pass we go from a high dimension input to a lower dimensionality. Then we use the output of the first funnel to pass it through a reverse funnel, where we go from a data with low dimensions to a higher dimensionality.
 
-![Autoencoder](./Images/autoencoder.PNG)
+![Autoencoder](./Images/autoencoder.png)
 
 ###### Fig 6. Represents a diagram of a general architecture for autoencoders. In this case, the input data are images.
 
