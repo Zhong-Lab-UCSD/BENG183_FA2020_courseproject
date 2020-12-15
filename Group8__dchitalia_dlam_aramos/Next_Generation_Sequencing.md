@@ -80,8 +80,15 @@ Moving forward from preparing the library, sequencing begins by randomly fragmen
 After bridging, the fragments return to having a double stranded structure through enzymatic activity which incorporates added nucleotides to form double-stranded bridges on the solid-phase substrate. Upon completion of bridge formation, denaturation occurs, resulting in single stranded templates to be isolated and bound to the substrate.
 
 What we are left with at this stage are the several million dense clusters of double-stranded DNA within the channels of the flow cell, completing amplification. 
-
 ![](./img/Clusters.PNG)
+
+We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
+
+![](./img/FirstBase.PNG)
+The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
+
+This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
+
 ## Analysis
 ![](..\..\.pastes\2020-12-14-12-04-09.png)
 **_Alignment_**
@@ -91,21 +98,6 @@ Alignment is also known as mapping, allows us to see the genetic differences bet
 **_Assembly_**
 
 
->>>>>>> Stashed changes
-
-We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
-
-![](./img/FirstBase.PNG)
-
-[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
-
-The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
-
-This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
-
-
-## Analysis
-## 
 ## Applications
 
 ## Citations
@@ -135,6 +127,8 @@ Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next 
 [Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 [Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+[First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 
 
