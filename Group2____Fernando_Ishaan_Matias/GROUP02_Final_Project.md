@@ -230,7 +230,7 @@ Since in Variant calling we want to analyze different reads at each position, wo
 |   seq1   | 278 |       G        |     23     |  ....,,.,.,...,,,.,....^k.  | %38\*<<;<7<<7<=<<<;<<<<< |
 |   seq1   | 279 |       C        |     23     |   A..T,,.,.,...,,,.,.....   | ;75&<<<<<<<<<=<<<9<<:<<  |
 
-As you can see in table 1, pileup file gives information position-wise (column 2), shows base in the reference genome at each position (column 3), number of reads aligning at that position (column 4), and what base each read gives at that position (column 5), and then the quality of the base given by each read at that position. For eaxmple, in read results, each '.' refers to the base matching reference genome on forward strand, while ',' on reverse strand. Bases A/C/T/G appearing refer to an SNV substituion of reference genome base to A/C/T/G.
+As you can see in table 1, pileup file gives information position-wise (column 2), shows base in the reference genome at each position (column 3), number of reads aligning at that position (column 4), and what base each read gives at that position (column 5), and then the quality of the base given by each read at that position. For eaxmple, in read results, each '.' refers to the base matching reference genome on forward strand, while ',' on reverse strand. Bases A/C/T/G appearing refer to an SNV substituion of reference genome base to A/C/T/G on forward strand, and a/c/t/g give the same but on reverse strand. So a read result like ,.$.AA...tAAAtA,.tAA.. might look like an SNV (substituted to A on forward strand) on one chromosome while matching reference base on other.
 
 #### Structure of DeepVariant Model
 
