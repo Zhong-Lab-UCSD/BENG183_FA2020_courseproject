@@ -65,6 +65,7 @@ The quantification step of the library preparation workflow is required to creat
 - Qubit
 - ddPCR
 - ddPCR-Tail
+
 The image above is from an article where these four methods for quantification were done and the effects of the quantification methods on the final NGS run quality were analyzed.
 
 In addition to these methods of quantification, it is standard to use tools such as Bioanalyzer (top right corner of the image above) to find the average base pair length of the sample pool. With these two quantification methods, the molarity of the sample can be calculated and be used for dilution.
