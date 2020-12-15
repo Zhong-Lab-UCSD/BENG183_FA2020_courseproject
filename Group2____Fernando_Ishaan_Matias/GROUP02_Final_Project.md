@@ -118,7 +118,7 @@ One example of an RNN, which is able to process sequential data as mentioned abo
 
 ![RNN model](./Images/RNN_model.png)
 
-###### Fig 5. Basic model architecture of an RNN. This basically shows how a RNN allows for data to be fed back into the network (creating a loop) [(5)](#References).
+###### Fig 5. Basic model architecture of an RNN. This basically shows how a RNN allows for data to be fed back into the network (creating a loop) [(14)](#References).
 
 
 
@@ -165,7 +165,7 @@ Medical imaging is a crucial component in the healthcare industry to treat patie
 
 ![DL Applications in Omics](./Images/DLApplicationsOmics.jpg)
 
-###### Fig 8: Workflow of Deep Learning Applications in Omics Data Analysis
+###### Fig 8: Workflow of Deep Learning Applications in Omics Data Analysis [(5)](#References).
 
 ---
 
