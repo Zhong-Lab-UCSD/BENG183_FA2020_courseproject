@@ -29,16 +29,16 @@ kmeans(X: {x_1,x_2,...,x_n}, k)
 
 ## 3. Implementation<a name="3"></a>
 With a given dataset, we could perform K-Means clustering easily through the steps below:
-    1. Normalizing the raw data
-    2. Choosing a statistically reasonable k: Elbow Method
-    3. Initializing Centroids
-    4. Code Implementation
-    5. Visualization (Plotting) of the Clustering Results
-    
+1. Normalizing the raw data
+2. Choosing a statistically reasonable k: Elbow Method
+3. Initializing Centroids
+4. Code Implementation
+5. Visualization (Plotting) of the Clustering Results
+
 ### 3.1. Normalizing the raw data
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
 
 ## 4. Limitations and Advantages<a name="4"></a>
-    1. Limitations of K-means Clustering
-    2. Advantages of K-means Clustering
+1. Limitations of K-means Clustering
+2. Advantages of K-means Clustering
 ### 4.1 Limitations of K-means Clustering
