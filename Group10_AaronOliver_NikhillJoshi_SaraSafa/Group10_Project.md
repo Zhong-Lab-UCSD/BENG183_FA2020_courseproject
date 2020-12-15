@@ -25,11 +25,12 @@ The three most common tests used to detect COVID-19 infection are the molecular,
 
 As with any traditional diagnosis tests, we can create a confusion matrix that describes the different outcome for a COVID-19 test. To extend the statistical concepts discussed in BENG 183 into real world consequences, consider the effects of a False Negative for a COVID-19 test compared to a False Positive. A patient that recieves a False Positive diagnosis will isolate unnecessarily in their home even though they can not spread COVID-19. Although this is inconvenient, compare this to the consequences of a False Negative result. In this scenario, a carrier of SARS-CoV-2 may not isolate in their homes, and thus they have the potential to spread COVID-19 further around their community. 
 
-Recall that specificity is defined as the number of True Positives divided by the sum of True Positives and False Negatives. Essentially, a high specificity stems from minimizing the number of False Negatives. Operating until the assumption that our main goal is to minimize the spread of COVID-19, the most important feature of a COVID-19 test is to maximize sensitivity above all else. An alternative test that sacrifices sensitivity for less False Positives will reduce inconveniences for patients that would have ended up receiving False Positive diagnoses, but this test would ultimately be **less effective** in preventing the spread of COVID-19.
 |COVID-19 Confusion Matrix |Patient has COVID-19 | Patient does **not** have COVID-19 |
 |:-:|:-:|:-:|
 |Test detects SARS-CoV-2 | True Positive | False Positive |
 |Test fails to detect SARS-CoV-2 | False Negative | True Negative |
+
+Recall that specificity is defined as the number of True Positives divided by the sum of True Positives and False Negatives. Essentially, a high specificity stems from minimizing the number of False Negatives. Operating until the assumption that our main goal is to minimize the spread of COVID-19, the most important feature of a COVID-19 test is to maximize sensitivity above all else. An alternative test that sacrifices sensitivity for less False Positives will reduce inconveniences for patients that would have ended up receiving False Positive diagnoses, but this test would ultimately be **less effective** in preventing the spread of COVID-19.
 
 ## 3. The Molecular Test <a name="3"></a>
 
