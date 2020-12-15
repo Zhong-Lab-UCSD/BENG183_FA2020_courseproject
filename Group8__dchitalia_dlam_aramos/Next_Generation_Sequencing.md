@@ -77,16 +77,21 @@ The standard Illumina PhiX control that is used today is the PhiX Control v3 Lib
 Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by shear mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
 
 ![](./img/Bridging.PNG)
-
-[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
-
 After bridging, the fragments return to having a double stranded structure through enzymatic activity which incorporates added nucleotides to form double-stranded bridges on the solid-phase substrate. Upon completion of bridge formation, denaturation occurs, resulting in single stranded templates to be isolated and bound to the substrate.
 
 What we are left with at this stage are the several million dense clusters of double-stranded DNA within the channels of the flow cell, completing amplification. 
 
 ![](./img/Clusters.PNG)
+## Analysis
+![](..\..\.pastes\2020-12-14-12-04-09.png)
+**_Alignment_**
+Alignment is also known as mapping, allows us to see the genetic differences between our reads and the reference genome and helps us to detect variation in samples. NGS produces short read pairs or short reads which are sequences of < 200 bases. To compare the sequenced sample to the reference first we must find the corresponding part of that sequence for each read in our data, which is the actual alignment or mapping of reads.
 
-[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+![Assembly.PNG](img%5CAssembly.PNG)
+**_Assembly_**
+
+
+>>>>>>> Stashed changes
 
 We begin the first sequencing cycle by adding four labeled reversible terminators, primers, and DNA polymerase. A laser is then used to excite the molecules, resulting in the emission of fluorescence from each labeled and known cluster, thus capturing and identifying the first base. 
 
@@ -124,7 +129,12 @@ Cortes, Kamila Caraballo, et al. “Next-Generation Sequencing of 5′ Untransla
   
 Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next Generation
   Sequencing.” Scientific Reports, vol. 6, no. 1, 2016, doi:10.1038/srep24067.
+  
+[Next Generation Sequencing Alignment](https://en.wikibooks.org/wiki/Next_Generation_Sequencing_(NGS)/Alignment)
 
+[Bridging](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
+
+[Clustering](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
 
 
