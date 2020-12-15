@@ -240,7 +240,6 @@ As you can see in table 1, pileup file gives information position-wise (column 2
 
 <div align="center">
     <figure class="image"><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.4235/MediaObjects/41587_2018_Article_BFnbt4235_Fig1_HTML.jpg?as=webp" alt="DeepVariant Workflow" width="600">
-        <figcaption>(Fig 11: DeepVariant Model Workflow)
         </figcaption>
     </figure>
 </div>
