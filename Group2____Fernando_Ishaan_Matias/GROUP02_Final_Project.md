@@ -167,9 +167,9 @@ As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs
 
 ---
 
-### DeepVariant
+### Deep Learning for Variant Calling
 
-#### Variant Calling
+#### What is Variant Calling
 Variants are regions of the genome where the sequence differes from the reference genome. They could be in the form of:
 - Single NUcleotide Variants (SNVs) (which are SNPs if 1% or more frequent in population)
 - Indels
@@ -186,13 +186,20 @@ Variants are regions of the genome where the sequence differes from the referenc
 #### Sequencing error vs Variants
 Accurate identification of Variants involves differentiating between the two causes of differences between reference genome and sequenced reads - Sequencing error and Variants. This is essentially what the Variant callers involve. Traditionally, Variant callers are statistical methods designed by humans that analyze frequency of a variant at the same position from all the reads, along with the quality of those read bases, and neighboring bases on same read. Example - GATK, FreeBayes, SAMtools etc.
 
-This is not always easy to detect, though, especially in applications like Cancer Biomarker detection, as shown in Fig 10. Usually approximately half of the reads should show an SNV/indel that is present on chromosome, so they should generally be detectable. However, even with 40% samples being normal cells in a tumor samples, we can have a false negative for the SNV.
+#### Challenges in Variant Calling
 
+As discussed above, variants are traditionally identified by statistical methods that find features by already set certain filters that consider particular parameters. This type of manual selection of features can create bias in terms of what parameters are considered.
 
+Furthermore, with the evolution of different sequencing technologies (Illumina sequencing, long read sequencing etc.), we need to set different filters manually for the human-designed statistical methods for optimal Variant Calling in different data types. 
+
+Not only this, we also need different methods to identify different types of variant. Method to identify an single-nucleotide variant must be very different from a copy number variant.
+
+Even with all these taken care of, variants is not always easy to detect, though, especially in applications like Cancer Biomarker detection, as shown in Fig 10. Usually approximately half of the reads should show an SNV/indel that is present on chromosome, so they should generally be detectable. However, even with 40% samples being normal cells in a tumor samples, we can have a false negative for the SNV (Fig 10(b)).
 
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fgm524/MediaObjects/13073_2014_Article_507_Fig1_HTML.jpg?as=webp)
-###### Fig 10: Somatic mutation detection in tumor samples [(16)](#References).
+###### Fig 10: Somatic mutation detection in tumor samples [(16)](#References). Calling variants being used as Cancer biomarkers. Major task in Variant calling (a) In a pure tumor sample, approximately half of the reads contain the SNV, but in (b) 60% purity sample, it becomes difficult to distinguish the heterozygous somatic SNV in the center from a sequencing error.
 
+####
 
 #### Pileups
 
