@@ -3,7 +3,7 @@
 
  1. [Introduction](#1)
  2. [Testing Basics](#2)
- 3. [The Molecular Test](#3)
+ 3. [The Molecular Test](#3) <br>
 	 3.1. [The First Steps of Development](#31) <br>
 	 3.2. [The Mechanism of SARS-CoV-2 Detection](#32) <br>
 	 3.3. [Sample Pooling: More Results with Less Tests](#33) 
