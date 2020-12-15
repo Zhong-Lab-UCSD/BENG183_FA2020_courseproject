@@ -66,7 +66,7 @@ Through simulation, previous research by Baha Abdalhamid *et al* in June 2020 [[
 
 <img src="images/pooling_graph.jpg" width="700">
 
-The *Abdalhamid* study among other literature on sample pooling rely on an important assumption about the samples - the vast majority of samples should **not** contain SARS-CoV-2. As a thought experiment, we can consider three scenarios in which we can test a matrix of *n* by *m* samples.
+The *Abdalhamid* study, among other literature on sample pooling, rely on an important assumption about the samples - the vast majority of samples should **not** contain SARS-CoV-2. As a thought experiment, we can consider three scenarios in which we can test a matrix of *n* by *m* samples.
 
 In Scenario 1, we use sample pooling on a batch of samples where all of the samples test negative for COVID-19. To get this result, the total number of tests we needed to perform was *n* for each of the rows and *m* for each of the columns, for a total number of tests of *n + m*.
 
