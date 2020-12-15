@@ -43,15 +43,17 @@ An important step we have to do before we actually use k means clustering to pro
 
 Table 1: Gene expression levels of four genes in patients with different cancer subtypes. **Table by Sheng Zhong, “Midterm2”, 2020, Beng183 FA20**.
 
-Taking the question 7 from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression level will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
+Taking the question 7 from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in the ranges of expression levels will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
+
 The function used to calculate the euclidean distance between patient P_i=(p1_i, p2_i, p3_i, p4_i) and centroid C_j=(c1_j, c2_j, c3_j, c4_j) is 
 ```
-Distance(P_i, C_j)= [ (p1_i-c1_i)^2 + (p2_i-c2_i)^2 + (p3_i-c3_i)^2 + (p4_i-c4_i)^2 ]^(1/2)
+Distance(P_i, C_j)= [ (p1_i-c1_j)^2 + (p2_i-c2_j)^2 + (p3_i-c3_j)^2 + (p4_i-c4_j)^2 ]^(1/2)
 ```
 The function used to find the average of cluster C_j containing patients P_i,...,P_k is 
 ```
 update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k))
 ```
+Let's think about what the functions above tell us. The euclidean distance is based on all four genes, while the distance p3_i-c3_j is likely to be greater than other three distance because of the larger range of the expression level of gene 3. So if a patient P_i has expression level p3_i such that p3_i-c3_j is small, then it will be assign to the cluster of C_j no matter if the differences p1_i-c1_j, p2_i-c2_j, or p4_i-c4_j is small. 
 
 As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to normalize the raw data to bring all the variables to the same range so that all genes have the same importance (Lakshmanan 2019).
 
