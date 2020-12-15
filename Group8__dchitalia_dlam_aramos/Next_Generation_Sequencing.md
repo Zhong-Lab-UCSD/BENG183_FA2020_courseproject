@@ -65,7 +65,7 @@ The quantification step of the library preparation workflow is required to creat
 - Qubit
 - ddPCR
 - ddPCR-Tail
-The image above is from an article where these four methods for quantification were done and the affects of the quantification methods on the final NGS run quality were analyzed.
+The image above is from an article where these four methods for quantification were done and the effects of the quantification methods on the final NGS run quality were analyzed.
 
 In addition to these methods of quantification, it is standard to use tools such as Bioanalyzer (top right corner of the image above) to find the average base pair length of the sample pool. With these two quantification methods, the molarity of the sample can be calculated and be used for dilution.
 
@@ -75,15 +75,15 @@ In addition to these methods of quantification, it is standard to use tools such
 
 [Dilution](https://upcvmda-pl480.weebly.com/educational-articles/dna-sequencing-illumina-workflow-part-1-dna-isolation-quality-control-and-dilution)
 
-Dilution is the next step in the library preparation workflow. This step is essential for the success of the resulting sequencing quality. When the sequencing undergoes bridge amplification, the sample DNA will be multiplied many times to form thousands of clusters across the sequencing flow cell. If the starting sample is not diluted enough, the clusters will over crowd the flow cell and the clusters will not be distinguishable when the sequencing images are taken. The standard dilution of DNA samples is down to a 4nM library.
+Dilution is the next step in the library preparation workflow. This step is essential for the success of the resulting sequencing quality. When the sequencing undergoes bridge amplification, the sample DNA will be multiplied many times to form thousands of clusters across the sequencing flow cell. If the starting sample is not diluted enough, the clusters will overcrowd the flow cell and the clusters will not be distinguishable when the sequencing images are taken. The standard dilution of DNA samples is down to a 4nM library.
 
 #### PhiX Control
 
-The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be over crowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
+The standard Illumina PhiX control that is used today is the PhiX Control v3 Library. This control is derived from the genome of a well-characterized bacteriophage. This library is about 500 base pairs long and has a composition of ~45% GC and ~55% AT. Because the composition of this PhiX control is so balanced, it helps even out base pair diversity across the flow cell. It provides a well-balanced, fluorescent signal for each cycle of the sequencing run to improve the quality of the reads. For example, if there is a region of the DNA samples of interest that have high GC content, the fluorescent images taken for the G and C bases would be overcrowded and the clusters would not be able to be differentiated. When PhiX control is added, it increases the base diversity and avoids this issue.
   
 ## Sequencing Run
 
-Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by shear mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
+Moving forward from preparing the library, sequencing begins by randomly fragmenting genomic DNA. This can be done by using enzymes or by sheer mechanical force. Once fragmented adapters are attached to both ends of the many fragments. Attaching these adapters allows for the now single stranded DNA to be bound to the surface of flow cell channels and In these flow cells, we add unlabeled nucleotides and enzymes to begin solid-phase bridge amplification. Amplification is a necessary step for generating DNA clusters for sequencing.
 
 ![](./img/Bridging.PNG)
 
@@ -103,7 +103,7 @@ We begin the first sequencing cycle by adding four labeled reversible terminator
 
 [First Base Identification](https://www.illumina.com/documents/products/techspotlights/techspotlight_sequencing.pdf)
 
-The second cycle then proceeds similar to the first with the addition of more terminators, primers and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
+The second cycle then proceeds similarly to the first with the addition of more terminators, primers, and DNA polymerase.  Upon laser excitation and fluorescence emission, the second base is captured and identified. 
 
 This series of cycles is then repeated over thousands of cycles, resulting in an agglomeration of the completed fragment’s base pair sequence.
 
@@ -126,16 +126,16 @@ Genome Assembly usually involves taking in a number of sequenced reads which are
 
 ![](./img/tools2.JPG)
 
-- Minia is a short-read assembler that is capable of assembling the human genome on a desktop computer in a day. Minia is based on a de Bruin graph. Assembly is performed using graph simplifications that are inspired by the SPADES assembler.
+- Minia is a short-read assembler that is capable of assembling the human genome on a desktop computer in a day. Minia is based on a de Bruin graph. Assembly is performed using graph simplifications that are inspired by the SPAdes assembler.
 - Sickle is a trimming tool for fastq files. It uses sliding windows and quality and length thresholds to determine and trim low quality bases.
-- SSPACE is a used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
+- SSPACE is used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
 
 ## Applications
 1. Sequencing and construction of a new genome or transcriptome (De Novo Sequencing)
 2. DNA/RNA Protein Interactions (ChIP Sequencing)
-3. Metagenomics: study of environmental samples where multiple microbial genomes are analyzed at the same time
+3. Metagenomics: the study of environmental samples where multiple microbial genomes are analyzed at the same time
 4. Resequencing: used to determine the genomic variations of a sample in relation to a common reference sequence
-5. Transcriptome Sequencing: Profiling, discovery and analysis of the entire transcript- especially useful for RNA sequencing
+5. Transcriptome Sequencing: Profiling, discovery, and analysis of the entire transcript- especially useful for RNA sequencing
 
 ## Citations
 
