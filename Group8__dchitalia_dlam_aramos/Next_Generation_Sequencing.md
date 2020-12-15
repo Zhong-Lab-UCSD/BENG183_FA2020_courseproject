@@ -1,6 +1,8 @@
 # In Depth Look at Next Generation Sequencing
 Dheerav Chitalia | Dylan Lam | Alejandro Ramos
+
 BENG 183: Applied Genomic Technologies
+
 Professor Sheng Zhong
 
 ## Library Preparation
