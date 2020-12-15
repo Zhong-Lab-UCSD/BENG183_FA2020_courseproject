@@ -38,13 +38,13 @@ With a given dataset, we could perform K-Means clustering easily through the ste
 ### 3.1. Normalizing the raw data
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
 
+
 ### 3.2. Choosing a statistically reasonable K (the number of clusters): Elbow Method
 There are a number of ways to do this, but a more common method is the elbow method. 
 What elbow method does is essentially running k-means with a range of values of k, for example, from 1 to 10, and then we calculate and plot the sum of squared errors with each respecting k number in a line chart. Lastly, the elbow point yields some of the best selections. We can do this whole process with pre-installed packages such as the KelbowVisulizer in python and wssplot in R. 
 
 See an example of Elbow Plot below:
-
-
+![Elbow Plot](3.2_TwoGraphs.png)
 Example of Using Elbow Method to Decide K. 
 
 Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering”, 2017, https://bl.ocks.org/rpgove/0060ff3b656618e9136b
@@ -56,7 +56,7 @@ As we can see, a number of 3 would be a good K selection.
 The performance of k-means clustering relies on good initial centroids. Bad initialization may end up getting bad clusters. In the example of the graph below, if at least two of the initial centroids chosen happened to be in the bottom cluster then the resulting solution will be very far from the true solution! (Both green and red clusters are actual one cluster)  
 There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance.(Satyam Kumar, 2020)
 
-
+![Bad Initialization](3.3.1_Initialization.png)
 Clusters Beginning with a Bad Initialization.
 
 Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, 2017, Research Gate, https://www.researchgate.net/figure/Example-of-clusters-begins-with-a-bad-initialization_fig1_319271749
