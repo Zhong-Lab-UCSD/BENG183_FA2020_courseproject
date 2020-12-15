@@ -47,6 +47,18 @@ With the summary of what some of these Omics technologies do, the overall object
 
 ## Deep Learning Background
 
+Deep Learning is a subset of machine learning that were modeled to represent the biological neural network of our brain. This model is called artificial neural networks (ANNs). To better undestand what Artificial intelligence and deep learning are, it would be benefitial to see what experts in the field have to say. Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University said:
+> Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence [(1)](#References).
+
+And Tom M. Mitchell from the Machine Learning Department in Carnegie Mellon University, said: 
+> Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence [(1)](#References).
+
+(to be continued...)
+
+![ANNs vs BioNN](./Images/ANN_vs_NN.png)
+
+###### Fig 0: Depiction of a biological neuron compared to an artificial neuron [(19)](#References). 
+
 - Why DL is important
 - AI, DL, ML, NN - Buzzword, for great reason, but meaning?
 - AI: Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University, “Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence.” [(1)](#References)
@@ -267,3 +279,4 @@ Conclusion...
 16. Raphael, B.J., Dobson, J.R., Oesper, L. et al. Identifying driver mutations in sequenced cancer genomes: computational approaches to enable precision medicine. Genome Med 6, 5 (2014). https://doi.org/10.1186/gm524
 17. Mahendran Venkatachalam. “Recurrent Neural Networks.” Medium, Towards Data Science, 24 Feb. 2019, towardsdatascience.com/recurrent-neural-networks-d4642c9bc7ce. Accessed 14 Dec. 2020.
 18. SAMtools Pileup Format http://samtools.sourceforge.net/pileup.shtml
+19. Nagyfi Richárd. “The Differences between Artificial and Biological Neural Networks.” Medium, Towards Data Science, 4 Sept. 2018, towardsdatascience.com/the-differences-between-artificial-and-biological-neural-networks-a8b46db828b7. Accessed 15 Dec. 2020.
