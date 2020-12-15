@@ -180,7 +180,7 @@ Variants are regions of the genome where the sequence differes from the referenc
   * Inversion
 
 ![SVs types](Images/TypesOfVariants.png)
-###### Fig 3: Types of Variants [(5)](#References).
+###### Fig 9: Types of Variants [(6)](#References).
 
 
 
