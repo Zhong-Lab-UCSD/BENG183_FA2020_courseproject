@@ -123,7 +123,12 @@ Genome Assembly usually involves taking in a number of sequenced reads which are
 - SSPACE is a used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
 
 ## Applications
-1. 
+1. Sequencing and construction of a new genome or transcriptome (De Novo Sequencing)
+2. DNA/RNA Protein Interactions (ChIP Sequencing)
+3. Metagenomics: study of environmental samples where multiple microbial genomes are analyzed at the same time
+4. Resequencing: used to determine the genomic variations of a sample in relation to a common reference sequence
+5. Transcriptome Sequencing: Profiling, discovery and analysis of the entire transcript- especially useful for RNA sequencing
+
 ## Citations
 
 [An Introduction to Next-Generation Sequencing Technology](https://www.illumina.com/content/dam/illumina-marketing/documents/products/illumina_sequencing_introduction.pdf)
