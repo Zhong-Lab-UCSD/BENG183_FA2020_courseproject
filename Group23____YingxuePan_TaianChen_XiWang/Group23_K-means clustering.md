@@ -114,10 +114,45 @@ plt.title('Clusters of Coordinates (Dataset1, KMean)')
 plt.xlabel('x')
 plt.ylabel('y')
 plt.show()
-
 ```
 
 ## 4. Limitations and Advantages<a name="4"></a>
 1. Limitations of K-means Clustering
 2. Advantages of K-means Clustering
-### 4.1 Limitations of K-means Clustering
+
+### 4.1. Limitations of K-means Clustering
+1. One of the limitations is that the k value is chosen manually
+2. When updating the centroids, the new mean vector can be deeply influenced by the outliers. Therefore, consider removing or clipping outliers before clustering.
+3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases. (unknown author, unknown date)
+
+![10Dimensions](4.1.1_10Dimensions.png)
+
+![1000Dimensions](4.1.1_1000Dimensions.png)
+
+Curse of Dimensionality
+
+Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages 
+
+### 4.2. Advantages of K-means Clustering
+1. K-Means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge.  Compared to other clustering methods. Agglomerative hierarchical clustering is in O(n^3). If speed is your priority work, K-Means can work well with the large dataset. 
+
+2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result. (unknown author, unknown date)
+
+![WidthsAdvantage](4.2_DifferentKMeans.png)
+
+Generalization of Kmeans
+
+Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages 
+
+## 5. References<a name="5"></a>
+Sheng Zhong, “Midterm2”, 2020, Beng183 FA20
+
+Imad Dabbura, “K-means Clustering: Algorithm, Applications, Evaluation Methods, and Drawbacks”, towards data science, 2018, https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a
+
+Satyam Kumar, “Understanding K-Means, K-Means++ and, K-Medoids Clustering Algorithms”, towards data science, 2020, https://towardsdatascience.com/understanding-k-means-k-means-and-k-medoids-clustering-algorithms-ad9c9fbf47ca
+
+Charles Zaiontz, “Initializing clusters via k-means++ algorithm”, Real Statistics Using Excel, 2016, https://www.real-statistics.com/multivariate-statistics/cluster-analysis/initializing-clusters-k-means/
+
+David Arthur and Sergei Vassilvitskii, “k-means++:  The Advantages of Careful Seeding”, Stanford InfoLab Publication Server, http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf
+
+Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages
