@@ -175,8 +175,6 @@ Medical imaging is a crucial component in the healthcare industry to treat patie
 
 As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs can be used in genomics and sequence analysis, transcriptomics, epigenomics, medical imaging, and many other areas. The next section of the paper will focus on a specific example of CNN applications in Omics data analysis, and that is in the detection of SNPs/indels and other variants.
 
----
-
 ### Deep Learning for Variant Calling
 
 #### What is Variant Calling
@@ -217,7 +215,7 @@ Even with all these taken care of, somatic variants are not always easy to detec
 
 Use of neural networks can address these challeneges since they automate the feature extraction process without introduing any human bias, or becoming specialized for types of data or types of variants. Instead of making new filters, we just need to retrain the model on new data.
 
-#### Background check - Pileups
+#### Background check - Pileup and VCF files
 
 Since in Variant calling we want to analyze different reads at each position, wouldn't it be easier to kind of take the transpose of a BAM file which gives aligned reads info read-wise across positions, and have the information instead position-wise across the reads? A Pileup file does exactly that. While it can be easily generated using SAMtools, GATK etc, most Variant callers take BAM file as input and perform the conversion to Pileup for you by default. Table 1 shows an example of a section of a Pileup file.
 
@@ -236,6 +234,12 @@ Since in Variant calling we want to analyze different reads at each position, wo
 
 As you can see in table 1, pileup file gives information position-wise (column 2), shows base in the reference genome at each position (column 3), number of reads aligning at that position (column 4), and what base each read gives at that position (column 5), and then the quality of the base given by each read at that position. For eaxmple, in read results, each '.' refers to the base matching reference genome on forward strand, while ',' on reverse strand. Bases A/C/T/G appearing refer to an SNV substituion of reference genome base to A/C/T/G on forward strand, and a/c/t/g give the same but on reverse strand. So a read result like ,.$.AA...tAAAtA,.tAA.. might look like an SNV (substituted to A on forward strand) on one chromosome while matching reference base on other.
 
+VCF on the other hand is the standard outout format of variant callers. 
+###### Table 2 - Example section of a VCF File from VCF format information given by SAMtools [(21)](#References)
+![](Images/VCF.png)
+
+Tabe 2 shows different Variants, each with what chromosome they lie on, their exact starting position on that chromosome, the ID given by dbSNP - the databse of all sorts of ploymorphisms (or '.' if unknown), reference base, altenate base (eg: first row - substitution G -> A, fourth row - deletion of T), and the quality score of variant out of 100 (not reading quality but the probability of it being an SNV), the filter passed (pass means good enough) - So while the first row is good SNP because it passes the quality filter, the second row shows filter q10 which means it's a possible SNP - and the rest of the columns show additional information such predicted genotype (GN) - 0|1 meaning heterozygous and 0|0 meaning homozygous non-reference.
+
 #### Structure of DeepVariant Model
 
 <div align="center">
@@ -244,19 +248,22 @@ As you can see in table 1, pileup file gives information position-wise (column 2
     </figure>
 </div>
 
-###### Fig 11: DeepVariant Model Workflow
+###### Fig 11: DeepVariant Model Workflow 
 
 #### Comparison with other Variant Calling methods
 
 As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
 
+As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predicts Genotype Likelihoods for Homozygous Reference (Same as reference), Heterezygous, or Homozygous Alteranate (Non-reference). Based on that, it emits a variant call if highest likelihood is for  Heterezygous or Homozygous Alteranate. uses CNN. 
+
+The CNN can be trained by feeding the CNN with aligned reads encoded into pileup images, something like Figure 12, and making the model target corresponding genotype likelihoods. Thus, we leverage the convolutional filter and pooling layers of CNN that make it able to take high dimensional data - read bases, quality of of bases and neighboring bases - just all the BAM file features. Essentially, the CNN is now just performing Image Classification.
+
+![](https://github.com/google/deepvariant/raw/r1.1/docs/images/inference_flow_diagram.svg)
+###### Figure 12 The workflow explained by DeepVariant open0source github Readme. 
+
+The deployment of the model can be done easily by running DeepVariant Docker container. Let's explore what kind of inputs go into the command 
+
 ### Other applications
-
-## Conclusion
-
-Conclusion...
-
----
 
 ### References
 
@@ -281,5 +288,7 @@ Conclusion...
 18. SAMtools Pileup Format http://samtools.sourceforge.net/pileup.shtml
 19. Nagyfi Richárd. “The Differences between Artificial and Biological Neural Networks.” Medium, Towards Data Science, 4 Sept. 2018, towardsdatascience.com/the-differences-between-artificial-and-biological-neural-networks-a8b46db828b7. Accessed 15 Dec. 2020.
 20. Dickson, Ben. “What Is Deep Learning?” PCMAG, 8 Aug. 2019, www.pcmag.com/news/what-is-deep-learning. Accessed 15 Dec. 2020.
-
+21. https://samtools.github.io/hts-specs/VCFv4.1.pdf
+22.
+23.
 ‌
