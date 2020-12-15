@@ -1,5 +1,7 @@
 # In Depth Look at Next Generation Sequencing
-BENG 183 Final | Dheerav Chitalia | Dylan Lam | Alejandro Ramos
+Dheerav Chitalia | Dylan Lam | Alejandro Ramos
+BENG 183: Applied Genomic Technologies
+Professor Sheng Zhong
 
 ## Library Preparation
 
@@ -169,4 +171,6 @@ Cortes, Kamila Caraballo, et al. “Next-Generation Sequencing of 5′ Untransla
 Robin, Jérôme D., et al. “Comparison of DNA Quantification Methods for Next Generation
   Sequencing.” Scientific Reports, vol. 6, no. 1, 2016, doi:10.1038/srep24067.
 
+CSE 185: Advanced Bioinformatics Lab - Professor Melissa Gymrek
 
+BENG 183: Applied Genomic Technologies - Professor Sheng Zhong
