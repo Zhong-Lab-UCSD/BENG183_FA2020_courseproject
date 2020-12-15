@@ -18,10 +18,9 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 
 ## 1. Introduction<a name="1"></a>
 
-<!---
-add pic of ChIP
--->
+
 ![chip_seq pipeline](./images/Intro.png)
+
 ChIP-Sequencing stands for chromatin-immunoprecipitation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
 
 The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, histone modifications, nucleosome positioning, and other protein-DNA interactions.
@@ -32,9 +31,8 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ### 1) Experimental Workflow<a name="21"></a>
 
-<!---
-add pics
--->
+![chip_seq experimental](./images/experimental.png)
+
 
 1. **Crosslink**:
 The proteins are first crosslinked to the DNA using formaldehyde.
@@ -50,6 +48,8 @@ The crosslinks are reversed and the DNA is purified using the antibody-bound mag
 The immunoprecipitated DNA is now prepared to be used for a next-generation sequencing to be analyzed for DNA binding sites.
 
 ### 2) Computational Analysis<a name="22"></a>
+
+![chip_seq experimental](./images/computational.jpg)
 
 Depending on if there is a small-scale analysis, like a single or small sample,or a large-scale anaylsis with many samples, different analysis strategies may be used. Peak calling is comparing different peaks from each experiment. For larger-scale analyses, a relaxed threshold to compare the peaks may be used. Normally differential analysis is used for small-scale samples, but other analysis strategies may be used to further analyze: 
 - Functional analysis: motif analysis, gene ontology
