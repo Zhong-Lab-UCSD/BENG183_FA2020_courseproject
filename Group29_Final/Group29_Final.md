@@ -241,7 +241,7 @@ From this example we got our **p-val to be equal to 0.125**. What do we do now?
 
 After obtaining the p-value, a decision can now be made! 
 There are two possible decisions:
-* **Reject the H0** if the test statistic is greater than our level of significance.
+* **Reject the H0** if the p-value is less than our level of significance .
 * Don’t Reject, **accept, the H0 otherwise**
 
 The smaller the p-value → the greater the belief we have against the H0
@@ -250,6 +250,9 @@ The smaller the p-value → the greater the belief we have against the H0
 
 The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reject the null hypothesis*
 
+> From our previous example, we saw that our p-value was **0.125** which is higher than our level of significance. 
+> 0.125 > 0.05 
+> So we can say that **we accept the H0** and that there is no statistical significance 
 
 #### *What if the decision we made is wrong?*
 There are two types of errors that we can make and they are: 
