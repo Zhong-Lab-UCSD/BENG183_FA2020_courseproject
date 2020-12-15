@@ -35,14 +35,13 @@ With the invention of new OMIC technologies, as well as with the advancement in 
 
 ## OMICS
 
-Omics are the different science branches of Biology, which have the suffix of *-omics*, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents al the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References).  A few Omic technologies are shown below with explanations as to what they study:
+Omics are the different science branches of Biology, which have the suffix of _-omics_, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents al the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References). A few Omic technologies are shown below with explanations as to what they study:
 
 - Genomics: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
 - Transcriptomics: studies the transcriptome, which is the collection of all mRNA
-- Proteomics: studies all protein as well as their properties and functional roles 
+- Proteomics: studies all protein as well as their properties and functional roles
 
-With the summary of what some of these Omics technologies do, the overall objective of Omics as a whole is to identify, characterize and quantify all biological molecules that are involved in the structure, function and dynamics of a cell, tissue, or organism [(7)](#References). 
-
+With the summary of what some of these Omics technologies do, the overall objective of Omics as a whole is to identify, characterize and quantify all biological molecules that are involved in the structure, function and dynamics of a cell, tissue, or organism [(7)](#References).
 
 ---
 
@@ -111,29 +110,38 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ### Autoencoders
 
+Another type of artificial neural networks are the autoencoders which employ efficient data encoding to learn a given dataset in an unsupervised manner [(11)](#References). We can think of autoencoders as two funnels where in the first pass we go from a high dimension input to a lower dimensionality. Then we use the output of the first funnel to pass it through a reverse funnel, where we go from a data with low dimensions to a higher dimensionality.
+
+![Autoencoder](./Images/autoencoder.PNG)
+
+###### Fig 6. Represents a diagram of a general architecture for autoencoders. In this case, the input data are images.
+
 ---
+
+As seen in the image above, there are two main sections to the autoencoder: Encoder and Decoder. The encoder makes reference to the first funnel, where we compress of the input data as a way of feature extraction. That is to say that by reducing the dimensions of the input data we force the encoder to learn the features that are crucial to understand and represent the data given. Once we reach the bottleneck, the decoder comes into play, where the objective is to reverse engineer the original data given the output of the encoder (which has a lower dimensionality).  
+Autoencoders can be utilized for a wide variety of applications: dimensionality reduction, image compression, image denoising, feature extraction, recommendation systems, sequence to sequence prediction, image generation, among others [(12)](#References). In the area of oncology, researchers utilized the ability of autoencoders to feature extract to attempt to discover relationships between multi-omics and medical data as seen in the paper "Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice" [(13)](#References).
 
 ## Applications in OMICS and Precision Medicine
 
-As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications also improve and give rise to precision medicine from analyzing medical imaging to get a specific diagnosis for a person [(5)](#References). 
+As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications also improve and give rise to precision medicine from analyzing medical imaging to get a specific diagnosis for a person [(5)](#References).
 
 Some other examples of what deep learning applications can be used for are explained below:
 
 ### Genomics and Sequence analysis
 
-There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References). 
+There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References).
 
 ### Transcriptomics
 
 In transcriptomics, which is the omics technology that quantifies RNA expression levels, deep learning algorithms use generally expression matrices of different gene expression levels as their input. Therefore, with the output of these deep learning methods, many applications can be conducted. For example, CNNs are used to identify actual splice junctions from false positives generated from RNA-seq reads alignment. Also, using a DNN with a Bayesian statistical model to analyze differential splicing between different samples using RNA-seq data. One final example is the use of an RNN to differentiate between coding and non-coding RNAs [(5)](#References).
 
-### Epigenomics 
+### Epigenomics
 
-Epigenomics studies the DNA structure modifications that has the potential of modifying gene expression. These changes, which were learned at the beginning  of BENG 183, are for example DNA methylation and histone modifications. Therefore, just like the previous methods discussed, deep learning methods can be used on methylation matrices, ChIP- and CLIP-seq data, DNase I sequencing data in order to predict and use it in many applications. Some examples are: CNNs have been used to predict sequences recognizes by DNA- and RNA-binding proteins; CNNs also have predicted the 3D chromatin state in a cell; and a final example is that a CNN was used to predict gene expression from histone modification data [(5)](#References).
+Epigenomics studies the DNA structure modifications that has the potential of modifying gene expression. These changes, which were learned at the beginning of BENG 183, are for example DNA methylation and histone modifications. Therefore, just like the previous methods discussed, deep learning methods can be used on methylation matrices, ChIP- and CLIP-seq data, DNase I sequencing data in order to predict and use it in many applications. Some examples are: CNNs have been used to predict sequences recognizes by DNA- and RNA-binding proteins; CNNs also have predicted the 3D chromatin state in a cell; and a final example is that a CNN was used to predict gene expression from histone modification data [(5)](#References).
 
 ### Medical Imaging
 
-Medical imaging is a crucial component in the healthcare industry to treat patients. With the introduction of deep learning methods in this field, it has helped push transition medicine to transition into precision medicine.  Omics data analysis has also helped precision medicine from the study of diseases at different molecular levels, such as DNA sequences and RNA expression, to determine if any have been altered.  To understand the importance of using medical imaging in deep learning methods, we will explore various applications and uses there have been. Deep Leaning Methods are used in identifying skin cancer; for example, CNNs have been used to predict whether a certain skin lesion is cancer or not with the input of clinical images. Moreover, it has applications in identifying brain tumors, where CNNs and SAEs are applied on MRI images to predict and identify characteristics of tumors. One final example is in the diagnosis of medical conditions with X-ray images. One such example is a CNN trained to detect vessel regions for the diagnosis of coronary artery disease [(5)](#References).
+Medical imaging is a crucial component in the healthcare industry to treat patients. With the introduction of deep learning methods in this field, it has helped push transition medicine to transition into precision medicine. Omics data analysis has also helped precision medicine from the study of diseases at different molecular levels, such as DNA sequences and RNA expression, to determine if any have been altered. To understand the importance of using medical imaging in deep learning methods, we will explore various applications and uses there have been. Deep Leaning Methods are used in identifying skin cancer; for example, CNNs have been used to predict whether a certain skin lesion is cancer or not with the input of clinical images. Moreover, it has applications in identifying brain tumors, where CNNs and SAEs are applied on MRI images to predict and identify characteristics of tumors. One final example is in the diagnosis of medical conditions with X-ray images. One such example is a CNN trained to detect vessel regions for the diagnosis of coronary artery disease [(5)](#References).
 
 ![DL Applications in Omics](./Images/DLApplicationsOmics.jpg)
 
@@ -145,7 +153,7 @@ Medical imaging is a crucial component in the healthcare industry to treat patie
 
 <!--CNN for medical images here-->
 
-As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs can be used in genomics and sequence analysis, transcriptomics, epigenomics, medical imaging, and many other areas. The next section of the paper will focus on a specific example of CNN applications in Omics data analysis, and that is in the detection of SNPs/indels and other variants. 
+As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs can be used in genomics and sequence analysis, transcriptomics, epigenomics, medical imaging, and many other areas. The next section of the paper will focus on a specific example of CNN applications in Omics data analysis, and that is in the detection of SNPs/indels and other variants.
 
 ---
 
@@ -194,3 +202,6 @@ Conclusion...
 8. Vailati-Riboni M., Palombo V., Loor J.J. (2017) What Are Omics Sciences?. In: Ametaj B. (eds) Periparturient Diseases of Dairy Cows. Springer, Cham. https://doi.org/10.1007/978-3-319-43033-1_1
 9. Gertych, A., Swiderska-Chadaj, Z., Ma, Z., Ing, N., Markiewicz, T., Cierniak, S., Salemi, H., Guzman, S., Walts, A. E., & Knudsen, B. S. (2019, February 6). Convolutional neural networks can accurately distinguish four histologic growth patterns of lung adenocarcinoma in digital slides. Scientific Reports. https://www.nature.com/articles/s41598-018-37638-9?error=cookies_not_supported&code=1e50ee0c-b6fa-430e-bfd6-129301dc481c
 10. Cancer diagnosis in histopathological image: CNN based approach. (2019, January 1). ScienceDirect. https://www.sciencedirect.com/science/article/pii/S2352914819301133 (#10)
+11. Wikipedia contributors. (2020, December 2). Autoencoder. Wikipedia. https://en.wikipedia.org/wiki/Autoencoder#:%7E:text=An%20autoencoder%20is%20a%20type,to%20ignore%20signal%20%E2%80%9Cnoise%E2%80%9D.
+12. Mantri, N. (2019, July 20). Applications of Autoencoders. OpenGenus IQ: Learn Computer Science. https://iq.opengenus.org/applications-of-autoencoders/
+13. Simidjievski, N. (2019). Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice. Frontiers. https://www.frontiersin.org/articles/10.3389/fgene.2019.01205/full
