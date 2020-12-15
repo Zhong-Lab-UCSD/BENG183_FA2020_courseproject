@@ -268,8 +268,8 @@ Here is an illustration of the type of decisions that can be made:
 
 ![Errors](/Group29_Final/type-1-2-errors.png)
 
-Is it possible to remove all errors?
-	It isn’t because there is a tradeoff between the types of error; if we decrease the probability of one then the probability of the other increases and vise versa. This is seen by the following graph.
+#### Is it possible to remove all errors?
+**It isn’t** because there is a tradeoff between the types of error; if we decrease the probability of one then the probability of the other increases and vise versa. This is seen by the following graph.
 
 ![tradeoffs](/Group29_Final/tradeoffbetweenerrors.png)
 
