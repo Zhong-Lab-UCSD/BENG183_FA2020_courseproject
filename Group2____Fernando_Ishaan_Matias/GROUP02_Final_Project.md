@@ -294,11 +294,25 @@ Besides performance, let us compare the technology itself. While statistical met
 
 The improvement of performance of DeepVariant from that of GATK was found to be even more with PacBio CCS than it was with typical Illumina Sequencing data. This is the benfit of automated unbiased feature extraction process. This unbiased nature can be seen the form of an observation that "at lower coverage GATK and SpeedSeq would call more A > T, C > A G > T and T > A substitutions than expected from the distribution of variants in the human genome. At the same time, false positive and false negative calls by DeepVariant seemed to be independent with respect to the base change."[(25)](#References)
 
-DeepVariant also offers the option flag of region to make analysis not heavier than required.
+DeepVariant also offers the option flag of region to make analysis not heavier than required. It has been shown to reduce Variant Calling time by 50% as compared to traditional methods [(25)](#References) by taking GPU computing CUDA support.
 
 As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
 
 ### Other applications
+
+While DeepVariant is the classic example of Variant Caller using Deep Learning, NeuSomatic is another deep convolutional neural network based approach that addresses besides the variety of sequencing technologies and strategies, the last challenge of Variant Calling we discussed earlier - detecting Somatic Variants well despite varying tumor purity.
+
+Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalant. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from mutitude of types of High throughput expaeriments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. Thus, this one tool has been fostering Precision Medicine in multiple ways.
+
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig2_HTML.jpg?as=webp)
+###### Fig 15 DeepBind Training Workflow [(26)](#References)
+
+Besides application of sequencing and othe rhigh throughput data, Neural Networks have even been used to improve sequencing technoilogies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
+
+### Conclusion
+Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automatino of feature extraction, flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
+
+It has definitely caused a recent shift in the Bioinformatics approaches and has brought fresh perspective of moving a bit away from focussing too much Biological features and let the computational approaches detect the different features in Biology automatically for better prediction of Biology.
 
 ### References
 
@@ -327,3 +341,4 @@ As discussed above, deep learning methods allow more flexibilty in feature exatr
 23. https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
 24. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
 25. Evaluating the Performance of NGS Pipelines on Noisy WGS Data, (2018, January 16), https://blog.dnanexus.com/2018-01-16-evaluating-the-performance-of-ngs-pipelines-on-noisy-wgs-data/
+26. Alipanahi, B., Delong, A., Weirauch, M. et al. Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning. Nat Biotechnol 33, 831–838 (2015). https://doi.org/10.1038/nbt.3300
