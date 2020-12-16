@@ -19,13 +19,13 @@ Figure 1: An Illustration of Kmeans Algorithm. **Figure by Sheng Zhong, “Beng1
 The pseudocode of K-means clustering is as follows:
 ```
 kmeans(X: {x_1,x_2,...,x_n}, k)
-    centroids: {c_1,c_2,...,c_k} = random_points(k)     \\randomly initialize k centroids
-	Y: {y_1,y_2,...,y_n} = new list(n)                  \\initialize the output, y_1 will be x_1's cluster
+    centroids: {c_1,c_2,...,c_k} = random_points(k)     		\\randomly initialize k centroids
+	Y: {y_1,y_2,...,y_n} = new list(n)           			\\initialize the output, y_1 will be x_1's cluster
 	while the clustering changes: 
 		for x_i in X:
-			y_i = closest_centroid(centroids,x_i)       \\find the closest centroid for each data point
+			y_i = closest_centroid(centroids,x_i)       	\\find the closest centroid for each data point
 		for c_i in centroids:
-			c_i = update_centroid(Y)                    \\update each centroid based on current assginment
+			c_i = update_centroid(Y)                    	\\update each centroid based on current assginment
     return Y
 ```
 
@@ -99,9 +99,9 @@ import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
-data = np.array() #data initialization, needs to be an array
-kmeans = KMeans(n_clusters=2) #initialize number of clusters, K
-kmeans.fit_predict(data) #fit data points with kmeans
+data = np.array() 		#data initialization, needs to be an array
+kmeans = KMeans(n_clusters=2)	#initialize number of clusters, K
+kmeans.fit_predict(data) 	#fit data points with kmeans
 ```
 
 Requirement: Python 3.8 (as Python 3.9 would not currently work). sklearn package.  
@@ -119,9 +119,9 @@ import numpy as np
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
-data = np.array() #data initialization, needs to be an array
-kmeans = KMeans(n_clusters=2) #initialize number of clusters, K
-kmeans.fit_predict(data) #fit data points with kmeans
+data = np.array() 		#data initialization, needs to be an array
+kmeans = KMeans(n_clusters=2) 	#initialize number of clusters, K
+kmeans.fit_predict(data) 	#fit data points with kmeans
 
 
 plt.scatter(data[:,0], data[:,1], s = 10, c = kmeans.labels_, cmap='rainbow')
@@ -140,7 +140,7 @@ plt.show()
 ### 4.1. Limitations of K-means Clustering<a name="4.1"></a>
 1. One of the limitations is that the k value is chosen manually
 2. When updating the centroids, the new mean vector can be deeply influenced by the outliers. Therefore, consider removing or clipping outliers before clustering.
-3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases (unknown author, unknown date). 
+3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
 ![10Dimensions](4.1.1_10Dimensions.png)
 
@@ -151,7 +151,7 @@ Figure 4: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advant
 ### 4.2. Advantages of K-means Clustering<a name="4.2"></a>
 1. K-Means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge.  Compared to other clustering methods. Agglomerative hierarchical clustering is in O(n^3). If speed is your priority work, K-Means can work well with the large dataset. 
 
-2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (unknown author, unknown date). 
+2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
 ![WidthsAdvantage](4.2_DifferentKMeans.png)
 
