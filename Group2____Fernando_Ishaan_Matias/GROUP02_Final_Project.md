@@ -236,7 +236,7 @@ As you can see in table 1, pileup file gives information position-wise (column 2
 
 VCF on the other hand is the standard outout format of variant callers. 
 ###### Table 2 - Example section of a VCF File from VCF format information given by SAMtools [(21)](#References)
-![](Images/VCF.png)
+![VCF](Images/VCF.png)
 
 Tabe 2 shows different Variants, each with what chromosome they lie on, their exact starting position on that chromosome, the ID given by dbSNP - the databse of all sorts of ploymorphisms (or '.' if unknown), reference base, altenate base (eg: first row - substitution G -> A, fourth row - deletion of T), and the quality score of variant out of 100 (not reading quality but the probability of it being an SNV), the filter passed (pass means good enough) - So while the first row is good SNP because it passes the quality filter, the second row shows filter q10 which means it's a possible SNP - and the rest of the columns show additional information such predicted genotype (GN) - 0|1 meaning heterozygous and 0|0 meaning homozygous non-reference.
 
