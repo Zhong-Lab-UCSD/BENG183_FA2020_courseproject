@@ -44,36 +44,36 @@ H0: μ = 0			 	H0: μ ≥ 0 					H0: μ ≤ 0
 H1: μ ≠ 0				H1: μ < 0					H1: μ > 0
 
 #### Testing your knowledge. Create the following hypotheses labeling your null and alternative hypothesis.
-The equality of male and female birth rates.
+1. The equality of male and female birth rates.
 
 Answer:
 >! Null hypothesis: The birth rates of males and females are equal.
 >! Alternative hypothesis: The birth rates of males and females are not equal.
 >! This is the earliest use of statistical hypothesis testing, created in the 1700s by John Arbuthnot and continued by Pierre-Simon Laplace (of the famous Laplace transform in Calculus).
 
-A lady’s ability to discern whether tea or milk was added first to a cup.
+2. A lady’s ability to discern whether tea or milk was added first to a cup.
 
-	Answer:
+Answer:
 >! Null hypothesis: The probability of guessing randomly (50%) is equal to the lady's answers on whether tea then milk and milk then tea were added.
 >! Alternative hypothesis: The lady’s answers are not random.
 >! This is a famous British example known as the *Lady tasting tea*, by Dr. Muriel Bristol
 
- A defendant's guilt under the assumption that the defendant is innocent until proven guilty.
+ 3. A defendant's guilt under the assumption that the defendant is innocent until proven guilty.
 
-	Answer:
+Answer:
 >! Null hypothesis: The defendant is innocent.
 >! Alternative hypothesis: The defendant is guilty.
 
-That a person is clairvoyant when blindly calling suites.
+4. That a person is clairvoyant when blindly calling suites.
 
-	Answer:
+Answer:
 >! Null hypothesis: That the probability of the clairvoyant’s guesses are equal to or less than the probability of guessing the suite at random.
 >! Alternative hypothesis: That the probability of the clairvoyant’s predictions are greater than the probability of guessing the suite at random. 
 
 
-That the presence of a gene increases the chances of developing cancer.
+5. That the presence of a gene increases the chances of developing cancer.
 
-	Answer:
+Answer:
 >! Null hypothesis: The presence of a gene does not change the probability of developing cancer.
 >! Alternative hypothesis: The presence of a gene does change the probability of developing cancer.
 
