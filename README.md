@@ -11,4 +11,3 @@ Tutorial for git and markdown writing please refer to piazza final paper post.
 
 
 
-
