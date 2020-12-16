@@ -256,7 +256,7 @@ As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predict
 The CNN can be trained by feeding the CNN with aligned reads encoded into pileup images, something like Figure 12, and making the model target corresponding genotype likelihoods. Thus, we leverage the convolutional filter and pooling layers of CNN that make it able to take high dimensional data - read bases, quality of of bases and neighboring bases - just all the BAM file features. Essentially, the CNN is now just performing Image Classification.
 
 ![](https://github.com/google/deepvariant/raw/r1.1/docs/images/inference_flow_diagram.svg)
-###### Figure 12 The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
+###### Fig 12 The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
 
 The deployment of the model can be done easily by following the pipeline shown above. Input: BAM file, output: VCF.
 Google Brain Team reccomends running DeepVariant Docker container. Let's explore what kind of inputs go into the command to run DeepVariant:
@@ -275,15 +275,25 @@ Google Brain Team reccomends running DeepVariant Docker container. Let's explore
 ```
 (Given by a DeepVariant pipeline tutorial [(23)](#References)
 
-So really all it takes as input is the familiar BAM file, reference genome. Optionally you can set flags like  model type and regions which we will explain importance of in the next section.
+So really all it takes as input is the familiar BAM file, reference genome. You can set option flags like  model type and regions which we will explain importance of in the next section.
 
 #### Comparison with other Variant Calling methods
 
 DeepVariant was developed by the Google Brain Team in response to the PrecisionFDA Truth Challenge, and was declared as the most accurate Variant caller at the time. In fact, this was even confirmed by studies systemetically comparing different Variant Callers [(24)](#References)
 
+DeepVariant is also cost-effective and fast since it has been especially designed to be deployable on Cloud. Also, DeepVariant has been found to perform remarkably even on low quality data [(25)](#References)
+
+Besides performance, let us compare the technology itself. While statistical methods require us to find special filters that can make it work on different data like long-reads data, DeepVariant, like any AI solution, automates that by boiling that down to retraining the existing default model on long read data and making the thus specialized models available through that model type flag we saw earlier. In fact, DeepVariant has been experimentally found to be perfoming better than the statistical methods with filters applied, as shown in Figure 13.
+
+![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2A_SNP.png)
+![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2B_Indel.png)
+###### Fig 13 Comparison of (Left) DeepVariant retrained with PacBio CCS data, with (Right) GATK with a Hard Filter applied designed for optimal performance with PacBioCCS
+
+The improvement of performance of DeepVariant from that of GATK was found to be even more with PacBio CCS than it was with typical Illumina Sequencing data. This is the benfit of automated unbiased feature extraction process. 
+
+DeepVariant also offers the option flag of region to make analysis not heavier than required.
 
 As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
-
 
 ### Other applications
 
@@ -313,4 +323,4 @@ As discussed above, deep learning methods allow more flexibilty in feature exatr
 22. https://github.com/google/deepvariant
 23. https://github.com/google/deepvariant/blob/r0.9/docs/deepvariant-quick-start.md
 24. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
-‌
+‌25. Evaluating the Performance of NGS Pipelines on Noisy WGS Data, (2018, January 16), https://blog.dnanexus.com/2018-01-16-evaluating-the-performance-of-ngs-pipelines-on-noisy-wgs-data/
