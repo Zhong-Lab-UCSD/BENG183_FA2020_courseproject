@@ -31,19 +31,19 @@ kmeans(X: {x_1,x_2,...,x_n}, k)
 
 ## 3. Implementation<a name="3"></a>
 With a given dataset, we could perform K-Means clustering easily through the steps below:
-1. [Normalizing the raw data](#3.1)
+1. [Standardizing the raw data](#3.1)
 2. [Choosing a statistically reasonable k: Elbow Method](#3.2)
 3. [Initializing Centroids](#3.3)
 4. [Code Implementation](#3.4)
 5. [Visualization (Plotting) of the Clustering Results](#3.5)
 
-### 3.1. Normalizing the raw data<a name="3.1"></a>
-An important step we have to do before we actually use k means clustering to process our data is normalization. 
+### 3.1. Standardizing the raw data<a name="3.1"></a>
+An important step we have to do before we actually use k means clustering to process our data is standardization. 
 ![Normalization Is Important](images/3.1_normalizationIsImportant.png)
 
 Table 1: Gene expression levels of four genes in patients with different cancer subtypes. **Table by Sheng Zhong, “Midterm2”, 2020, Beng183 FA20**.
 
-Taking the question 7 from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in the ranges of expression levels will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
+Taking the question 7 from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression levels will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
 
 The function used to calculate the euclidean distance between patient P_i=(p1_i, p2_i, p3_i, p4_i) and centroid C_j=(c1_j, c2_j, c3_j, c4_j) is 
 ```
@@ -55,7 +55,15 @@ update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3
 ```
 Let's think about what the functions above tell us. The euclidean distance is based on all four genes, while the distance p3_i-c3_j is likely to be greater than other three distance because of the larger range of the expression level of gene 3. So if a patient P_i has expression level p3_i such that p3_i-c3_j is small, then it will be assign to the cluster of C_j no matter if the differences p1_i-c1_j, p2_i-c2_j, or p4_i-c4_j is small. 
 
-As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to normalize the raw data to bring all the variables to the same range so that all genes have the same importance (Lakshmanan 2019).
+As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to standardize the raw data to transform all variables to comparable scales so that all genes have the same importance (Lakshmanan 2019).
+
+We can standarize our data easily using sklearn package in Python. 
+```python
+from sklearn.preprocessing import StandardScaler
+data = np.array() 		#data initialization, needs to be an array
+scaler = StandardScaler() 	#scaler initialization
+data_scaled = scaler.fit_transform(data)	#standardize the data using the standard scaler
+```
 
 
 ### 3.2. Choosing a statistically reasonable K: Elbow Method<a name="3.2"></a>
@@ -68,8 +76,8 @@ See an example of Elbow Plot below:
 
 Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering” (2017)**.
 
-The two graphs are the line graphs of the sum of squared errors with respect to their k numbers for two randomly generated datasets. The elbow point is the point where the sum of errors begins decreasing slowly. 
-As we can see, a number of 3 would be a good K selection. 
+The two graphs are the line graphs of the sum of squared errors with respect to their k numbers for two randomly generated datasets. **The elbow point is the point where the sum of errors begins decreasing slowly**. 
+As we can see, for Dataset A, a number of 3 would be a good K selection where the slope of the curve changes rapidly. However, for Dataset B, there is not a clear elbow point since the curve is rather comparably smooth. In this case, we might need to try other methods of K selection (e.g. the silhouette score) (Gove, 2017).
 
 ### 3.3. Initializing centroids<a name="3.3"></a>
 The performance of k-means clustering relies on good initial centroids. Bad initialization may end up getting undesirable clusters. We will briefly talk about how to select good initial centroids.
