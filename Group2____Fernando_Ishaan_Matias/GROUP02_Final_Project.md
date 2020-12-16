@@ -65,15 +65,7 @@ As mentioned above, ANNs were biological neural networks because they are made b
 
 #### Basic design:
 
-- Image of a simple neural network
-- Inputs are training data ($x$ for each training example), first layer outputs just that
-- In the forward-propagation step, the outputs of activation function of neurons in one layer are successively applied weights and other parameters ($w,b$) on and fed to next layer in forward fashion. Output of final is the expected output ( $\hat{y}$ for each training example)
-- Loss function ( $L(\hat{y},y)$ ) compares expected output with real output of training data ($y$ for each training example)
-- Cost function $ J $ is the average of $L$ across all training examples.
-- In back-propagation step, We use Gradient Descent to optimize Cost Function, i.e, find the parameters that minimize the Cost Function.
-- In Gradient Descent, we change the parameters by a step proportional to the slope of Cost function for those parameters.
-- So for each parameter $w$, $ \frac{\partial J}{\partial w} $ is computed by chain rule.
-- Iteratively, we minimize $ J $ by iteratively in each forward propagation step (except initial) tuning the parameter $w$ in the direction $ -\frac{\partial J}{\partial w} $ This algorithm called gradient descent helps **learn** the parameters.
+![](Images/ANN.png)
 
 This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
 Furthermore, the example we saw is a Deep Feed-Forward NN (DFF), but there are different NN architectures specific to different uses.
