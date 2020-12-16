@@ -305,7 +305,7 @@ Besides application of sequencing and other high throughput data, Neural Network
 ### Conclusion
 Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automation of feature extraction, more transferable approaches (like Image Classification) flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
 
-It has definitely caused a recent shift in the Bioinformatics approaches to less specialized and more widespread compuatational tasks like Image Classification or Natural Language Processing, and has brought fresh perspective of moving a bit away from focussing too much Biological features and let the computational approaches detect the different features in Biology automatically for better prediction of Biology.
+It has definitely caused a recent shift in the Bioinformatics approaches to less specialized and more widespread compuatational tasks like Image Classification or Natural Language Processing, and has brought fresh perspective of moving a bit away from focussing too much on 'manual' Biological feature selection and let the 'machine' detect the different Biological features for better predictions to drive Biological discovery.
 
 ### References
 
