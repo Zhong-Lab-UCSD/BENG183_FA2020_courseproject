@@ -33,18 +33,18 @@ The fastq file contains multiple sequences, and there will be 4 lines representi
 4) Line 4 is a sequence of phred quality scores, each corresponding to a base in line 2. For example, the green box shows the score for that base “T” is “G”. The scores are represented in ASCII values, and a greater score means less probability of error, i.e, higher accuracy and higher quality.
 The following chars are used to represent phred quality scores:
 
- ``'!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~``
+ ```!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~```
 
 “!” represents the lowest quality (it has the smallest ASCII value) and “~” represents the highest quality.
 
 **Tips:**
-Counting the number of reads in a fastq file: Note that “@” can also be the first character of line 4. In other words, all sequence id starts with an “@”, but not all lines starting with “@” is a sequence id. Therefore, do not use grep -c '^@' filename.fq to count the number of reads. Use wc -l filename.fq instead. It will give the number of lines in the file, and you can get the number of reads by dividing that number by 4. The number of reads will also be included in the fastqc report.
+Counting the number of reads in a fastq file: Note that “@” can also be the first character of line 4. In other words, all sequence id starts with an “@”, but not all lines starting with “@” is a sequence id. Therefore, do not use ```grep -c '^@' filename.fq``` to count the number of reads. Use wc -l filename.fq instead. It will give the number of lines in the file, and you can get the number of reads by dividing that number by 4. The number of reads will also be included in the fastqc report.
 
 ## 2.Quality check of the raw reads
 The first step is to check the quality of the raw reads using fastqc.
 Get help:
 
-`fastqc -h	//gives the description and usage of the fastqc package`
+`fastqc -h	  //gives the description and usage of the fastqc package`
 
 How to run fastqc:
 
