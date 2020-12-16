@@ -77,57 +77,68 @@ Each link corresponds to a test. The color of the bulletin points shows the qual
 The following graphs are results from running fastqc on [female_midgut1_R1_raw.fastq.gz](http://sysbio.ucsd.edu/public/wenxingzhao/CourseFall2019/DS_raw/female_midgut1_R1_raw.fastq.gz), which is a RNAseq data of drosophila melanogaster.
 
 #### How to interpret the test results
-- Basic statics:
+- Basic statics
+
 This table gives some simple composition statistics for the analyzed file. Note that for sequence length, it should provide the length of the shortest and longest sequence in the set. In the picture below, it’s only providing one value because all sequences in this file have the same length.
 
 ![Basic statics](https://github.com/ZhiyiZhu0226/BENG183/blob/main/basic%20statistics.PNG?raw=true)
 
 - Per base sequence quality
+
 The plot shows the Phred quality score of each base for all reads (Red: bad; Orange: reasonable; Green: good). The x axis is the position of each base, and the y axis is the Phred quality score. Shown is a good quality graph, whereas the score for most bases are in the green region.
 
 ![Per base sequence quality](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20base%20sequence%20quality.png?raw=true)
 
 - Per tile sequence quality
+
 This is a heatmap that gives the flow cell quality by individual tiles. The y-axis is a tile, the x axis is a base, and the color is the quality score. Having bright blue for most regions indicates good quality. Other colors indicate there are problems with specific tiles and sequence quality in those regions may be lower. The picture below shows there are potential problems for tile 2215-2305.
 
 ![Per tile sequence quality](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20tile%20sequence%20quality.png?raw=true)
 
 - Per base sequence content
+
 This graph shows the percentage of each base (ATCG) at each position of all reads. When analyzing RNA, this test will likely fail or produce warning because the primers used during PCR have arbitrarily chosen sequences. This test will still fail even if we cut the reads, yet in most cases, this won't have much of a negative effect on the following steps in the pipeline.
 
 ![Per base sequence content](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20base%20sequence%20content.png?raw=true)
 
 - Per sequence quality scores
+
 The y-axis is the number of reads, and the x-axis is the mean Phred score of a read. The graph below shows that most reads have high average Phred scores, and thus most reads have high quality.
 
 ![Per sequence quality scores](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20sequence%20quality%20scores.png?raw=true)
 
 - Per sequence GC content
+
 Y-axis stands for the number of reads with a GC presentation of x, and x-axis stands for the GC content. Theoretically the distribution should be normal, and any other distribution may indicate contamination or adapter sequences. (This graph shows a bad GC content)
 
 ![Per sequence GC content](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20sequence%20GC%20content.png?raw=true)
 
 - Per base N content
+
 This graph shows the percentage of undefined base at certain positions among all reads. The following graph shows a good result that has a flat line with y=0. Consider resequencing if y is too high at any position.
 
 ![Per base N content](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Per%20base%20N%20content.png?raw=true)
 
 - Sequence Length Distribution
+
 X-axis is the length of a read, and y-axis is the number of reads that has length of x. Since we haven’t trimmed the raw reads yet, all the reads should have a length of 125.
 
 ![Sequence Length Distribution](https://github.com/ZhiyiZhu0226/BENG183/blob/main/Sequence%20Length%20Distribution.png?raw=true)
 
 - Sequence Duplication Levels
+
 The x-axis shows a sequence is found in the file for how many times, and the y-axis shows the percent of reads with that sequence. High duplication levels could come from adapters, biased enrichment during PCR, or transposons. However, it’s common to have high duplication levels when sequencing RNA since some gene fragments have higher expressions and thus have more duplications. Due to the threshold used by the program, this test will likely fail even the duplication level is expected in this case.
 
 ![Sequence Duplication Levels](https://github.com/ZhiyiZhu0226/BENG183/blob/main/sequence%20duplication%20levels.png?raw=true)
 
 - Overrepresented sequences
+
 This table lists all of the reads that make up more than 0.1% of the total. Overrepresented sequences could result from contamination, unremoved adapters, or genes that are highly significant.
 
 ![Overrepresented sequences](https://github.com/ZhiyiZhu0226/BENG183/blob/main/overrepresented%20sequences.PNG?raw=true)
 
 - Adapter content
+
 This graph searches for adapters and shows the location of the adapters. Any line that’s not flat with y=0 indicates there are unremoved adapters.
 
 ![Adapter content](https://github.com/ZhiyiZhu0226/BENG183/blob/main/adapter%20content.png?raw=true)
