@@ -37,9 +37,9 @@ With the invention of new OMIC technologies, as well as with the advancement in 
 
 Omics are the different science branches of Biology, which have the suffix of _-omics_, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents all the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References). A few Omic technologies are shown below with explanations as to what they study:
 
-- __Genomics__: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
-- __Transcriptomics__: studies the transcriptome, which is the collection of all mRNA
-- __Proteomics__: studies all protein as well as their properties and functional roles
+- _Genomics_: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
+- _Transcriptomics_: studies the transcriptome, which is the collection of all mRNA
+- _Proteomics_: studies all protein as well as their properties and functional roles
 
 With the summary of what some of these Omics technologies do, the overall objective of Omics as a whole is to identify, characterize and quantify all biological molecules that are involved in the structure, function and dynamics of a cell, tissue, or organism [(7)](#References).
 
