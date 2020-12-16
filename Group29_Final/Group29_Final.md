@@ -117,7 +117,6 @@ That the presence of a mutated gene increases the chances of developing cancer.
 >! Select a random assortment of the population that both contain and do not contain the gene. Then, over a long period of time, check evolving cancer rates for both groups.
 >! Or compare a control group of mice to genetically engineered mouse models for cancer research as seen [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533445/). 
 
-TODO: Add an example requiring the use of those bioinformatic databases.
 
 These are some *common Bioinformatic Databases*: 
 * GISAID (https://www.gisaid.org/)
@@ -139,22 +138,29 @@ Data will need to be summarized into a *single number* called a **statistic**.
 If the magnitude of the statistic supports *either hypothesis*, then it’s called a **test statistic**.
 
 ### List of Different Test Statistics
-Z-Statistic (Z-Test)
-Determines if two means are different assuming normal distribution using a known standard deviation as the average variation.
-T-Statistic (T-Test)
-Used instead of a Z Test replacing average variation with the sample’s standard deviation.
-Chi-Square Statistic (Chi-Square Test)
-Determines if at least one of these expected percentages are incorrect given our sampling data. Used for tests of homogeneity and tests of independence. Used to test if our sample distribution fits our null distribution for factors which, when added, equal the whole subset. Average variation is replaced with the expected percentages of each given factor.
-Logistic Regression
- Determines if the probability of an obtained event can be shown as a linear function of a combination of predictor variables. Models of the data are in binary values and must not be correlated with each other.
-Linear Regression
-Determines if the data’s relationship can be modeled using a straight line. The relationship between independent and dependent variables is required and correlation could exist.
-Multiple Regression
-Determines if a dependent variable can be determined using multiple independent variables to either create a linear regression or a non-linear regression. It is rare that a dependent variable is explained by only one other variable. It is assumed that there is no major correlation between the independent variables.
-F-Statistic (ANOVA)
-ANOVA stands for analysis of variance. Generally used as the first statistical test as it can compare multiple groups to determine if, given a single variable, somewhere between the groups there is a significant difference. Afterwards, there would still need to occur (N choose 2) T-Tests to find which specific group interactions are statistically significant.
-Multivariate F-Statistic (MANOVA)
-Similar to ANOVA, but compares multiple variables between groups.
+#### Z-Statistic (Z-Test)
+* Determines if two means are different assuming normal distribution using a known standard deviation as the average variation.
+
+#### T-Statistic (T-Test)
+* Used instead of a Z Test replacing average variation with the sample’s standard deviation.
+
+##### Chi-Square Statistic (Chi-Square Test)
+* Determines if at least one of these expected percentages are incorrect given our sampling data. Used for tests of homogeneity and tests of independence. Used to test if our sample distribution fits our null distribution for factors which, when added, equal the whole subset. Average variation is replaced with the expected percentages of each given factor.
+
+##### Logistic Regression
+* Determines if the probability of an obtained event can be shown as a linear function of a combination of predictor variables. Models of the data are in binary values and must not be correlated with each other.
+ 
+##### Linear Regression
+* Determines if the data’s relationship can be modeled using a straight line. The relationship between independent and dependent variables is required and correlation could exist.
+
+##### Multiple Regression
+* Determines if a dependent variable can be determined using multiple independent variables to either create a linear regression or a non-linear regression. It is rare that a dependent variable is explained by only one other variable. It is assumed that there is no major correlation between the independent variables.
+
+##### F-Statistic (ANOVA)
+* ANOVA stands for analysis of variance. Generally used as the first statistical test as it can compare multiple groups to determine if, given a single variable, somewhere between the groups there is a significant difference. Afterwards, there would still need to occur (N choose 2) T-Tests to find which specific group interactions are statistically significant.
+
+#### Multivariate F-Statistic (MANOVA)
+* Similar to ANOVA, but compares multiple variables between groups.
 
 **How to Choose Which Statistical Test**
 
