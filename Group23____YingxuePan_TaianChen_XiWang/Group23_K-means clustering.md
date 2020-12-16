@@ -64,7 +64,7 @@ What elbow method does is essentially running k-means with a range of values of 
 
 See an example of Elbow Plot below:
 
-<img src="3.2_TwoGraphs.png" width="800" height="400" />
+![elbowmethod](3.2_TwoGraphs.png)
 
 Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering” (2017)**.
 
