@@ -1,7 +1,7 @@
 # Proteomic Applications of Supervised Learning
 *Group 26: Veronika Pister, Rohit Kandula, Aditya Chandrasekar*\
 *BENG 183 Fall 2020 Final Project*\
-*University of California, San Diego*\
+*University of California, San Diego*
 
 Contents:
 1. [Supervised Learning Overview](#Supervised-Learning-in-Bioinformatics)\
