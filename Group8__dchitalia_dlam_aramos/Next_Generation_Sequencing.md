@@ -132,9 +132,15 @@ Genome Assembly usually involves taking in a number of sequenced reads which are
 - SSPACE is used for scaffolding contigs using paired-end reads. SSPACE has the feature of extending contigs using reads that are unmappable in the assembly step.
 
 ## Applications
+<<<<<<< Updated upstream
 1. Sequencing and construction of a new genome or transcriptome (De Novo Sequencing)
 2. DNA/RNA Protein Interactions (ChIP Sequencing)
 3. Metagenomics: the study of environmental samples where multiple microbial genomes are analyzed at the same time
+=======
+1. **_De Novo Sequencing_**: refers to the construction of a new genome or transcript. The mapping of reads for this process, especially during alignment, is fairly complicated due to the absence of a reference genome. In this process overlapping sequences are built up into as few large contigs as possible. Provision of high coverage read data increases the amount of overlapping sequences therefore increasing the confidence in sequence assembly.
+2. **_ChIP Sequencing_**: or Chromatin Immunoprecipitation sequencing is used to analyze DNA-protein interactions. In this process, proteins are crosslinked with DNA to preserve the in vivo association. Next, DNA is sheared and a protein specific antibody isolates the DAN via immunoprecipitation. Lastly, the crosslinks are reversed and DAN is purified for sequencing.
+3. Metagenomics: study of environmental samples where multiple microbial genomes are analyzed at the same time
+>>>>>>> Stashed changes
 4. Resequencing: used to determine the genomic variations of a sample in relation to a common reference sequence
 5. Transcriptome Sequencing: Profiling, discovery, and analysis of the entire transcript- especially useful for RNA sequencing
 
