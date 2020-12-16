@@ -65,7 +65,7 @@ As mentioned above, ANNs were biological neural networks because they are made b
 
 #### Basic design:
 
-![](Images/ANN.png)
+![](Images/ANN4.png)
 
 This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
 Furthermore, the example we saw is a Deep Feed-Forward NN (DFF), but there are different NN architectures specific to different uses.
