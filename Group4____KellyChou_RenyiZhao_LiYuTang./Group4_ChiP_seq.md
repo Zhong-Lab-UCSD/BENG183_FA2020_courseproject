@@ -56,9 +56,11 @@ Then, the chromatin is sheared into smaller pieces by sonication or enzymes to d
 Next, the antibodies for the specific protein in question is added.
 
 4. **Immunoprecipitation**
+
 Later, the DNA is immunoprecipitated to isolate and concentrate the particular protein in question.
 
 5. **Purify DNA**
+
 The crosslinks are reversed and the DNA is purified using the antibody-bound magnetic beads.
 
 6. **Prepare for sequencing**
