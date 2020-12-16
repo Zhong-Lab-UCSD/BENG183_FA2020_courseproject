@@ -189,7 +189,7 @@ If the magnitude of the statistic supports *either hypothesis*, then it’s call
 ##### Multivariate F-Statistic (MANOVA)
 * Similar to ANOVA, but compares multiple variables between groups.
 
-###How to Choose Which Statistical Test
+### How to Choose Which Statistical Test
 
 ![flowchart](/Group29_Final/flowchart-for-choosing-a-statistical-test.png)
 
