@@ -1,5 +1,8 @@
 # BENG183_FA2020_courseproject
 
+# Thank you all for submitting your final paper! 
+
+
 Eeach group creat a folder and put your paper md files together with figures within the folder. 
 Folder name should follow format: 
 
