@@ -12,8 +12,8 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang<br>
 3. [Advantages](#3)
 4. [Disadvantages](#4)
 5. [Improved Methodologies](#5)<br>
-    5.1 [Limited Cell Number](#51)<br>
-    5.2 [ChIP-exo](#52)<br>
+    5.1 [ChIP-exo](#51)<br>
+    5.2 [Limited Cell Number](#52)<br>
     5.3 [Re-ChIP](#53)<br>
 6. [Quality Control](#6)<br>
     6.1 [Sequencing Depth](#61)<br>
@@ -125,24 +125,49 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 ## 5. Improved Methodologies<a name="5"></a>
 
-### 5.1 Limited Cell Number<a name="51"></a>
-### 5.2 ChIP-exo <a name="52"></a>
+
+
+### 5.1 ChIP-exo <a name="51"></a>
+<p align="left">
+  <img src="./images/exochip.png" width="400" height="400"/>
+</p>
+In the fragmentation process, ChIP-exo can be performed to increase precision and avoid systematic biases. 
+Standard ChIP-seq experiments that use sonication to fragment chromatin result in libraries containing DNA molecules that are ~200 bases long, even though each protein typically binds only 6-20 bases. In addition, resulting libraries are often contaminated with DNA not bound by the target factor, which has necessitated the use of the input control experiments and is responsible for some common systematic biases. <br><br>
+Instead of sonication, ChIP-exo uses lambda (λ) exonuclease to digest the protein-bound, it can largely eliminate contaminating DNA. It could identify binding sites with single basepair precision, a 90-fold greater precision than when using the standard protocol, and with a 40-fold increase in the signal-to-noise ratio indicating lower background (contaminating) signal.<br><br>
+
+### 5.2 Limited Cell Number<a name="52"></a>
+<p align="left">
+  <img src="./images/linda.png" width="500" height="400"/>
+</p>
+Typically, large numbers of cells (~10 million) are required for a ChIP experiment limiting both the types of cells that can be assayed as well as the number of ChIP experiments that can be performed on a valuable sample. It can be especially challenging in small model organisms where multiple whole animals may be necessary to achieve these quantities. Two protocols have been recently developed to address this problem through post-ChIP DNA amplification. <br><br>
+
 ### 5.3 Re-ChIP  <a name="53"></a>
+
+DNA bound proteins and histone modifications work together and with other genomic modifications to perform cellular functions. For experiments in which different proteins or modifications are at the same genomic location, sequential ChIP, or re-ChIP are performed. <br><br>
+Sequential experiment uses antibodies to different proteins in succession. It can help to determine whether the interactions are simultaneously present or on different chromosomes in the same cell or in different cells. It is helpful to reveal the identities of individual proteins interacting in larger complexes, providing evidence for combinations of factors that will bind together. 
+
 ---
 
 ## 6. Quality Control<a name="6"></a>
 <p align="center">
-  <img src="./images/Quality control.jpg">
+  <img src="./images/Quality control.jpg" >
 </p>
 
 ### 6.1 Sequencing Depthh<a name="61"></a>
-The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus,sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. <br>
-A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
-Increased sequencing depth allows detection of more sites with reduced enrichment. It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. <br>
-It is also noted that DNA sequencing library complexity, which is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. <br>
-Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate. <br>
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus,sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. 
+<br><br>
+A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. 
+<br><br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. 
+<br><br>
+It is also noted that DNA sequencing library complexity, which is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations.
+<br><br>
+Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate. 
+<br><br>
 
 ### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
+The S/N is evaluated by the number and strength of peaks obtained for each ChIP sample. This measure can also be used to assess the degree of noises in the input sample. The ENCODE consortium proposed two metrics, fraction of reads in peaks (FRiP) and cross-correlation profiles (CCPs) to measure the S/Ns.
+<br><br>
 
 
 ---
