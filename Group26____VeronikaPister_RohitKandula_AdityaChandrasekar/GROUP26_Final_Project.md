@@ -11,7 +11,7 @@ Contents:
 2. [Protein Function Prediction](#Predicting-Protein-Function)\
     a. [Framing the Problem with Gene Ontology](#Framing-the-Problem-with-Gene-Ontology)\
     b. [Features for Protein Function](#Features-for-Protein-Function)\
-    e. [Training Algorithms](#Training-Algorithms)
+    c. [Training Algorithms](#Training-Algorithms)
 
 3. [Protein Structure Prediction](#Structure-Prediction)\
     a. [Introduction to Protein Folding](#Introduction-to-Protein-Folding)\
