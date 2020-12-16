@@ -32,13 +32,13 @@ where `closet_centroid(centroids, x_i)` is a function that can find the closest 
 
 ## 3. Implementation<a name="3"></a>
 With a given dataset, we could perform K-Means clustering easily through the steps below:
-1. [Standardizing the raw data](#3.1)
-2. [Choosing a statistically reasonable k: Elbow Method](#3.2)
+1. [Standardizing the Raw Data](#3.1)
+2. [Choosing a Statistically Reasonable k: Elbow Method](#3.2)
 3. [Initializing Centroids](#3.3)
 4. [Code Implementation](#3.4)
 5. [Visualization (Plotting) of the Clustering Results](#3.5)
 
-### 3.1. Standardizing the raw data<a name="3.1"></a>
+### 3.1. Standardizing the Raw Data<a name="3.1"></a>
 An important step we have to do before we actually use k means clustering to process our data is standardization. 
 ![Normalization Is Important](images/3.1_normalizationIsImportant.png)
 
@@ -67,7 +67,7 @@ data_scaled = scaler.fit_transform(data)	#standardize the data using the standar
 ```
 
 
-### 3.2. Choosing a statistically reasonable K: Elbow Method<a name="3.2"></a>
+### 3.2. Choosing a Statistically Reasonable K: Elbow Method<a name="3.2"></a>
 There are a number of ways to do this, but a more common method is the elbow method. 
 What elbow method does is essentially running k-means with a range of values of k, for example, from 1 to 10, and then we calculate and plot the sum of squared errors with each respecting k number in a line chart. Lastly, the elbow point yields some of the best selections. We can do this whole process with pre-installed packages such as the KelbowVisulizer in python and wssplot in R. 
 
@@ -80,16 +80,16 @@ Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, �
 The two graphs are the line graphs of the sum of squared errors with respect to their k numbers for two randomly generated datasets. **The elbow point is the point where the sum of errors begins decreasing slowly**. 
 As we can see, for Dataset A, a number of 3 would be a good K selection where the slope of the curve changes rapidly. However, for Dataset B, there is not a clear elbow point since the curve is rather comparably smooth. In this case, we might need to try other methods of K selection (e.g. the silhouette score) (Gove, 2017).
 
-### 3.3. Initializing centroids<a name="3.3"></a>
+### 3.3. Initializing Centroids<a name="3.3"></a>
 The performance of k-means clustering relies on good initial centroids. Bad initialization may end up getting undesirable clusters. We will briefly talk about how to select good initial centroids.
-#### 3.3.1. Bad initial centroids
+#### 3.3.1. Bad Initial Centroids
 In the example of the graph below, if at least two of the initial centroids chosen happened to be in the bottom cluster then the resulting solution will be very far from the true solution! (Both green and red clusters are actual one cluster).
 There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance (Satyam Kumar, 2020).
 
 ![Bad Initialization](images/3.3.1_Initialization.png)
 Figure 3: Clusters Beginning with a Bad Initialization. **Figure by Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, Research Gate (2017)**.
 
-#### 3.3.2. K-Means++ methods for selecting good initialization points
+#### 3.3.2. K-Means++ Methods for Selecting Good Initialization Points
 Spreading out the initial centroids is a worthy objective for selecting good initialization, given that initial centroids close to each other often give bad results.
 
 Here are general steps:
@@ -182,8 +182,6 @@ Swetha Lakshmanan, “How, When, and Why Should You Normalize / Standardize / Re
 Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering”, 2017, https://bl.ocks.org/rpgove/0060ff3b656618e9136b
 
 Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, 2017, Research Gate, https://www.researchgate.net/figure/Example-of-clusters-begins-with-a-bad-initialization_fig1_319271749
-
-Imad Dabbura, “K-means Clustering: Algorithm, Applications, Evaluation Methods, and Drawbacks”, towards data science, 2018, https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a
 
 Satyam Kumar, “Understanding K-Means, K-Means++ and, K-Medoids Clustering Algorithms”, towards data science, 2020, https://towardsdatascience.com/understanding-k-means-k-means-and-k-medoids-clustering-algorithms-ad9c9fbf47ca
 
