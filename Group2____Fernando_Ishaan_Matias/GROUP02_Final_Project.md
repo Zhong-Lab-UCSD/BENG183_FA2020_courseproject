@@ -300,7 +300,7 @@ Besides, Variant Calling, many other examples of OMICS data analysis using Neura
 
 While CNNs are used often to leverage their ability to take high-dimensional data, a common nature of Biological data, DeePromoter is a unique approach that combines a CNN with LSTM for enhancer prediction. [(28)](#References)
 
-Besides application of sequencing and othe rhigh throughput data, Neural Networks have even been used to improve sequencing technoilogies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
+Besides application of sequencing and other high throughput data, Neural Networks have even been used to improve sequencing technoilogies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
 
 ### Conclusion
 Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automation of feature extraction, more transferable approaches (like Image Classification) flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
