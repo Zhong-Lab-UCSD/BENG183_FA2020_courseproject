@@ -81,13 +81,13 @@ So for large data, we use Convolutional Neural Network Architecture (CNNs) that 
 ##### (a)
 ![Pooling layer example](https://miro.medium.com/max/1400/1*-3-9b0tAakAsdozzhNlEww.png)
 ##### (b)
-###### Fig 2: (a)Example of feature extraction with the help of Convolutional filter layer (b) Example of feature extraction with the help of Pooling layer
+###### Fig 2: (a) Example of feature extraction with the help of Convolutional filter layer (b) Example of feature extraction with the help of Pooling layer
 
 Oncology is one of the areas in the medical field where CNNs are gaining prevalence. One of the papers that explored this possibility is "Convolutional neural networks can accurately distinguish four histologic growth patterns of lung adenocarcinoma in digital slides". To better improve the accuracy when diagnosing Lung Adenocarcinomas (LAC), researchers utilize DL to evaluate distinct histological tumor growth patterns [(9)](#References). There are five main growth patterns of interest when it comes to assaying LAC: Acinar (AC), Microcapillary (MP), Solid (SO), Cribriform (CR) and Non-Tumor (NT). In an effort to automate the task of quantifying these growth patterns, the scientists developed a pipeline that involves a CNN model.
 
 ![CNN Pipeline](./Images/cnn_hist_1.png)
 
-###### Fig 3: Pipeline with a CNN model that classifies the different growth patterns in lung adenocarcinoma (LAC). A: Flow chart describing the model of CNN. B: Flow chart showing the whole pipeline of the project.
+###### Fig 3: Pipeline with a CNN model that classifies the different growth patterns in lung adenocarcinoma (LAC). A: Flow chart describing the model of CNN. B: Flow chart showing the whole pipeline of the project [(9)](#References).
 
 From Figure 3.A, we can observe that the researchers employ a convolutional neural network to predict all five growth patterns (AC, SO, MP, CR and NT) given an image (note that this paper refers to the input images as tiles). In this example, a single histopathology slide yielded 19,942 tiles corresponding to 5 classes and after data augmentation, 797,680 images were used to train the model. Once the CNN model was trained, it was incorporated into the overall pipeline as seen in Figure 3.B. The model is used to be able to classify the tiles to be able to quantify the different growth patterns and later construct the tumor growth pattern map.
 
@@ -103,9 +103,9 @@ These papers not only demonstrate the potential of CNN in a clinical setting but
 
 ### RNNs and LSTMs
 
-Recurrent Neural Networks, or RNNs, are another example of artificial neural networks. RNNs differ to other Neural Networks in that they can take any sized vector as an input, where NNs can only take a fixed size vector. The training process of RNNs is unique. They are able to take input vectors and produce output vectors that are influenced by various things, like weights from inputs, and a hidden state that stores the context from inputs and previous outputs. Thus, it won't guarantee the same output from the same input, since it also takes into consideration the context of previous inputs and outputs. An example of an RNN model is shown in Figure 5, as the input layers also get the context of previous inputs before generating a final output. Therefore, since they are good at processing sequential inputs, RNNs are often used in speech and handwriting recognition [(17)](#References). But, normal RNNs have a short-term memory, which means that they don't retain the context of previous inputs/outputs for long. A model is able to retain this information are called LSTM, which are explained below.
+Recurrent Neural Networks, or RNNs, are another example of artificial neural networks. RNNs differ to other Neural Networks (NNs) in that they can take any sized vector as an input, where NNs can only take a fixed size vector. The training process of RNNs is unique. They are able to take input vectors and produce output vectors that are influenced by various things, like weights from inputs, and a hidden state that stores the context from inputs and previous outputs. Thus, it won't guarantee the same output from the same input, since it also takes into consideration the context of previous inputs and outputs. An example of an RNN model is shown in Figure 5, as the input layers also get the context of previous inputs before generating a final output. Therefore, since they are good at processing sequential inputs, RNNs are often used in speech and handwriting recognition [(17)](#References). But, normal RNNs have a short-term memory, which means that they don't retain the context of previous inputs/outputs for long. A model is able to retain this information are called LSTM, which are explained below.
 
-One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell state which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. LSTMs extend the memory of RNNs by the implementation of 4 gates: the learn gate, the forget gate, the remember gate, and the use gate. Therefore, due to its model characteristics, LSTM are used for example in Natural Language processing tasks [(14, 17)](#References).
+One example of an RNN, which is able to process sequential data as mentioned above, are Long short-term memory, or LSTMs. They have an improved model structure, as they contain additional (memory) gates and a cell state which determines the time it should keep the context of previous inputs/outputs and when it should learn new ones. LSTMs extend the memory of RNNs by the implementation of 4 gates: the learn gate, the forget gate, the remember gate, and the use gate. Therefore, due to its model characteristics, LSTM are used in many tasks such as Natural Language processing tasks [(14, 17)](#References). We will see some examples later on of RNNs used in Omics data analysis. 
 
 ![RNN model](./Images/RNN_model.png)
 
@@ -115,26 +115,26 @@ One example of an RNN, which is able to process sequential data as mentioned abo
 
 ### Autoencoders
 
-Another type of artificial neural networks are the autoencoders which employ efficient data encoding to learn a given dataset in an unsupervised manner [(11)](#References). We can think of autoencoders as two funnels where in the first pass we go from a high dimension input to a lower dimensionality. Then we use the output of the first funnel to pass it through a reverse funnel, where we go from a data with low dimensions to a higher dimensionality.
+Another type of artificial neural networks are the autoencoders which employ efficient data encoding to learn a given dataset in an unsupervised manner [(11)](#References). We can think of autoencoders as two funnels where in the first pass we go from a high dimension input to a lower dimensionality. Then we use the output of the first funnel to pass it through a reverse funnel, where we go from a data with a low dimensionality to a higher dimensionality.
 
 ![Autoencoder](./Images/autoencoder.png)
 
 ###### Fig 6: Represents a diagram of a general architecture for autoencoders. In this case, the input data are images.
 
-As seen in the image above, there are two main sections to the autoencoder: Encoder and Decoder. The encoder makes reference to the first funnel, where we compress of the input data as a way of feature extraction. That is to say that by reducing the dimensions of the input data we force the encoder to learn the features that are crucial to understand and represent the data given. Once we reach the bottleneck, the decoder comes into play, where the objective is to reverse engineer the original data given the output of the encoder (which has a lower dimensionality).  
+As seen in the image above, there are two main sections to the autoencoder: Encoder and Decoder. The encoder makes reference to the first funnel, where we compress the input data as a way of feature extraction. That is to say that by reducing the dimensions of the input data we force the encoder to learn the features that are crucial to understand and represent the data given. Once we reach the bottleneck, the decoder comes into play, where the objective is to reverse engineer the original data given the output of the encoder (which has a lower dimensionality).  
 Autoencoders can be utilized for a wide variety of applications: dimensionality reduction, image compression, image denoising, feature extraction, recommendation systems, sequence to sequence prediction, image generation, among others [(12)](#References). In the area of oncology, researchers utilized the ability of autoencoders to feature extract to attempt to discover relationships between multi-omics and medical data as seen in the paper "Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice" [(13)](#References).
 
 ---
 
 ## Applications in OMICS and Precision Medicine
 
-As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 5. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, varient calling, etc. Many of these applications also improve and give rise to precision medicine from analyzing medical imaging to get a specific diagnosis for a person [(5)](#References).
+As previously explained, Deep Learning algorithms are good for the task of analyzing omics datasets. The workflow of Deep Learning applications in Omics data is depicted in Figure 8. The basic workflow is that deep learning algorithms/methods such as CNNs and RNNs are applied to biological data, such as sequencing data, alignment data, expression matrices, etc. From the output results of the deep learning methods, we get multiple applications, such as alternative splicing analysis, classification, enhancer prediction, variant calling, etc. Many of these applications also improve and give rise to precision medicine from analyzing medical imaging to get a specific diagnosis for a person [(5)](#References).
 
 Some other examples of what deep learning applications can be used for are explained below:
 
 ### Genomics and Sequence analysis
 
-There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and SAEs which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References).
+There are many examples where deep learning methods have been applied to genomics data. One example is using CNNs which detects single-nucleotide polymorphisms (SNP) and indels. Another example is the use of DFFs and Autoencoders (AEs) which predict the effect of genetic variants on gene expression. Finally, CNNs and LSTMs have been used to predict promoter sequences in genes, and CNNs have been used to identify splice junctions [(5)](#References).
 
 An example of the workflow of deep learning methods in genomics is shown below.
 
@@ -170,9 +170,9 @@ As previously mentioned, CNNs have many uses in the analysis of Omics data. CNNs
 
 #### What is Variant Calling
 
-Variants are regions of the genome where the sequence differes from the reference genome. They could be in the form of:
+Variants are regions of the genome where the sequence differs from the reference genome. They could be in the form of:
 
-- Single NUcleotide Variants (SNVs) (which are SNPs if 1% or more frequent in population)
+- Single Nucleotide Variants (SNVs) (which are SNPs if 1% or more frequent in population)
 - Indels
 - Structural Variants (SVs)
   - Copy number Variants (CNVs)
@@ -204,11 +204,11 @@ Even with all these taken care of, somatic variants are not always easy to detec
 
 #### DeepVariant
 
-Use of neural networks can address these challeneges since they automate the feature extraction process without introduing any human bias, or becoming specialized for types of data or types of variants. Instead of making new filters, we just need to retrain the model on new data.
+Use of neural networks can address these challenges since they automate the feature extraction process without introducing any human bias, or becoming specialized for types of data or types of variants. Instead of making new filters, we just need to retrain the model on new data.
 
 #### Background check - Pileup and VCF files
 
-Since in Variant calling we want to analyze different reads at each position, wouldn't it be easier to kind of take the transpose of a BAM file which gives aligned reads info read-wise across positions, and have the information instead position-wise across the reads? A Pileup file does exactly that. While it can be easily generated using SAMtools, GATK etc, most Variant callers take BAM file as input and perform the conversion to Pileup for you by default. Table 1 shows an example of a section of a Pileup file.
+Since in Variant calling we want to analyze different reads at each position, wouldn't it be easier to kind of take the transpose of a BAM file which gives aligned reads info read-wise across positions, and have the information instead position-wise across the reads? A Pileup file does exactly that. While it can be easily generated using SAMtools, GATK etc., most Variant callers take BAM file as input and perform the conversion to Pileup for you by default. Table 1 shows an example of a section of a Pileup file.
 
 ###### Table 1 - Example section of a Pileup file, based on the the information on Pileup format given by SAMtools [(18)](#References)
 
@@ -223,13 +223,13 @@ Since in Variant calling we want to analyze different reads at each position, wo
 |   seq1   | 278 |       G        |     23     |  ....,,.,.,...,,,.,....^k.  | %38\*<<;<7<<7<=<<<;<<<<< |
 |   seq1   | 279 |       C        |     23     |   A..T,,.,.,...,,,.,.....   | ;75&<<<<<<<<<=<<<9<<:<<  |
 
-As you can see in table 1, pileup file gives information position-wise (column 2), shows base in the reference genome at each position (column 3), number of reads aligning at that position (column 4), and what base each read gives at that position (column 5), and then the quality of the base given by each read at that position. For eaxmple, in read results, each '.' refers to the base matching reference genome on forward strand, while ',' on reverse strand. Bases A/C/T/G appearing refer to an SNV substituion of reference genome base to A/C/T/G on forward strand, and a/c/t/g give the same but on reverse strand. So a read result like ,.$.AA...tAAAtA,.tAA.. might look like an SNV (substituted to A on forward strand) on one chromosome while matching reference base on other.
+As you can see in table 1, pileup file gives information position-wise (column 2), shows base in the reference genome at each position (column 3), number of reads aligning at that position (column 4), and what base each read gives at that position (column 5), and then the quality of the base given by each read at that position. For example, in read results, each '.' refers to the base matching reference genome on forward strand, while ',' on reverse strand. Bases A/C/T/G appearing refer to an SNV substituion of reference genome base to A/C/T/G on forward strand, and a/c/t/g give the same but on reverse strand. So a read result like ,.$.AA...tAAAtA,.tAA.. might look like an SNV (substituted to A on forward strand) on one chromosome while matching reference base on other.
 
-VCF on the other hand is the standard outout format of variant callers. 
+VCF on the other hand is the standard output  format of variant callers. 
 ###### Table 2 - Example section of a VCF File from VCF format information given by SAMtools [(21)](#References)
 ![VCF](Images/VCF.png)
 
-Tabe 2 shows different Variants, each with what chromosome they lie on, their exact starting position on that chromosome, the ID given by dbSNP - the databse of all sorts of ploymorphisms (or '.' if unknown), reference base, altenate base (eg: first row - substitution G -> A, fourth row - deletion of T), and the quality score of variant out of 100 (not reading quality but the probability of it being an SNV), the filter passed (pass means good enough) - So while the first row is good SNP because it passes the quality filter, the second row shows filter q10 which means it's a possible SNP - and the rest of the columns show additional information such predicted genotype (GN) - 0|1 meaning heterozygous and 0|0 meaning homozygous non-reference.
+Table 2 shows different Variants, each with what chromosome they lie on, their exact starting position on that chromosome, the ID given by dbSNP - the database  of all sorts of polymorphisms  (or '.' if unknown), reference base, alternate  base (eg: first row - substitution G -> A, fourth row - deletion of T), and the quality score of variant out of 100 (not reading quality but the probability of it being an SNV), the filter passed (pass means good enough) - So while the first row is good SNP because it passes the quality filter, the second row shows filter q10 which means it's a possible SNP - and the rest of the columns show additional information such predicted genotype (GN) - 0|1 meaning heterozygous and 0|0 meaning homozygous non-reference.
 
 #### Structure of DeepVariant Model
 
@@ -242,7 +242,7 @@ Tabe 2 shows different Variants, each with what chromosome they lie on, their ex
 ###### Fig 11: DeepVariant Model Workflow [(3)](#References)
 
 
-As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predicts Genotype Likelihoods for Homozygous Reference (Same as reference), Heterezygous, or Homozygous Alteranate (Non-reference). Based on that, it emits a variant call if highest likelihood is for  Heterezygous or Homozygous Alteranate. uses CNN. 
+As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predicts Genotype Likelihoods for Homozygous Reference (Same as reference), Heterozygous, or Homozygous Alternate  (Non-reference). Based on that, it emits a variant call if highest likelihood is for  Heterozygous or Homozygous Alternate . uses CNN. 
 
 The CNN can be trained by feeding the CNN with aligned reads encoded into pileup images, something like Figure 12, and making the model target corresponding genotype likelihoods. Thus, we leverage the convolutional filter and pooling layers of CNN that make it able to take high dimensional data - read bases, quality of of bases and neighboring bases - just all the BAM file features. Essentially, the CNN is now just performing Image Classification.
 
@@ -250,7 +250,7 @@ The CNN can be trained by feeding the CNN with aligned reads encoded into pileup
 ###### Fig 12: The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
 
 The deployment of the model can be done easily by following the pipeline shown above. Input: BAM file, output: VCF.
-Google Brain Team reccomends running DeepVariant Docker container. Let's explore what kind of inputs go into the command to run DeepVariant:
+Google Brain Team recommends running DeepVariant Docker container. Let's explore what kind of inputs go into the command to run DeepVariant:
 ```sudo docker run \
   -v "${INPUT_DIR}":"/input" \
   -v "${OUTPUT_DIR}:/output" \
@@ -270,24 +270,24 @@ So really all it takes as input is the familiar BAM file, reference genome. You 
 
 #### Comparison with other Variant Calling methods
 
-DeepVariant was developed by the Google Brain Team in response to the PrecisionFDA Truth Challenge, and was declared as the most accurate Variant caller at the time. In fact, this was even confirmed by studies systemetically comparing different Variant Callers [(24)](#References)
+DeepVariant was developed by the Google Brain Team in response to the PrecisionFDA Truth Challenge, and was declared as the most accurate Variant caller at the time. In fact, this was even confirmed by studies systematically comparing different Variant Callers [(24)](#References)
 
 DeepVariant is also cost-effective and fast since it has been especially designed to be deployable on Cloud. Also, DeepVariant has been found to perform remarkably even on low quality data [(25)](#References)
 
 ![](Images/comparePerformChart.png)
-###### Fig 13: Comparision of F1 Score based on data given by different in a study [(25)](#References)
+###### Fig 13: Comparison of F1 Score based on data given by different in a study [(25)](#References)
 
-Besides performance, let us compare the technology itself. While statistical methods require us to find special filters that can make it work on different data like long-reads data, DeepVariant, like any AI solution, automates that by boiling that down to retraining the existing default model on long read data and making the thus specialized models available through that model type flag we saw earlier. In fact, DeepVariant has been experimentally found to be perfoming better than the statistical methods with filters applied, as shown in Figure 13.
+Besides performance, let us compare the technology itself. While statistical methods require us to find special filters that can make it work on different data like long-reads data, DeepVariant, like any AI solution, automates that by boiling that down to retraining the existing default model on long read data and making the thus specialized models available through that model type flag we saw earlier. In fact, DeepVariant has been experimentally found to be performing better than the statistical methods with filters applied, as shown in Figure 13.
 
 ![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2A_SNP.png)
 ![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2B_Indel.png)
 ###### Fig 14: Comparison of (Left) DeepVariant retrained with PacBio CCS data, with (Right) GATK with a Hard Filter applied designed for optimal performance with PacBioCCS
 
-The improvement of performance of DeepVariant from that of GATK was found to be even more with PacBio CCS than it was with typical Illumina Sequencing data. This is the benfit of automated unbiased feature extraction process. This unbiased nature can be seen the form of an observation that "at lower coverage GATK and SpeedSeq would call more A > T, C > A G > T and T > A substitutions than expected from the distribution of variants in the human genome. At the same time, false positive and false negative calls by DeepVariant seemed to be independent with respect to the base change."[(25)](#References)
+The improvement of performance of DeepVariant from that of GATK was found to be even more with PacBio CCS than it was with typical Illumina Sequencing data. This is the benefit of automated unbiased feature extraction process. This unbiased nature can be seen the form of an observation that "at lower coverage GATK and SpeedSeq would call more A > T, C > A G > T and T > A substitutions than expected from the distribution of variants in the human genome. At the same time, false positive and false negative calls by DeepVariant seemed to be independent with respect to the base change."[(25)](#References)
 
 DeepVariant also offers the option flag of region to make analysis not heavier than required. It has been shown to reduce Variant Calling time by 50% as compared to traditional methods [(25)](#References) by taking GPU computing CUDA support.
 
-As discussed above, deep learning methods allow more flexibilty in feature exatraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
+As discussed above, deep learning methods allow more flexibility in feature extraction. An example of this is that DeepVariant has even shown to improved further to incorporate detection of haplotypes. Haplotype phasing involves assigning which of the variants called lie on the same DNA molecule, or the same chromosome. DeepVariant has been shown to account for that better by simply sorting the reads in the pileup by haplotype.
 
 ### Other applications
 
