@@ -1,16 +1,24 @@
-# CHIP-Sequencing
-BENG183 Final Paper
-Date: 12-15-2020
-Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
+![chip_seq pipeline](./images/Intro.png)
+# CHIP-Sequencing and Potential Improvement
+BENG183 Final Paper <br>
+Date: 12-15-2020<br>
+Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang<br>
+
 
 1. [Introduction](#1)
 2. [ChIP-Sequencing Workflow](#2)<br>
-    2.1. [Experimental Workflow](#21)<br>
-    2.2. [Computational Analysis](#22)<br>
+    2.1 [Experimental Workflow](#21)<br>
+    2.2 [Computational Analysis](#22)<br>
 3. [Advantages](#3)
 4. [Disadvantages](#4)
-5. [Improvements and Possible Solutions](#5)
-6. [References](#6)
+5. [Improved Methodologies](#5)<br>
+    5.1 [Limited Cell Number](#51)<br>
+    5.2 [ChIP-exo](#52)<br>
+    5.3 [Re-ChIP](#53)<br>
+6. [Quality Control](#6)<br>
+    6.1 [Sequencing Depth](#61)<br>
+    6.2 [S/N - The Signal To Noise Ratio](#62)<br>
+7. [References](#7)
 
 <!--- 
 (make sure that you're using a "Relative path" of the figure so that when you pull your project folder to course project repo, we can properly see your figures. eg, using ![image info](./pictures/image.png) where your .md file are under the same level with the pictures folder.)
@@ -19,9 +27,11 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 ## 1. Introduction<a name="1"></a>
 
 
-![chip_seq pipeline](./images/Intro.png)
+<p align="center">
+  <img src="./images/Workflow.jpg">
+</p>
 
-ChIP-Sequencing stands for chromatin-immunoprecipitation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
+ChIP-Sequencing stands for chromatin-immunoprecipation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
 
 The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, histone modifications, nucleosome positioning, and other protein-DNA interactions.
 
@@ -29,10 +39,12 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ## 2. ChIP-Sequencing Workflow<a name="2"></a>
 
-### 1) Experimental Workflow<a name="21"></a>
+### 2.1 Experimental Workflow<a name="21"></a>
 
-![chip_seq experimental] <img src="./images/experimental.png" width="600" height="500"/>
 
+<p align="center">
+  <img src="./images/experimental.png" width="500" height="400"/>
+</p>
 
 1. **Crosslink**:
 The proteins are first crosslinked to the DNA using formaldehyde.
@@ -47,9 +59,10 @@ The crosslinks are reversed and the DNA is purified using the antibody-bound mag
 6. **Prepare for sequencing**:
 The immunoprecipitated DNA is now prepared to be used for a next-generation sequencing to be analyzed for DNA binding sites.
 
-### 2) Computational Analysis<a name="22"></a>
-
-![chip_seq experimental](./images/computational.jpg)
+### 2.2 Computational Analysis<a name="22"></a>
+<p align="center">
+    <img src="./images/computational.jpg">
+</p>
 
 Depending on if there is a small-scale analysis, like a single or small sample,or a large-scale anaylsis with many samples, different analysis strategies may be used. Peak calling is comparing different peaks from each experiment. For larger-scale analyses, a relaxed threshold to compare the peaks may be used. Normally differential analysis is used for small-scale samples, but other analysis strategies may be used to further analyze: 
 - Functional analysis: motif analysis, gene ontology
@@ -59,6 +72,32 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ---
 
 ## 3. Advantages<a name="3"></a>
+- **Mapping**
+
+    It can be used to map DNA-binding proteins and histone modifications in a genome-wide manner at base-pair resolution.
+    
+- **Higher resolution, less noise, higher genome coverage and wider dynamic range**
+
+- **Requires few amounts of DNA**
+    
+    Generates a more precise list of protein binding sites and targets of transcription factors, enhancers, and identification of sequence motifs. Detailed profiling of           histone modifications and nucleosome positions enables greater understanding of epigenetic mechanisms in development and differentiation.
+ 
+- **Repetitive regions in the genome can now be examined**
+
+- **Increased sensitivity and specificity**
+
+    Increased sensitivity and specificity in the mapping of transcription factor binding sites can facilitate motif discovery and target identification.
+    
+- **Compatibility with various input of DNA samples.**
+
+- **Single nucleotide resolution**
+
+    While the resolution for ChIP-chip varied by arrays, it is generally in the range of 30-100 bp.
+    
+- **Eliminate signal noise**
+
+    During ChIP-chip’s hybridization process there may be cross-hybridization between imperfectly matched sequences, which adds to signal noise. ChIP-seq is intrinsically         immune to such sources of noise due to the direct sequencing method.
+
 
 ---
 
@@ -73,7 +112,7 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 - **Required large amounts of tissue**
 
-    It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles needed to be compared to the same loci of the control sample to make        the result more accurate.
+    It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles need to be compared to the same loci of the control sample to make        the result more accurate.
 
 - **Prior knowledge of DNA-binding protein required**
 
@@ -84,11 +123,22 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 ---
 
-## 5. Improvements and Possible Solutions<a name="5"></a>
+## 5. Improved Methodologies<a name="5"></a>
+### 5.1 Limited Cell Number<a name="51"></a>
+### 5.2 ChIP-exo <a name="52"></a>
+### 5.3 Re-ChIP  <a name="53"></a>
+---
+## 6. Quality Control<a name="6"></a>
+### 6.1 Sequencing Depthh<a name="61"></a>
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus, the number of called peaks increas as the sequencing depth increases. Sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. <br>
+It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. It is also noted that DNA sequencing library complexity, that is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate.
+
+### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
+
 
 ---
-
-## 6. References<a name="6"></a>
+## 7. References<a name="7"></a>
 1.  Barski, A., & Zhao, K. (2009, January 27). Genomic location analysis by ChIP‐Seq. Retrieved December 07, 2020, from https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcb.22077
 2.  Furey, T. (2012, December). ChIP-seq and beyond: New and improved methodologies to detect and characterize protein-DNA interactions. Retrieved December 07, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/
 3.  Nakato, R., & Sakata, T. (2020, March 30). Methods for ChIP-seq analysis: A practical workflow and advanced applications. Retrieved December 07, 2020, from https://www.sciencedirect.com/science/article/pii/S1046202320300591
