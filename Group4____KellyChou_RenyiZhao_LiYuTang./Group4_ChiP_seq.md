@@ -31,7 +31,7 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ### 1) Experimental Workflow<a name="21"></a>
 
-![chip_seq experimental](./images/experimental.png)
+![chip_seq experimental](./images/experimental.png)<img src="./images/experimental.png" width="940" height="790"/>
 
 
 1. **Crosslink**:
