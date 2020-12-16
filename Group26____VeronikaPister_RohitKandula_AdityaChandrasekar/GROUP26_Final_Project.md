@@ -178,7 +178,7 @@ Most high-performing models take a combined physics-based and supervised learnin
 To understand how a supervised learning algorithm can be applied to proteomics, a high-level overview of AlphaFold, the current state of the art for predicting 3D backbone structure, can paint a great picture of the power of framing biological problems correctly.
 
 ![](./img/AlphaFoldSchematic.JPG)
-Fig ?. High-level schematic of AlphaFold’s algorithm. [[A7]]
+Fig ?. High-level schematic of AlphaFold’s algorithm. [[A7]](#Works-Cited)
 
 #### High-Level Overview of AlphaFold
 
@@ -199,7 +199,7 @@ After training our algorithm on empirically-validated distance matrices, we now 
 
 #### Reasons for Success
 
-Although the computational resources at deep mind played a huge role in the success of AlphaFold in protein folding, many other factors are at play: The design of the neural network supervised learning algorithm (described below), as well as the reliance of statistical feature extraction rather than domain-based feature engineering [[A1]](#Works-Cited). The protein-folding problem had plenty of data involved, making pinning down complex mappings tractable with computational time -- minimizing overfitting and other vagaries of overgeneralization common with unsupervised learning.
+Although the computational resources at deep mind played a huge role in the success of AlphaFold in protein folding, many other factors are at play: The design of the neural network supervised learning algorithm (described below), as well as the reliance of statistical feature extraction rather than domain-based feature engineering [[A9]](#Works-Cited). The protein-folding problem had plenty of data involved, making pinning down complex mappings tractable with computational time -- minimizing overfitting and other vagaries of overgeneralization common with unsupervised learning.
 
 #### Additional Information
 
@@ -215,7 +215,7 @@ Fig ?. Low-level details of neural network architecture. [[A7]](#Works-Cited)
 In the news recently, AlphaFold 2 has beat out AlphaFold and all other protein-folding models, with many claiming the protein-folding problem is finally solved. The comparison in performance of the top models is shown below:
 
 ![](./img/AlphaFold2.JPG)
-Fig ?. Performance of top protein folding models. [[A9]](#Works-Cited)
+Fig ?. Performance of top protein folding models. [[A10]](#Works-Cited)
 
 ### Has the Protein Folding Problem been solved?
 
@@ -225,13 +225,13 @@ Unsupervised methods are great for classification and regression, but they can s
 
 #### "Yes, The Problem has been Solved"
 
-Some say the protein folding problem has been solved by these modern supervised learning techniques, since these models can be treated as the next step in our standard genetic code to amino acid translation table: After translating the codons, we can plug our amino acid sequence into the model to understand protein structure (and guess at function) [[A10]](#Works-Cited). The full molecular biology pipeline is made clearer than ever.
+Some say the protein folding problem has been solved by these modern supervised learning techniques, since these models can be treated as the next step in our standard genetic code to amino acid translation table: After translating the codons, we can plug our amino acid sequence into the model to understand protein structure (and guess at function) [[A8]](#Works-Cited). The full molecular biology pipeline is made clearer than ever.
 
 #### "No, The Problem is yet to be Solved" (And Next Steps)
 
 Again, we don’t truly know understand the biological plausibility of this mapping table (and the problem is complex enough to make us wonder whether we’ll ever get there). Because of the inscrutability of our model, many important questions remain: can we predict secondary structures, post-translational modifications, proteins with multiple stable configurations, prions, etc.
 
-The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, might be a better indicator of how well we've actually "solved" the protein folding problem [[A9]](#Works-Cited), by finding a two-way mapping, but importantly, there’s a huge amount of therapeutic potential. Understanding inverse folding unlocked avenues in protein and drugs engineering, which could serve to be a great tool in years ahead [[A9]](#Works-Cited).
+The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, might be a better indicator of how well we've actually "solved" the protein folding problem [[A10]](#Works-Cited), by finding a two-way mapping, but importantly, there’s a huge amount of therapeutic potential. Understanding inverse folding unlocked avenues in protein and drugs engineering, which could serve to be a great tool in years ahead [[A9]](#Works-Cited).
 
 The knowledge of biophysics gained from AlphaFold can also help us explore other important protein-related questions, especially as it comes to tackling the complexity of protein-protein interaction networks...
 
@@ -263,41 +263,56 @@ An example of a computational success in this field is MIT’s [Struct2Net](http
 
 [2] Lualdi, M., & Fasano, M. (2018). *Statistical analysis of proteomics data: A review on feature selection.* Journal of Proteomics. doi:10.1016/j.jprot.2018.12.004
 
-rohit:
-
 [3] Bonetta, R,  Valentino, G.  Machine learning techniques for protein function prediction. Proteins.  2020; 88: 397– 413. https://doi.org/10.1002/prot.25832
+
 [4]	Kahtani, Abdullah. (2018). A Case Study of the Gene Database Ontology A Case Study of the Gene Database Ontology. 10.13140/RG.2.2.29089.86888.
-[5]	Machine Learning Approaches for Protein–Protein Interaction Hot Spot Prediction: Progress and Comparative Assessment
+
+[5]	Liu, S.; Liu, C.; Deng, L. Machine Learning Approaches for Protein–Protein Interaction Hot Spot Prediction: Progress and Comparative Assessment. Molecules 2018, 23, 2535.
+
 [6]	Chou KC. Prediction of protein signal sequences and their cleavage sites. Proteins. 2001;42:136-139.
+
 [7]	Mondal S, Bhavna R, Mohan Babu R, Ramakumar S. Pseudo amino acid composition and multi-class support vector machines approach for conotoxin superfamily classification. J Theor Biol. 2006 Nov 21;243(2):252-60. doi: 10.1016/j.jtbi.2006.06.014. Epub 2006 Jun 27. PMID: 16890961.
+
 [8]	Khan, Zaheer. (2015). PREDICTION OF ACIDIC AND ALKALINE ENZYME USING PSEUDO AMINO ACID COMPOSITION IN COMBINATION WITH MACHINE LEARNING APROACHES. 10.13140/RG.2.2.17215.51365.
+
 [9]	K. C. Chou and H. B. Shen. MemType- 2L: A Web server for predicting membrane proteins and their types by incorporating evolution information through Pse-PSSM. Biochem Biophys Res Comm, 360:339– 345, 2007.
+
 [10] Qiu W, Li S, Cui X, Yu Z, Wang M, Du J, Peng Y, Yu B. Predicting protein submitochondrial locations by incorporating the pseudo-position specific scoring matrix into the general Chou's pseudo-amino acid composition. J Theor Biol. 2018 Aug 7;450:86-103. doi: 10.1016/j.jtbi.2018.04.026. Epub 2018 Apr 18. PMID: 29678694.
+
 [11] Jeong JC, Lin X, Chen XW. On position-specific scoring matrix for protein function prediction. IEEE/ACM Trans Comput Biol Bioinform. 2011;8:308-315.
+
 [12] Vandecraen, Joachim & Monsieurs, Pieter & Mergeay, Max & Leys, Natalie & Aertsen, Abram & Van Houdt, Rob. (2016). Zinc-Induced Transposition of Insertion Sequence Elements Contributes to Increased Adaptability of Cupriavidus metallidurans. Frontiers in Microbiology. 7. 10.3389/fmicb.2016.00359.
+
 [13] Hira ZM, Gillies DF. A Review of Feature Selection and Feature Extraction Methods Applied on Microarray Data. Adv Bioinformatics. 2015;2015:198363. doi:10.1155/2015/198363
+
 [14] Al-Shahib A, Breitling R, Gilbert DR. Franksum: new feature selec- tion method for protein function prediction. Int J Neural Syst. 2005; 15:259-275.
+
 [15] Fernandez-Lozano C, Cuinas RF, Seoane JA, Fernandez-Blanco E, Dorado J, Munteanu CR. Classification of signaling proteins based on molecular star graph descriptors using machine learning models. J Theor Biol. 2015;384:50-58.
-[16] Kumar C, Li G, Choudhary A. Enzyme function classification using
-protein sequence features and random forest. Proceedings of IEEE International Conference on Bioinformatics and Biomedical Engi- neering Beijing, China, 2009
+
+[16] Kumar C, Li G, Choudhary A. Enzyme function classification using protein sequence features and random forest. Proceedings of IEEE International Conference on Bioinformatics and Biomedical Engi- neering Beijing, China, 2009
+
 [17] García-Gonzalo, Esperanza & Fernández-Muñiz, Zulima & Garcia Nieto, Paulino Jose & Sánchez, Antonio & Menéndez, Marta. (2016). Hard-Rock Stability Analysis for Span Design in Entry-Type Excavations with Learning Classifiers. Materials. 9. 531. 10.3390/ma9070531.
+
 [18] You R, Zhang Z, Xiong Y, Sun F, Mamitsuka H, Zhu S. GOLabeler: improving sequence-based large-scale protein function prediction by learning to rank. Bioinformatics. 2018;34:2465-2473.
+
 [19] https://www.researchgate.net/figure/K-nearest-neighbor-algorithm-illustration-The-green-circle-is-the-sample-which-is-to-be_fig14_267953942
+
 [20] J.G. Liao, Khew-Voon Chin, Logistic regression for disease classification using microarray data: model selection in a large p and small n case, Bioinformatics, Volume 23, Issue 15, August 2007, Pages 1945–1951, https://doi.org/10.1093/bioinformatics/btm287
+
 [21] Machine learning versus logistic regression methods for 2-year mortality prognostication in a small, heterogeneous glioma database
 Sandip S Panesar, Rhett N D’Souza, Fang-Cheng Yeh, Juan C Fernandez-Miranda
 bioRxiv 472555; doi: https://doi.org/10.1101/472555
-[22] Silva M, Leijoto L, Nobre C. Algorithms analysis in adjusting the SVM parameters: an approach in the prediction of protein function. J Appl Artif Intell. 2017;31:316-331.
 
+[22] Silva M, Leijoto L, Nobre C. Algorithms analysis in adjusting the SVM parameters: an approach in the prediction of protein function. J Appl Artif Intell. 2017;31:316-331.
 
 
 aditya (will reformat):
 
-[A1] http://sitn.hms.harvard.edu/flash/2010/issue65/
+[23] http://sitn.hms.harvard.edu/flash/2010/issue65/
 
-[A2] Dobson, C. *Protein folding and misfolding*. Nature 426, 884–890 (2003). https://doi.org/10.1038/nature02261
+[24] Dobson, C. *Protein folding and misfolding*. Nature 426, 884–890 (2003). https://doi.org/10.1038/nature02261
 
-[A3]
+[25]
 Maxwell I. Zimmerman, Justin R. Porter, Michael D. Ward, et al. (30 Jun 2020) *Citizen Scientists Create an Exascale Computer to Combat COVID-19* BioRxiv. https://doi.org/10.1101/2020.06.27.175430
 
 [A4] Agostini FP, Soares-Pinto Dde O, Moret MA, Osthoff C, Pascutti PG. *Generalized simulated annealing applied to protein folding studies.* J Comput Chem. 2006 Aug;27(11):1142-55. doi: 10.1002/jcc.20428.
@@ -312,9 +327,10 @@ PK, Pushmeet Kohli (15 Jan 2020) *AlphaFold: Using AI for scientific discovery* 
 [A8] Callaway, Ewen. (10 Dec 2020) *It will change everything’: DeepMind’s AI makes gigantic leap in solving protein structures* Nature 588, 203–204.
 https://www.nature.com/articles/d41586-020-03348-4
 
-[A9] The AlphaFold Team. (30 Nov 2020) *AlphaFold: a solution to a 50-year-old grand challenge in biology* Deep Mind. https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology
+[A9] https://onlinelibrary.wiley.com/doi/full/10.1002/prot.25834
 
-[A10] https://onlinelibrary.wiley.com/doi/full/10.1002/prot.25834
+[A10] The AlphaFold Team. (30 Nov 2020) *AlphaFold: a solution to a 50-year-old grand challenge in biology* Deep Mind. https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology
+
 
 interactomics:
 [V3] Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. *A SARS-CoV-2 protein interaction map reveals targets for drug repurposing.* Nature 583, 459–468 (2020). https://doi.org/10.1038/s41586-020-2286-9
