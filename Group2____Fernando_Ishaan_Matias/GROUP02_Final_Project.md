@@ -64,7 +64,8 @@ As mentioned above, ANNs were biological neural networks because they are made b
 ### ANNs
 
 #### Basic design:
-
+![](https://miro.medium.com/max/2500/1*ZB6H4HuF58VcMOWbdpcRxQ.png)
+###### Fig 1: Basic design of ANN - a fully connectected multilayer architecture [(27)](
 ![](Images/ANN4.png)
 
 This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
@@ -77,12 +78,10 @@ If we want to use high dimensional data, such as images (with each pixel corresp
 So for large data, we use Convolutional Neural Network Architecture (CNNs) that have layers themselves comprising of Convolutional filters and pooling layers, that act like feature reduction, reducing the number of parameters needed. Thus, CNNs are often used for DL with images.
 
 ![Convolution filter example](https://cdn.analyticsvidhya.com/wp-content/uploads/2018/12/Screenshot-from-2018-12-07-15-21-02.png)
-
-###### Fig 1: Example of feature extraction with the help of Convolutional filter layer
-
+##### (a)
 ![Pooling layer example](https://miro.medium.com/max/1400/1*-3-9b0tAakAsdozzhNlEww.png)
-
-###### Fig 2: Example of feature extraction with the help of Pooling layer
+##### (b)
+###### Fig 2: (a)Example of feature extraction with the help of Convolutional filter layer (b) Example of feature extraction with the help of Pooling layer
 
 Oncology is one of the areas in the medical field where CNNs are gaining prevalence. One of the papers that explored this possibility is "Convolutional neural networks can accurately distinguish four histologic growth patterns of lung adenocarcinoma in digital slides". To better improve the accuracy when diagnosing Lung Adenocarcinomas (LAC), researchers utilize DL to evaluate distinct histological tumor growth patterns [(9)](#References). There are five main growth patterns of interest when it comes to assaying LAC: Acinar (AC), Microcapillary (MP), Solid (SO), Cribriform (CR) and Non-Tumor (NT). In an effort to automate the task of quantifying these growth patterns, the scientists developed a pipeline that involves a CNN model.
 
@@ -334,3 +333,4 @@ It has definitely caused a recent shift in the Bioinformatics approaches to less
 24. Supernat, A., Vidarsson, O., Steen, V. and Stokowy, T. (2018). Comparison of three variant callers for human whole genome sequencing. Scientific Reports, 8(1).
 25. Evaluating the Performance of NGS Pipelines on Noisy WGS Data, (2018, January 16), https://blog.dnanexus.com/2018-01-16-evaluating-the-performance-of-ngs-pipelines-on-noisy-wgs-data/
 26. Alipanahi, B., Delong, A., Weirauch, M. et al. Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning. Nat Biotechnol 33, 831–838 (2015). https://doi.org/10.1038/nbt.3300
+27. The Artificial Neural Networks handbook: Part 1, https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4
