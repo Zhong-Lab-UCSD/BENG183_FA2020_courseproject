@@ -134,7 +134,7 @@ Application: Scoring Gene Ontology Terms for a target protein[[18]](#Works-Cited
 Logistic Regression is used to classify data based on probability and as such involves predictive analysis. The probability of input data belonging to a certain classification is what the algorithm returns[[20]](#Works-Cited).
 
 ![](./img/logreg.jpg)
-[[21]](#Works-Cited)
+fig 9. [[21]](#Works-Cited)
 
 #### Efficiency
 
@@ -167,19 +167,19 @@ Protein-folding is fundamentally a chemical process -- one of trying to find the
 
 We have plenty of data for empirically-verified protein folding patterns already, and so statistics can provide a powerful tool to generalize to new structures. On the way, difficult statistical questions arise: which patterns and secondary structures generalize, and which do not? These difficult questions about generalization lend themselves to abstracting statistics away into modern supervised learning approaches, which manage to pick up complex signals and learn to ignore noise if given appropriate data and time. [[27]](#Works-Cited)
 
-Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is difficult to intuit, and we have lots of data from which to pick up signal from [[27]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
+Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is complex, and we have lots of data from which to pick up signal from [[27]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
 
 #### Combined Approaches
 
-Most high-performing models take a combined physics-based and supervised learning approach, leveraging simulation techniques in specific contexts. Since the physics simulation is computationally expensive, the main driver of algorithm design is supervised learning, which the physics helps ground the learning algorithm’s output in biologically plausible results. [[28]](#Works-Cited)
+Most high-performing models take a combined physics-based and supervised learning approach, leveraging simulation techniques in specific contexts. Since the physics simulation is computationally expensive, the main driver of most modern algorithms is supervised learning, where physics helps ground the learning  output in biologically plausible results. [[28]](#Works-Cited)
 
 ### AlphaFold
 
-To understand how a supervised learning algorithm can be applied to proteomics, a high-level overview of AlphaFold, the current state of the art for predicting 3D backbone structure, can paint a great picture of the power of framing biological problems correctly.
+To understand how a supervised learning algorithm can be applied to proteomics, a high-level overview of AlphaFold, the current state of the art for predicting 3D backbone structure, can paint a good picture of the power of framing biological problems correctly.
 
 ![](./img/AlphaFoldSchematic.JPG)
 
-Fig ?. High-level schematic of AlphaFold’s algorithm. [[29]](#Works-Cited)
+Fig 10. High-level schematic of AlphaFold’s algorithm. [[29]](#Works-Cited)
 
 #### High-Level Overview of AlphaFold
 
@@ -191,7 +191,7 @@ After finding both the distance matrix and the angles, physics simulation techni
 
 ![](./img/DistanceMatrix.JPG)
 
-Fig ?. The main driver of the algorithm: Distance-Matrix prediction. [[30]](#Works-Cited)
+Fig 11. The main driver of the algorithm: Distance-Matrix prediction. [[30]](#Works-Cited)
 
 #### Pairwise Distance Matrix Prediction
 
@@ -211,7 +211,7 @@ More specific information about the neural network architecture used in AlphaFol
 
 ![](./img/NeuralNetworkArchitecture.JPG)
 
-Fig ?. Low-level details of neural network architecture. [[29]](#Works-Cited)
+Fig 12. Low-level details of neural network architecture. [[29]](#Works-Cited)
 
 #### AlphaFold 2
 
@@ -219,7 +219,7 @@ In the news recently, AlphaFold 2 has beat out AlphaFold and all other protein-f
 
 ![](./img/AlphaFold2.JPG)
 
-Fig ?. Performance of top protein folding models. [[32]](#Works-Cited)
+Fig 13. Performance of top protein folding models. [[32]](#Works-Cited)
 
 ### Has the Protein Folding Problem been solved?
 
@@ -233,9 +233,9 @@ Some say the protein folding problem has been solved by these modern supervised 
 
 #### "No, The Problem is yet to be Solved" (And Next Steps)
 
-Again, we don’t truly know understand the biological plausibility of this mapping table (and the problem is complex enough to make us wonder whether we’ll ever get there). Because of the inscrutability of our model, many important questions remain: can we predict secondary structures, post-translational modifications, proteins with multiple stable configurations, prions, etc.
+Again, we don’t truly know understand the biology of this mapping table (and the problem is complex enough to make us wonder whether we’ll ever get there). Because of the inscrutability of our model, many important questions remain: how can we predict secondary structures, post-translational modifications, proteins with multiple stable configurations, prions, etc.
 
-The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, might be a better indicator of how well we've actually "solved" the protein folding problem [[32]](#Works-Cited), by finding a two-way mapping, but importantly, there’s a huge amount of therapeutic potential. Understanding inverse folding unlocked avenues in protein and drugs engineering, which could serve to be a great tool in years ahead [[31]](#Works-Cited).
+The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, this might be a better indicator of how well we've actually "solved" the protein folding problem [[32]](#Works-Cited), but there’s also a huge amount of therapeutic potential. Understanding inverse folding would unlock avenues in protein and drug engineering, which could serve to be a great tool in years ahead [[31]](#Works-Cited).
 
 The knowledge of biophysics gained from AlphaFold can also help us explore other important protein-related questions, especially as it comes to tackling the complexity of protein-protein interaction networks...
 
@@ -248,7 +248,7 @@ Interactomics is the study of molecular interactions within the cell. This inclu
 ### Current Approaches
 The current experimental approaches to map out molecular interactions within the cell have crucial limitations. In this course, we have thoroughly explored ChIP-seq and its various applications. ChIP-seq is a method of studying protein-genome interactions for a protein of interest through immunoprecipitation. ChIP-seq is highly effective but requires a long and cumbersome experimental process. Because of this strain and the low throughput of ChIP-seq (only one protein per experiment), it is difficult to perform extensive studies with only ChIP sequencing.
 
-A common method to study protein-protein interactions in vivo is affinity purification mass spectrometry (AP-MS). AP-MS involves overexpressing a protein of interest and utilizing a molecular flagging system to determine binding partners. As with many spectrometry methods, AP-MS requires highly specialized equipment and is not accessible to most labs. Similarly to ChIP-seq, AP-MS has very limited throughput. Each experiment only determines the binding partners of a single protein at a time. [[34]](#Works-Cited)
+A common method to study protein-protein interactions *in vivo* is affinity purification mass spectrometry (AP-MS). AP-MS involves overexpressing a protein of interest and utilizing a molecular flagging system to determine binding partners. As with many spectrometry methods, AP-MS requires highly specialized equipment and is not accessible to most labs. Similarly to ChIP-seq, AP-MS has very limited throughput. Each experiment only determines the binding partners of a single protein at a time. [[34]](#Works-Cited)
 
 There are anywhere between 80,000 and 400,000 different proteins in the human proteome [[35]](#Works-Cited). Thus, these experimental approaches that cover a single protein at a time are insufficient for a complete understanding of the human interactome. The magnitude of the problem demands computational assistance.
 
@@ -257,7 +257,7 @@ The supervised learning approach to interaction prediction is fairly intuitive. 
 
 
 ![](./img/struct2net.png)
-*[[36]](#Works-Cited) Figure ?: This shows a visual representation of the interactions between the enormous amount of proteins stored on the Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows MIT training on highly complex data and adding testing data to that model.*
+*[[36]](#Works-Cited) Figure ?: This visually represents the interactome of Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows Struct2Net's algorithm, Coev2Net, training on highly complex data and placing testing data within the model.*
 
 An example of a computational success in this field is MIT’s [Struct2Net](http://cb.csail.mit.edu/cb/struct2net/webserver/) software [[36]](#Works-Cited). The software takes either one or two amino acid sequences as input. It then maps the amino acids to the closest match in the Protein Data Bank. The Protein Data Bank is a resource to accumulate experimentally derived information about proteins. After determining a match, Struct2Net guesses the interactive domains of the input protein. Finally, interaction predictions are performed with a boosted classifier. Two input amino acid sequences will result in a single interaction prediction. Whereas, a single input protein will return a list of potential interactors.
 
