@@ -10,19 +10,18 @@ Contents:
     c. [Feature Generation & Selection](#Feature-Generation-&-Selection)
 2. [Protein Function Prediction](#Predicting-Protein-Function)\
     a. [Framing the Problem with Gene Ontology](#Framing-the-Problem-with-Gene-Ontology)\
-    b. [Feature Engineering](#Feature-Engineering)\
-    c. [Feature Engineering Applications](#Feature-Engineering-Applications)
-    - [Pseudo Amino Acid Composition](#Pseudo-Amino-Acid-Composition)
-    - [Postion Specific Scoring Matrix](#Position-Specific-Scoring-Matrix)
+    b. [Features for Protein Function](#Features-for-Protein-Function)\
+    e. [Training Algorithms](#Training-Algorithms)
+
 3. [Protein Structure Prediction](#Structure-Prediction)\
     a. [Introduction to Protein Folding](#Introduction-to-Protein-Folding)\
     b. [Possible Approaches](#Possible-Approaches)\
     c. [AlphaFold](#AlphaFold)\
-    d. [Has the Protein Folding Problem Been Solved?](#Has-The-Protein-Folding-Problem-Been-Solved?)\
+    d. [Has the Protein Folding Problem Been Solved?](#Has-The-Protein-Folding-Problem-Been-Solved?)
 4. [Interactome Prediction](#Interactome-Prediction)\
     a. [Biology of the Interactome](#Biology-of-the-Interactome)\
     b. [Current Approaches](#Current-Approaches)\
-    c. [Computational Approaches](#Computational-Approaches)\
+    c. [Computational Approaches](#Computational-Approaches)
 5. [References](#Works-Cited)
 
 ---
@@ -31,14 +30,14 @@ Contents:
 
 ### Problem Domains
 ![](./img/bioinformatics_ML.png)
-*[[1]](#Works-Cited) Figure 1: applications of Machine Learning within the bioinformatics problem domain*
+*[[1]](#Works-Cited) Fig 1: applications of Machine Learning within the bioinformatics problem domain*
 
 Figure 1 depicts the problem domains within bioinformatics which supervised learning can be applied to. Many of these problems have been introduced throughout the course. This figure gives an idea of how impactful supervised learning is and can continue to be in the field of bioinformatics. In the center of the figure, a plethora of proteomics problems are described. The focus of this chapter will be supervised learning in functional prediction, structure prediction, interaction prediction, and the interplay between all three.
 
 ### Supervised Learning
 ![](./img/supervised-machine-learning.png)
 
-*[Figure 2](https://www.javatpoint.com/supervised-machine-learning): Supervised learning follows the general workflow displayed above. The left half of the image depicts the labeled data which characterizes supervised learning.*
+*[Fig 2](https://www.javatpoint.com/supervised-machine-learning): Supervised learning follows the general workflow displayed above. The left half of the image depicts the labeled data which characterizes supervised learning.*
 
 Supervised learning describes the machine learning algorithms which train on labeled input data in order to classify or otherwise analyze testing data. This is in opposition to unsupervised learning which does not interact with labeled data. In previous chapters, we have already discussed the supervised algorithms k nearest neighbors (kNN), linear regression, and support vector machines. Some other common supervised learning algorithms are naive bayes, decision trees, and most recently neural networks.
 
@@ -50,7 +49,7 @@ For the purpose of this chapter, we can assume all of these algorithms are a bla
 
 ### Feature Generation & Selection
 ![](./img/feature_generation.png)
-*Figure 3: This shows the translation of biological data into a vector of features.*
+*Fig 3: This shows the translation of biological data into a vector of features.*
 
 At a high level, feature generation is the act of turning input data into an interpretable vector for algorithmic consumption. Feature generation is a very complex process to fully describe. In its most simplistic form, it is choosing relevant quantifiable “features” of non quantifiable data. Take for example, a protein. To input a protein as training data into an algorithm, it must be reduced to key elements. For example, the amino acid sequence, the amino acid distribution, or the amino acid transitions can be used to represent a protein. Selecting the most useful features is another endeavour that requires extensive statistical analysis or manual expertise. Statistician George Box once sagely quipped "All models are wrong, but some are useful". This very much applies to feature selection [[2]](#Works-Cited). Once features have been decided, they are ogranized into a single vector for each variable of testing data.
 
@@ -64,7 +63,7 @@ Because of the limitations of current biological techniques, we haven’t seen t
 Understanding protein function requires an in-depth knowledge of the various intersections between biological pathways and particles. As such it is important that there exists an accurate representation of protein function in terms of all areas of biological relevance. Gene ontology does just this by providing a comprehensive representation of gene encoding and gene products. It effectively divides protein function into three domains: molecular function, biological process, and cellular component. From these domains further hierarchical division down the line further represents a more encompassing low level representation of all interacting facets of gene encoding and gene products[[4]](#Works-Cited). This representation allows for a clear way in which to frame the protein function needing to be solved and where and how relevant features are present.
 
 ![](./img/GO.png)
-[[4]](#Works-Cited)
+fig 4.[[4]](#Works-Cited)
 
 ### Features for Protein Function
 
@@ -81,7 +80,7 @@ Feature engineering involves the extraction of smaller sets of features from exi
 Current research has really focused on the use of sequence data in conjunction with other features, most notably physicochemical properties. A common protein sequence feature used is the Pseudo Amino Acid Composition[[6]](#Works-Cited). This is a feature vector of size [20+lambda] that depicts the composition of the first 20 amino acids followed by sequence order information. The pseAAC has been used in conjunction with SVMs to classify conotoxin superfamilies[[7]](#Works-Cited).
 
 ![](./img/pseACC.png)
-[[8]](#Works-Cited)
+fig 5. [[8]](#Works-Cited)
 
 ###### Position Specific Scoring Matrix
 Another common protein sequence feature used is the Position Specific Scoring Matrix. This is a matrix that indicates the level of conservation of amino acids at specific sequence positions. High scores in regions of the sequence could hint to some biological relation. One way the PSSM has been used in feature extraction is the development of the Pseudo-PSSM which was made by combining the pseAAC and the PSSM[9]](#Works-Cited).
@@ -91,7 +90,7 @@ This feature extraction has been used in conjunction with SVM in a study on subm
 Jeong et Al. extracted further features sets from a PSSM in conjunction with other features[[11]](#Works-Cited). The first feature set was derived from averaged PSSM profiles over blocks where a PSSM was divided into 20 blocks of 20 features giving a 1x400 feature vector. Another feature set was derived using a similar technique but focusing on sequence domains with similar rates of conservation. A third 1x180 set was developed utilizing consensus sequences in conjunction with 9 physicochemical properties of hydrophobicity, isoelectric point, mess scale, hydrophobicity, hydrophilicity, polar, nonpolar, positive, and negative charge residues. And finally a fourth 1x980 set combining all three feature sets was made. After the utilization of training algorithms feature set 2 was found as most effective[[11]](#Works-Cited). These extractions are a good example of the versatility of feature extraction.
 
 ![](./img/PSSM.png)
- [[12]](#Works-Cited)
+fig 6. [[12]](#Works-Cited)
 
 ##### Feature Selection
 
@@ -117,7 +116,7 @@ Application: Classification of Enzyme function[[16]](#Works-Cited)
 Support Vector Machines is a 2 group classification algorithm that from input data maps points and constructs a hyperplane with the purpose of maximizing the margin from the points.
 
 ![](./img/svm.png)
-[[17]](#Works-Cited)
+fig 7. [[17]](#Works-Cited)
 
 #### kNN
 
@@ -126,7 +125,7 @@ Application: Classification of proteins based on a similarity of function coeffi
 The k-Nearest Neighbor algorithm assumes proximity means similarity and as such there doesn’t exist a traditional training step. Rather, input data is classified based on classification of most of its k-neighbors.
 
 ![](./img/knn.png)
-[[19]](#Works-Cited)
+fig 8. [[19]](#Works-Cited)
 
 #### Logistic Regression
 
@@ -179,6 +178,7 @@ Most high-performing models take a combined physics-based and supervised learnin
 To understand how a supervised learning algorithm can be applied to proteomics, a high-level overview of AlphaFold, the current state of the art for predicting 3D backbone structure, can paint a great picture of the power of framing biological problems correctly.
 
 ![](./img/AlphaFoldSchematic.JPG)
+
 Fig ?. High-level schematic of AlphaFold’s algorithm. [[29]](#Works-Cited)
 
 #### High-Level Overview of AlphaFold
@@ -190,6 +190,7 @@ The main driver of the algorithm is the distance matrix prediction. The angle pr
 After finding both the distance matrix and the angles, physics simulation techniques (gradient descent algorithm on an energy landscape) are employed to find the optimal 3D structure for various random starting points [[30]](#Works-Cited).
 
 ![](./img/DistanceMatrix.JPG)
+
 Fig ?. The main driver of the algorithm: Distance-Matrix prediction. [[30]](#Works-Cited)
 
 #### Pairwise Distance Matrix Prediction
@@ -209,6 +210,7 @@ We’ve treated neural networks as a generic unsupervised learning model, and th
 More specific information about the neural network architecture used in AlphaFold for interested readers:
 
 ![](./img/NeuralNetworkArchitecture.JPG)
+
 Fig ?. Low-level details of neural network architecture. [[29]](#Works-Cited)
 
 #### AlphaFold 2
@@ -216,6 +218,7 @@ Fig ?. Low-level details of neural network architecture. [[29]](#Works-Cited)
 In the news recently, AlphaFold 2 has beat out AlphaFold and all other protein-folding models, with many claiming the protein-folding problem is finally solved. The comparison in performance of the top models is shown below:
 
 ![](./img/AlphaFold2.JPG)
+
 Fig ?. Performance of top protein folding models. [[32]](#Works-Cited)
 
 ### Has the Protein Folding Problem been solved?
@@ -300,13 +303,13 @@ An example of a computational success in this field is MIT’s [Struct2Net](http
 
 [20] J.G. Liao, Khew-Voon Chin, Logistic regression for disease classification using microarray data: model selection in a large p and small n case, Bioinformatics, Volume 23, Issue 15, August 2007, Pages 1945–1951, https://doi.org/10.1093/bioinformatics/btm287
 
-[21] Machine learning versus logistic regression methods for 2-year mortality prognostication in a small, heterogeneous glioma database
+[21] *Machine learning versus logistic regression methods for 2-year mortality prognostication in a small, heterogeneous glioma database*
 Sandip S Panesar, Rhett N D’Souza, Fang-Cheng Yeh, Juan C Fernandez-Miranda
 bioRxiv 472555; doi: https://doi.org/10.1101/472555
 
 [22] Silva M, Leijoto L, Nobre C. Algorithms analysis in adjusting the SVM parameters: an approach in the prediction of protein function. J Appl Artif Intell. 2017;31:316-331.
 
-[23] http://sitn.hms.harvard.edu/flash/2010/issue65/
+[23] “Free Modern Language Association 8th Edition Bibliography & Citation Maker.” BibMe, www.bibme.org/bibliographies/266942990?new=true.“Free Modern Language Association 8th Edition Bibliography & Citation Maker.” BibMe, www.bibme.org/bibliographies/266942990?new=true.
 
 [24] Dobson, C. *Protein folding and misfolding*. Nature 426, 884–890 (2003). https://doi.org/10.1038/nature02261
 
