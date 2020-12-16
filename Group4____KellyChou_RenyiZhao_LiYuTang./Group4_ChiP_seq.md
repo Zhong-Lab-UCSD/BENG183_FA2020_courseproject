@@ -64,10 +64,19 @@ The immunoprecipitated DNA is now prepared to be used for a next-generation sequ
     <img src="./images/computational.jpg">
 </p>
 
-Depending on if there is a small-scale analysis, like a single or small sample,or a large-scale anaylsis with many samples, different analysis strategies may be used. Peak calling is comparing different peaks from each experiment. For larger-scale analyses, a relaxed threshold to compare the peaks may be used. Normally differential analysis is used for small-scale samples, but other analysis strategies may be used to further analyze: 
-- Functional analysis: motif analysis, gene ontology
-- Integration with other technologies
-- Validation: qPCR, knockdown analysis
+After the DNA is prepared for sequencing and mapping, different analysis strategies may be used depending if there is a **small-scale analysis**, like a single or small sample, or a **large-scale anaylsis** with many samples. Normally **differential analysis** is used for small-scale samples with **spike-in analysis** or **de novo normalization** by using different [signal-to-noise (S/N) ratios](#61) and underlying assumptions. For small-scale analyses, **peak-calling strategies** and parameters may be adjusted. For large-scale analyses, it may be wise to **jointly analyze** all the ChIP samples instead of comparing peaks for each sample individually. A **relaxed threshold** to compare the peaks may be used for large-scale analyses.
+
+**Peak calling** is comparing different peaks from each experiment. There are three modes that each require different peak-calling strategies: 
+- **sharp mode**: specific positions in genome
+- **broad mode**: large genomic domains
+- **mixed mode**: both specific positions and large genomic domains
+
+Broad and mixed mode peaks are associated with weak and widespreach enriched regions with no clear peak summits and sequence specficity.
+
+In addition, other analysis strategies may be used to further analyze: 
+- **Functional analysis**: motif analysis, gene ontology
+- **Integration with other technologies**: gene expression, chromatin, genetic variation, DNA methylation
+- **Validation**: qPCR, knockdown analysis
 
 ---
 
