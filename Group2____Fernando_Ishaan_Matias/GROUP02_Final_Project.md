@@ -293,7 +293,7 @@ As discussed above, deep learning methods allow more flexibility in feature extr
 
 While DeepVariant is the classic example of Variant Caller using Deep Learning, NeuSomatic is another deep convolutional neural network based approach that addresses besides the variety of sequencing technologies and strategies, the last challenge of Variant Calling we discussed earlier - detecting Somatic Variants well despite varying tumor purity.
 
-Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalant. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from mutitude of types of High throughput expaeriments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. [(26)](#References) Thus, this one tool has been fostering Precision Medicine in multiple ways.
+Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalent. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from multitude of types of High throughput experiments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. [(26)](#References) Thus, this one tool has been fostering Precision Medicine in multiple ways.
 
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig2_HTML.jpg?as=webp)
 ###### Fig 15: DeepBind Training Workflow [(26)](#References)
@@ -303,9 +303,9 @@ While CNNs are used often to leverage their ability to take high-dimensional dat
 Besides application of sequencing and other high throughput data, Neural Networks have even been used to improve sequencing technologies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
 
 ### Conclusion
-Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automation of feature extraction, more transferable approaches (like Image Classification) flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
+Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automation of feature extraction, more transferable approaches (like Image Classification) flexible approaches that can be extended to different data, and generally cost-effective and fast scalable solutions.
 
-It has definitely caused a recent shift in the Bioinformatics approaches to less specialized and more widespread compuatational tasks like Image Classification or Natural Language Processing, and has brought fresh perspective of moving a bit away from focussing too much on 'manual' Biological feature selection and let the 'machine' detect the different Biological features for better predictions to drive Biological discovery.
+It has definitely caused a recent shift in the Bioinformatics approaches to less specialized and more widespread computational tasks like Image Classification or Natural Language Processing, and has brought fresh perspective of moving a bit away from focusing too much on 'manual' Biological feature selection and let the 'machine' detect the different Biological features for better predictions to drive Biological discovery.
 
 ### References
 
