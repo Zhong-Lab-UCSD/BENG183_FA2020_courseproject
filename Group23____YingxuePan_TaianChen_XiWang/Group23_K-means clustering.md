@@ -137,7 +137,7 @@ Example scatter plot:
 
 ![Example Scatter Plot](3.5_d1kmean.png)
 
-Data size of 500.
+Figure 4: Scatter Plot Example Using Python with a Data Size of 500.
 
 ## 4. Limitations and Advantages<a name="4"></a>
 1. [Limitations of K-means Clustering](#4.1)
@@ -152,7 +152,7 @@ Data size of 500.
 
 ![1000Dimensions](4.1.1_1000Dimensions.png)
 
-Figure 4: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
+Figure 5: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ### 4.2. Advantages of K-means Clustering<a name="4.2"></a>
 1. K-Means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge.  Compared to other clustering methods. Agglomerative hierarchical clustering is in O(n^3). If speed is your priority work, K-Means can work well with the large dataset. 
@@ -161,7 +161,7 @@ Figure 4: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advant
 
 ![WidthsAdvantage](4.2_DifferentKMeans.png)
 
-Figure 5: Generalization of Kmeans. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
+Figure 6: Generalization of Kmeans. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ## 5. References<a name="5"></a>
 Sheng Zhong, “Beng183 FA20 Lecture 15 Machine Learning, part 2”, (2020)
