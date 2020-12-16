@@ -1,19 +1,23 @@
-# CHIP-Sequencing and Potential Improvement
-BENG183 Final Paper
-Date: 12-15-2020
-Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
-
 ![chip_seq pipeline](./images/Intro.png)
+# CHIP-Sequencing and Potential Improvement
+BENG183 Final Paper <br>
+Date: 12-15-2020<br>
+Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang<br>
+
+
 1. [Introduction](#1)
 2. [ChIP-Sequencing Workflow](#2)<br>
-    2.1. [Experimental Workflow](#21)<br>
-    2.2. [Computational Analysis](#22)<br>
+    2.1 [Experimental Workflow](#21)<br>
+    2.2 [Computational Analysis](#22)<br>
 3. [Advantages](#3)
 4. [Disadvantages](#4)
-5. [Improvements and Possible Solutions](#5)
-6. [Quality Control](#6)
-    6.1. [Sequencing Depth](#61)<br>
-    6.2. [Signal To Noise Ratio S/N](#62)<br>
+5. [Improved Methodologies](#5)<br>
+    5.1 [Limited Cell Number](#51)<br>
+    5.2 [ChIP-exo](#52)<br>
+    5.3 [Re-ChIP](#53)<br>
+6. [Quality Control](#6)<br>
+    6.1 [Sequencing Depth](#61)<br>
+    6.2 [S/N - The Signal To Noise Ratio](#62)<br>
 7. [References](#7)
 
 <!--- 
@@ -23,9 +27,11 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 ## 1. Introduction<a name="1"></a>
 
 
+<p align="center">
+  <img src="./images/Workflow.jpg">
+</p>
 
-
-ChIP-Sequencing stands for chromatin-immunoprecipitation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
+ChIP-Sequencing stands for chromatin-immunoprecipation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
 
 The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, histone modifications, nucleosome positioning, and other protein-DNA interactions.
 
@@ -33,7 +39,7 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ## 2. ChIP-Sequencing Workflow<a name="2"></a>
 
-### 1) Experimental Workflow<a name="21"></a>
+### 2.1 Experimental Workflow<a name="21"></a>
 
 
 <p align="center">
@@ -53,7 +59,7 @@ The crosslinks are reversed and the DNA is purified using the antibody-bound mag
 6. **Prepare for sequencing**:
 The immunoprecipitated DNA is now prepared to be used for a next-generation sequencing to be analyzed for DNA binding sites.
 
-### 2) Computational Analysis<a name="22"></a>
+### 2.2 Computational Analysis<a name="22"></a>
 <p align="center">
     <img src="./images/computational.jpg">
 </p>
@@ -82,7 +88,7 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
     Increased sensitivity and specificity in the mapping of transcription factor binding sites can facilitate motif discovery and target identification.
     
-- **It also offers compatibility with various input DNA samples.**
+- **Compatibility with various input of DNA samples.**
 
 - **Single nucleotide resolution**
 
@@ -117,12 +123,18 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 ---
 
-## 5. Improvements and Possible Solutions<a name="5"></a>
-
+## 5. Improved Methodologies<a name="5"></a>
+### 5.1 Limited Cell Number<a name="51"></a>
+### 5.2 ChIP-exo <a name="52"></a>
+### 5.3 Re-ChIP  <a name="53"></a>
 ---
 ## 6. Quality Control<a name="6"></a>
-### 1) Sequencing Depthh<a name="61"></a>
-### 2) Signal To Noise Ratio S/N <a name="62"></a>
+### 6.1 Sequencing Depthh<a name="61"></a>
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus, the number of called peaks increas as the sequencing depth increases. Sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. <br>
+It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. It is also noted that DNA sequencing library complexity, that is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate.
+
+### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
 
 
 ---
