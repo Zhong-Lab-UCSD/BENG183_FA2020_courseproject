@@ -10,7 +10,8 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 3. [Advantages](#3)
 4. [Disadvantages](#4)
 5. [Improvements and Possible Solutions](#5)
-6. [References](#6)
+6. [Improvements and Possible Solutions](#6)
+7. [References](#7)
 
 <!--- 
 (make sure that you're using a "Relative path" of the figure so that when you pull your project folder to course project repo, we can properly see your figures. eg, using ![image info](./pictures/image.png) where your .md file are under the same level with the pictures folder.)
@@ -31,7 +32,7 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ### 1) Experimental Workflow<a name="21"></a>
 
-![chip_seq experimental] <img src="./images/experimental.png" width="600" height="500"/>
+ <img src="./images/experimental.png" width="500" height="400"/>
 
 
 1. **Crosslink**:
@@ -87,8 +88,10 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ## 5. Improvements and Possible Solutions<a name="5"></a>
 
 ---
+## 6. Quality Control<a name="6"></a>
 
-## 6. References<a name="6"></a>
+---
+## 7. References<a name="7"></a>
 1.  Barski, A., & Zhao, K. (2009, January 27). Genomic location analysis by ChIP‐Seq. Retrieved December 07, 2020, from https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcb.22077
 2.  Furey, T. (2012, December). ChIP-seq and beyond: New and improved methodologies to detect and characterize protein-DNA interactions. Retrieved December 07, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/
 3.  Nakato, R., & Sakata, T. (2020, March 30). Methods for ChIP-seq analysis: A practical workflow and advanced applications. Retrieved December 07, 2020, from https://www.sciencedirect.com/science/article/pii/S1046202320300591
