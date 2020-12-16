@@ -298,6 +298,8 @@ Besides, Variant Calling, many other examples of OMICS data analysis using Neura
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig2_HTML.jpg?as=webp)
 ###### Fig 15: DeepBind Training Workflow [(26)](#References)
 
+While CNNs are used often to leverage their ability to take high-dimensional data, a common nature of Biological data, DeePromoter is a unique approach that combines a CNN with LSTM for enhancer prediction. [(28)](#References)
+
 Besides application of sequencing and othe rhigh throughput data, Neural Networks have even been used to improve sequencing technoilogies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
 
 ### Conclusion
@@ -334,3 +336,4 @@ It has definitely caused a recent shift in the Bioinformatics approaches to less
 25. Evaluating the Performance of NGS Pipelines on Noisy WGS Data, (2018, January 16), https://blog.dnanexus.com/2018-01-16-evaluating-the-performance-of-ngs-pipelines-on-noisy-wgs-data/
 26. Alipanahi, B., Delong, A., Weirauch, M. et al. Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning. Nat Biotechnol 33, 831–838 (2015). https://doi.org/10.1038/nbt.3300
 27. The Artificial Neural Networks handbook: Part 1, https://medium.com/coinmonks/the-artificial-neural-networks-handbook-part-1-f9ceb0e376b4
+28. Oubounyt M, Louadi Z, Tayara H, Chong KT. DeePromoter: Robust promoter predictor using deep learning. Front Genet. 2019;10:286.
