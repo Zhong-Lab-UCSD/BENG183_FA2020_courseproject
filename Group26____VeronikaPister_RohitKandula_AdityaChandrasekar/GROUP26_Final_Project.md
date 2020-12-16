@@ -4,20 +4,20 @@
 *University of California, San Diego*
 
 Contents:
-1. [Supervised Learning Overview](#Supervised-Learning-in-Bioinformatics)
-    a. [Problem Domains](#Problem-Domains)
-    b. [Supervised Learning](#Supervised-Learning)
-    c. [Feature Generation & Selection](#Feature-Generation-&-Selection)
-2. [Protein Function Prediction](#Predicting-Protein-Function)
-    a. [Framing the Problem with Gene Ontology](#Framing-the-Problem-with-Gene-Ontology)
-    b. [Feature Engineering](#Feature-Engineering)
-    c. [Feature Engineering Applications](#Feature-Engineering-Applications)
-    - [Pseudo Amino Acid Composition](#Pseudo-Amino-Acid-Composition)
-    - [Postion Specific Scoring Matrix](#Position-Specific-Scoring-Matrix)
-3. [Protein Structure Prediction](#Structure-Prediction)
-    a. [Introduction to Protein Folding](#Introduction-to-Protein-Folding)
-    b. [Possible Approaches](#Possible-Approaches)
-    c. [AlphaFold](#AlphaFold)
+1. [Supervised Learning Overview](#Supervised-Learning-in-Bioinformatics)\
+    a. [Problem Domains](#Problem-Domains)\
+    b. [Supervised Learning](#Supervised-Learning)\
+    c. [Feature Generation & Selection](#Feature-Generation-&-Selection)\
+2. [Protein Function Prediction](#Predicting-Protein-Function)\
+    a. [Framing the Problem with Gene Ontology](#Framing-the-Problem-with-Gene-Ontology)\
+    b. [Feature Engineering](#Feature-Engineering)\
+    c. [Feature Engineering Applications](#Feature-Engineering-Applications)\
+    - [Pseudo Amino Acid Composition](#Pseudo-Amino-Acid-Composition)\
+    - [Postion Specific Scoring Matrix](#Position-Specific-Scoring-Matrix)\
+3. [Protein Structure Prediction](#Structure-Prediction)\
+    a. [Introduction to Protein Folding](#Introduction-to-Protein-Folding)\
+    b. [Possible Approaches](#Possible-Approaches)\
+    c. [AlphaFold](#AlphaFold)\
     d. [Has the Protein Folding Problem Been Solved?](#Has-The-Protein-Folding-Problem-Been-Solved?)
 4. [Interactome Prediction](#Interactome-Prediction)
     a. [Biology of the Interactome](#Biology-of-the-Interactome)
@@ -62,7 +62,7 @@ Because of the limitations of current biological techniques, we haven’t seen t
 
 Understanding protein function requires an in-depth knowledge of the various intersections between biological pathways and particles. As such it is important that there exists an accurate representation of protein function in terms of all areas of biological relevance. Gene ontology does just this by providing a comprehensive representation of gene encoding and gene products. It effectively divides protein function into three domains: molecular function, biological process, and cellular component. From these domains further hierarchical division down the line further represents a more encompassing low level representation of all interacting facets of gene encoding and gene products[[4]](#Works-Cited). This representation allows for a clear way in which to frame the protein function needing to be solved and where and how relevant features are present.
 
-![](./img/GO.png)
+![](./img/GO.png =250x)
 [[4]](#Works-Cited)
 
 ### Features for Protein Function
@@ -79,7 +79,7 @@ Feature engineering involves the extraction of smaller sets of features from exi
 ###### Pseudo Amino Acid Composition
 Current research has really focused on the use of sequence data in conjunction with other features, most notably physicochemical properties. A common protein sequence feature used is the Pseudo Amino Acid Composition[[6]](#Works-Cited). This is a feature vector of size [20+lambda] that depicts the composition of the first 20 amino acids followed by sequence order information. The pseAAC has been used in conjunction with SVMs to classify conotoxin superfamilies[[7]](#Works-Cited).
 
-![](./img/pseACC.png)
+![](./img/pseACC.png =250x)
 [[8]](#Works-Cited)
 
 ###### Position Specific Scoring Matrix
@@ -89,7 +89,7 @@ This feature extraction has been used in conjunction with SVM in a study on subm
 
 Jeong et Al. extracted further features sets from a PSSM in conjunction with other features[[11]](#Works-Cited). The first feature set was derived from averaged PSSM profiles over blocks where a PSSM was divided into 20 blocks of 20 features giving a 1x400 feature vector. Another feature set was derived using a similar technique but focusing on sequence domains with similar rates of conservation. A third 1x180 set was developed utilizing consensus sequences in conjunction with 9 physicochemical properties of hydrophobicity, isoelectric point, mess scale, hydrophobicity, hydrophilicity, polar, nonpolar, positive, and negative charge residues. And finally a fourth 1x980 set combining all three feature sets was made. After the utilization of training algorithms feature set 2 was found as most effective[[11]](#Works-Cited). These extractions are a good example of the versatility of feature extraction.
 
-![](./img/PSSM.png)
+![](./img/PSSM.png =250x)
  [[12]](#Works-Cited)
 
 ##### Feature Selection
@@ -115,7 +115,7 @@ Application: Classification of Enzyme function[[16]](#Works-Cited)
 
 Support Vector Machines is a 2 group classification algorithm that from input data maps points and constructs a hyperplane with the purpose of maximizing the margin from the points.
 
-![](./img/svm.png)
+![](./img/svm.png =250x)
 [[17]](#Works-Cited)
 
 #### kNN
@@ -124,7 +124,7 @@ Application: Classification of proteins based on a similarity of function coeffi
 
 The k-Nearest Neighbor algorithm assumes proximity means similarity and as such there doesn’t exist a traditional training step. Rather, input data is classified based on classification of most of its k-neighbors.
 
-![](./img/knn.png)
+![](./img/knn.png =250x)
 [[19]](#Works-Cited)
 
 #### Logistic Regression
@@ -133,7 +133,7 @@ Application: Scoring Gene Ontology Terms for a target protein[[18]](#Works-Cited
 
 Logistic Regression is used to classify data based on probability and as such involves predictive analysis. The probability of input data belonging to a certain classification is what the algorithm returns[[20]](#Works-Cited).
 
-![](./img/logreg.jpg)
+![](./img/logreg.jpg =250x)
 [[21]](#Works-Cited)
 
 #### Efficiency
@@ -145,9 +145,9 @@ The efficiency of these algorithms really depends on the type of input data and 
 
 ### Introduction to Protein Folding
 
-From the aggregate body plan of mammals to the subtle chemical interactions of biological macromolecules, it becomes difficult to deny the deep links between biological structure and function. Our understanding of protein structure is no different, providing a model for studying biochemical structure. The three-dimensional structure of a protein can give us great insight into the protein’s function, and by being able to predict protein structure from amino acid sequence, we’d be able to deepen our understanding of the molecular biology pipeline: from the genetic code to amino acids to functional biological units. [[A1]](#Works-Cited)
+From the aggregate body plan of mammals to the subtle chemical interactions of biological macromolecules, it becomes difficult to deny the deep links between biological structure and function. Our understanding of protein structure is no different, providing a model for studying biochemical structure. The three-dimensional structure of a protein can give us great insight into the protein’s function, and by being able to predict protein structure from amino acid sequence, we’d be able to deepen our understanding of the molecular biology pipeline: from the genetic code to amino acids to functional biological units. [[23]](#Works-Cited)
 
-The problem of predicting three-dimensional structure from two-dimensional sequence is mathematically ill-defined -- there are far more possible three-dimensional structures than two-dimensional ones. However, biological molecules manage to find their configurations efficiently regardless, so there must rhyme and reason at the core of the mapping [[A2]](#Works-Cited). Anfinsen’s dogma, the idea that the mapping from amino-acid sequence to three-dimensional structure is unique, further inspires us to try to pin this mapping down.
+The problem of predicting three-dimensional structure from two-dimensional sequence is mathematically ill-defined -- there are far more possible three-dimensional structures than two-dimensional ones. However, biological molecules manage to find their configurations efficiently regardless, so there must rhyme and reason at the core of the mapping [[24]](#Works-Cited). Anfinsen’s dogma, the idea that the mapping from amino-acid sequence to three-dimensional structure is unique, further inspires us to try to pin this mapping down.
 
 Since not every biological question is so well-defined (find a function mapping from sequence to structure), the applications of unsupervised learning to structure prediction provides an excellent toy example from which to understand the process of framing biological problems as supervised learning ones, and how to export advances of computer science in a bioinformatics context.
 
@@ -157,49 +157,49 @@ Since the protein-folding problem is fundamental to our understanding of biology
 
 #### Brute-force Approaches
 
-Brute-force approaches rely on raw computational power, and are the essence of the work done by Folding-at-home. By crowd-sourcing the computations, you hope that some of the sequences asked to crowd-fold will find a close solution at hand, by the law of large numbers. [[A3]](#Works-Cited)
+Brute-force approaches rely on raw computational power, and are the essence of the work done by Folding-at-home. By crowd-sourcing the computations, you hope that some of the sequences asked to crowd-fold will find a close solution at hand, by the law of large numbers. [[25]](#Works-Cited)
 
 #### Physics-based Approaches
 
-Protein-folding is fundamentally a chemical process -- one of trying to find the molecular conformation that minimizes free energy. Computational modelling and simulation can simulate these chemical interactions, at high computational cost. Past the physics -- other assessments of protein structure can be made based on understanding of biological motifs, depending heavily on domain-knowledge and a priori knowledge about protein folding. Although this method works for small molecules, it's too computationally expensive to scale. [[A4]](#Works-Cited)
+Protein-folding is fundamentally a chemical process -- one of trying to find the molecular conformation that minimizes free energy. Computational modelling and simulation can simulate these chemical interactions, at high computational cost. Past the physics -- other assessments of protein structure can be made based on understanding of biological motifs, depending heavily on domain-knowledge and a priori knowledge about protein folding. Although this method works for small molecules, it's too computationally expensive to scale. [[26]](#Works-Cited)
 
 #### Statistical Approaches
 
-We have plenty of data for empirically-verified protein folding patterns already -- statistics can provide a powerful tool to generalize to new structures. On the way, hairy statistical questions arise: which motifs and secondary structures generalize, and which do not? These statistically difficult questions about generalization lend themselves to abstracting statistics away into modern supervised learning approaches, which manage to pick up complex signals and learn to ignore noise if given appropriate data and time. [[A5]](#Works-Cited)
+We have plenty of data for empirically-verified protein folding patterns already -- statistics can provide a powerful tool to generalize to new structures. On the way, hairy statistical questions arise: which motifs and secondary structures generalize, and which do not? These statistically difficult questions about generalization lend themselves to abstracting statistics away into modern supervised learning approaches, which manage to pick up complex signals and learn to ignore noise if given appropriate data and time. [[27]](#Works-Cited)
 
-Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is very complex, and we have lots of data from which to pick up signal from [[A5]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
+Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is very complex, and we have lots of data from which to pick up signal from [[27]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
 
 #### Combined Approaches
 
-Most high-performing models take a combined physics-based and supervised learning approach, leveraging simulation techniques in specific contexts. Since the physics simulation is computationally expensive, the main driver of algorithm design is supervised learning, which the physics helps ground the learning algorithm’s output in biologically plausible results. [[A6]](#Works-Cited)
+Most high-performing models take a combined physics-based and supervised learning approach, leveraging simulation techniques in specific contexts. Since the physics simulation is computationally expensive, the main driver of algorithm design is supervised learning, which the physics helps ground the learning algorithm’s output in biologically plausible results. [[28]](#Works-Cited)
 
 ### AlphaFold
 
 To understand how a supervised learning algorithm can be applied to proteomics, a high-level overview of AlphaFold, the current state of the art for predicting 3D backbone structure, can paint a great picture of the power of framing biological problems correctly.
 
 ![](./img/AlphaFoldSchematic.JPG)
-Fig ?. High-level schematic of AlphaFold’s algorithm. [[A7]](#Works-Cited)
+Fig ?. High-level schematic of AlphaFold’s algorithm. [[29]](#Works-Cited)
 
 #### High-Level Overview of AlphaFold
 
-The schematic illustrated above gives us a good picture of AlphaFold’s organization. The main Supervised Learning component is the Neural Network that the Protein Sequence is fed into, which has been trained against a database of empirically verified 3D structures. The algorithm has two outputs: A prediction of the pairwise distance-matrix for the protein sequence, as well as predictions of torsional angle prediction at points down the protein’s structure [[A8]](#Works-Cited).
+The schematic illustrated above gives us a good picture of AlphaFold’s organization. The main Supervised Learning component is the Neural Network that the Protein Sequence is fed into, which has been trained against a database of empirically verified 3D structures. The algorithm has two outputs: A prediction of the pairwise distance-matrix for the protein sequence, as well as predictions of torsional angle prediction at points down the protein’s structure [[30]](#Works-Cited).
 
 The main driver of the algorithm is the distance matrix prediction. The angle prediction helps break ties between candidate structures, but doesn’t provide enough information to solve the folding itself.
 
-After finding both the distance matrix and the angles, physics simulation techniques (gradient descent algorithm on an energy landscape) are employed to find the optimal 3D structure for various random starting points [[A8]](#Works-Cited).
+After finding both the distance matrix and the angles, physics simulation techniques (gradient descent algorithm on an energy landscape) are employed to find the optimal 3D structure for various random starting points [[30]](#Works-Cited).
 
 ![](./img/DistanceMatrix.JPG)
-Fig ?. The main driver of the algorithm: Distance-Matrix prediction. [[A8]](#Works-Cited)
+Fig ?. The main driver of the algorithm: Distance-Matrix prediction. [[30]](#Works-Cited)
 
 #### Pairwise Distance Matrix Prediction
 
-The core of the algorithm is simple: predict a distance matrix given an amino acid sequence. The distance matrix represents pairwise distance in angstroms between any two points in the sequence (M[i,j] corresponds to the three-dimensional distance between sequence[i] and sequence[j]). In this fairly simple move, which has also seen application in RNA structure prediction, we have transformed our biological problem to an image recognition one [[A3]](#Works-Cited).
+The core of the algorithm is simple: predict a distance matrix given an amino acid sequence. The distance matrix represents pairwise distance in angstroms between any two points in the sequence (M[i,j] corresponds to the three-dimensional distance between sequence[i] and sequence[j]). In this fairly simple move, which has also seen application in RNA structure prediction, we have transformed our biological problem to an image recognition one [[25]](#Works-Cited).
 
-After training our algorithm on empirically-validated distance matrices, we now have a model that can predict new distance matrices from new sequences. The only prerequisite is a clean training set, and computational time (there is plenty of protein data around, but getting the data into this format may require some domain knowledge and ingenuity!) [[A4]](#Works-Cited)
+After training our algorithm on empirically-validated distance matrices, we now have a model that can predict new distance matrices from new sequences. The only prerequisite is a clean training set, and computational time (there is plenty of protein data around, but getting the data into this format may require some domain knowledge and ingenuity!) [[26]](#Works-Cited)
 
 #### Reasons for Success
 
-Although the computational resources at deep mind played a huge role in the success of AlphaFold in protein folding, many other factors are at play: The design of the neural network supervised learning algorithm (described below), as well as the reliance of statistical feature extraction rather than domain-based feature engineering [[A9]](#Works-Cited). The protein-folding problem had plenty of data involved, making pinning down complex mappings tractable with computational time -- minimizing overfitting and other vagaries of overgeneralization common with unsupervised learning.
+Although the computational resources at deep mind played a huge role in the success of AlphaFold in protein folding, many other factors are at play: The design of the neural network supervised learning algorithm (described below), as well as the reliance of statistical feature extraction rather than domain-based feature engineering [[31]](#Works-Cited). The protein-folding problem had plenty of data involved, making pinning down complex mappings tractable with computational time -- minimizing overfitting and other vagaries of overgeneralization common with unsupervised learning.
 
 #### Additional Information
 
@@ -208,14 +208,14 @@ We’ve treated neural networks as a generic unsupervised learning model, and th
 More specific information about the neural network architecture used in AlphaFold for interested readers:
 
 ![](./img/NeuralNetworkArchitecture.JPG)
-Fig ?. Low-level details of neural network architecture. [[A7]](#Works-Cited)
+Fig ?. Low-level details of neural network architecture. [[29]](#Works-Cited)
 
 #### AlphaFold 2
 
 In the news recently, AlphaFold 2 has beat out AlphaFold and all other protein-folding models, with many claiming the protein-folding problem is finally solved. The comparison in performance of the top models is shown below:
 
 ![](./img/AlphaFold2.JPG)
-Fig ?. Performance of top protein folding models. [[A10]](#Works-Cited)
+Fig ?. Performance of top protein folding models. [[32]](#Works-Cited)
 
 ### Has the Protein Folding Problem been solved?
 
@@ -225,13 +225,13 @@ Unsupervised methods are great for classification and regression, but they can s
 
 #### "Yes, The Problem has been Solved"
 
-Some say the protein folding problem has been solved by these modern supervised learning techniques, since these models can be treated as the next step in our standard genetic code to amino acid translation table: After translating the codons, we can plug our amino acid sequence into the model to understand protein structure (and guess at function) [[A8]](#Works-Cited). The full molecular biology pipeline is made clearer than ever.
+Some say the protein folding problem has been solved by these modern supervised learning techniques, since these models can be treated as the next step in our standard genetic code to amino acid translation table: After translating the codons, we can plug our amino acid sequence into the model to understand protein structure (and guess at function) [[30]](#Works-Cited). The full molecular biology pipeline is made clearer than ever.
 
 #### "No, The Problem is yet to be Solved" (And Next Steps)
 
 Again, we don’t truly know understand the biological plausibility of this mapping table (and the problem is complex enough to make us wonder whether we’ll ever get there). Because of the inscrutability of our model, many important questions remain: can we predict secondary structures, post-translational modifications, proteins with multiple stable configurations, prions, etc.
 
-The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, might be a better indicator of how well we've actually "solved" the protein folding problem [[A10]](#Works-Cited), by finding a two-way mapping, but importantly, there’s a huge amount of therapeutic potential. Understanding inverse folding unlocked avenues in protein and drugs engineering, which could serve to be a great tool in years ahead [[A9]](#Works-Cited).
+The key to understanding folding dynamics, and making use of them, may now be the inverse folding problem: figuring out the amino acid sequence from a structure of interest. Scientifically, might be a better indicator of how well we've actually "solved" the protein folding problem [[32]](#Works-Cited), by finding a two-way mapping, but importantly, there’s a huge amount of therapeutic potential. Understanding inverse folding unlocked avenues in protein and drugs engineering, which could serve to be a great tool in years ahead [[31]](#Works-Cited).
 
 The knowledge of biophysics gained from AlphaFold can also help us explore other important protein-related questions, especially as it comes to tackling the complexity of protein-protein interaction networks...
 
@@ -239,23 +239,23 @@ The knowledge of biophysics gained from AlphaFold can also help us explore other
 ## Interactome Prediction
 
 ### Biology of the Interactome
-Interactomics is the study of molecular interactions within the cell. This includes protein-protein interactions and protein-genome interactions. Study of the interactome provides insight into signalling pathways and the effect of various perturbations on the cell. This is exceptionally helpful for novel drug development. Most recently, an extensive UCSF study of COVID19’s interactome played a crucial role in understanding the impact of the virus and potential therapies [[V3]](#Works-Cited). The medical significance of the interactome makes it a pressing area of research. In fact, much of the effort to predict protein function and structure is in an attempt to predict protein interactions within the cell.
+Interactomics is the study of molecular interactions within the cell. This includes protein-protein interactions and protein-genome interactions. Study of the interactome provides insight into signalling pathways and the effect of various perturbations on the cell. This is exceptionally helpful for novel drug development. Most recently, an extensive UCSF study of COVID19’s interactome played a crucial role in understanding the impact of the virus and potential therapies [[33]](#Works-Cited). The medical significance of the interactome makes it a pressing area of research. In fact, much of the effort to predict protein function and structure is in an attempt to predict protein interactions within the cell.
 
 ### Current Approaches
 The current experimental approaches to map out molecular interactions within the cell have crucial limitations. In this course, we have thoroughly explored ChIP-seq and its various applications. ChIP-seq is a method of studying protein-genome interactions for a protein of interest through immunoprecipitation. ChIP-seq is highly effective but requires a long and cumbersome experimental process. Because of this strain and the low throughput of ChIP-seq (only one protein per experiment), it is difficult to perform extensive studies with only ChIP sequencing.
 
-A common method to study protein-protein interactions in vivo is affinity purification mass spectrometry (AP-MS). AP-MS involves overexpressing a protein of interest and utilizing a molecular flagging system to determine binding partners. As with many spectrometry methods, AP-MS requires highly specialized equipment and is not accessible to most labs. Similarly to ChIP-seq, AP-MS has very limited throughput. Each experiment only determines the binding partners of a single protein at a time. [[V4]](#Works-Cited)
+A common method to study protein-protein interactions in vivo is affinity purification mass spectrometry (AP-MS). AP-MS involves overexpressing a protein of interest and utilizing a molecular flagging system to determine binding partners. As with many spectrometry methods, AP-MS requires highly specialized equipment and is not accessible to most labs. Similarly to ChIP-seq, AP-MS has very limited throughput. Each experiment only determines the binding partners of a single protein at a time. [[34]](#Works-Cited)
 
-There are anywhere between 80,000 and 400,000 different proteins in the human proteome [[V5]](#Works-Cited). Thus, these experimental approaches that cover a single protein at a time are insufficient for a complete understanding of the human interactome. The magnitude of the problem demands computational assistance.
+There are anywhere between 80,000 and 400,000 different proteins in the human proteome [[35]](#Works-Cited). Thus, these experimental approaches that cover a single protein at a time are insufficient for a complete understanding of the human interactome. The magnitude of the problem demands computational assistance.
 
 ### Computational Approaches
 The supervised learning approach to interaction prediction is fairly intuitive. The trick is in labeling training data. Each variable (or protein) must be labeled by its experimentally established interactome. This is often done by assigning a number gradient to the strength of interaction of each pair of proteins.
 
 
 ![](./img/struct2net.png)
-*[[V6]](#Works-Cited) Figure ?: This shows a visual representation of the interactions between the enormous amount of proteins stored on the Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows MIT training on highly complex data and adding testing data to that model.*
+*[[36]](#Works-Cited) Figure ?: This shows a visual representation of the interactions between the enormous amount of proteins stored on the Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows MIT training on highly complex data and adding testing data to that model.*
 
-An example of a computational success in this field is MIT’s [Struct2Net](http://cb.csail.mit.edu/cb/struct2net/webserver/) software [[V6]](#Works-Cited). The software takes either one or two amino acid sequences as input. It then maps the amino acids to the closest match in the Protein Data Bank. The Protein Data Bank is a resource to accumulate experimentally derived information about proteins. After determining a match, Struct2Net guesses the interactive domains of the input protein. Finally, interaction predictions are performed with a boosted classifier. Two input amino acid sequences will result in a single interaction prediction. Whereas, a single input protein will return a list of potential interactors.
+An example of a computational success in this field is MIT’s [Struct2Net](http://cb.csail.mit.edu/cb/struct2net/webserver/) software [[36]](#Works-Cited). The software takes either one or two amino acid sequences as input. It then maps the amino acids to the closest match in the Protein Data Bank. The Protein Data Bank is a resource to accumulate experimentally derived information about proteins. After determining a match, Struct2Net guesses the interactive domains of the input protein. Finally, interaction predictions are performed with a boosted classifier. Two input amino acid sequences will result in a single interaction prediction. Whereas, a single input protein will return a list of potential interactors.
 
 ## Works Cited
 
@@ -306,8 +306,6 @@ bioRxiv 472555; doi: https://doi.org/10.1101/472555
 [22] Silva M, Leijoto L, Nobre C. Algorithms analysis in adjusting the SVM parameters: an approach in the prediction of protein function. J Appl Artif Intell. 2017;31:316-331.
 
 
-aditya (will reformat):
-
 [23] http://sitn.hms.harvard.edu/flash/2010/issue65/
 
 [24] Dobson, C. *Protein folding and misfolding*. Nature 426, 884–890 (2003). https://doi.org/10.1038/nature02261
@@ -315,29 +313,29 @@ aditya (will reformat):
 [25]
 Maxwell I. Zimmerman, Justin R. Porter, Michael D. Ward, et al. (30 Jun 2020) *Citizen Scientists Create an Exascale Computer to Combat COVID-19* BioRxiv. https://doi.org/10.1101/2020.06.27.175430
 
-[A4] Agostini FP, Soares-Pinto Dde O, Moret MA, Osthoff C, Pascutti PG. *Generalized simulated annealing applied to protein folding studies.* J Comput Chem. 2006 Aug;27(11):1142-55. doi: 10.1002/jcc.20428.
+[26] Agostini FP, Soares-Pinto Dde O, Moret MA, Osthoff C, Pascutti PG. *Generalized simulated annealing applied to protein folding studies.* J Comput Chem. 2006 Aug;27(11):1142-55. doi: 10.1002/jcc.20428.
 
-[A5] Ying, Xue. (Feb 2019) *An Overview of Overfitting and its Solutions.* Journal of Physics: Conference Series. vol. 1168, iss. 2. doi: 10.1088/1742-6596/1168/2/022022.
+[27] Ying, Xue. (Feb 2019) *An Overview of Overfitting and its Solutions.* Journal of Physics: Conference Series. vol. 1168, iss. 2. doi: 10.1088/1742-6596/1168/2/022022.
 
-[A6] Yeona Kang, Charles M. Fortmann, *An Alternative Approach to Protein Folding.* BioMed Research International, vol. 2013, Article ID 583045, 10 pages, 2013. https://doi.org/10.1155/2013/583045
+[28] Yeona Kang, Charles M. Fortmann, *An Alternative Approach to Protein Folding.* BioMed Research International, vol. 2013, Article ID 583045, 10 pages, 2013. https://doi.org/10.1155/2013/583045
 
-[A7] Andrew Senior JJ, John Jumper, Demis Hassabis
+[29] Andrew Senior JJ, John Jumper, Demis Hassabis
 PK, Pushmeet Kohli (15 Jan 2020) *AlphaFold: Using AI for scientific discovery* Deep Mind. https://deepmind.com/blog/article/AlphaFold-Using-AI-for-scientific-discovery
 
-[A8] Callaway, Ewen. (10 Dec 2020) *It will change everything’: DeepMind’s AI makes gigantic leap in solving protein structures* Nature 588, 203–204.
+[30] Callaway, Ewen. (10 Dec 2020) *It will change everything’: DeepMind’s AI makes gigantic leap in solving protein structures* Nature 588, 203–204.
 https://www.nature.com/articles/d41586-020-03348-4
 
-[A9] https://onlinelibrary.wiley.com/doi/full/10.1002/prot.25834
+[31] https://onlinelibrary.wiley.com/doi/full/10.1002/prot.25834
 
-[A10] The AlphaFold Team. (30 Nov 2020) *AlphaFold: a solution to a 50-year-old grand challenge in biology* Deep Mind. https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology
+[32] The AlphaFold Team. (30 Nov 2020) *AlphaFold: a solution to a 50-year-old grand challenge in biology* Deep Mind. https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology
 
 
 interactomics:
-[V3] Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. *A SARS-CoV-2 protein interaction map reveals targets for drug repurposing.* Nature 583, 459–468 (2020). https://doi.org/10.1038/s41586-020-2286-9
+[33] Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. *A SARS-CoV-2 protein interaction map reveals targets for drug repurposing.* Nature 583, 459–468 (2020). https://doi.org/10.1038/s41586-020-2286-9
 
-[V4] Steven J Bark, J Chromatogr Sep Tech 2015, 6:4
+[34] Steven J Bark, J Chromatogr Sep Tech 2015, 6:4
 http://dx.doi.org/10.4172/2157-7064.S1.007
 
-[V5] Ponomarenko EA, Poverennaya EV, Ilgisonis EV, et al. *The Size of the Human Proteome: The Width and Depth.* Int J Anal Chem. 2016;2016:7436849. doi:10.1155/2016/7436849
+[35] Ponomarenko EA, Poverennaya EV, Ilgisonis EV, et al. *The Size of the Human Proteome: The Width and Depth.* Int J Anal Chem. 2016;2016:7436849. doi:10.1155/2016/7436849
 
-[V6] R. Hosur, J. Peng, A. Vinayagam, U. Stelzl, J. Xu, N. Perrimon, J. Beinkowska, and B. Berger. 2012. *Coev2Net: a computational framework for boosting confidence in high-throughput protein-protein interaction datasets.* Genome Biology, doi:10.1186/gb-2012-13-8-r76.
+[36] R. Hosur, J. Peng, A. Vinayagam, U. Stelzl, J. Xu, N. Perrimon, J. Beinkowska, and B. Berger. 2012. *Coev2Net: a computational framework for boosting confidence in high-throughput protein-protein interaction datasets.* Genome Biology, doi:10.1186/gb-2012-13-8-r76.
