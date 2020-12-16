@@ -7,22 +7,22 @@
 
 #### STAR (Spliced Transcript Alignment to a Reference) is a efficient read mapping algorithm that handles RNA-Seq libraries
 
-With the rapid development of sequencing technology and the need for sequencing coverage, modern RNA-Seq experimental runs can easily generate libraries of size 30~200 million reads.
+With the rapid development of sequencing technology and the need for sequencing coverage, modern RNA-Seq experimental runs can easily generate libraries between 30~200 million reads.
 
-The sheer size of the read libraries and the non-continuous nature of RNA-Seq reads overwhelms traditional RNA-Seq aligners, which suffers from slow runtime and high alignment error rates. STAR overcomes all such challenges with the combination of seed and extend approach and fast string search algorithm.
+The sheer size of the read libraries and the non-continuous nature of RNA-Seq reads overwhelms traditional RNA-Seq aligners, which suffer from slow runtime and high alignment error rates. STAR overcomes all of these challenges with the combination of the seed and extend approach and the fast string search algorithm.
 
 ---
 
-### Why do we care about alignment speed and mapping error
+### Why do we care about alignment speed and mapping error?
 Modern computers are fast, with billions of transistors switching on and off at a rate of several gigahertz. However, the computation power we have is easily dwarfed by the size of input we wish to analyze. Given the length of genomes, even algorithms running in polynomial runtime can take an impractical time to execute.   
 
 
 #### How bad is the Naïve approach?
-The naïve string search algorithm is simple. The query string is slide over the reference text and char-by-char comparisons are made after each slide. [5]
+The naïve string search algorithm is simple. The query string slides over the reference text and char-by-char comparisons are made after each slide. [5]
 
 
 
-This approach works quite well for inputs of small size, but careful inspection of it execution reveals lot of unnecessary work. For instance: Try aligning AAAB to reference AAAAAAAAAA
+This approach works quite well for small inputs, but careful inspection of its execution reveals lot of unnecessary work. For instance: Try aligning AAAB to reference AAAAAAAAAA
 
 ```
 1-1	⌄		1-2      ⌄		1-3	  ⌄		1-4	   ⌄		
@@ -44,30 +44,30 @@ This approach works quite well for inputs of small size, but careful inspection 
 ```
 Notice that the algorithm repeatedly compares the first 3 "A"s in the query to the reference, only to arrive at the last "B" and realize the alignment at the current position fails. Eventually, the program will terminate after 28 total single-char comparisons.
 
-For a reference text is 10 chars long and the query 4 chars long, do we really need to do more than 10 comparisons to be able to confidently report alignment status?  
+For a reference text is 10 chars long and the query 4 chars long, do we really need to do more than 10 comparisons to be able to confidently report the alignment status?  
 
-The answer is no. An slightly improved version of the naïve string search, KMP algorithm, saves the extra comparisons by "remembering" what is previously compared and achieves linear time in the worst case. That is, any character in the reference will not be compared with the query in more than one sliding position. [6]
+The answer is no. A slightly improved version of the naïve string search, the KMP algorithm, reduces the number of comparisons by "remembering" what was previously compared and achieves linear time in the worst case. That is, any character in the reference will not be compared with the query in more than one sliding position. [6]
 
 
-When the input is millions of short reads and whole genomes, however, linear time is still considered too slow.
+However, when the input is millions of short reads and whole genomes, however, linear time is still considered too slow.
 
 
 
 #### Mapping error
 
-**Mapping error** typically occur when a RNA-Seq read spans the alternatively spliced junctions and one segment of the read is ambiguously assigned to more than one exons. [7] 
+**Mapping error** typically occur when a RNA-Seq read spans the alternatively spliced junctions and one segment of the read is ambiguously assigned to multiple exons. [7] 
 
-Some aligners before STAR use the **split-read** approach. The read sequences are first split into smaller fragments, either based on prior knowledge of the junction site or certain preliminary continuous alignment result, and then individually aligned. The **mapping error** issue can arise from either incomplete annotation of the target transcriptome, biasing the alignment towards the known exons over the unknown ones. 
+Some aligners before STAR used the **split-read** approach. The read sequences are first split into smaller fragments, either based on prior knowledge of the junction site or certain preliminary continuous alignment results, and then are individually aligned. The issue of **mapping error** can arise from incomplete annotation of the target transcriptome, biasing the alignment towards the known exons over the unknown ones. 
 
 
 
-#### What is an example of some alignment tool that is actually practical? 
+#### What is an example of an actual, practical alignment tool? 
 
-After discussing how the naïve approach is terrible, it is time that we should talk about an example of alignment tool that is actually used in the industry. 
+After discussing the shortcomings of the naïve approach, it is now time to talk about an example of an alignment tool that is actually used in industry. 
 
 **BLAST**, or the **(Basic Local Alignment Search Tool)**, is probably "the most widely bioinformatics tool every written". [1] It is typically used to align a query of protein sequence to some transcriptome database, and has the capacity to handle alignment between protein sequences and DNA sequences given a transcription frame. 
 
-The algorithm behind **BLAST** is the **Aho-Corasick Automaton**, a dictionary-matching algorithm that locates a collection of patterns (queries) in the reference text (database of DNA or protein sequence). The algorithm uses the "trie" data structure to align multiple patterns within linear search time with respect to the database size.  
+The algorithm behind **BLAST** is the **Aho-Corasick Automaton**, a dictionary-matching algorithm that locates a collection of patterns (queries) in the reference text (a database of DNA or protein sequences). The algorithm uses the "trie" data structure to align multiple patterns within linear search time with respect to the database size.  
 
 In a nutshell, the Aho-Corasick algorithm transforms the set of patterns to a trie, where characters of patterns serve as paths that connects one node to another. The reference is run against the trie, and whenever the reference text contains a pattern of interest, that specific permutation of characters "navigates" itself to a destination node that signifies the algorithm of a match. 
 
@@ -85,7 +85,7 @@ The efficient mapping of STAR is achieved through a 2 step process:
 #### 1. Seed Search
 
 
-**Maximal Mappable Prefix** (**MMPs**), sometimes more simply referred to as **seeds**, are segments of the RNA-Seq reads that exactly matches to the reference genome. [3] STAR begins from the first base of the read sequence and extracts the segment that continuously matches to the genome. When a junction is hit, the continuous mapping terminates and a discrete **seed** is thus produced. The seed finding process is continued on the remainder of the unmapped reads, until the read is depleted.  
+**Maximal Mappable Prefix** (**MMPs**), sometimes more simply referred to as **seeds**, are segments of the RNA-Seq reads that exactly match to the reference genome. [3] STAR begins from the first base of the read sequence and extracts the segment that continuously matches to the genome. When a junction is hit, the continuous mapping terminates and a discrete **seed** is thus produced. The seed finding process is continued on the remainder of the unmapped reads, until the read is depleted.  
 
 The seed search component of STAR is implemented as uncompressed **Suffix Array** (SA), which takes logarithmic time with respect to the size of genome.   
 
@@ -116,7 +116,7 @@ In STAR, the reference text (in context of RNA-Seq, the genome) is first convert
 
 #### Representing substrings with integers 
 
-Consider length 14 genome AGCTGCATTACCGT, we initialize an array of of the size of that genome, and fill in the array element as integers 1 thru 14. 
+Consider the length 14 genome AGCTGCATTACCGT, we initialize an array of of the size of that genome, and fill in the array element as integers 1 thru 14. 
 
 | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   | 13   | 14   |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -156,7 +156,7 @@ For convenience of illustration, we will drop the lexicographical order and simp
 
                                                  A<T<C<G
 
-* When comparing 2 strings, we simply proceed to the first character position that the strings differ at and apply the above rule (e.g. AA < AT < AC < AG). If one of the string is an exact prefix of the other, then the shorter string is considered smaller (e.g. A < AC < ACT < ACTG).  
+* When comparing 2 strings, we simply proceed to the first character position that the strings differ at and apply the above rule (e.g. AA < AT < AC < AG). If one of the strings is an exact prefix of the other, then the shorter string is considered smaller (e.g. A < AC < ACT < ACTG).  
 * If one string is an exact prefix of the other (e.g. ATC is a prefix of ATCGG), then the shorter string is considered smaller (e.g. A < AC < ACT < ACTG).  
 
 
