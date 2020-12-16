@@ -60,29 +60,29 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ---
 
 ## 3. Advantages<a name="3"></a>
-**Mapping**
+- **Mapping**
 
     Chromatin immunoprecipitation followed by sequencing (ChIP–seq) can be used to map DNA-binding proteins and histone modifications in a genome-wide manner at base-pair         resolution.
     
-**Higher resolution, less noise, higher genome coverage and wider dynamic range**
+- **Higher resolution, less noise, higher genome coverage and wider dynamic range**
 
-**Requires few amounts of DNA**
+- **Requires few amounts of DNA**
     
     Generates a more precise list of protein binding sites and targets of transcription factors, enhancers, and identification of sequence motifs. Detailed profiling of           histone modifications and nucleosome positions enables greater understanding of epigenetic mechanisms in development and differentiation.
  
-**Repetitive regions in the genome can now be examined**
+- **Repetitive regions in the genome can now be examined**
 
-**Increased sensitivity and specificity**
+- **Increased sensitivity and specificity**
 
     Increased sensitivity and specificity in the mapping of transcription factor binding sites has facilitated motif discovery and target identification.
     
-**It also offers compatibility with various input DNA samples.**
+- **It also offers compatibility with various input DNA samples.**
 
-**Single nucleotide resolution**
+- **Single nucleotide resolution**
 
     While the resolution for ChIP-chip varied by arrays but was generally in the range of 30-100 bp.
     
-**Eliminate signal noise**
+- **Eliminate signal noise**
 
     During ChIP-chip’s hybridization process there may be cross-hybridization between imperfectly matched sequences, which adds to signal noise. ChIP-seq is intrinsically         immune to such sources of noise due to the direct sequencing method.
 
