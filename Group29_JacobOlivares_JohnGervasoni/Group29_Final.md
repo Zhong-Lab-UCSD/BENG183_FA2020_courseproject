@@ -159,7 +159,7 @@ Now that the hypothesis-related data is obtained, some data transformations are 
 
 All test statistic equations take the general form:
 
-![teststatistic2](/Group29_Final/teststatistic2.png)
+![teststatistic2](/Group29_JacobOlivares_JohnGervasoni/teststatistic2.png)
 
 Data will need to be summarized into a *single number* called a **statistic**.
 If the magnitude of the statistic supports *either hypothesis*, then it’s called a **test statistic**.
@@ -191,7 +191,7 @@ If the magnitude of the statistic supports *either hypothesis*, then it’s call
 
 ### How to Choose Which Statistical Test
 
-![flowchart](/Group29_Final/flowchart-for-choosing-a-statistical-test.png)
+![flowchart](/Group29_JacobOlivares_JohnGervasoni/flowchart-for-choosing-a-statistical-test.png)
 
 ### Testing your knowledge
 
@@ -209,7 +209,7 @@ Alternative hypothesis: Presence of the mutated gene increases the chance of can
 
 <details>
 	<summary>Answer:</summary>
-H <sub>1</sub> : μ <sub>m</sub> - μ <sub>n</sub> > 0
+H<sub>1</sub> : μ<sub>m</sub> - μ<sub>n</sub> > 0
 The percentage of women with cancer given the presence of the mutation is greater than the percentage of women with cancer given no mutation.
 </details>
 
@@ -217,24 +217,24 @@ Mutation Mean and Average Variation:
 
 <details>
 	<summary>Answer:</summary>
-μ <sub>1</sub> = P <sub>m</sub> = .07
-σ <sup>2</sup> = P <sub>m</sub> (1-P <sub>m</sub> )/N = ~.0007
+μ<sub>1</sub> = P<sub>m</sub> = .07
+σ<sup>2</sup> = P<sub>m</sub> (1-P<sub>m</sub> )/N = ~.0007
 </details>
 
 Normal Mean and Average Variation:
 
 <details>
 	<summary>Answer:</summary>
-μ <sub>2</sub> = P <sub>n</sub> = .40
-σ <sup>2</sup> = P <sub>n</sub> (1-P <sub>n</sub> )/N = ~.0024
+μ<sub>2</sub> = P<sub>n</sub> = .40
+σ<sup>2</sup> = P<sub>n</sub> (1-P<sub>n</sub>)/N = ~.0024
 </details>
 
 Sample Distribution and Standard deviation:
 
 <details>
 	<summary>Answer:</summary>
-μ <sub>Pm</sub> - μ <sub>Pn</sub> = |0.07 - 0.47| = 0.33
-σ <sub>Pm-Pn</sub> = (.0007 + .0024) <sup>1/2</sup> = ~0.0557
+μ<sub>Pm</sub> - μ<sub>Pn</sub> = |0.07 - 0.47| = 0.33
+σ<sub>Pm-Pn</sub> = (.0007 + .0024)<sup>1/2</sup> = ~0.0557
 
 For a 95% chance that it is within the distance of the mean, the t table gives the value of 1.984. Find the confidence interval:
 
@@ -254,8 +254,8 @@ Assuming the null hypothesis is correct, calculate the t statistic using the gen
 
 <details>
 	<summary>Answer:</summary>
-Assuming P <sub>m</sub> = P <sub>n</sub> = P
-σ <sub>Pm-Pn</sub> = [2P(1-P)/100] <sup>1/2</sup> = ~0.0424
+Assuming P<sub>m</sub> = P<sub>n</sub> = P
+σ<sub>Pm-Pn</sub> = [2P(1-P)/100]<sup>1/2</sup> = ~0.0424
 Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
 </details>
 
@@ -277,26 +277,26 @@ The **p-value** calculates the probability that we would get the same test stati
 
 P-value = 1 - FT|H <sub>0</sub> (t)
 
->  FT|H <sub>0</sub> (t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H <sub>0</sub>
+>  FT|H<sub>0</sub> (t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H<sub>0</sub>
 
-### How to find the CDF under the H <sub>0</sub>:
+### How to find the CDF under the H<sub>0</sub>:
 
 Computer simulation: simulate random outcomes by using the numbers from the test statistic and keep swapping them for many simulations (approximation of null distribution)
 
 ### Example
 You read an article that said 6% of NCAA students go to the professional level. You think it’s higher at your college. You take a random sample of 50 NCAA students and see that 11% of them are going pro. 
 You are puzzled and do 40 random simulations of n = 50 NCAA students for a large population where 2% of them go pro. You noted the percentage you got every simulation. Here’s a graph of them: 
-![plot](/Group29_Final/plot.PNG)
+![plot](/Group29_JacobOlivares_JohnGervasoni/plot.PNG)
 > We have our statistic p = 0.06 (NOT P-value)
 
-> Our null hypothesis is that the 0.06 applies to your school: H <sub>0</sub> : p = 0.06
+> Our null hypothesis is that the 0.06 applies to your school: H<sub>0</sub> : p = 0.06
 
-> So our alt hypothesis is that it’s higher at your school: H <sub>1</sub> : p > 0.06
+> So our alt hypothesis is that it’s higher at your school: H<sub>1</sub> : p > 0.06
 
-> NOTE: These are disjoint sets and the H <sub>0</sub> and H <sub>1</sub> can’t happen at the same time.
+> NOTE: These are disjoint sets and the H<sub>0</sub> and H<sub>1</sub> can’t happen at the same time.
 
 > So now we can start approximating our p-value 
-> p-val = P(P <sub>school</sub> ≥ 11% | H0) = 5/40 = 0.125
+> p-val = P(P<sub>school</sub> ≥ 11% | H0) = 5/40 = 0.125
 > We got this by counting the number of simulations where the p ≥ 0.11 and dividing it by the total number of simulations 
 From this example we got our **p-val to be equal to 0.125**. What do we do now? 
 ---
@@ -304,8 +304,8 @@ From this example we got our **p-val to be equal to 0.125**. What do we do now?
 
 After obtaining the p-value, a decision can now be made! 
 There are two possible decisions:
-* **Reject the H0** if the p-value is less than our level of significance .
-* Don’t Reject, **accept, the H0 otherwise**
+* **Reject the H<sub>0</sub>** if the p-value is less than our level of significance .
+* Don’t Reject, **accept, the H<sub>0</sub> otherwise**
 
 The smaller the p-value → the greater the belief we have against the H0
 
@@ -316,7 +316,7 @@ The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reje
 > From our previous example, we saw that our p-value was **0.125** which is higher than our level of significance. 
 
 > 0.125 > 0.05 
-> therefore we can say that **we accept the H <sub>0</sub> ** and that there is no statistical significance 
+> therefore we can say that **we accept the H<sub>0</sub> ** and that there is no statistical significance 
 
 #### *What if the decision we made is wrong?*
 There are two types of errors that we can make and they are: 
@@ -325,12 +325,12 @@ There are two types of errors that we can make and they are:
 
 Here is an illustration of the type of decisions that can be made:
 
-![Errors](/Group29_Final/type-1-2-errors.png)
+![Errors](/Group29_JacobOlivares_JohnGervasoni/type-1-2-errors.png)
 
 #### Is it possible to remove all errors?
-**It isn’t** because there is a tradeoff between the types of error; if we decrease the probability of one then the probability of the other increases and vise versa. This is seen by the following graph.
+**It isn’t**.  There is a tradeoff between the types of error; if we decrease the probability of one then the probability of the other increases and vise versa. This is seen by the following graph.
 
-![tradeoffs](/Group29_Final/tradeoffbetweenerrors.png)
+![tradeoffs](/Group29_JacobOlivares_JohnGervasoni/tradeoffbetweenerrors.png)
 
 ---
 
@@ -344,12 +344,3 @@ Here is an illustration of the type of decisions that can be made:
 * Sacha, Varin, and Demosthenes B Panagiotakos. “Insights in Hypothesis Testing and Making Decisions in Biomedical Research.” The Open Cardiovascular Medicine Journal, Bentham Open, 30 Sept. 2016, www.ncbi.nlm.nih.gov/pmc/articles/PMC5054503/.
 * Sheng Zhong’s (Ph.D), lecture 12: Hypothesis Testing
 * Bevans, R. (2020, October 26). Choosing the Right Statistical Test: Types and Examples. Retrieved December 15, 2020, from https://www.scribbr.com/statistics/statistical-tests/
-
-
-
-
-
-
-
-
-
