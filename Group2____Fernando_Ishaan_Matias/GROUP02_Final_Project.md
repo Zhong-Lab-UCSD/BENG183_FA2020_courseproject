@@ -118,7 +118,7 @@ One example of an RNN, which is able to process sequential data as mentioned abo
 
 ![RNN model](./Images/RNN_model.png)
 
-###### Fig 5. Basic model architecture of an RNN. This basically shows how a RNN allows for data to be fed back into the network (creating a loop) [(14)](#References).
+###### Fig 5: Basic model architecture of an RNN. This basically shows how a RNN allows for data to be fed back into the network (creating a loop) [(14)](#References).
 
 
 
@@ -128,7 +128,7 @@ Another type of artificial neural networks are the autoencoders which employ eff
 
 ![Autoencoder](./Images/autoencoder.png)
 
-###### Fig 6. Represents a diagram of a general architecture for autoencoders. In this case, the input data are images.
+###### Fig 6: Represents a diagram of a general architecture for autoencoders. In this case, the input data are images.
 
 As seen in the image above, there are two main sections to the autoencoder: Encoder and Decoder. The encoder makes reference to the first funnel, where we compress of the input data as a way of feature extraction. That is to say that by reducing the dimensions of the input data we force the encoder to learn the features that are crucial to understand and represent the data given. Once we reach the bottleneck, the decoder comes into play, where the objective is to reverse engineer the original data given the output of the encoder (which has a lower dimensionality).  
 Autoencoders can be utilized for a wide variety of applications: dimensionality reduction, image compression, image denoising, feature extraction, recommendation systems, sequence to sequence prediction, image generation, among others [(12)](#References). In the area of oncology, researchers utilized the ability of autoencoders to feature extract to attempt to discover relationships between multi-omics and medical data as seen in the paper "Variational Autoencoders for Cancer Data Integration: Design Principles and Computational Practice" [(13)](#References).
@@ -149,7 +149,7 @@ An example of the workflow of deep learning methods in genomics is shown below.
 
 ![Workflow in Genomics](./Images/Workflow_DL_in_Genomics.png)
 
-###### Fig 7. An example of a deep learning method workflow in genomics. The workflow starts with a dataset that is randomly split up into a training, a validation and a test datasets. Then a deep learning method, such as a CNN or RNN is trained on the training dataset. Finally, the results are evaluated and we can make predictions based on the outputs of the models [(15)](#References).
+###### Fig 7: An example of a deep learning method workflow in genomics. The workflow starts with a dataset that is randomly split up into a training, a validation and a test datasets. Then a deep learning method, such as a CNN or RNN is trained on the training dataset. Finally, the results are evaluated and we can make predictions based on the outputs of the models [(15)](#References).
 
 ### Transcriptomics
 
@@ -256,7 +256,7 @@ As figure 11 (Left) shows, DeepVariant takes as input aligned reads, and predict
 The CNN can be trained by feeding the CNN with aligned reads encoded into pileup images, something like Figure 12, and making the model target corresponding genotype likelihoods. Thus, we leverage the convolutional filter and pooling layers of CNN that make it able to take high dimensional data - read bases, quality of of bases and neighboring bases - just all the BAM file features. Essentially, the CNN is now just performing Image Classification.
 
 ![](https://github.com/google/deepvariant/raw/r1.1/docs/images/inference_flow_diagram.svg)
-###### Fig 12 The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
+###### Fig 12: The deployment workflow explained by DeepVariant open-source github Readme. [(22)](#References)
 
 The deployment of the model can be done easily by following the pipeline shown above. Input: BAM file, output: VCF.
 Google Brain Team reccomends running DeepVariant Docker container. Let's explore what kind of inputs go into the command to run DeepVariant:
@@ -284,13 +284,13 @@ DeepVariant was developed by the Google Brain Team in response to the PrecisionF
 DeepVariant is also cost-effective and fast since it has been especially designed to be deployable on Cloud. Also, DeepVariant has been found to perform remarkably even on low quality data [(25)](#References)
 
 ![](Images/comparePerformChart.png)
-###### Fig 13 Comparision of F1 Score based on data given by different in a study [(25)](#References)
+###### Fig 13: Comparision of F1 Score based on data given by different in a study [(25)](#References)
 
 Besides performance, let us compare the technology itself. While statistical methods require us to find special filters that can make it work on different data like long-reads data, DeepVariant, like any AI solution, automates that by boiling that down to retraining the existing default model on long read data and making the thus specialized models available through that model type flag we saw earlier. In fact, DeepVariant has been experimentally found to be perfoming better than the statistical methods with filters applied, as shown in Figure 13.
 
 ![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2A_SNP.png)
 ![](https://blog.dnanexus.com/wp-content/uploads/2019/01/Figure2B_Indel.png)
-###### Fig 14 Comparison of (Left) DeepVariant retrained with PacBio CCS data, with (Right) GATK with a Hard Filter applied designed for optimal performance with PacBioCCS
+###### Fig 14: Comparison of (Left) DeepVariant retrained with PacBio CCS data, with (Right) GATK with a Hard Filter applied designed for optimal performance with PacBioCCS
 
 The improvement of performance of DeepVariant from that of GATK was found to be even more with PacBio CCS than it was with typical Illumina Sequencing data. This is the benfit of automated unbiased feature extraction process. This unbiased nature can be seen the form of an observation that "at lower coverage GATK and SpeedSeq would call more A > T, C > A G > T and T > A substitutions than expected from the distribution of variants in the human genome. At the same time, false positive and false negative calls by DeepVariant seemed to be independent with respect to the base change."[(25)](#References)
 
@@ -305,14 +305,14 @@ While DeepVariant is the classic example of Variant Caller using Deep Learning, 
 Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalant. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from mutitude of types of High throughput expaeriments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. [(26)](#References) Thus, this one tool has been fostering Precision Medicine in multiple ways.
 
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig2_HTML.jpg?as=webp)
-###### Fig 15 DeepBind Training Workflow [(26)](#References)
+###### Fig 15: DeepBind Training Workflow [(26)](#References)
 
 Besides application of sequencing and othe rhigh throughput data, Neural Networks have even been used to improve sequencing technoilogies themselves. For example, in Nanopore Sequencing De Novo read Qualities have been improved by MiniScrub, a CNN based approach.
 
 ### Conclusion
-Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automatino of feature extraction, flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
+Tensorflow-based and Deep Learning/ Machine Learning- based technologies have been shown to be revolutionizing more and more spheres of Medical Genetics and OMICS data analysis. These state-of-the-art methods are unbiased due to automation of feature extraction, more transferable approaches (like Image Classification) flexible approaches that can be extended to different data, and genrally cost-effective and fast scalable solutions.
 
-It has definitely caused a recent shift in the Bioinformatics approaches and has brought fresh perspective of moving a bit away from focussing too much Biological features and let the computational approaches detect the different features in Biology automatically for better prediction of Biology.
+It has definitely caused a recent shift in the Bioinformatics approaches to less specialized and more widespread compuatational tasks like Image Classification or Natural Language Processing, and has brought fresh perspective of moving a bit away from focussing too much Biological features and let the computational approaches detect the different features in Biology automatically for better prediction of Biology.
 
 ### References
 
