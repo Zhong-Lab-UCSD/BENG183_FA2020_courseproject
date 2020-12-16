@@ -1,8 +1,9 @@
-# CHIP-Sequencing
+# CHIP-Sequencing and Potential Improvement
 BENG183 Final Paper
 Date: 12-15-2020
 Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 
+![chip_seq pipeline](./images/Intro.png)
 1. [Introduction](#1)
 2. [ChIP-Sequencing Workflow](#2)<br>
     2.1. [Experimental Workflow](#21)<br>
@@ -11,6 +12,8 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 4. [Disadvantages](#4)
 5. [Improvements and Possible Solutions](#5)
 6. [Quality Control](#6)
+    6.1. [Sequencing Depth](#61)<br>
+    6.2. [Signal To Noise Ratio S/N](#62)<br>
 7. [References](#7)
 
 <!--- 
@@ -20,7 +23,7 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 ## 1. Introduction<a name="1"></a>
 
 
-![chip_seq pipeline](./images/Intro.png)
+
 
 ChIP-Sequencing stands for chromatin-immunoprecipitation and focuses on protein-DNA interactions. It uses antibodies to select specific proteins or nucleosomes that are then hybridized to a microarray to identify the DNA fragments later. It enriches for DNA fragments bound to proteins or nucleosomes.
 
@@ -32,8 +35,10 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
 
 ### 1) Experimental Workflow<a name="21"></a>
 
- <img src="./images/experimental.png" width="500" height="400"/>
 
+<p align="center">
+  <img src="./images/experimental.png" width="500" height="400"/>
+</p>
 
 1. **Crosslink**:
 The proteins are first crosslinked to the DNA using formaldehyde.
@@ -49,8 +54,9 @@ The crosslinks are reversed and the DNA is purified using the antibody-bound mag
 The immunoprecipitated DNA is now prepared to be used for a next-generation sequencing to be analyzed for DNA binding sites.
 
 ### 2) Computational Analysis<a name="22"></a>
-
-![chip_seq experimental](./images/computational.jpg)
+<p align="center">
+    <img src="./images/computational.jpg">
+</p>
 
 Depending on if there is a small-scale analysis, like a single or small sample,or a large-scale anaylsis with many samples, different analysis strategies may be used. Peak calling is comparing different peaks from each experiment. For larger-scale analyses, a relaxed threshold to compare the peaks may be used. Normally differential analysis is used for small-scale samples, but other analysis strategies may be used to further analyze: 
 - Functional analysis: motif analysis, gene ontology
@@ -62,7 +68,7 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ## 3. Advantages<a name="3"></a>
 - **Mapping**
 
-    Chromatin immunoprecipitation followed by sequencing (ChIP–seq) can be used to map DNA-binding proteins and histone modifications in a genome-wide manner at base-pair         resolution.
+    It can be used to map DNA-binding proteins and histone modifications in a genome-wide manner at base-pair resolution.
     
 - **Higher resolution, less noise, higher genome coverage and wider dynamic range**
 
@@ -74,13 +80,13 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 - **Increased sensitivity and specificity**
 
-    Increased sensitivity and specificity in the mapping of transcription factor binding sites has facilitated motif discovery and target identification.
+    Increased sensitivity and specificity in the mapping of transcription factor binding sites can facilitate motif discovery and target identification.
     
 - **It also offers compatibility with various input DNA samples.**
 
 - **Single nucleotide resolution**
 
-    While the resolution for ChIP-chip varied by arrays but was generally in the range of 30-100 bp.
+    While the resolution for ChIP-chip varied by arrays, it is generally in the range of 30-100 bp.
     
 - **Eliminate signal noise**
 
@@ -100,7 +106,7 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 - **Required large amounts of tissue**
 
-    It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles needed to be compared to the same loci of the control sample to make        the result more accurate.
+    It requires a lot of tissue to be prohibitive for some rare sample types. The peaks in the profiles need to be compared to the same loci of the control sample to make        the result more accurate.
 
 - **Prior knowledge of DNA-binding protein required**
 
@@ -115,6 +121,9 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 ---
 ## 6. Quality Control<a name="6"></a>
+### 1) Sequencing Depthh<a name="61"></a>
+### 2) Signal To Noise Ratio S/N <a name="62"></a>
+
 
 ---
 ## 7. References<a name="7"></a>
