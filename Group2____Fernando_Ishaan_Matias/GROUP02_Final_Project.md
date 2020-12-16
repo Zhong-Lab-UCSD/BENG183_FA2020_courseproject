@@ -19,15 +19,15 @@
 
 ## Introduction
 
-With the invention of new OMIC technologies, as well as with the advancement in technology withing new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models and from these large biological datasets [(5)](#References).
+With the invention of new OMIC technologies, as well as with the advancement in technology within new and old OMIC technologies, such as microarrays and next-generation sequencing, biological data has increased exponentially. These datasets are complex and would be nearly impossible for a human to extract valuable information from these in order to interpret it and make conclusions about it. Thus, this has given bioinformaticians and machine learning researchers a challenge to come up with ways to extract valuable information from these biological datasets to be able to fully analyze them. This has given rise to different deep learning algorithms and methods which are able to identify complex patterns and create predictive models from these large biological datasets [(5)](#References).
 
 ### Aim of this lesson:
 
-- To show how AI is revolutionizing Precision Medicine and OMICS data analysis
+- To show how Artificial Intelligence (AI) is revolutionizing Precision Medicine and OMICS data analysis
 - To explain the background of Deep Learning and Artificial Neural Networks (ANNs), with a focus on Convolutional Neural Networks (CNNs)
 - To introduce different kinds of architectures and appropriate uses
-- To show what kinds of data can be used input and output for DL in OMICS data through examples
-- Particularly focus on Variant Calling as an example application
+- To show with examples what kinds of data can be used as input and output for DL in OMICS data 
+	- Particularly focus on Variant Calling as an example application
 
 ---
 
@@ -35,11 +35,11 @@ With the invention of new OMIC technologies, as well as with the advancement in 
 
 ## OMICS
 
-Omics are the different science branches of Biology, which have the suffix of _-omics_, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents al the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References). A few Omic technologies are shown below with explanations as to what they study:
+Omics are the different science branches of Biology, which have the suffix of _-omics_, such as genomics (which is the focus of BENG 183), transcriptomics, epigenomics, metabolomics, proteomics, and so on [(8)](#References). Moreover, Omics represents all the different technologies that are used to determine the roles, relationships, and actions of different types of molecules for the structure, function and dynamic that make up the cells of an organism [(7)](#References). A few Omic technologies are shown below with explanations as to what they study:
 
-- Genomics: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
-- Transcriptomics: studies the transcriptome, which is the collection of all mRNA
-- Proteomics: studies all protein as well as their properties and functional roles
+- <u>Genomics</u>: studies the structure, function, evolution, and mapping of genomes as well as the characterization and quantification of genes.
+- <u>Transcriptomics</u>: studies the transcriptome, which is the collection of all mRNA
+- <u>Proteomics</u>: studies all protein as well as their properties and functional roles
 
 With the summary of what some of these Omics technologies do, the overall objective of Omics as a whole is to identify, characterize and quantify all biological molecules that are involved in the structure, function and dynamics of a cell, tissue, or organism [(7)](#References).
 
@@ -47,15 +47,15 @@ With the summary of what some of these Omics technologies do, the overall object
 
 ## Deep Learning Background
 
-Deep Learning is a subset of machine learning that were modeled to represent the biological neural network of our brain. This model is called artificial neural networks (ANNs) (See Figure [(0)](#ANNs vs BioNN). To better undestand what Artificial intelligence and deep learning are and their importance, it would be benefitial to see what experts in the field have to say. Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University said:
+Deep Learning is a subset of machine learning that was modeled to represent the biological neural network of our brain. This model is called artificial neural networks (ANNs) (See Figure [(0)](#ANNs vs BioNN). To better understand what Artificial intelligence and deep learning are and their importance, it would be beneficial  to see what experts in the field have to say. Andrew Moore, Former-Dean of the School of Computer Science at Carnegie Mellon University said:
 > Artificial intelligence is the science and engineering of making computers behave in ways that, until recently, we thought required human intelligence [(1)](#References).
 
 And Tom M. Mitchell from the Machine Learning Department in Carnegie Mellon University, said: 
 > Machine learning is the study of computer algorithms that allow computer programs to automatically improve through experience [(1)](#References).
 
-In general terms, deep learning is an algorithm that performs tasks through experience or "learning" as implied by its name.  There are different types of learning that deep learning can do. Learning can be supervised, unsupervised and semi_supervised.  In supervised learning, deep learning takes in labeled training data as input. In unsupervised learning, does not use labeled training data. And semi_supervised learning is the combination of both, it trains on a small labeled data combined with big unlabeled data [(20)](#References).
+In general terms, deep learning is an algorithm that performs tasks through experience or "learning," as implied by its name.  There are different types of learning that deep learning can do. Learning can be supervised, unsupervised and semi_supervised.  In supervised learning, deep learning takes in labeled training data as input. Unsupervised learning does not use labeled training data. And semi-supervised learning is the combination of both, it trains on labeled data from a small fraction of the dataset, and trains with unlabeled data for the remainder of the dataset [(20)](#References).
 
-As mentioned above, ANNs were biological neural networks because they are made by interconnected artificial neurons. Each artificial neuron receives an input, applies a certain transformation on that input and "fires" an output. With this model, deep learning has many applications. They can encode and learn from heterogeneous and complex data. This can be useful in image recognition, voice and speech recognition and language processing. Image recognition is useful in the field of biology because deep learning can take as input medical images and output a diagnosis for medical conditions such as cancer or other diseases [(5, 20)](#References). Deep Learning has become a crucial part in Omics Data Analysis since it has outperformed other techniques and methods as it is more specific, sensative and efficient [(5)](#References).
+As mentioned above, ANNs are biological neural networks because they are made by interconnected artificial neurons. Each artificial neuron receives an input, applies a certain transformation on that input and "fires" an output. With this model, deep learning has many applications. They can encode and learn from heterogeneous and complex data. This can be useful in image recognition, voice and speech recognition and language processing. Image recognition is useful in the field of biology because deep learning can take as input medical images and output a diagnosis for medical conditions such as cancer or other diseases [(5, 20)](#References). Deep Learning has become a crucial part in Omics Data Analysis since it has outperformed other techniques and methods as it is more specific, sensitive and efficient [(5)](#References).
 
 ![ANNs vs BioNN](./Images/ANN_vs_NN.png)
 
