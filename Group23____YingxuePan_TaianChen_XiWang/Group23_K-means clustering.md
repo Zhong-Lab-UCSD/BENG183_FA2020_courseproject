@@ -64,7 +64,7 @@ What elbow method does is essentially running k-means with a range of values of 
 
 See an example of Elbow Plot below:
 
-![Elbow Plot](3.2_TwoGraphs.png)
+<img src="3.2_TwoGraphs.png" width="800" height="400" />
 
 Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering” (2017)**.
 
@@ -84,10 +84,10 @@ Figure 3: Clusters Beginning with a Bad Initialization. **Figure by Jianpeng Qi,
 Spreading out the initial centroids is a worthy objective for selecting good initialization, given that initial centroids close to each other often give bad results.
 
 Here are general steps:
-1. choose the first centroid randomly
+1. Choose the first centroid randomly.
 2. Calculate distance of all points x_i from all of the previously selected centroids c_j. d_i should be the minimum value of distances between x_i and c_j, where j =  h, 1 ≤ h ≤ m. m is the number of total previously selected centroids.
 3. Select the data points from the data set as a new centroid. The probability of any data point in the data setx_i is chosen is proportional to d_i, which is the minimum value in step2.  
-4. repeat step2 and step3 until k centroids are selected (Charles Zaiontz, 2016). 
+4. Repeat step2 and step3 until k centroids are selected (Charles Zaiontz, 2016). 
 
 The method aims to push the centroids such that they can be as far from one another as possible, overlaying as much of the occupied data space (David Arthur and Sergei Vassilvitskii, 2006). 
 
@@ -132,6 +132,12 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.show()
 ```
+
+Example scatter plot:
+
+![Example Scatter Plot](3.5_d1kmean.png)
+
+Data size of 500.
 
 ## 4. Limitations and Advantages<a name="4"></a>
 1. [Limitations of K-means Clustering](#4.1)
