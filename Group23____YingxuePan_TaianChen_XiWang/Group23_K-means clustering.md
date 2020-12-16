@@ -46,15 +46,15 @@ Table 1: Gene expression levels of four genes in patients with different cancer 
 
 Taking the question 7 from midterm 2 (Sheng Zhong, Beng183 FA2020) as an example, given the  data above, our goal is to see how well the expression of these four genes can classify patients. We can see that the expression level of gene 3 is much greater than other genes in almost all samples. When we try to perform k-means clustering on this data, this difference in expression levels will make gene 3 weigh too much when calculating the distances and finding the average of a cluster. 
 
-The function used to calculate the euclidean distance between patient P_i=(p1_i, p2_i, p3_i, p4_i) and centroid C_j=(c1_j, c2_j, c3_j, c4_j) is 
+The function used to calculate the euclidean distance between patient `P_i=(p1_i, p2_i, p3_i, p4_i)` and centroid `C_j=(c1_j, c2_j, c3_j, c4_j)` is 
 ```
 Distance(P_i, C_j)= [ (p1_i-c1_j)^2 + (p2_i-c2_j)^2 + (p3_i-c3_j)^2 + (p4_i-c4_j)^2 ]^(1/2)
 ```
-The function used to find the average of cluster C_j containing patients P_i,...,P_k is 
+The function used to find the average of cluster `C_j` containing patients `P_i,...,P_k` is 
 ```
 update_centroid(C_j)=(mean(p1_i,...,p1_k), mean(p2_i,...,p2_k), mean(p3_i,...,p3_k), mean(p4_i,...,p4_k))
 ```
-Let's think about what the functions above tell us. The euclidean distance is based on all four genes, while the distance p3_i-c3_j is likely to be greater than other three distance because of the larger range of the expression level of gene 3. So if a patient P_i has expression level p3_i such that p3_i-c3_j is small, then it will be assign to the cluster of C_j no matter if the differences p1_i-c1_j, p2_i-c2_j, or p4_i-c4_j is small. 
+Let's think about what the functions above tell us. The euclidean distance is based on all four genes, while the distance `p3_i-c3_j` is likely to be greater than other three distance because of the larger range of the expression level of gene 3. So if a patient `P_i` has expression level `p3_i` such that `p3_i-c3_j` is small, then it will be assign to the cluster of `C_j` no matter if the differences `p1_i-c1_j`, `p2_i-c2_j`, or `p4_i-c4_j` is small. 
 
 As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to standardize the raw data to transform all variables to comparable scales so that all genes have the same importance (Lakshmanan 2019).
 
@@ -94,9 +94,9 @@ Spreading out the initial centroids is a worthy objective for selecting good ini
 
 Here are general steps:
 1. Choose the first centroid randomly.
-2. Calculate distance of all points x_i from all of the previously selected centroids c_j. d_i should be the minimum value of distances between x_i and c_j, where j =  h, 1 ≤ h ≤ m. m is the number of total previously selected centroids.
-3. Select the data points from the data set as a new centroid. The probability of any data point in the data setx_i is chosen is proportional to d_i, which is the minimum value in step2.  
-4. Repeat step2 and step3 until k centroids are selected (Charles Zaiontz, 2016). 
+2. Calculate distance of all points `x_i` from all of the previously selected centroids `C_j`. `d_i` should be the minimum value of distances between `x_i` and `C_j`, where `j =  h`, `1 ≤ h ≤ m`. `m` is the number of total previously selected centroids.
+3. Select the data points from the data set as a new centroid. The probability of any data point in the dataset `x_i` is chosen is proportional to `d_i`, which is the minimum value in step2.  
+4. Repeat step2 and step3 until `k` centroids are selected (Charles Zaiontz, 2016). 
 
 The method aims to push the centroids such that they can be as far from one another as possible, overlaying as much of the occupied data space (David Arthur and Sergei Vassilvitskii, 2006). 
 
@@ -164,7 +164,7 @@ Figure 4: Scatter Plot Example Using Python with a Data Size of 500.
 Figure 5: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ### 4.2. Advantages of K-means Clustering<a name="4.2"></a>
-1. K-means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge. The step that we assign the data to its closest cluster takes O(kn) in the worst case. This is because for each data x_i, we have to compute its Euclidean distance to each centroid c_j, and assign the data to the cluster withh the shortest distance. For each data x_i, we calculate k euclidean distances since there are k centroids. Since there are n data points, generating a new cluster assignment takes O(kn). Since we need t iterations until we finally reach the convergence, i.e. the final cluster assignment, the algorithm takes O(tkn) (Pinocchio, StackExchange). In most cases, t <<n, k << n, so we may consider the runtime of k-means algorithm as linear runtime. Other algorithms, such as agglomerative hierarchical clustering which takes O(n^3), are not as efficient as k-means. So if you are working on large dataset, i.e. n is large, k-means clustering works more efficiently compared to other clustering methods.
+1. K-means is in `O(tkn)` where `n` is the number of objects, `k` is the number of clusters, and `t` is how many iterations it takes to converge. The step that we assign the data to its closest cluster takes `O(kn)` in the worst case. This is because for each data `x_i`, we have to compute its Euclidean distance to each centroid `C_j`, and assign the data to the cluster withh the shortest distance. For each data `x_i`, we calculate `k` euclidean distances since there are `k` centroids. Since there are `n` data points, generating a new cluster assignment takes `O(kn)`. Since we need `t` iterations until we finally reach the convergence, i.e. the final cluster assignment, the algorithm takes `O(tkn)` (Pinocchio, StackExchange). In most cases, `t<<n`, `k<<n`, so we may consider the runtime of k-means algorithm as linear runtime. Other algorithms, such as agglomerative hierarchical clustering which takes `O(n^3)`, are not as efficient as k-means. So if you are working on large dataset, i.e. n is large, k-means clustering works more efficiently compared to other clustering methods.
 
 2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
