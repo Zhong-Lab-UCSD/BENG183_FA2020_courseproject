@@ -124,15 +124,23 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ---
 
 ## 5. Improved Methodologies<a name="5"></a>
+
 ### 5.1 Limited Cell Number<a name="51"></a>
 ### 5.2 ChIP-exo <a name="52"></a>
 ### 5.3 Re-ChIP  <a name="53"></a>
 ---
+
 ## 6. Quality Control<a name="6"></a>
+<p align="center">
+  <img src="./images/Quality control.jpg">
+</p>
+
 ### 6.1 Sequencing Depthh<a name="61"></a>
-The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus, the number of called peaks increas as the sequencing depth increases. Sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
-Increased sequencing depth allows detection of more sites with reduced enrichment. <br>
-It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. It is also noted that DNA sequencing library complexity, that is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate.
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus,sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. <br>
+A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. <br>
+It is also noted that DNA sequencing library complexity, which is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. <br>
+Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate. <br>
 
 ### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
 
