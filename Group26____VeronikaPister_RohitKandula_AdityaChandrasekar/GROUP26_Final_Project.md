@@ -39,19 +39,19 @@ Figure 1 depicts the problem domains within bioinformatics which supervised lear
 
 *[Fig 2](https://www.javatpoint.com/supervised-machine-learning): Supervised learning follows the general workflow displayed above. The left half of the image depicts the labeled data which characterizes supervised learning.*
 
-Supervised learning describes the machine learning algorithms which train on labeled input data in order to classify or otherwise analyze testing data. This is in opposition to unsupervised learning which does not interact with labeled data. In previous chapters, we have already discussed the supervised algorithms k nearest neighbors (kNN), linear regression, and support vector machines. Some other common supervised learning algorithms are naive bayes, decision trees, and most recently neural networks.
+Supervised learning describes the machine learning algorithms which train on labeled input data in order to classify or otherwise analyze testing data. This is in opposition to unsupervised learning which does not interact with labeled data. In previous chapters, we have already discussed the following supervised algorithms: k nearest neighbors (kNN), linear regression, and support vector machines. Some other common supervised learning algorithms are naive bayes, decision trees, and most recently neural networks.
 
 1. **Naive Bayes**: These algorithms assume a strong independence between different features of input data. All methods dubbed “naive bayes” are relatively simple probabilistic algorithms which are inspired by the Bayes’ theorem.
 2. **Decision trees**: Decision tree learning algorithms depend on a predictive decision tree to anticipate the value of a variable of interest.
 3. **Neural Networks**: Neural networks computationally mimic the convergence of neurons within the human brain. Famously, neural networks are a complex sequence of algorithms to reduce features through a progression of “artificial neurons” and weighted edges which represent the propagating neural signals.
 
-For the purpose of this chapter, we can assume all of these algorithms are a black box with specific input and output formats. The question remains: how can we use the supervised learning algorithms to tackle large scale bioinformatics problems? The answer is in formatting input data. The real effort of machine learning in bioinformatics is learning how to frame input data in the most advantageous way. This process is called “feature selection”.
+For the purpose of this chapter, we can assume all of these algorithms are a black box with specific input and output formats. The question remains: how can we use supervised learning algorithms to tackle large scale bioinformatics problems? The answer is in formatting input data. The real effort of machine learning in bioinformatics is learning how to frame input data in the most advantageous way. This process is called “feature selection”.
 
 ### Feature Generation & Selection
 ![](./img/feature_generation.png)
 *Fig 3: This shows the translation of biological data into a vector of features.*
 
-At a high level, feature generation is the act of turning input data into an interpretable vector for algorithmic consumption. Feature generation is a very complex process to fully describe. In its most simplistic form, it is choosing relevant quantifiable “features” of non quantifiable data. Take for example, a protein. To input a protein as training data into an algorithm, it must be reduced to key elements. For example, the amino acid sequence, the amino acid distribution, or the amino acid transitions can be used to represent a protein. Selecting the most useful features is another endeavour that requires extensive statistical analysis or manual expertise. Statistician George Box once sagely quipped "All models are wrong, but some are useful". This very much applies to feature selection [[2]](#Works-Cited). Once features have been decided, they are ogranized into a single vector for each variable of testing data.
+At a high level, feature generation is the act of turning input data into an interpretable vector for algorithmic consumption. Feature generation is a very complex process to fully describe. In its most simplistic form, it is choosing relevant quantifiable “features” of non quantifiable data. Take for example, a protein. To input a protein as training data into an algorithm, it must be reduced to key elements. For example, the amino acid sequence, the amino acid distribution, or the amino acid transitions can be used to represent a protein. Selecting the most useful features is another endeavour that requires extensive statistical analysis or manual expertise. Statistician George Box once sagely quipped "All models are wrong, but some are useful". This very much applies to feature selection [[2]](#Works-Cited). Once features have been decided, they are ogranized by a single vector for each variable of testing data.
 
 ---
 ## Predicting Protein Function
@@ -96,13 +96,13 @@ fig 6. [[12]](#Works-Cited)
 
 Feature Selection is an alternative approach to obtaining relevant feature sets. This process utilizes feature selection algorithms (FSA) to produce a smaller set of features by selecting features that are most suitable to the problem.[[13]](#Works-Cited) FSAs need to evaluate the performance of features in order to make this selection. These algorithms can involve statistical tests like ANOVA to evaluate features[[13]](#Works-Cited). A novel method called FrankSum was developed for protein function using the Wilcoxon-Rank Test p-value and correlation coefficient, to measure feature significance and feature redundancy respectively[[14]](#Works-Cited).
 
-###### FSAs and Applications
+###### FSAs and Applications [[13]](#Works-Cited)
 
-Filter methods: Use of statistical tests to evaluate features [[13]](#Works-Cited) such as FrankSum[[14]](#Works-Cited).
+Filter methods: Use of statistical tests to evaluate features  such as FrankSum[[14]](#Works-Cited).
 
-Wrapper method: Utilizes training algorithm in feature evaluation [[13]](#Works-Cited) and was used in the classification of signaling proteins[[15]](#Works-Cited).
+Wrapper method: Utilizes training algorithm in feature evaluation and was used in the classification of signaling proteins[[15]](#Works-Cited).
 
-Embedded methods: Perform feature selection during model training [[13]](#Works-Cited) and was used in the evaluation of sequence features in classification of enzyme function[[16]](#Works-Cited)
+Embedded methods: Perform feature selection during model training and was used in the evaluation of sequence features in classification of enzyme function[[16]](#Works-Cited)
 
 
 ### Training Algorithms
@@ -149,7 +149,7 @@ From the aggregate body plan of mammals to the subtle chemical interactions of b
 
 The problem of predicting three-dimensional structure from two-dimensional sequence is mathematically ill-defined -- there are far more possible three-dimensional structures than two-dimensional ones. However, biological molecules manage to find their configurations efficiently regardless, so there must rhyme and reason at the core of the mapping [[24]](#Works-Cited). Anfinsen’s dogma, the idea that the mapping from amino-acid sequence to three-dimensional structure is unique, further inspires us to try to pin this mapping down.
 
-Since not every biological question is so well-defined (find a function mapping from sequence to structure), the applications of unsupervised learning to structure prediction provides an excellent toy example from which to understand the process of framing biological problems as supervised learning ones, and how to export advances of computer science in a bioinformatics context.
+Since not every biological question is so well-defined (find a function mapping from sequence to structure), the applications of unsupervised learning to structure prediction provides an excellent toy example from which to understand the process of framing biological problems as supervised learning ones, and how to export advances of computer science to bioinformatics problems.
 
 ### Possible Approaches
 
@@ -165,9 +165,9 @@ Protein-folding is fundamentally a chemical process -- one of trying to find the
 
 #### Statistical Approaches
 
-We have plenty of data for empirically-verified protein folding patterns already -- statistics can provide a powerful tool to generalize to new structures. On the way, hairy statistical questions arise: which motifs and secondary structures generalize, and which do not? These statistically difficult questions about generalization lend themselves to abstracting statistics away into modern supervised learning approaches, which manage to pick up complex signals and learn to ignore noise if given appropriate data and time. [[27]](#Works-Cited)
+We have plenty of data for empirically-verified protein folding patterns already, and so statistics can provide a powerful tool to generalize to new structures. On the way, difficult statistical questions arise: which patterns and secondary structures generalize, and which do not? These difficult questions about generalization lend themselves to abstracting statistics away into modern supervised learning approaches, which manage to pick up complex signals and learn to ignore noise if given appropriate data and time. [[27]](#Works-Cited)
 
-Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is very complex, and we have lots of data from which to pick up signal from [[27]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
+Supervised Learning has lent itself extremely well to protein folding because of two reasons: the mapping between sequence and structure is difficult to intuit, and we have lots of data from which to pick up signal from [[27]](#Works-Cited). This is where the magic has been in recent years, and what we'll be focusing on in showing the power of exporting supervised learning to a domain.
 
 #### Combined Approaches
 
