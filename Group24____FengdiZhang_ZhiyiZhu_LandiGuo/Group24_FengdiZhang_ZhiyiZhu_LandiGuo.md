@@ -74,9 +74,10 @@ The fastqc report contains graphs and tables that shows the quality of the input
 ![index](https://github.com/ZhiyiZhu0226/BENG183/blob/main/fastqc%20index.PNG?raw=true)
 
 Each link corresponds to a test. The color of the bulletin points shows the quality of the corresponding module. Green represents pass, orange represents warning, and red represents failed. Although it seems like that more green bulletin points indicates a file has better quality, the thresholds used by the program may not suit your data, so your data could still have good quality even if it failed several tests. For example, the thresholds to determine the quality of a DNA file and a RNA file should be different, yet fastqc uses the same threshold and therefore produces inaccurate test results.
+
 The following graphs are results from running fastqc on [female_midgut1_R1_raw.fastq.gz](http://sysbio.ucsd.edu/public/wenxingzhao/CourseFall2019/DS_raw/female_midgut1_R1_raw.fastq.gz), which is a RNAseq data of drosophila melanogaster.
 
-#### How to interpret the test results
+#### How to interpret the test results:
 - Basic statics
 
 This table gives some simple composition statistics for the analyzed file. Note that for sequence length, it should provide the length of the shortest and longest sequence in the set. In the picture below, it’s only providing one value because all sequences in this file have the same length.
