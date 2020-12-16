@@ -302,7 +302,7 @@ As discussed above, deep learning methods allow more flexibilty in feature exatr
 
 While DeepVariant is the classic example of Variant Caller using Deep Learning, NeuSomatic is another deep convolutional neural network based approach that addresses besides the variety of sequencing technologies and strategies, the last challenge of Variant Calling we discussed earlier - detecting Somatic Variants well despite varying tumor purity.
 
-Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalant. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from mutitude of types of High throughput expaeriments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. Thus, this one tool has been fostering Precision Medicine in multiple ways.
+Besides, Variant Calling, many other examples of OMICS data analysis using Neural Networks are now becoming increasingly prevalant. For example, DeepBind, which also uses CNN and also runs on GPU server, takes data from mutitude of types of High throughput expaeriments to predict sequence specific binding of DNA- and RNA-binding proteins, which can be further used to predict regions involved in gene regulation like enhancer prediction, detection of binding sites. [(26)](#References) Thus, this one tool has been fostering Precision Medicine in multiple ways.
 
 ![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig2_HTML.jpg?as=webp)
 ###### Fig 15 DeepBind Training Workflow [(26)](#References)
