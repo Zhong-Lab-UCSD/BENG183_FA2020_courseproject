@@ -197,21 +197,21 @@ Sample Distribution and Standard deviation:
 
 95% chance that it is within the distance of the mean, searching the t table gives the value of 1.984. Find the confidence interval:
 
-!> 1.984(.0557) = .1105
+>! 1.984(.0557) = .1105
 
 Therefore, we are 95% confident that:
 
-!> It falls between the interval .33+-.1105
+>! It falls between the interval .33+-.1105
 
 Assuming the null hypothesis is correct, calculate the t statistic using the general formula for test statistics as a guide:
 
- !> Assuming PM = PN = P
-!> σPm-Pn = [2P(1-P)/100]½ = ~0.0424
-!> Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
+>! Assuming PM = PN = P
+>! σPm-Pn = [2P(1-P)/100]½ = ~0.0424
+>! Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
 
 What is the conclusion?
 
-!>Given a significance level of 5%, since our critical t value is less than the t value above, we can be 95% confident that the presence of the mutation contributes to the beast cancer and reject the null hypothesis. These statistics in this example reflect the percentages caused by the BRCA1 mutation.
+>! Given a significance level of 5%, since our critical t value is less than the t value above, we can be 95% confident that the presence of the mutation contributes to the beast cancer and reject the null hypothesis. These statistics in this example reflect the percentages caused by the BRCA1 mutation.
 
 ---
 ## Calculate the P-value
