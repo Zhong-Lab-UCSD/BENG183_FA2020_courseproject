@@ -29,65 +29,83 @@ These hypotheses need to have these two features:
 * Have reproducible results
 * Have the possibility to be proven either false or true
 
-These hypotheses have names and they are the **null hypothesis (H0)** and the **alternative hypothesis (H1)**
+These hypotheses are called the **null hypothesis (H<sub>0</sub>)** and the **alternative hypothesis (H<sub>1</sub>)**
 
-#### Null Hypothesis (H0)
+#### Null Hypothesis (H<sub>0</sub>)
 * always predicts that there is no relationship between variables or no difference between variables 
 * is assumed true until rejected by *not rejecting the alternative hypothesis*
 * usually set to be the *simpler* one of the two
 
-#### Alternative hypothesis (H1)
+#### Alternative hypothesis (H<sub>1</sub>)
 * needs to proven true 
 * this hypothesis is the one that assumes there’s a relationship between variables
 
-H0: μ = 0			 	H0: μ ≥ 0 					H0: μ ≤ 0
-H1: μ ≠ 0				H1: μ < 0					H1: μ > 0
+These tests can be quantitatively represented in the following ways:
 
-#### Testing your knowledge. Create the following hypotheses labeling your null and alternative hypothesis.
+### One-sided hypothesis tests
+
+H<sub>0</sub>: μ ≥ 0
+H<sub>1</sub>: μ < 0
+
+H<sub>0</sub>: μ ≤ 0
+H<sub>1</sub>: μ > 0
+
+#### Two-sided hypothesis test
+
+H<sub>0</sub>: μ = 0
+H<sub>1</sub>: μ ≠ 0
+
+#### Testing your knowledge. Create the following hypotheses, stating if it is one-sided to two-sided and labeling your null and alternative hypothesis.
+
 1. The equality of male and female birth rates.
 
-Answer:
->! Null hypothesis: The birth rates of males and females are equal.
->! Alternative hypothesis: The birth rates of males and females are not equal.
->! This is the earliest use of statistical hypothesis testing, created in the 1700s by John Arbuthnot and continued by Pierre-Simon Laplace (of the famous Laplace transform in Calculus).
+<details>
+	<summary>Answer:</summary>
+	Two-sided hypothesis test.
+Null hypothesis: The birth rates of males and females are equal.
+Alternative hypothesis: The birth rates of males and females are not equal.
+This is the earliest use of statistical hypothesis testing, created in the 1700s by John Arbuthnot and continued by Pierre-Simon Laplace (of the famous Laplace transform in Calculus).
+</details>
 
 2. A lady’s ability to discern whether tea or milk was added first to a cup.
 
-Answer:
->! Null hypothesis: The probability of guessing randomly (50%) is equal to the lady's answers on whether tea then milk and milk then tea were added.
->! Alternative hypothesis: The lady’s answers are not random.
->! This is a famous British example known as the *Lady tasting tea*, by Dr. Muriel Bristol
+<details>
+	<summary>Answer:</summary>
+	Two-sided hypothesis test.
+Null hypothesis: The probability of guessing randomly (50%) is equal to the lady's answers on whether tea then milk and milk then tea were added.
+Alternative hypothesis: The lady’s answers are statistically significant and not random.
+This is a famous British example known as the *Lady tasting tea*, by Dr. Muriel Bristol.
+</details>
 
- 3. A defendant's guilt under the assumption that the defendant is innocent until proven guilty.
+3. That a person is clairvoyant when blindly calling suites.
 
-Answer:
->! Null hypothesis: The defendant is innocent.
->! Alternative hypothesis: The defendant is guilty.
+<details>
+	<summary>Answer:</summary>
+	Two-sided hypothesis test.
+Null hypothesis: That the probability of the clairvoyant’s guesses are equal to or less than the probability of guessing the suite at random.
+Alternative hypothesis: That the probability of the clairvoyant’s predictions are greater than the probability of guessing the suite at random. 
+</details>
 
-4. That a person is clairvoyant when blindly calling suites.
+4. That the presence of a gene increases the chances of developing cancer.
 
-Answer:
->! Null hypothesis: That the probability of the clairvoyant’s guesses are equal to or less than the probability of guessing the suite at random.
->! Alternative hypothesis: That the probability of the clairvoyant’s predictions are greater than the probability of guessing the suite at random. 
-
-
-5. That the presence of a gene increases the chances of developing cancer.
-
-Answer:
->! Null hypothesis: The presence of a gene does not change the probability of developing cancer.
->! Alternative hypothesis: The presence of a gene does change the probability of developing cancer.
+<details>
+	<summary>Answer:</summary>
+	One-sided hypothesis test.
+Null hypothesis: The presence of a gene does not change the probability of developing cancer.
+Alternative hypothesis: The presence of a gene does change the probability of developing cancer.
+</details>
 
 Now that we have our hypotheses, we need to create a test design to gather data. 
 
 ---
 ## Data and Test Design
 
-Test design should contain the following
-Discrimination - Clearly seperated hypotheses
-Replication - Ability to be reproduced with the exact same conditions
-Controls - Limited interference from outside variables. Set a placebo.
-Blind/Randomized Design - Unbiased selection of experimental variables
-Measurement - Ability to be quantified
+Test design should contain the following:
+Discrimination - Clearly seperated hypotheses.
+Replication - Ability to be reproduced with the exact same conditions.
+Controls - Limit interference from outside variables. Set a negative and positive control.
+Blind/Randomized Design - Unbiased selection of experimental variables.
+Measurement - Ability to be quantified.
 
 The data collected/generated determines what hypothesis is supported. Data is generated by repeating an experiment under controlled conditions. The degree to which the results vary is tabulated into test statistics.
 
@@ -99,23 +117,32 @@ Data must:
 
 The equality of male and female birth rates.
 
-	Answer:
->! Collect birth rates across multiple locations
+<details>
+	<summary>Answer:</summary>
+Accumulate birth rates across multiple locations
+</details>
 
 A lady’s ability to discern whether tea or milk was added first to a cup.
 
-	Answer:
->! Conduct multiple experiments making sure to use the same tea cup, have the temperature, contain equal proportions of tea and milk, and try to limit human interaction.
->! Tone of voice as well as many other factors could unconsciously transfer information.
+<details>
+	<summary>Answer:</summary>
+Conduct multiple experiments making sure to use the same tea cup, the same temperature, contain equal proportions of tea and milk, and try to limit human interaction as tone of voice as well as many other factors could unconsciously transfer information.
+</details>
 
 That a person is clairvoyant when blindly calling suites.
 
->! Conduct multiple experiments making sure that there is no variation in tone of voice or movement in the presenter.
+<details>
+	<summary>Answer:</summary>
+Conduct multiple experiments making sure that there is no variation in tone of voice or movement in the presenter or any markings on the cards being presented.
+</details>
 
 That the presence of a mutated gene increases the chances of developing cancer.
 
->! Select a random assortment of the population that both contain and do not contain the gene. Then, over a long period of time, check evolving cancer rates for both groups.
->! Or compare a control group of mice to genetically engineered mouse models for cancer research as seen [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533445/). 
+<details>
+	<summary>Answer:</summary>
+Select a random assortment of the population that both contain and do not contain the gene and tabulate cancer rates for both groups.
+Another approach would be to compare a control group of mice to genetically engineered mouse models with the mutation. This common procedure for cancer research can be seen [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3533445/).
+</details>
 
 
 These are some *common Bioinformatic Databases*: 
@@ -138,10 +165,10 @@ Data will need to be summarized into a *single number* called a **statistic**.
 If the magnitude of the statistic supports *either hypothesis*, then it’s called a **test statistic**.
 
 ### List of Different Test Statistics
-#### Z-Statistic (Z-Test)
+##### Z-Statistic (Z-Test)
 * Determines if two means are different assuming normal distribution using a known standard deviation as the average variation.
 
-#### T-Statistic (T-Test)
+##### T-Statistic (T-Test)
 * Used instead of a Z Test replacing average variation with the sample’s standard deviation.
 
 ##### Chi-Square Statistic (Chi-Square Test)
@@ -159,59 +186,85 @@ If the magnitude of the statistic supports *either hypothesis*, then it’s call
 ##### F-Statistic (ANOVA)
 * ANOVA stands for analysis of variance. Generally used as the first statistical test as it can compare multiple groups to determine if, given a single variable, somewhere between the groups there is a significant difference. Afterwards, there would still need to occur (N choose 2) T-Tests to find which specific group interactions are statistically significant.
 
-#### Multivariate F-Statistic (MANOVA)
+##### Multivariate F-Statistic (MANOVA)
 * Similar to ANOVA, but compares multiple variables between groups.
 
-**How to Choose Which Statistical Test**
+###How to Choose Which Statistical Test
 
 ![flowchart](/Group29_Final/flowchart-for-choosing-a-statistical-test.png)
 
 ### Testing your knowledge
 
-You suspect that an ancestral mutation to a specific gene is the cause for a higher likelihood of developing breast cancer in women. In the U.S., about 1 in 400 people have the mutation. You take a sample of 100 women aged 70 without the mutation and find that 7 have breast cancer. You take a sample of 100 women aged 70 with the mutation and find that 40 have breast cancer. Test if this gene can be said to increase the development of breast cancer with a 95% confidence interval.
+You suspect that an ancestral mutation to a specific gene is the cause for a higher likelihood of developing breast cancer in women. In the U.S., about 1 in 400 people have the mutation. You take a sample of 100 women aged 70 without the mutation and find that 7 have breast cancer. You take a sample of 100 women aged 70 with the mutation and find that 40 have breast cancer. Test if this gene can be said to increase the development of breast cancer with a 95% confidence interval. Let mutation and normal be represented by the letters m and n respectively. Let N represent the sample number. State the following:
 
 Null hypothesis: The mutated gene does not increase the chance of cancer. 
 
->! H0: μmutation - μnormal <= 0
->! The percentage of women with cancer given the presence of the mutation is less than or equal to the percentage of women with cancer given no mutation.
+<details>
+	<summary>Answer:</summary>
+H<sub>0</sub>: μ<sub>m</sub> - μ<sub>n</sub> <= 0
+The percentage of women with cancer given the presence of the mutation is less than or equal to the percentage of women with cancer given no mutation.
+</details>
 
 Alternative hypothesis: Presence of the mutated gene increases the chance of cancer.
 
->! H1: μmutation - μnormal > 0
->! The percentage of women with cancer given the presence of the mutation is greater than the percentage of women with cancer given no mutation.
+<details>
+	<summary>Answer:</summary>
+H <sub>1</sub> : μ <sub>m</sub> - μ <sub>n</sub> > 0
+The percentage of women with cancer given the presence of the mutation is greater than the percentage of women with cancer given no mutation.
+</details>
 
 Mutation Mean and Average Variation:
 
->! μ1 = PM = .07
->! σ2 = PM(1-PM)/N = ~.0007
+<details>
+	<summary>Answer:</summary>
+μ <sub>1</sub> = P <sub>m</sub> = .07
+σ <sup>2</sup> = P <sub>m</sub> (1-P <sub>m</sub> )/N = ~.0007
+</details>
 
 Normal Mean and Average Variation:
 
->! μ2 = PN = .40
->! σ2 =  PN(1-PN)/N = ~.0024
+<details>
+	<summary>Answer:</summary>
+μ <sub>2</sub> = P <sub>n</sub> = .40
+σ <sup>2</sup> = P <sub>n</sub> (1-P <sub>n</sub> )/N = ~.0024
+</details>
 
 Sample Distribution and Standard deviation:
 
->! μPm - μPn = |.07 - .47| = .33
->! σPm - Pn = (.0007 + .0024)1/2 = ~.0557
+<details>
+	<summary>Answer:</summary>
+μ <sub>Pm</sub> - μ <sub>Pn</sub> = |0.07 - 0.47| = 0.33
+σ <sub>Pm-Pn</sub> = (.0007 + .0024) <sup>1/2</sup> = ~0.0557
 
-95% chance that it is within the distance of the mean, searching the t table gives the value of 1.984. Find the confidence interval:
+For a 95% chance that it is within the distance of the mean, the t table gives the value of 1.984. Find the confidence interval:
 
->! 1.984(.0557) = .1105
+<details>
+	<summary>Answer:</summary>
+1.984(0.0557) = 0.1105
+</details>
 
 Therefore, we are 95% confident that:
 
->! It falls between the interval .33+-.1105
+<details>
+	<summary>Answer:</summary>
+It falls between the interval: 0.33+-0.1105
+</details>
 
 Assuming the null hypothesis is correct, calculate the t statistic using the general formula for test statistics as a guide:
 
->! Assuming PM = PN = P
->! σPm-Pn = [2P(1-P)/100]½ = ~0.0424
->! Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
+<details>
+	<summary>Answer:</summary>
+Assuming P <sub>m</sub> = P <sub>n</sub> = P
+σ <sub>Pm-Pn</sub> = [2P(1-P)/100] <sup>1/2</sup> = ~0.0424
+Therefore, t = (.33 - 0) / 0.0424 = 7.783 with a mean of 0.
+</details>
 
 What is the conclusion?
 
->! Given a significance level of 5%, since our critical t value is less than the t value above, we can be 95% confident that the presence of the mutation contributes to the beast cancer and reject the null hypothesis. These statistics in this example reflect the percentages caused by the BRCA1 mutation.
+<details>
+	<summary>Answer:</summary>
+Given a significance level of 5%, since our critical t value is less than the t value above, we can be 95% confident that the presence of the mutation contributes to the beast cancer and reject the null hypothesis. These statistics in this example reflect the percentages caused by the BRCA1 mutation.
+</details>
 
 ---
 ## Calculate the P-value
@@ -222,11 +275,11 @@ The **p-value** calculates the probability that we would get the same test stati
 
 ### How to calculate the P-value:
 
-P-value = 1 - FT|H0(t)
+P-value = 1 - FT|H <sub>0</sub> (t)
 
->  FT|H0(t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H0
+>  FT|H <sub>0</sub> (t) = cumulative distribution function (CDF) = distribution of the Test Statistic under H <sub>0</sub>
 
-### How to find the CDF under the H0:
+### How to find the CDF under the H <sub>0</sub>:
 
 Computer simulation: simulate random outcomes by using the numbers from the test statistic and keep swapping them for many simulations (approximation of null distribution)
 
@@ -236,15 +289,15 @@ You are puzzled and do 40 random simulations of n = 50 NCAA students for a large
 ![plot](/Group29_Final/plot.PNG)
 > We have our statistic p = 0.06 (NOT P-value)
 
-> Our null hypothesis is that the 0.06 applies to your school: H0 : p = 0.06
+> Our null hypothesis is that the 0.06 applies to your school: H <sub>0</sub> : p = 0.06
 
-> So our alt hypothesis is that it’s higher at your school: H1: p > 0.06
+> So our alt hypothesis is that it’s higher at your school: H <sub>1</sub> : p > 0.06
 
-> NOTE: These are disjoint sets and the H0 and H1 can’t happen at the same time 
+> NOTE: These are disjoint sets and the H <sub>0</sub> and H <sub>1</sub> can’t happen at the same time.
 
 > So now we can start approximating our p-value 
-> p-val = P(Pschool >= 11% | H0) = 5/40 = 0.125
-> We got this by counting the number of simulations where the p >= 0.11 and dividing it by the total number of simulations 
+> p-val = P(P <sub>school</sub> ≥ 11% | H0) = 5/40 = 0.125
+> We got this by counting the number of simulations where the p ≥ 0.11 and dividing it by the total number of simulations 
 From this example we got our **p-val to be equal to 0.125**. What do we do now? 
 ---
 ## Make a Decision
@@ -263,7 +316,7 @@ The cutoff for the p-value that we choose,**USUALLY**, is 0.05 in order to *reje
 > From our previous example, we saw that our p-value was **0.125** which is higher than our level of significance. 
 
 > 0.125 > 0.05 
-> So we can say that **we accept the H0** and that there is no statistical significance 
+> therefore we can say that **we accept the H <sub>0</sub> ** and that there is no statistical significance 
 
 #### *What if the decision we made is wrong?*
 There are two types of errors that we can make and they are: 
@@ -291,6 +344,8 @@ Here is an illustration of the type of decisions that can be made:
 * Sacha, Varin, and Demosthenes B Panagiotakos. “Insights in Hypothesis Testing and Making Decisions in Biomedical Research.” The Open Cardiovascular Medicine Journal, Bentham Open, 30 Sept. 2016, www.ncbi.nlm.nih.gov/pmc/articles/PMC5054503/.
 * Sheng Zhong’s (Ph.D), lecture 12: Hypothesis Testing
 * Bevans, R. (2020, October 26). Choosing the Right Statistical Test: Types and Examples. Retrieved December 15, 2020, from https://www.scribbr.com/statistics/statistical-tests/
+
+
 
 
 
