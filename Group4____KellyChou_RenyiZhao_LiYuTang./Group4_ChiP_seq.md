@@ -20,9 +20,6 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang<br>
     6.2 [S/N - The Signal To Noise Ratio](#62)<br>
 7. [References](#7)<br>
 
-<!--- 
-(make sure that you're using a "Relative path" of the figure so that when you pull your project folder to course project repo, we can properly see your figures. eg, using ![image info](./pictures/image.png) where your .md file are under the same level with the pictures folder.)
--->
 
 ## 1. Introduction<a name="1"></a>
 
@@ -46,28 +43,49 @@ The goal of ChIP-Sequencing is to map binding sites of any DNA binding protein, 
   <img src="./images/experimental.png" width="500" height="400"/>
 </p>
 
-1. **Crosslink**:
+1. **Crosslink**
+
 The proteins are first crosslinked to the DNA using formaldehyde.
-2. **Shear Chromatin**:
+
+2. **Shear Chromatin**
+
 Then, the chromatin is sheared into smaller pieces by sonication or enzymes to digest them.
-3. **Add protein-specific antibody**:
+
+3. **Add protein-specific antibody**
+
 Next, the antibodies for the specific protein in question is added.
-4. **Immunoprecipitation**:
+
+4. **Immunoprecipitation**
+
 Later, the DNA is immunoprecipitated to isolate and concentrate the particular protein in question.
-5. **Purify DNA**:
+
+5. **Purify DNA**
+
 The crosslinks are reversed and the DNA is purified using the antibody-bound magnetic beads.
-6. **Prepare for sequencing**:
+
+6. **Prepare for sequencing**
+
 The immunoprecipitated DNA is now prepared to be used for a next-generation sequencing to be analyzed for DNA binding sites.
+
 
 ### 2.2 Computational Analysis<a name="22"></a>
 <p align="center">
     <img src="./images/computational.jpg">
 </p>
 
-Depending on if there is a small-scale analysis, like a single or small sample,or a large-scale anaylsis with many samples, different analysis strategies may be used. Peak calling is comparing different peaks from each experiment. For larger-scale analyses, a relaxed threshold to compare the peaks may be used. Normally differential analysis is used for small-scale samples, but other analysis strategies may be used to further analyze: 
-- Functional analysis: motif analysis, gene ontology
-- Integration with other technologies
-- Validation: qPCR, knockdown analysis
+After the DNA is prepared for sequencing and mapping, different analysis strategies may be used depending if there is a **small-scale analysis**, like a single or small sample, or a **large-scale anaylsis** with many samples. Normally **differential analysis** is used for small-scale samples with **spike-in analysis** or **de novo normalization** by using different [signal-to-noise (S/N) ratios](#61) and underlying assumptions. For small-scale analyses, **peak-calling strategies** and parameters may be adjusted. For large-scale analyses, it may be wise to **jointly analyze** all the ChIP samples instead of comparing peaks for each sample individually. A **relaxed threshold** to compare the peaks may be used for large-scale analyses.
+
+**Peak calling** is comparing different peaks from each experiment. There are three modes that each require different peak-calling strategies: 
+- **sharp mode**: specific positions in genome
+- **broad mode**: large genomic domains
+- **mixed mode**: both specific positions and large genomic domains
+
+Broad and mixed mode peaks are associated with weak and widespreach enriched regions with no clear peak summits and sequence specficity.
+
+In addition, other analysis strategies may be used to further analyze: 
+- **Functional analysis**: motif analysis, gene ontology
+- **Integration with other technologies**: gene expression, chromatin, genetic variation, DNA methylation
+- **Validation**: qPCR, knockdown analysis
 
 ---
 
@@ -124,6 +142,19 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 ---
 
 ## 5. Improved Methodologies<a name="5"></a>
+
+### 5.1 Limited Cell Number<a name="51"></a>
+### 5.2 ChIP-exo <a name="52"></a>
+### 5.3 Re-ChIP  <a name="53"></a>
+## 6. Quality Control<a name="6"></a>
+### 6.1 Sequencing Depth<a name="61"></a>
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus, the number of called peaks increas as the sequencing depth increases. Sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. <br>
+It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. It is also noted that DNA sequencing library complexity, that is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate.
+
+### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
+
+
 
 
 
