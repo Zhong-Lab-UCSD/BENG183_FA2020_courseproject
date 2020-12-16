@@ -65,7 +65,7 @@ As mentioned above, ANNs are biological neural networks because they are made by
 
 #### Basic design:
 ![](https://miro.medium.com/max/2500/1*ZB6H4HuF58VcMOWbdpcRxQ.png)
-###### Fig 1: Basic design of ANN - a fully connectected multilayer architecture [(27)](
+###### Fig 1: Basic design of ANN - a fully connected multilayer architecture [(27)](
 ![](Images/ANN4.png)
 
 This is further complicated by use of various activation functions, differing the number of hidden layers, or the number of perceptrons in a layer, different ways to initialize the weights and other optimization techniques.
