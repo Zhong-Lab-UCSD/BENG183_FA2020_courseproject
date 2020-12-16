@@ -394,7 +394,7 @@ measuring if the odds ratio is significantly larger or smaller than
 using a contingency table. The contingency table in Figure 9 is only for
 one gene, however, this can be used on hundreds to thousands of genes.
 
-![(Fang, Martin, Wang, 2012) ](pic1.png "fig:") [fig:galaxy]
+![(Fang, Martin, Wang, 2012) ](pic1.png "fig:") 
 
 ![(Fang, Martin, Wang, 2012) ](pic2.png "fig:") [fig:galaxy]
 
