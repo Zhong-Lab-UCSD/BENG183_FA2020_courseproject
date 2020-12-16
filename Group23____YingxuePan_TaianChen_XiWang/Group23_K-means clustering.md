@@ -12,7 +12,7 @@ K-Means Clustering:
 
 ## 2. Algorithm<a name="2"></a>
 In a nutshell, K-means clustering begins with randomly selected centroids (graph b), assigns objects to the closest cluster (graph c), updates the centroids based on the current assignment of objects (graph d), and repeats the previous two steps (graph e and f) until it reaches convergence.
-![Visualization of k-means algorithm](2._kmeansalgo.png)
+![Visualization of k-means algorithm](images/2._kmeansalgo.png)
 
 Figure 1: An Illustration of Kmeans Algorithm. **Figure by Sheng Zhong, “Beng183 FA20 Lecture 15 Machine Learning, part 2”, (2020)**.
 
@@ -39,7 +39,7 @@ With a given dataset, we could perform K-Means clustering easily through the ste
 
 ### 3.1. Normalizing the raw data<a name="3.1"></a>
 An important step we have to do before we actually use k means clustering to process our data is normalization. 
-![Normalization Is Important](3.1_normalizationIsImportant.png)
+![Normalization Is Important](images/3.1_normalizationIsImportant.png)
 
 Table 1: Gene expression levels of four genes in patients with different cancer subtypes. **Table by Sheng Zhong, “Midterm2”, 2020, Beng183 FA20**.
 
@@ -64,7 +64,7 @@ What elbow method does is essentially running k-means with a range of values of 
 
 See an example of Elbow Plot below:
 
-![elbowmethod](3.2_TwoGraphs.png)
+![elbowmethod](images/3.2_TwoGraphs.png)
 
 Figure 2: Example of Using Elbow Method to Decide K. **Figure by Robert Gove, “Using the elbow method to determine the optimal number of clusters for k-means clustering” (2017)**.
 
@@ -77,7 +77,7 @@ The performance of k-means clustering relies on good initial centroids. Bad init
 In the example of the graph below, if at least two of the initial centroids chosen happened to be in the bottom cluster then the resulting solution will be very far from the true solution! (Both green and red clusters are actual one cluster).
 There is no built-in mechanism to correct for initial wrong starting points. One may run multiple iterations for selecting good starting points even though it’s costly. That is, re-iterating the algorithm and initialization of centroids multiple times and choose the initialization with small intracluster distance and large intercluster distance (Satyam Kumar, 2020).
 
-![Bad Initialization](3.3.1_Initialization.png)
+![Bad Initialization](images/3.3.1_Initialization.png)
 Figure 3: Clusters Beginning with a Bad Initialization. **Figure by Jianpeng Qi, Yanwei Yu et al, “An Effective and Efficient Hierarchical K-means Clustering Algorithm”, Research Gate (2017)**.
 
 #### 3.3.2. K-Means++ methods for selecting good initialization points
@@ -135,7 +135,7 @@ plt.show()
 
 Example scatter plot:
 
-![Example Scatter Plot](3.5_d1kmean.png)
+![Example Scatter Plot](images/3.5_d1kmean.png)
 
 Figure 4: Scatter Plot Example Using Python with a Data Size of 500.
 
@@ -148,9 +148,9 @@ Figure 4: Scatter Plot Example Using Python with a Data Size of 500.
 2. When updating the centroids, the new mean vector can be deeply influenced by the outliers. Therefore, consider removing or clipping outliers before clustering.
 3. the ratio of the standard deviation to the mean of distance between examples decreases as the number of dimensions increases. This convergence means k-means becomes less effective at distinguishing between examples as the num of dimensions increases (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
-![10Dimensions](4.1.1_10Dimensions.png)
+![10Dimensions](images/4.1.1_10Dimensions.png)
 
-![1000Dimensions](4.1.1_1000Dimensions.png)
+![1000Dimensions](images/4.1.1_1000Dimensions.png)
 
 Figure 5: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
@@ -159,7 +159,7 @@ Figure 5: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advant
 
 2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
-![WidthsAdvantage](4.2_DifferentKMeans.png)
+![WidthsAdvantage](images/4.2_DifferentKMeans.png)
 
 Figure 6: Generalization of Kmeans. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
