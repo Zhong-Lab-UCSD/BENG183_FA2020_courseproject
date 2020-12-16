@@ -320,7 +320,7 @@ from our RSEM pipeline to quantify the expression of the different
 isoforms of the Ccl6 gene in our sample.
 
 Further details about this example can be found at the RSEM Github Page
-(Source ).
+(Source 2).
 
 Common Analysis Goals and Discoveries from RNA Sequencing 
 ==========================================================
@@ -372,14 +372,14 @@ perform multi-group comparisons”.(Fang, Martin, Wang, 2012).
 Poisson Distribution
 
 When the RNA samples constitute independent measurements from only one
-source, the Poisson distribution is used. “$m_{ij}$$^{k}$ is defined as
+source, the Poisson distribution is used. “m_{ij}^{k} is defined as
 the total number of short sequences which aligned to the gene, for the
 expression level of a specific gene. Essentially the sum of a series of
 random events that correspond to a short sequence and a Bernoulli
 Distribution comes after. ”(Fang, Martin, Wang, 2012). The ”probability
 that the sequence aligns to the gene”(Fang, Martin, Wang, 2012) is the
 achievement. Poisson distribution is used in order to approximate
-mij(k)sample, this can be written as “Poi(μi (k)), with μ i (k) being
+mij(k)sample, this can be written as “Poi((μ)i(k)), with (μ)i(k) being
 the mean”.(Fang, Martin, Wang, 2012). The null hypothesis for the
 ithgene will be that “all means are equal” for various expression
 levels(Fang, Martin, Wang, 2012). Fisher’s Exact Test and the Likelihood
@@ -396,7 +396,7 @@ one gene, however, this can be used on hundreds to thousands of genes.
 
 ![(Fang, Martin, Wang, 2012) ](pic1.png "fig:") 
 
-![(Fang, Martin, Wang, 2012) ](pic2.png "fig:") [fig:galaxy]
+![(Fang, Martin, Wang, 2012) ](pic2.png "fig:") 
 
 The values from the contingency table can be inputted into R in order to
 calculate the P value. The function is listed in Figure 10. The p value
@@ -416,18 +416,18 @@ Likelihood Ratio Test:
 
 The likelihood ratio test is pinpointing differently expressed genes.
 This method uses the Poisson distribution in the following equation
-“Poi($μ_i$(k) =$L_j$$^k$$v_i$$^k$$(k))$, where $v_i$$^(k)$ represents
+“Poi(μ_i(k) =L_j^kv_i^k(k)), where v_i^(k) represents
 the proportion of gene transcript copies of the ith gene in all samples
 under the kth phenotype”.(Fang, Martin, Wang, 2012) In order to lessen
-the sequencing depth variation the $L_j$$^ k$ is incorporated into the
+the sequencing depth variation the L_j^ k is incorporated into the
 Poisson mean.
 
 Figure 11 shows the following calculations that must be made in order to
 calculate the statistic for the 2 sided alternative hypothesis.
 
-![(Fang, Martin, Wang, 2012) ](pic3.png "fig:") [fig:galaxy]
+![(Fang, Martin, Wang, 2012) ](pic3.png "fig:") 
 
-![(Fang, Martin, Wang, 2012) ](pic4.png "fig:") [fig:galaxy]
+![(Fang, Martin, Wang, 2012) ](pic4.png "fig:") 
 
 If it is a one sided alternative hypothesis, Figure 12 illustrates the
 equations used in order to make the calculations. However, “results may
@@ -440,13 +440,13 @@ Negative Binomial Distribution:
 As brought up earlier, overdispersion occurs, the methods that are based
 on Poisson distribution may not produce correct results. Bayesian method
 can be applied in this case, “modeling gene counts by the marginal
-distribution of $m_{ij}^k$ and making the Poisson mean a random
-variable”(Fang, Martin, Wang, 2012). Gamma distribution has $\mu$
-i(k)$\psi$ “scale parameter and (1/$\phi$) shape parameter”(Fang,
+distribution of m_{ij}^k and making the Poisson mean a random
+variable”(Fang, Martin, Wang, 2012). Gamma distribution has mu
+i(k)\psi “scale parameter and (1/phi) shape parameter”(Fang,
 Martin, Wang, 2012), and by making the speculation that Poisson mean
 comes from the Gamma distribution, the mean of the negative binomial
-distribution becomes $\mu$i(k) while its variance transforms to
-$\mu$i(k)(1+ $\mu$i(k)$\psi$) where $\psi$→ 0 resulting in an overall
+distribution becomes mui(k) while its variance transforms to
+(mu)i(k)(1+ (mu)i(k)psi) where psi→ 0 resulting in an overall
 depletion for the Poisson distribution. Essentially, the Negative
 Bionomial model is a slight improvement and alteration of the Poisson
 distribution. In order to detect the differentially expressed genes the
@@ -464,7 +464,7 @@ variation when reducing variance and mean relationship. Deseq 2 uses the
 equation in Figure 13 in order to model every gene for the normal count
 data.
 
-![(Chan 2017) ](pic5.png "fig:") [fig:galaxy]
+![(Chan 2017) ](pic5.png "fig:") 
 
 The general workflow for Deseq2 can be divided up into two categories.
 The first one is quality control, which has the following steps of “read
@@ -492,13 +492,13 @@ distribution all of the variance is captured. This can be seen in Figure
 (The figures mentioned above are listed below)
 
 ![(Anjum, Jaggi, Varghese, Lall, Bhowmik, Rai, 2016) ](pic6.png "fig:")
-[fig:galaxy]
+
 
 ![(Anjum, Jaggi, Varghese, Lall, Bhowmik, Rai, 2016) ](pic7.png "fig:")
-[fig:galaxy]
+
 
 ![(Anjum, Jaggi, Varghese, Lall, Bhowmik, Rai, 2016) ](pic8.png "fig:")
-[fig:galaxy]
+
 
 References
 ==========
