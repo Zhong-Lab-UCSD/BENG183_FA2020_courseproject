@@ -7,22 +7,22 @@ Contents:
 1. [Supervised Learning Overview](#Supervised-Learning-in-Bioinformatics)\
     a. [Problem Domains](#Problem-Domains)\
     b. [Supervised Learning](#Supervised-Learning)\
-    c. [Feature Generation & Selection](#Feature-Generation-&-Selection)\
+    c. [Feature Generation & Selection](#Feature-Generation-&-Selection)
 2. [Protein Function Prediction](#Predicting-Protein-Function)\
     a. [Framing the Problem with Gene Ontology](#Framing-the-Problem-with-Gene-Ontology)\
     b. [Feature Engineering](#Feature-Engineering)\
-    c. [Feature Engineering Applications](#Feature-Engineering-Applications)\
-    - [Pseudo Amino Acid Composition](#Pseudo-Amino-Acid-Composition)\
-    - [Postion Specific Scoring Matrix](#Position-Specific-Scoring-Matrix)\
+    c. [Feature Engineering Applications](#Feature-Engineering-Applications)
+    - [Pseudo Amino Acid Composition](#Pseudo-Amino-Acid-Composition)
+    - [Postion Specific Scoring Matrix](#Position-Specific-Scoring-Matrix)
 3. [Protein Structure Prediction](#Structure-Prediction)\
     a. [Introduction to Protein Folding](#Introduction-to-Protein-Folding)\
     b. [Possible Approaches](#Possible-Approaches)\
     c. [AlphaFold](#AlphaFold)\
-    d. [Has the Protein Folding Problem Been Solved?](#Has-The-Protein-Folding-Problem-Been-Solved?)
-4. [Interactome Prediction](#Interactome-Prediction)
-    a. [Biology of the Interactome](#Biology-of-the-Interactome)
-    b. [Current Approaches](#Current-Approaches)
-    c. [Computational Approaches](#Computational-Approaches)
+    d. [Has the Protein Folding Problem Been Solved?](#Has-The-Protein-Folding-Problem-Been-Solved?)\
+4. [Interactome Prediction](#Interactome-Prediction)\
+    a. [Biology of the Interactome](#Biology-of-the-Interactome)\
+    b. [Current Approaches](#Current-Approaches)\
+    c. [Computational Approaches](#Computational-Approaches)\
 5. [References](#Works-Cited)
 
 ---
@@ -37,6 +37,7 @@ Figure 1 depicts the problem domains within bioinformatics which supervised lear
 
 ### Supervised Learning
 ![](./img/supervised-machine-learning.png)
+
 *[Figure 2](https://www.javatpoint.com/supervised-machine-learning): Supervised learning follows the general workflow displayed above. The left half of the image depicts the labeled data which characterizes supervised learning.*
 
 Supervised learning describes the machine learning algorithms which train on labeled input data in order to classify or otherwise analyze testing data. This is in opposition to unsupervised learning which does not interact with labeled data. In previous chapters, we have already discussed the supervised algorithms k nearest neighbors (kNN), linear regression, and support vector machines. Some other common supervised learning algorithms are naive bayes, decision trees, and most recently neural networks.
@@ -62,7 +63,7 @@ Because of the limitations of current biological techniques, we haven’t seen t
 
 Understanding protein function requires an in-depth knowledge of the various intersections between biological pathways and particles. As such it is important that there exists an accurate representation of protein function in terms of all areas of biological relevance. Gene ontology does just this by providing a comprehensive representation of gene encoding and gene products. It effectively divides protein function into three domains: molecular function, biological process, and cellular component. From these domains further hierarchical division down the line further represents a more encompassing low level representation of all interacting facets of gene encoding and gene products[[4]](#Works-Cited). This representation allows for a clear way in which to frame the protein function needing to be solved and where and how relevant features are present.
 
-![](./img/GO.png =250x)
+![](./img/GO.png)
 [[4]](#Works-Cited)
 
 ### Features for Protein Function
@@ -79,7 +80,7 @@ Feature engineering involves the extraction of smaller sets of features from exi
 ###### Pseudo Amino Acid Composition
 Current research has really focused on the use of sequence data in conjunction with other features, most notably physicochemical properties. A common protein sequence feature used is the Pseudo Amino Acid Composition[[6]](#Works-Cited). This is a feature vector of size [20+lambda] that depicts the composition of the first 20 amino acids followed by sequence order information. The pseAAC has been used in conjunction with SVMs to classify conotoxin superfamilies[[7]](#Works-Cited).
 
-![](./img/pseACC.png =250x)
+![](./img/pseACC.png)
 [[8]](#Works-Cited)
 
 ###### Position Specific Scoring Matrix
@@ -89,7 +90,7 @@ This feature extraction has been used in conjunction with SVM in a study on subm
 
 Jeong et Al. extracted further features sets from a PSSM in conjunction with other features[[11]](#Works-Cited). The first feature set was derived from averaged PSSM profiles over blocks where a PSSM was divided into 20 blocks of 20 features giving a 1x400 feature vector. Another feature set was derived using a similar technique but focusing on sequence domains with similar rates of conservation. A third 1x180 set was developed utilizing consensus sequences in conjunction with 9 physicochemical properties of hydrophobicity, isoelectric point, mess scale, hydrophobicity, hydrophilicity, polar, nonpolar, positive, and negative charge residues. And finally a fourth 1x980 set combining all three feature sets was made. After the utilization of training algorithms feature set 2 was found as most effective[[11]](#Works-Cited). These extractions are a good example of the versatility of feature extraction.
 
-![](./img/PSSM.png =250x)
+![](./img/PSSM.png)
  [[12]](#Works-Cited)
 
 ##### Feature Selection
@@ -115,7 +116,7 @@ Application: Classification of Enzyme function[[16]](#Works-Cited)
 
 Support Vector Machines is a 2 group classification algorithm that from input data maps points and constructs a hyperplane with the purpose of maximizing the margin from the points.
 
-![](./img/svm.png =250x)
+![](./img/svm.png)
 [[17]](#Works-Cited)
 
 #### kNN
@@ -124,7 +125,7 @@ Application: Classification of proteins based on a similarity of function coeffi
 
 The k-Nearest Neighbor algorithm assumes proximity means similarity and as such there doesn’t exist a traditional training step. Rather, input data is classified based on classification of most of its k-neighbors.
 
-![](./img/knn.png =250x)
+![](./img/knn.png)
 [[19]](#Works-Cited)
 
 #### Logistic Regression
@@ -133,7 +134,7 @@ Application: Scoring Gene Ontology Terms for a target protein[[18]](#Works-Cited
 
 Logistic Regression is used to classify data based on probability and as such involves predictive analysis. The probability of input data belonging to a certain classification is what the algorithm returns[[20]](#Works-Cited).
 
-![](./img/logreg.jpg =250x)
+![](./img/logreg.jpg)
 [[21]](#Works-Cited)
 
 #### Efficiency
@@ -305,7 +306,6 @@ bioRxiv 472555; doi: https://doi.org/10.1101/472555
 
 [22] Silva M, Leijoto L, Nobre C. Algorithms analysis in adjusting the SVM parameters: an approach in the prediction of protein function. J Appl Artif Intell. 2017;31:316-331.
 
-
 [23] http://sitn.hms.harvard.edu/flash/2010/issue65/
 
 [24] Dobson, C. *Protein folding and misfolding*. Nature 426, 884–890 (2003). https://doi.org/10.1038/nature02261
@@ -325,10 +325,9 @@ PK, Pushmeet Kohli (15 Jan 2020) *AlphaFold: Using AI for scientific discovery* 
 [30] Callaway, Ewen. (10 Dec 2020) *It will change everything’: DeepMind’s AI makes gigantic leap in solving protein structures* Nature 588, 203–204.
 https://www.nature.com/articles/d41586-020-03348-4
 
-[31] https://onlinelibrary.wiley.com/doi/full/10.1002/prot.25834
+[31] Senior, Andrew W., et al. *Protein Structure Prediction Using Multiple Deep Neural Networks in the 13th Critical Assessment of Protein Structure Prediction (CASP13).* Proteins: Structure, Function, and Bioinformatics, vol. 87, no. 12, 2019, pp. 1141–1148., doi:10.1002/prot.25834
 
 [32] The AlphaFold Team. (30 Nov 2020) *AlphaFold: a solution to a 50-year-old grand challenge in biology* Deep Mind. https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology
-
 
 interactomics:
 [33] Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. *A SARS-CoV-2 protein interaction map reveals targets for drug repurposing.* Nature 583, 459–468 (2020). https://doi.org/10.1038/s41586-020-2286-9
