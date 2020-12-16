@@ -111,4 +111,3 @@ Although this chapter focused on the molecular test, all three of the testing st
 14. Genbank, Wuhan seafood market pneumonia virus isolate Wuhan-Hu-1, complete genome. [https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.1).  <a name="c14"></a>
 
 15. Federal Drug Administration, [https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19](https://www.fda.gov/news-events/press-announcements/fda-takes-key-action-fight-against-covid-19-issuing-emergency-use-authorization-first-covid-19).  <a name="c15"></a>
-
