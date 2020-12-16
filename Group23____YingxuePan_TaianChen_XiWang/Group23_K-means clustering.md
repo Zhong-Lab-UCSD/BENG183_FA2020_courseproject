@@ -24,10 +24,11 @@ kmeans(X: {x_1,x_2,...,x_n}, k)
 	while the clustering changes: 
 		for x_i in X:
 			y_i = closest_centroid(centroids,x_i)       	\\find the closest centroid for each data point
-		for c_i in centroids:
-			c_i = update_centroid(Y)                    	\\update each centroid based on current assginment
+		for c_j in centroids:
+			c_j = update_centroid(Y,c_j)                    \\update each centroid based on current assginment
     return Y
 ```
+where `closet_centroid(centroids, x_i)` is a function that can find the closest centroid for `x_i` from the set of all centroids by calculating the euclidean distance. By assigning the return value of `closet_centroid(centroids, x_i)` to `y_i`, we assign the data `x_i` to the corresponding cluster. After we have found the closest centroid for each data point, the currect assignment of data points to clusters is stored in the output list `Y`. On the other hand, `update_centroid(Y,c_j)` is a funtion that can update the centroid `c_j` by calculating the average of all data points that are currently assigned to the cluster cooresponding to `c_j`. 
 
 ## 3. Implementation<a name="3"></a>
 With a given dataset, we could perform K-Means clustering easily through the steps below:
@@ -57,7 +58,7 @@ Let's think about what the functions above tell us. The euclidean distance is ba
 
 As a result, the final clusters will be based more on patterns in gene 3 while ignoring patterns in other genes (Lakshmanan 2019). However, we want to see how these four genes together can help identify the cancer type, instead of merely gene 3. Therefore, we have to standardize the raw data to transform all variables to comparable scales so that all genes have the same importance (Lakshmanan 2019).
 
-We can standarize our data easily using sklearn package in Python. 
+We can standarize our data easily using sklearn package in Python (Lakshmanan 2019). 
 ```python
 from sklearn.preprocessing import StandardScaler
 data = np.array() 		#data initialization, needs to be an array
