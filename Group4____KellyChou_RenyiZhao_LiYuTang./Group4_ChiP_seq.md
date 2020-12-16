@@ -12,13 +12,13 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang<br>
 3. [Advantages](#3)
 4. [Disadvantages](#4)
 5. [Improved Methodologies](#5)<br>
-    5.1 [Limited Cell Number](#51)<br>
-    5.2 [ChIP-exo](#52)<br>
+    5.1 [ChIP-exo](#51)<br>
+    5.2 [Limited Cell Number](#52)<br>
     5.3 [Re-ChIP](#53)<br>
 6. [Quality Control](#6)<br>
     6.1 [Sequencing Depth](#61)<br>
     6.2 [S/N - The Signal To Noise Ratio](#62)<br>
-7. [References](#7)
+7. [References](#7)<br>
 
 <!--- 
 (make sure that you're using a "Relative path" of the figure so that when you pull your project folder to course project repo, we can properly see your figures. eg, using ![image info](./pictures/image.png) where your .md file are under the same level with the pictures folder.)
@@ -125,28 +125,62 @@ Depending on if there is a small-scale analysis, like a single or small sample,o
 
 ## 5. Improved Methodologies<a name="5"></a>
 
-### 5.1 Limited Cell Number<a name="51"></a>
-### 5.2 ChIP-exo <a name="52"></a>
+
+
+### 5.1 ChIP-exo <a name="51"></a>
+<p align="left">
+  <img src="./images/exochip.png" width="430" height="400"/>
+</p>
+In the fragmentation process, ChIP-exo can be performed to increase precision and avoid systematic biases. 
+Standard ChIP-seq experiments that use sonication to fragment chromatin result in libraries containing DNA molecules that are ~200 bases long, even though each protein typically binds only 6-20 bases. In addition, resulting libraries are often contaminated with DNA not bound by the target factor, which has necessitated the use of the input control experiments and is responsible for some common systematic biases. <br><br>
+Instead of sonication, ChIP-exo uses lambda (λ) exonuclease to digest the protein-bound, it can largely eliminate contaminating DNA. It could identify binding sites with single basepair precision, a 90-fold greater precision than when using the standard protocol, and with a 40-fold increase in the signal-to-noise ratio indicating lower background (contaminating) signal.<br><br>
+
+### 5.2 Limited Cell Number<a name="52"></a>
+<p align="left">
+  <img src="./images/linda.png" width="500" height="400"/>
+</p>
+Typically, large numbers of cells (~10 million) are required for a ChIP experiment limiting both the types of cells that can be assayed as well as the number of ChIP experiments that can be performed on a valuable sample. It can be especially challenging in small model organisms where multiple whole animals may be necessary to achieve these quantities. Two protocols have been recently developed to address this problem through post-ChIP DNA amplification. <br><br>
+
 ### 5.3 Re-ChIP  <a name="53"></a>
+
+DNA bound proteins and histone modifications work together and with other genomic modifications to perform cellular functions. For experiments in which different proteins or modifications are at the same genomic location, sequential ChIP, or re-ChIP are performed. <br><br>
+Sequential experiment uses antibodies to different proteins in succession. It can help to determine whether the interactions are simultaneously present or on different chromosomes in the same cell or in different cells. It is helpful to reveal the identities of individual proteins interacting in larger complexes, providing evidence for combinations of factors that will bind together. 
+
 ---
 
 ## 6. Quality Control<a name="6"></a>
+
 <p align="center">
-  <img src="./images/Quality control.jpg">
+  <img src="./images/Quality control.jpg" >
 </p>
 
+Because the quality of the ChIP-seq results are relevant to the specificity of the binding events and the choice of a method in a specific analysis, the overall design and quality management of the experiment are of critical importance. We are still discovering biases in sequence data due to a combination of genomic characteristics, experimental protocols, specific sequencing technologies, and analytical methods. In order to maintain the robustness of the technique, it is crucial to monitor several varibles for quality control and adjust the protocols accordingly.  <br> 
+
+
+
 ### 6.1 Sequencing Depthh<a name="61"></a>
-The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus,sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. <br>
-A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. <br>
-Increased sequencing depth allows detection of more sites with reduced enrichment. It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. <br>
-It is also noted that DNA sequencing library complexity, which is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations. <br>
-Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate. <br>
+The number of called peaks increases with the sequencing depth, because the weaker sites become statistically significant with a greater number of reads. Thus,sufficient sequencing depth is required to include all functional sites, which avoids the technical biases caused by uneven Chip-enrichment. 
+<br><br>
+A saturation analysis is usually performed to determine adquate sequencing depth. And for most histone-modification which exists no clear saturation point, the depth is usually determined empirically. 
+<br><br>
+Increased sequencing depth allows detection of more sites with reduced enrichment. It is noted that setting a minimal signal strength threshold, usually based on a p-value or false discovery rate calculation, to identify peaks does not guarantee discovery of all functional sites. 
+<br><br>
+It is also noted that DNA sequencing library complexity, which is the amount of unique DNA molecules, must be sufficient meaning sequencing depths do not exceed complexity. It is suggested that at least 80% of 10 million or more reads be mapped to distinct genomic locations.
+<br><br>
+Low complexity libraries generally indicate a failed experiment where not enough DNA was recovered causing the same PCR amplified products to be sequenced repeatedly and many small peaks to be detected with a high false positive rate. 
+<br><br>
 
 ### 6.2 Signal To Noise Ratio S/N <a name="62"></a>
+The S/N is evaluated by the number and strength of peaks obtained for each ChIP sample. This measure can also be used to assess the degree of noises in the input sample. The ENCODE consortium proposed two metrics, fraction of reads in peaks (FRiP) and cross-correlation profiles (CCPs) to measure the S/Ns. However, they have mainly been tested using only a few species and a more extensive investigation is necessary to understand the applicability of this approach to many other species. 
+<br><br>
+Moreover, a large S/N does not guarantee that the identified peaks are genuine binding sites—a large score merely means that there are many read-enriched regions in the genome. Samples that have many false-positive sites (e.g. non-specific binding sites) also have large S/Ns.
 
+<br>
 
 ---
+
 ## 7. References<a name="7"></a>
+
 1.  Barski, A., & Zhao, K. (2009, January 27). Genomic location analysis by ChIP‐Seq. Retrieved December 07, 2020, from https://onlinelibrary.wiley.com/doi/pdf/10.1002/jcb.22077
 2.  Furey, T. (2012, December). ChIP-seq and beyond: New and improved methodologies to detect and characterize protein-DNA interactions. Retrieved December 07, 2020, from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/
 3.  Nakato, R., & Sakata, T. (2020, March 30). Methods for ChIP-seq analysis: A practical workflow and advanced applications. Retrieved December 07, 2020, from https://www.sciencedirect.com/science/article/pii/S1046202320300591
@@ -156,112 +190,3 @@ Low complexity libraries generally indicate a failed experiment where not enough
 
 ---
 
-# Text weight
-
-# Really heavy text!
-## Less heavy
-### Even littler
-#### I'm shrinking
-##### Oh no
-###### plz help
-This is some normal text...
-
-This is a new paragraph
-that continues in the same line despite the line break.
-
-
----
-
-
-# Text formatting
-
- **I'm bold!**
-
- *I'm italic!*
-
-### <span style="color:cyan">COLOR!</span> <span style="color:red">COLOR!</span> <span style="color:yellow">COLOR!</span> <span style="color:magenta">COLOR!</span>
-
-
-
----
-
-# Links
-## [I'm a hyperlink](https://en.wikipedia.org/wiki/YOLO_(aphorism)
-[*I'm a small italic link*](https://en.wikipedia.org/wiki/YOLO_(aphorism)
-
-___
-
-
-# Quoting
-
-"Normal Quotes"
-
-Block quotes!
-
->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a ipsum nec justo dictum convallis. Integer luctus ultricies tortor sit amet vehicula. Nam tristique faucibus pharetra. Cras nec erat ligula. Proin at odio ex. Nulla ornare imperdiet nulla, sed posuere est imperdiet et. Curabitur egestas risus vitae quam pulvinar, in vulputate leo mollis. Fusce nec tincidunt libero. Suspendisse odio urna, pretium eget lectus id, accumsan bibendum ex. Aenean accumsan malesuada sem, at blandit dui euismod a. Sed sed eros porttitor, iaculis augue id, pulvinar mi. Ut in scelerisque libero, quis malesuada sem. Donec commodo diam quis massa condimentum, non consequat orci bibendum. Praesent auctor tellus egestas felis tincidunt, eget imperdiet lorem pharetra.
-
----
-
-# Pictures
-Two ways to format this
-![Puppy0](https://www.merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/puppy-3143-ad4140d8f6055cda2cd8956d4af37ea9@1x.jpg "A puppy!")
-
-
-![Puppy1][puppy2]
-
-[puppy2]: https://i.ytimg.com/vi/AZ2ZPmEfjvU/maxresdefault.jpg "Another Puppy!!"
-
-
-[![Puppy2](https://pbs.twimg.com/profile_images/446566229210181632/2IeTff-V_400x400.jpeg "This puppy is a link!")](nytimes.com)
-
----
-
-# Code
-You can reference variables like `x` or `y` inline.
-But you can also have block quotes like:
-```
-import numpy as np
-random = np.random.randn(10, 10)
-
-print('Hello World!')
-```
-But you can even format the text for languages:
-```python
-import numpy as np
-random = np.random.randn(10, 10)
-
-print('Hello World!')
-```
-**Pretty!**
-
-
-----
-
-# Lists
-
-1. Item One
-2. Another
-
-
-* Unordered Item
-* Another one!
-
----
-
-# Tables
-Note the different alignments
-
-|Time of day| Favorite snack | Why?                |
-|-----------|:----------------:|----:              |
-|Morning    | Oreos!           | Delicious         |
-|Afternoon  | Otter Pop        | It's hot out baby |
-|Night      | IPA              | I need it. |
-
-# Comments (look at the source code)
-
-[comment]: <> (This is a comment
-               everything in here won't be in the final doc)
-
- <!---
-This is also a comment :)
- -->
