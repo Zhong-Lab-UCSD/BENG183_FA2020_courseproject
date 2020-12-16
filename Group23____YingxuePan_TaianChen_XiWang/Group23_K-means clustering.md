@@ -164,7 +164,7 @@ Figure 4: Scatter Plot Example Using Python with a Data Size of 500.
 Figure 5: Curse of Dimensionality. **Figure by Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course**.
 
 ### 4.2. Advantages of K-means Clustering<a name="4.2"></a>
-1. K-means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge.  Compared to other clustering methods. Agglomerative hierarchical clustering is in O(n^3). If speed is your priority work, K-Means can work well with the large dataset. 
+1. K-means is in O(tkn) where n is the number of objects, k is the number of clusters, and t is how many iterations it takes to converge. The step that we assign the data to its closest cluster takes O(kn) in the worst case. This is because for each data x_i, we have to compute its Euclidean distance to each centroid c_j, and assign the data to the cluster withh the shortest distance. For each data x_i, we calculate k euclidean distances since there are k centroids. Since there are n data points, generating a new cluster assignment takes O(kn). Since we need t iterations until we finally reach the convergence, i.e. the final cluster assignment, the algorithm takes O(tkn) (Pinocchio, StackExchange). In most cases, t <<n, k << n, so we may consider the runtime of k-means algorithm as linear runtime. Other algorithms, such as agglomerative hierarchical clustering which takes O(n^3), are not as efficient as k-means. So if you are working on large dataset, i.e. n is large, k-means clustering works more efficiently compared to other clustering methods.
 
 2. The ease of modifying the shape of k-means is another reason why it's powerful. In the left plot, No generalization, resulting in a non-intuitive cluster boundary. In the right plot, Besides different cluster widths, allow different widths per dimension, resulting in elliptical instead of spherical clusters, improving the result (“k-Means Advantages and Disadvantages”, Machine Learning Crash Course). 
 
@@ -192,5 +192,7 @@ Charles Zaiontz, “Initializing clusters via k-means++ algorithm”, Real Stati
 David Arthur and Sergei Vassilvitskii, “k-means++:  The Advantages of Careful Seeding”, Stanford InfoLab Publication Server, http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf
 
 Unknown author, “k-Means Advantages and Disadvantages”, unknown date, Machine Learning Crash Course, https://developers.google.com/machine-learning/clustering/algorithm/advantages-disadvantages
+
+Pinocchio, "Run time analysis of the clustering algorithm (k-means)", StackExchange, https://stats.stackexchange.com/questions/89229/run-time-analysis-of-the-clustering-algorithm-k-means
 
 Alex R, "why K-means Algorithm will terminate in a finite number of iterations?", StackExchange, https://stats.stackexchange.com/questions/181319/why-k-means-algorithm-will-terminate-in-a-finite-number-of-iterations
