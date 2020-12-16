@@ -77,13 +77,13 @@ Feature engineering involves the extraction of smaller sets of features from exi
 ##### Feature Engineering Applications
 
 ###### Pseudo Amino Acid Composition
-Current research has really focused on the use of sequence data in conjunction with other features, most notably physicochemical properties. A common protein sequence feature used is the Pseudo Amino Acid Composition[[6]](#Works-Cited). This is a feature vector of size [20+lambda] that depicts the composition of the first 20 amino acids followed by sequence order information. The pseAAC has been used in conjunction with SVMs to classify conotoxin superfamilies[[7]](#Works-Cited).
+Current research has really focused on the use of sequence data in conjunction with other features, most notably physicochemical properties. A common protein sequence feature used is the Pseudo Amino Acid Composition[[6]](#Works-Cited). This is a feature vector of size [20+λ] that depicts the composition of the first 20 amino acids followed by sequence order information. The pseAAC has been used in conjunction with SVMs to classify conotoxin superfamilies[[7]](#Works-Cited).
 
 ![](./img/pseACC.png)
 fig 5. [[8]](#Works-Cited)
 
 ###### Position Specific Scoring Matrix
-Another common protein sequence feature used is the Position Specific Scoring Matrix. This is a matrix that indicates the level of conservation of amino acids at specific sequence positions. High scores in regions of the sequence could hint to some biological relation. One way the PSSM has been used in feature extraction is the development of the Pseudo-PSSM which was made by combining the pseAAC and the PSSM[9]](#Works-Cited).
+Another common protein sequence feature used is the Position Specific Scoring Matrix. This is a matrix that indicates the level of conservation of amino acids at specific sequence positions. High scores in regions of the sequence could hint to some biological relation. One way the PSSM has been used in feature extraction is the development of the Pseudo-PSSM which was made by combining the pseAAC and the PSSM[[9]](#Works-Cited).
 
 This feature extraction has been used in conjunction with SVM in a study on submitochondrial locations for the purpose of understanding biological function of proteins due to location specific mitochondrial function[[10]](#Works-Cited).
 
@@ -257,7 +257,7 @@ The supervised learning approach to interaction prediction is fairly intuitive. 
 
 
 ![](./img/struct2net.png)
-*[[36]](#Works-Cited) Figure ?: This visually represents the interactome of Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows Struct2Net's algorithm, Coev2Net, training on highly complex data and placing testing data within the model.*
+*[[36]](#Works-Cited) Fig 14: This visually represents the interactome of Protein Data Bank. Each node is a protein and each edge is a interaction with an assigned strength. This shows Struct2Net's algorithm, Coev2Net, training on highly complex data and placing testing data within the model.*
 
 An example of a computational success in this field is MIT’s [Struct2Net](http://cb.csail.mit.edu/cb/struct2net/webserver/) software [[36]](#Works-Cited). The software takes either one or two amino acid sequences as input. It then maps the amino acids to the closest match in the Protein Data Bank. The Protein Data Bank is a resource to accumulate experimentally derived information about proteins. After determining a match, Struct2Net guesses the interactive domains of the input protein. Finally, interaction predictions are performed with a boosted classifier. Two input amino acid sequences will result in a single interaction prediction. Whereas, a single input protein will return a list of potential interactors.
 
