@@ -10,7 +10,7 @@ Group 4: Kelly Chou, Renyi Zhao, Li Yu Tang
 3. [Advantages](#3)
 4. [Disadvantages](#4)
 5. [Improvements and Possible Solutions](#5)
-6. [Improvements and Possible Solutions](#6)
+6. [Quality Control](#6)
 7. [References](#7)
 
 <!--- 
